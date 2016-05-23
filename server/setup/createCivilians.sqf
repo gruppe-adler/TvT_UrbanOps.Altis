@@ -1,5 +1,12 @@
+/*	Spawns civilians and find position for dealer
+*
+*		executed via init.sqf on server
+*/
+
 waitUntil {!isNil "CITYPOSITION"};
 waitUntil {!isNil "CITYAREASIZE"};
+
+private ["_dealerHouse","_buildingPos"];
 
 //load gear
 call compile preprocessFileLineNumbers "loadouts\civilianGear.sqf";
@@ -13,8 +20,8 @@ _exclusionList = [
 	 "Land_runway_edgelight"
 ];
 
-//find houses
-_houseList =  CITYPOSITION nearObjects ["House",CITYAREASIZE+100];
+//HOUSE LIST ===================================================================
+_houseList =  CITYPOSITION nearObjects ["House",CITYAREASIZE+80];
 diag_log format ["createCivilians.sqf - %1 houses found:", (count _houseList)];
 
 //Clean up house list (remove buildings that have no positions)
@@ -29,7 +36,8 @@ _cleanUpCounter = 0;
 diag_log format ["createCivilians.sqf - %1 houses without positions have been cleaned from list.", _cleanUpCounter];
 diag_log format ["createCivilians.sqf - %1 houses remaining.", (count _houseList)];
 
-//spawn static civilians
+
+//SPAWN STATIC CIVILIANS =======================================================
 staticCivilians = [];
 _staticCivilianTotalCounter = 0;
 _houseCounter = 0;
@@ -64,3 +72,40 @@ _halfNumberOfHouses = (count _houseList) / 2;
 
 	_staticCivilianTotalCounter = _staticCivilianTotalCounter + _staticCivilianCounter;
 }foreach _houseList;
+
+
+//SPAWN DEALER =================================================================
+//select building
+_isExcluded = true;
+while {_isExcluded} do {
+	_dealerHouse = selectRandom _houseList;
+	if !(typeOf _dealerHouse in _exclusionList) then {
+		_isExcluded = false;
+	};
+	if (str (_dealerHouse buildingpos 0) == "[0,0,0]") then {
+		_isExcluded = true;
+	};
+	if (getpos _dealerHouse distance2D CITYPOSITION > CITYAREASIZE*DEALERRADIUSFACTOR) then {
+		_isExcluded = true;
+	};
+};
+diag_log format ["createCivilians.sqf - House selected for dealer: %1.",_dealerHouse];
+
+//find positions
+_allPositions = [];
+_allfound = false;
+_bPosCounter = 0;
+while {!_allFound} do {
+	_bPos = _dealerHouse buildingpos _bPosCounter;
+	if (str _bPos != "[0,0,0]") then {
+		_allPositions pushBack _bPos;
+		_bPosCounter = _bPosCounter + 1;
+	} else {
+		_allFound = true;
+	};
+};
+diag_log format ["createCivilians.sqf - Positions found in dealer house: %1.",_bPosCounter];
+
+//select position and spawn dealer
+_dealerPos = selectRandom _allPositions;
+[_dealerPos] execVM "server\setup\spawnDealer.sqf";

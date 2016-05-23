@@ -131,5 +131,5 @@ if (isServer) then {
 
   //============================================================================
   addMissionEventHandler ["HandleDisconnect", {[_this select 3] spawn mcd_fnc_removeRespawnedFromList}];
-  [] execVM "waveRespawn.sqf";
+  [] execVM "server\waveRespawn.sqf";
 };

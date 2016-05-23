@@ -14,13 +14,16 @@ _rule = parseText "<t align='center'><t color='#708090'>------------------------
 _lineBreak = parseText "<br />";
 _timeleft = RESPAWNTIME;
 _waitCondition = {};
+_interruptCondition = {};
 _playersLeft = {};
 _waveTimeLeft = {};
 _freeRespawn = {};
 _waveSize = {};
+_interrupted = false;
 
 if (originalSide == "WEST") then {
   _waitCondition = compile "!WAVERESPAWNBLU";
+  _interruptCondition = {COMMANDVEHICLEDESTROYED};
   _playersLeft = {WAVERESPAWNPLAYERSLEFTBLU};
   _waveTimeLeft = {WAVERESPAWNTIMELEFTBLU};
   _waveSize = BLUFORWAVESIZE;
@@ -28,6 +31,7 @@ if (originalSide == "WEST") then {
 };
 if (originalSide == "EAST") then {
   _waitCondition = compile "!WAVERESPAWNOPF";
+  _interruptCondition = {DEALERKILLED};
   _playersLeft = {WAVERESPAWNPLAYERSLEFTOPF};
   _waveTimeLeft = {WAVERESPAWNTIMELEFTOPF};
   _waveSize = OPFORWAVESIZE;
@@ -37,6 +41,8 @@ if (originalSide == "EAST") then {
 
 //respawn countdown ============================================================
 while {_timeleft > 0} do {
+  if (call _interruptCondition) exitWith {diag_log "onPlayerKilled.sqf - Respawn interrupted."; _interrupted = true};
+
   //countdown
   _timeleft = _timeleft - 1;
   _minutes = str (floor (_timeleft/60));
@@ -60,12 +66,16 @@ while {_timeleft > 0} do {
   sleep 1;
 };
 
+if (_interrupted) exitWith {call mcd_fnc_startSpectator};
+
 //send command to server to add player to wave array ===========================
 [profileName, originalSide] remoteExec ["mcd_fnc_addDeadPlayerToWave",2,false];
 
 
 //wait until enough players in wave ============================================
 while _waitCondition do {
+  if (call _interruptCondition) exitWith {diag_log "onPlayerKilled.sqf - Respawn interrupted."; _interrupted = true};
+
   _respawnIn = parseText format ["<t align='center' size='1.4'>Spieler <t color='#00ff00'>bereit</t></t>"];
   _minutes = str (floor (call _waveTimeLeft/60));
   _seconds = floor (call _waveTimeLeft mod 60);
@@ -82,8 +92,9 @@ while _waitCondition do {
   sleep 1;
 };
 
-//respawn ======================================================================
+if (_interrupted) exitWith {call mcd_fnc_startSpectator};
 
+//respawn ======================================================================
 //respawn hint
 _respawning = parseText format ["<t align='center' color='#00ff00' size='1.4'>Respawning...</t>"];
 hint composeText [_rule, _respawning, _lineBreak, _rule];

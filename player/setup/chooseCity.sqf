@@ -14,7 +14,6 @@ if (isNil "opforcommander") exitWith {};
 if (player != opforcommander) exitWith {};
 
 diag_log "chooseCity.sqf starting...";
-99 cutRsc ["chooseCityGUI", "PLAIN", 0, true];
 
 //MAPCLICK EVENT ===============================================================
 mcd_chooseCityClick = [

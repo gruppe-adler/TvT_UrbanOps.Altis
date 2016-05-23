@@ -11,6 +11,4 @@ if (TIME_OF_DAY == 1000) then {
 };
 
 diag_log format ["setTime.sqf - Setting time to %1:00", TIME_OF_DAY];
-_minutes = 0;
-if (TIME_OF_DAY == 6) then {_minutes = 30};
-[[2015, 2, 5, TIME_OF_DAY, _minutes]] call bis_fnc_setDate;
+[[2015, 2, 5, TIME_OF_DAY, 0]] call bis_fnc_setDate;

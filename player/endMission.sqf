@@ -3,17 +3,26 @@
 *   executed on player via initPlayerLocal
 */
 
+endInProgress = false;
+
 mcd_fnc_endMission = {
   params ["_winningSide", "_endText", "_var"];
   if (!_var) exitWith {};
 
-  _winningSide = _this select 0;
+  if (endInProgress) exitWith {diag_log "fnc_endMission - A different ending is already in progress."};
+  endInProgress = true;
+  
   _isVictory = false;
   if (_winningSide == originalSide) then {
     _isVictory = true;
   };
 
-  _text = format ["<img size= '6' style='vertical-align:middle' shadow='false' image='data\gruppe-adler.paa'/><br/><t size='.9' color='#FFFFFF'>%1</t>", _endText];
+  _winningText = switch (_winningSide) do {
+    case "WEST": {"BLUFOR WINS"};
+    case "EAST": {"OPFOR WINS"};
+  };
+
+  _text = format ["<img size= '6' style='vertical-align:middle' shadow='false' image='data\gruppe-adler.paa'/><br/><t size='.9' color='#FFFFFF'>%1<br/>%2</t>", _endText, _winningText];
   [_text,0,0,2,2] spawn BIS_fnc_dynamicText;
 
   sleep 5;
@@ -22,3 +31,4 @@ mcd_fnc_endMission = {
 };
 
 "CITYCAPTURED" addPublicVariableEventHandler {["WEST", "CITY CAPTURED!", _this select 1] spawn mcd_fnc_endMission};
+"CITYDEFENDED" addPublicVariableEventHandler {["EAST", "CITY DEFENDED!", _this select 1] spawn mcd_fnc_endMission};

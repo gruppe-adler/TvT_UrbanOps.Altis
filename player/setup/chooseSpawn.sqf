@@ -16,7 +16,6 @@ waitUntil {!isNil "BLUFORSPAWNDIST" && !isNil "BLUFORSPAWNBAND"};
 waitUntil {!isNil "CITYPOSITION"};
 
 diag_log "chooseSpawn.sqf starting...";
-99 cutRsc ["chooseSpawnGUI", "PLAIN", 0, true];
 
 //MAPCLICK EVENT ===============================================================
 mcd_chooseSpawnClick = [
@@ -59,8 +58,6 @@ mcd_onSpawnKeyDown = (findDisplay 46) displayAddEventHandler ["KeyDown", {
 
           //position successfully chosen
           diag_log format ["chooseSpawn.sqf - ...and chose a spawnposition!"];
-          99 cutFadeOut 1;
-          player say3D "taskSucceeded";
 
           SPAWNCHOSEN = true;
           publicVariable "SPAWNCHOSEN";

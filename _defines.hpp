@@ -92,7 +92,7 @@ class RscStructuredText
 {
     access = 0;
 	idc = -1;
-	type =  CT_STRUCTURED_TEXT; 
+	type =  CT_STRUCTURED_TEXT;
 	style = ST_MULTI;
     lineSpacing = 0.5;
 	colorBackground[] = {-1,-1,-1,0};
@@ -105,7 +105,7 @@ class RscStructuredText
 	h = 0;
 	w = 0;
     class Attributes {
-        align = "center";      
+        align = "center";
   };
 };
 
@@ -113,7 +113,7 @@ class RscStructuredTextTooltip
 {
     access = 0;
     idc = -1;
-    type =  CT_STRUCTURED_TEXT; 
+    type =  CT_STRUCTURED_TEXT;
     style = ST_MULTI;
     lineSpacing = 0.5;
     colorBackground[] = {-1,-1,-1,0};
@@ -126,7 +126,7 @@ class RscStructuredTextTooltip
     h = 0;
     w = 0;
     class Attributes {
-        align = "left";      
+        align = "left";
   };
 };
 
@@ -134,7 +134,7 @@ class RscStructuredTextHeadline
 {
     access = 0;
 	idc = -1;
-	type =  CT_STRUCTURED_TEXT; 
+	type =  CT_STRUCTURED_TEXT;
 	style = ST_CENTER;
 	colorBackground[] = {-1,-1,-1,0};
 	colorText[] = {0.5,0.5,0.5,1};
@@ -168,7 +168,7 @@ class RscText
     y = 0;
     h = 0;
     w = 0;
-   
+
 };
 
 class RscPicture
@@ -193,7 +193,7 @@ class RscPicture
 
 class RscButton
 {
-    
+
    access = 0;
     type = CT_BUTTON;
     text = "";
@@ -227,7 +227,7 @@ class RscButton
 
 class RscButtonSmall
 {
-    
+
     access = 0;
     type = CT_BUTTON;
     text = "";
@@ -273,6 +273,20 @@ class RscFrame
 };
 
 class background
+{
+   type = CT_STATIC;
+    idc = -1;
+    style = ST_LEFT;
+    shadow = 2;
+    colorText[] = {1,1,1,1};
+    font = "PuristaLight";
+    sizeEx = 0.04;
+    colorBackground[] = { 0,0,0, 0.8 };
+    text = "";
+
+};
+
+class background_smalltext
 {
    type = CT_STATIC;
     idc = -1;
