@@ -44,6 +44,7 @@ if (isServer) then {
 	GAMESTARTED = false;
 	GAMEENDED = false;
 	BLUFORINCONTROL = false;
+	BLUFORELIMINATED = false;
 	CITYCAPTURED = false;
 	CITYDEFENDED = false;
 	CAPTURETIMEREMAINING = CAPTURETIME;
@@ -77,6 +78,7 @@ if (isServer) then {
 	publicVariable "GAMESTARTED";
 	publicVariable "GAMEENDED";
 	publicVariable "BLUFORINCONTROL";
+	publicVariable "BLUFORELIMINATED";
 	publicVariable "CITYCAPTURED";
 	publicVariable "CITYDEFENDED";
 	publicVariable "CAPTURETIMEREMAINING";
@@ -100,6 +102,7 @@ if (isServer) then {
 	[] execVM "initWaveRespawn.sqf";
 	[] execVM "server\endByControl.sqf";
 	[] execVM "server\endByTimeout.sqf";
+	[] execVM "server\endByBluKilled.sqf";
 
 	//TFAR
 	if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {

@@ -1,7 +1,14 @@
+/*  Ends the game after Blufor has held the city for CAPTURETIME
+*
+*   executed via init.sqf on server
+*/
+
 waitUntil {!isNil "GAMESTARTED"};
 waitUntil {GAMESTARTED};
 waitUntil {!isNil "cityTrigger"};
 waitUntil {!isNull cityTrigger};
+
+diag_log "endByControl.sqf starting...";
 
 while {!GAMEENDED} do {
 

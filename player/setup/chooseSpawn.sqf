@@ -3,11 +3,16 @@
 *   executed via initPlayerLocal
 */
 
+waitUntil {!isNil "originalSide"};
+if (originalSide == "EAST") exitWith {};
 waitUntil {!isNull player};
 waitUntil {player == player};
-
 waitUntil {!isNull (findDisplay 46)};
 openMap [true, false];
+
+[] execVM "player\setup\bluforWaitDialog.sqf";
+waitUntil {!isNil "SETUPTIMEREMAINING"};
+waitUntil {SETUPTIMEREMAINING <= 0};
 
 if (isNil "bluforcommander") exitWith {};
 if (player != bluforcommander) exitWith {};

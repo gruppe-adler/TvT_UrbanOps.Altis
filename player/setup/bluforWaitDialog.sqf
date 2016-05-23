@@ -16,7 +16,7 @@ while {SETUPTIMEREMAINING > 0} do {
   sleep 1;
 };
 
-if (isNil "bluforcommander") then {_isCommander = (player == bluforcommander)};
+if (!isNil "bluforcommander") then {_isCommander = (player == bluforcommander)};
 if (_isCommander) then {
   while {isNil "SPAWNCHOSEN"} do {
     99 cutRsc ["chooseSpawnGUI", "PLAIN", 0.0001, true];

@@ -3,10 +3,11 @@
 *   executed via initPlayerLocal
 */
 
+waitUntil {!isNil "originalSide"};
+if (originalSide == "WEST") exitWith {};
 waitUntil {!isNull player};
 waitUntil {player == player};
 waitUntil {!isNil "VILLAGEMARKERSIZE" && !isNil "CITYMARKERSIZE" && !isNil "CAPITALMARKERSIZE" && !isNil "OTHERMARKERSIZE"};
-
 waitUntil {!isNull (findDisplay 46)};
 openMap [true, false];
 

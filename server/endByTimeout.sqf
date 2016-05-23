@@ -3,12 +3,15 @@
 *   executed via init.sqf on server
 */
 
-waitUntil {!isNil "BLUFORTELEPORTED"};
-waitUntil {BLUFORTELEPORTED};
+waitUntil {!isNil "GAMESTARTED"};
+waitUntil {GAMESTARTED};
 
+diag_log "endByTimeout.sqf starting...";
 diag_log format ["endByTimeout.sqf - Opfor has to defend the city for %1s.", CAPTURETIME];
-sleep CAPTURETIME;
 
+sleep CAPTURETIME;
+GAMEENDED = true;
+CITYDEFENDED = true;
 diag_log "endByTimeout.sqf - Opfor has defended the city.";
 
 publicVariable "GAMEENDED";
