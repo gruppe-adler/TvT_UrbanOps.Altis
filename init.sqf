@@ -12,6 +12,7 @@ if (isServer) then {
 	mcd_fnc_deleteSideMarker = compile preprocessFileLineNumbers "functions\fn_deleteSideMarker.sqf";
 	mcd_fnc_emptyContainer = compile preprocessFileLineNumbers "functions\fn_emptyContainer.sqf";
 	mcd_fnc_spawnStaticCivilian = compile preprocessFileLineNumbers "functions\fn_spawnStaticCivilian.sqf";
+	mcd_fnc_spawnNonstaticCivilian = compile preprocessFileLineNumbers "functions\fn_spawnNonstaticCivilian.sqf";
 
 	//Dynamic Groups
 	["Initialize", [true]] call BIS_fnc_dynamicGroups;
@@ -34,6 +35,7 @@ if (isServer) then {
 
 	BLUFORSPAWNDIST = 1200;
 	BLUFORSPAWNBAND = 1000;
+	OPFORRESPAWNDIST = 100;
 
 	CIVILIANPROBABILITY = 5;
 	DEALERRADIUSFACTOR = 0.75;																										//CITYAREASIZE * DEALERRADIUSFACTOR == DEALERSPAWNRADIUS
@@ -45,6 +47,7 @@ if (isServer) then {
 	GAMEENDED = false;
 	BLUFORINCONTROL = false;
 	BLUFORELIMINATED = false;
+	OPFORELIMINATED = false;
 	CITYCAPTURED = false;
 	CITYDEFENDED = false;
 	CAPTURETIMEREMAINING = CAPTURETIME;
@@ -68,6 +71,7 @@ if (isServer) then {
 
 	publicVariable "BLUFORSPAWNDIST";
 	publicVariable "BLUFORSPAWNBAND";
+	publicVariable "OPFORRESPAWNDIST";
 
 	publicVariable "CIVILIANPROBABILITY";
 	publicVariable "DEALERRADIUSFACTOR";
@@ -79,13 +83,13 @@ if (isServer) then {
 	publicVariable "GAMEENDED";
 	publicVariable "BLUFORINCONTROL";
 	publicVariable "BLUFORELIMINATED";
+	publicVariable "OPFORELIMINATED";
 	publicVariable "CITYCAPTURED";
 	publicVariable "CITYDEFENDED";
 	publicVariable "CAPTURETIMEREMAINING";
 
 	publicVariable "COMMANDVEHICLEDESTROYED";
 	publicVariable "DEALERKILLED";
-
 
 
 	//setup
@@ -103,6 +107,7 @@ if (isServer) then {
 	[] execVM "server\endByControl.sqf";
 	[] execVM "server\endByTimeout.sqf";
 	[] execVM "server\endByBluKilled.sqf";
+	[] execVM "server\endByOpfKilled.sqf";
 
 	//TFAR
 	if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {

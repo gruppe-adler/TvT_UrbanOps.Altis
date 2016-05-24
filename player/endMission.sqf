@@ -36,3 +36,4 @@ mcd_fnc_endMission = {
 "CITYCAPTURED" addPublicVariableEventHandler {["WEST", "CITY CAPTURED!", _this select 1] spawn mcd_fnc_endMission};
 "CITYDEFENDED" addPublicVariableEventHandler {["EAST", "CITY DEFENDED!", _this select 1] spawn mcd_fnc_endMission};
 "BLUFORELIMINATED" addPublicVariableEventHandler {["EAST", "BLUFOR ELIMINATED!", _this select 1] spawn mcd_fnc_endMission};
+"OPFORELIMINATED" addPublicVariableEventHandler {["WEST", "OPFOR ELIMINATED!", _this select 1] spawn mcd_fnc_endMission};
