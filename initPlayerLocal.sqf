@@ -1,5 +1,7 @@
 if (hasInterface) then {
 
+  call compile preprocessFile "islandConfig.sqf";
+
   //functions
   mcd_fnc_formattedHint = compile preprocessFileLineNumbers "functions\fn_formattedHint.sqf";
   mcd_fnc_startSpectator = compile preProcessFileLineNumbers "functions\fn_startSpectator.sqf";
@@ -8,12 +10,14 @@ if (hasInterface) then {
   mcd_fnc_deleteSideMarkerRemote = compile preprocessFileLineNumbers "functions\fn_deleteSideMarkerRemote.sqf";
   mcd_fnc_teleport = compile preprocessFileLineNumbers "functions\fn_teleport.sqf";
   mcd_fnc_findOpfSpawnPos = compile preprocessFileLineNumbers "functions\fn_findOpfSpawnPos.sqf";
+  KK_fnc_fileExists = compile preprocessFileLineNumbers "functions\fn_fileExists.sqf";
 
   //dyn groups
   ["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
 
   //setup
   [] execVM "helpers\originalSide.sqf";
+  [] execVM "player\setup\mapStartPos.sqf";
   [] execVM "player\setup\chooseCity.sqf";
   [] execVM "player\setup\chooseSpawn.sqf";
   [] execVM "player\captureTimeCountdown.sqf";

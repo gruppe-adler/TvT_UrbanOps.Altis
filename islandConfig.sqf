@@ -46,7 +46,10 @@ ISLANDS = [
 
 
 ISLAND_CONFIG = [
-	[true,														// is woodland
-	'Altis']													// name
+	[true,														//is woodland
+	[13754.7,6389.77,0],							//spawnpos blufor
+	[13836.3,6765.53,0],							//spawnpos opfor
+	'Altis'
+	]
 
 ];

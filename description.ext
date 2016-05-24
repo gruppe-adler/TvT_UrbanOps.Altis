@@ -49,18 +49,18 @@ class Params
   class BluforFaction
   {
     title = "Blufor Faction";
-    values[] = {"us_marines", "ger_heer", "rus_msv", "ind_eastRebels", "ind_terrorists"};
+    values[] = {0,1,2,3,4};
     texts[] = {"USA - USMC", "Germany - Heer", "Russia - MSV", "Independent - Eastern European Rebels", "Independent - Islamic Terrorists"};
-    default = "us_marines";
+    default = 0;
   };
 
   class OpforFaction
   {
     title = "Opfor Faction";
-    values[] = {"us_marines", "ger_heer", "rus_msv", "ind_eastRebels", "ind_terrorists"};
+    values[] = {0,1,2,3,4};
     texts[] = {"USA - USMC", "Germany - Heer", "Russia - MSV", "Independent - Eastern European Rebels", "Independent - Islamic Terrorists"};
-    default = "rus_msv";
-  }
+    default = 2;
+  };
 
   class DefenseTime
   {

@@ -2,11 +2,12 @@
 CHOSENLOCATION = nearestLocation [[13991.4,18699.7,0], "NameCity"];
 CITYCHOSEN = true;*/
 
-call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
-call compile preprocessFile "islandConfig.sqf";
 
 //SERVER ONLY ==================================================================
 if (isServer) then {
+
+	call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
+	call compile preprocessFile "islandConfig.sqf";
 
 	mcd_fnc_createSideMarker = compile preprocessFileLineNumbers "functions\fn_createSideMarker.sqf";
 	mcd_fnc_deleteSideMarker = compile preprocessFileLineNumbers "functions\fn_deleteSideMarker.sqf";
@@ -24,8 +25,20 @@ if (isServer) then {
 	CAPTURETIME = "CaptureTime" call BIS_fnc_getParamValue;
 	DEFENSETIME = "DefenseTime" call BIS_fnc_getParamValue;
 	SETUPTIME = "SetupTime" call BIS_fnc_getParamValue;
-	BLUFORFACTION = (getArray (missionConfigFile >> "Params" >> "BluforFaction" >> "values")) select ("BluforFaction" call BIS_fnc_getParamValue);
-	OPFORFACTION = (getArray (missionConfigFile >> "Params" >> "OpforFaction" >> "values")) select ("OpforFaction" call BIS_fnc_getParamValue);
+	BLUFORFACTION = [
+		"us_marines",
+		"ger_heer",
+		"rus_msv",
+		"ind_eastRebels",
+	 	"ind_terrorists"
+	] select ("BluforFaction" call BIS_fnc_getParamValue);
+	OPFORFACTION = [
+		"us_marines",
+		"ger_heer",
+		"rus_msv",
+		"ind_eastRebels",
+		"ind_terrorists"
+	] select ("OpforFaction" call BIS_fnc_getParamValue);
 	ISWOODLAND = (ISLAND_CONFIG select (ISLANDS find worldName)) select 0;
 
 	//Settings
@@ -97,6 +110,7 @@ if (isServer) then {
 	//setup
 	[] execVM "server\setup\setTime.sqf";
 	[] execVM "server\setup\setWeather.sqf";
+	[] execVM "server\setup\mapRespawnPos.sqf";
 	[] execVM "server\setup\allLocationMarkers.sqf";
 	[] execVM "server\setup\chosenCityListener.sqf";
 	[] execVM "server\setup\chosenSpawnListener.sqf";
