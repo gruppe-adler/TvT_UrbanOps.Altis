@@ -6,7 +6,7 @@ class chooseCityErrorMessage
 	enableSimulation = 1;
 	enableDisplay = 1;
 	objects[] = {};
-	onLoad = "disableSerialization; player say3d 'defaultNotification'";
+	onLoad = "disableSerialization; player say 'defaultNotification'";
 
 	class ControlsBackground
 	{
@@ -45,7 +45,7 @@ class spawnselectErrorMessage1
 	enableSimulation = 1;
 	enableDisplay = 1;
 	objects[] = {};
-	onLoad = "disableSerialization; player say3d 'defaultNotification'";
+	onLoad = "disableSerialization; player say 'defaultNotification'";
 
 	class ControlsBackground
 	{
@@ -84,7 +84,7 @@ class spawnselectErrorMessage2
 	enableSimulation = 1;
 	enableDisplay = 1;
 	objects[] = {};
-	onLoad = "disableSerialization; player say3d 'defaultNotification'";
+	onLoad = "disableSerialization; player say 'defaultNotification'";
 
 	class ControlsBackground
 	{
@@ -123,7 +123,7 @@ class spawnselectErrorMessage3
 	enableSimulation = 1;
 	enableDisplay = 1;
 	objects[] = {};
-	onLoad = "disableSerialization; player say3d 'defaultNotification'";
+	onLoad = "disableSerialization; player say 'defaultNotification'";
 
 	class ControlsBackground
 	{

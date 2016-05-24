@@ -4,12 +4,14 @@
 */
 
 waitUntil {!isNil "originalSide"};
-if (originalSide == "WEST") exitWith {};
+if (originalSide != "EAST") exitWith {};
 waitUntil {!isNull player};
 waitUntil {player == player};
 waitUntil {!isNil "VILLAGEMARKERSIZE" && !isNil "CITYMARKERSIZE" && !isNil "CAPITALMARKERSIZE" && !isNil "OTHERMARKERSIZE"};
 waitUntil {!isNull (findDisplay 46)};
 openMap [true, false];
+
+[] execVM "player\setup\opforWaitDialog.sqf";
 
 if (isNil "opforcommander") exitWith {};
 if (player != opforcommander) exitWith {};
@@ -32,19 +34,14 @@ mcd_chooseCityClick = [
     };
     diag_log format ["chooseCity.sqf - Player clicked on %1", text CHOSENLOCATION];
 
-    //delete old marker if it exists
-    if (getMarkerType "selectionMarker" != "") then {
-      deleteMarkerLocal "selectionMarker";
-    };
-
-    //draw selection marker
+    //create marker
     if (!isNil "CHOSENLOCATION") then {
-      _marker = createMarkerLocal ["selectionMarker", locationPosition CHOSENLOCATION];
-      _marker setMarkerShapeLocal "ELLIPSE";
-      _marker setMarkerColorLocal "ColorGreen";
-      _marker setMarkerBrushLocal "Solid";
-      _marker setMarkerSizeLocal [_drawRadius, _drawRadius];
-      _marker setMarkerAlphaLocal 0.35;
+      [locationPosition CHOSENLOCATION,_drawRadius] spawn {
+        params ["_pos","_drawRadius"];
+        [EAST,"selectionMarker"] call mcd_fnc_deleteSideMarker;
+        sleep 0.3;
+        [EAST,"selectionMarker",_pos,"hd_start","ColorGreen","","ELLIPSE",_drawRadius,0.35,"Solid"] call mcd_fnc_createSideMarker;
+      };
     };
   }
 ] call BIS_fnc_addStackedEventHandler;
@@ -61,8 +58,6 @@ mcd_onCityKeyDown = (findDisplay 46) displayAddEventHandler ["KeyDown", {
 
       diag_log format ["chooseCity.sqf - ...and chose location %1", text CHOSENLOCATION];
 
-      99 cutFadeOut 1;
-      player say3D "taskSucceeded";
       deleteMarkerLocal "selectionMarker";
 
       CITYCHOSEN = true;

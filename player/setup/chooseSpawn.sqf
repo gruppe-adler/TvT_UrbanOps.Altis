@@ -4,7 +4,7 @@
 */
 
 waitUntil {!isNil "originalSide"};
-if (originalSide == "EAST") exitWith {};
+if (originalSide != "WEST") exitWith {};
 waitUntil {!isNull player};
 waitUntil {player == player};
 waitUntil {!isNull (findDisplay 46)};

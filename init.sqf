@@ -1,6 +1,6 @@
-//DEBUGDEBUGDEBUGDEBUGDEBUGDEBUG
+/*//DEBUGDEBUGDEBUGDEBUGDEBUGDEBUG
 CHOSENLOCATION = nearestLocation [[13991.4,18699.7,0], "NameCity"];
-CITYCHOSEN = true;
+CITYCHOSEN = true;*/
 
 call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
 call compile preprocessFile "islandConfig.sqf";
@@ -22,6 +22,7 @@ if (isServer) then {
 	TIME_OF_DAY = "TimeOfDay" call BIS_fnc_getParamValue;
 	CONTROLRATIO = "ControlRatio" call BIS_fnc_getParamValue;
 	CAPTURETIME = "CaptureTime" call BIS_fnc_getParamValue;
+	DEFENSETIME = "DefenseTime" call BIS_fnc_getParamValue;
 	SETUPTIME = "SetupTime" call BIS_fnc_getParamValue;
 	BLUFORFACTION = (getArray (missionConfigFile >> "Params" >> "BluforFaction" >> "values")) select ("BluforFaction" call BIS_fnc_getParamValue);
 	OPFORFACTION = (getArray (missionConfigFile >> "Params" >> "OpforFaction" >> "values")) select ("OpforFaction" call BIS_fnc_getParamValue);
@@ -59,6 +60,7 @@ if (isServer) then {
 	publicVariable "TIME_OF_DAY";
 	publicVariable "CONTROLRATIO";
 	publicVariable "CAPTURETIME";
+	publicVariable "DEFENSETIME";
 	publicVariable "SETUPTIME";
 	publicVariable "BLUFORFACTION";
 	publicVariable "OPFORFACTION";

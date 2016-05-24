@@ -1,4 +1,4 @@
-/*  Ends the game after Opfor has held the city for CAPTURETIME
+/*  Ends the game after Opfor has held the city for DEFENSETIME
 *
 *   executed via init.sqf on server
 */
@@ -7,9 +7,9 @@ waitUntil {!isNil "GAMESTARTED"};
 waitUntil {GAMESTARTED};
 
 diag_log "endByTimeout.sqf starting...";
-diag_log format ["endByTimeout.sqf - Opfor has to defend the city for %1s.", CAPTURETIME];
+diag_log format ["endByTimeout.sqf - Opfor has to defend the city for %1s.", DEFENSETIME];
 
-sleep CAPTURETIME;
+sleep DEFENSETIME;
 GAMEENDED = true;
 CITYDEFENDED = true;
 diag_log "endByTimeout.sqf - Opfor has defended the city.";

@@ -7,6 +7,7 @@
 */
 
 params ["_pos"];
+private ["_dealerMarkerType"];
 _group = createGroup civilian;
 "C_man_1" createUnit [_pos,_group, "DEALER = this"];
 
@@ -27,5 +28,7 @@ for "_i" from 1 to 4 do {_unit addItemToUniform "ACE_morphine";};
 
 publicVariable "DEALER";
 DEALER addEventHandler ["killed", {DEALERKILLED = true; publicVariable "DEALERKILLED"}];
+
+[EAST,"dealerMarker",_pos,"mil_marker","COLOREAST"] call mcd_fnc_createSideMarker;
 
 diag_log format ["spawnDealer.sqf - Dealer spawned at %1.", _pos];

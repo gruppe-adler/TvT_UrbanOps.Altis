@@ -2,7 +2,7 @@ waitUntil {!isNull player};
 waitUntil {player == player};
 waitUntil {!isNull (findDisplay 46)};
 
-private ["_isCommander"];
+_isCommander = false;
 
 while {isNil "CITYPOSITION"} do {
   99 cutRsc ["bluforWaitMessage1", "PLAIN", 0.0001, true];
