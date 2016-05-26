@@ -6,6 +6,8 @@ if (hasInterface) then {
   mcd_fnc_formattedHint = compile preprocessFileLineNumbers "functions\fn_formattedHint.sqf";
   mcd_fnc_startSpectator = compile preProcessFileLineNumbers "functions\fn_startSpectator.sqf";
   mcd_fnc_strToLoadout = compile preprocessFileLineNumbers "functions\fn_strToLoadout.sqf";
+  mcd_fnc_createSideMarker = compile preprocessFileLineNumbers "functions\fn_createSideMarker.sqf";
+	mcd_fnc_deleteSideMarker = compile preprocessFileLineNumbers "functions\fn_deleteSideMarker.sqf";
   mcd_fnc_createSideMarkerRemote = compile preprocessFileLineNumbers "functions\fn_createSideMarkerRemote.sqf";
   mcd_fnc_deleteSideMarkerRemote = compile preprocessFileLineNumbers "functions\fn_deleteSideMarkerRemote.sqf";
   mcd_fnc_teleport = compile preprocessFileLineNumbers "functions\fn_teleport.sqf";
@@ -22,7 +24,9 @@ if (hasInterface) then {
   [] execVM "player\setup\chooseSpawn.sqf";
   [] execVM "player\captureTimeCountdown.sqf";
   [] execVM "player\endMission.sqf";
+  [] execVM "player\buymenu\buymenuInit.sqf";
   [] execVM "loadouts\loadoutinit.sqf";
+
 
   //register in respawn system
   if (!isServer) then {

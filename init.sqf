@@ -9,8 +9,6 @@ if (isServer) then {
 	call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
 	call compile preprocessFile "islandConfig.sqf";
 
-	mcd_fnc_createSideMarker = compile preprocessFileLineNumbers "functions\fn_createSideMarker.sqf";
-	mcd_fnc_deleteSideMarker = compile preprocessFileLineNumbers "functions\fn_deleteSideMarker.sqf";
 	mcd_fnc_emptyContainer = compile preprocessFileLineNumbers "functions\fn_emptyContainer.sqf";
 	mcd_fnc_spawnStaticCivilian = compile preprocessFileLineNumbers "functions\fn_spawnStaticCivilian.sqf";
 	mcd_fnc_spawnNonstaticCivilian = compile preprocessFileLineNumbers "functions\fn_spawnNonstaticCivilian.sqf";

@@ -1,5 +1,9 @@
-#include "_defines.hpp"
-#include "_dialogs.hpp"
+#include "setupDialogs.hpp"
+
+#include "player\buymenu\gui_base.hpp"
+#include "player\buymenu\ui_toolkit.hpp"
+#include "player\buymenu\common.hpp"
+#include "player\buymenu\buymenu_dialog.hpp"
 
 //======================================================================= HEADER
 class Header

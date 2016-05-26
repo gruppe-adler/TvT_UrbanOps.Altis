@@ -29,13 +29,14 @@ params [
 ];
 
 if (side player != _side) exitWith {};
+if (getMarkerType _name != "") exitWith {diag_log format ["fn_createSideMarkerRemote - Markername %1 is already in use.", _name]};
 
-_i = 1;
+/*_i = 1;
 _originalName = _name;
 while {getMarkerType _name != ""} do {
   _name = _originalName + format ["_%1",_i];
   _i = _i + 1;
-};
+};*/
 
 _marker = createMarkerLocal [_name, _pos];
 _marker setMarkerAlphaLocal _alpha;

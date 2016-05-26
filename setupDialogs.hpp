@@ -1,3 +1,64 @@
+class mcd_RscMapText
+{
+   type = CT_STATIC;
+    idc = -1;
+    style = ST_LEFT;
+    shadow = 2;
+    colorText[] = {1,1,1,1};
+    font = "PuristaLight";
+    sizeEx = 0.04;
+    colorBackground[] = { 0,0,0, 0.8 };
+    text = "";
+
+};
+
+class mcd_RscConfirmBar
+{
+    access = 0;
+    idc = -1;
+    type = CT_BUTTON;
+    style = ST_LEFT;
+    default = false;
+    font = "PuristaLight";
+    sizeEx = 0.03;
+    colorText[] = {1,1,1,1};
+    colorFocused[] = {0.75,0.75,0.75,0.8};
+    colorDisabled[] = {0.4,0.4,0.4,1};
+    colorBackground[] = {0,0,0,0.6};
+    colorBackgroundDisabled[] = {0,0,0,0};
+    colorBackgroundActive[] = {0.75,0.75,0.75,1};
+    colorShadow[] = {0,0,0,0};
+    colorBorder[] = { 0, 0, 0, 1 };
+    borderSize = 0;
+    offsetX = 0;
+    offsetY = 0;
+    offsetPressedX = 0.002;
+    offsetPressedY = 0.002;
+    soundEnter[] = {"\ca\ui\data\sound\onover",0.09,1};
+    soundPush[] = {"\ca\ui\data\sound\new1",0,0};
+    soundClick[] = {"\ca\ui\data\sound\onclick",0.07,1};
+    soundEscape[] = {"\ca\ui\data\sound\onescape",0.09,1};
+    x = 0;
+    y = 0;
+    w = 0.055589;
+    h = 0.039216;
+    text = "";
+};
+
+class mcd_RscMapTextSmall
+{
+   type = CT_STATIC;
+    idc = -1;
+    style = ST_LEFT;
+    shadow = 2;
+    colorText[] = {1,1,1,1};
+    font = "PuristaLight";
+    sizeEx = 0.04;
+    colorBackground[] = { 0,0,0, 0.8 };
+    text = "";
+
+};
+
 class chooseCityErrorMessage
 {
 	idd = 9000;
@@ -10,7 +71,7 @@ class chooseCityErrorMessage
 
 	class ControlsBackground
 	{
-		class dlgBackground: background
+		class dlgBackground: mcd_RscMapText
 		{
 			moving = 1;
 			idc = 9001;
@@ -24,7 +85,7 @@ class chooseCityErrorMessage
 	};
 
 	class Controls {
-		class confirmErrorMessageButton: mcdButton
+		class confirmErrorMessageButton: mcd_RscConfirmBar
 		{
 			idc = 9002;
 			text = "OK";
@@ -49,7 +110,7 @@ class spawnselectErrorMessage1
 
 	class ControlsBackground
 	{
-		class dlgBackground: background
+		class dlgBackground: mcd_RscMapText
 		{
 			moving = 1;
 			idc = 9101;
@@ -63,7 +124,7 @@ class spawnselectErrorMessage1
 	};
 
 	class Controls {
-		class confirmErrorMessageButton: mcdButton
+		class confirmErrorMessageButton: mcd_RscConfirmBar
 		{
 			idc = 9102;
 			text = "OK";
@@ -88,7 +149,7 @@ class spawnselectErrorMessage2
 
 	class ControlsBackground
 	{
-		class dlgBackground: background
+		class dlgBackground: mcd_RscMapText
 		{
 			moving = 1;
 			idc = 9201;
@@ -102,7 +163,7 @@ class spawnselectErrorMessage2
 	};
 
 	class Controls {
-		class confirmErrorMessageButton: mcdButton
+		class confirmErrorMessageButton: mcd_RscConfirmBar
 		{
 			idc = 9202;
 			text = "OK";
@@ -127,7 +188,7 @@ class spawnselectErrorMessage3
 
 	class ControlsBackground
 	{
-		class dlgBackground: background
+		class dlgBackground: mcd_RscMapText
 		{
 			moving = 1;
 			idc = 9301;
@@ -141,7 +202,7 @@ class spawnselectErrorMessage3
 	};
 
 	class Controls {
-		class confirmErrorMessageButton: mcdButton
+		class confirmErrorMessageButton: mcd_RscConfirmBar
 		{
 			idc = 9302;
 			text = "OK";
@@ -169,7 +230,7 @@ class RscTitles
 
 		class ControlsBackground
 		{
-			class dlgBackground: background
+			class dlgBackground: mcd_RscMapText
 			{
 				moving = 1;
 				idc = 1001;
@@ -183,7 +244,7 @@ class RscTitles
 		};
 
 		class Controls {
-			class confirmPlayZoneButton: mcdButton
+			class confirmPlayZoneButton: mcd_RscConfirmBar
 			{
 				idc = 1002;
 				text = "CONFIRM (ENTER)";
@@ -210,7 +271,7 @@ class RscTitles
 
 		class ControlsBackground
 		{
-			class dlgBackground: background
+			class dlgBackground: mcd_RscMapText
 			{
 				moving = 1;
 				idc = 1101;
@@ -224,7 +285,7 @@ class RscTitles
 		};
 
 		class Controls {
-			class confirmPlayZoneButton: mcdButton
+			class confirmPlayZoneButton: mcd_RscConfirmBar
 			{
 				idc = 1102;
 				text = "CONFIRM (ENTER)";
@@ -250,7 +311,7 @@ class RscTitles
 
 		class ControlsBackground
 		{
-			class dlgBackground: background
+			class dlgBackground: mcd_RscMapText
 			{
 				moving = 1;
 				idc = 1201;
@@ -264,7 +325,7 @@ class RscTitles
 		};
 
 		class Controls {
-			class dlgBackground: background_smalltext
+			class dlgBackground: mcd_RscMapTextSmall
 			{
 				idc = 1202;
 				text = "PLEASE WAIT";
@@ -290,7 +351,7 @@ class RscTitles
 
 		class ControlsBackground
 		{
-			class dlgBackground: background
+			class dlgBackground: mcd_RscMapText
 			{
 				moving = 1;
 				idc = 1301;
@@ -304,7 +365,7 @@ class RscTitles
 		};
 
 		class Controls {
-			class dlgBackground: background_smalltext
+			class dlgBackground: mcd_RscMapTextSmall
 			{
 				idc = 1302;
 				text = "PLEASE WAIT";
@@ -330,7 +391,7 @@ class RscTitles
 
 		class ControlsBackground
 		{
-			class dlgBackground: background
+			class dlgBackground: mcd_RscMapText
 			{
 				moving = 1;
 				idc = 1401;
@@ -344,7 +405,7 @@ class RscTitles
 		};
 
 		class Controls {
-			class dlgBackground: background_smalltext
+			class dlgBackground: mcd_RscMapTextSmall
 			{
 				idc = 1402;
 				text = "PLEASE WAIT";
@@ -370,7 +431,7 @@ class RscTitles
 
 		class ControlsBackground
 		{
-			class dlgBackground: background
+			class dlgBackground: mcd_RscMapText
 			{
 				moving = 1;
 				idc = 1501;
@@ -384,7 +445,7 @@ class RscTitles
 		};
 
 		class Controls {
-			class dlgBackground: background_smalltext
+			class dlgBackground: mcd_RscMapTextSmall
 			{
 				idc = 1502;
 				text = "PLEASE WAIT";
