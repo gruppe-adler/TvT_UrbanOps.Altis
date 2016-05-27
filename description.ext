@@ -1,6 +1,8 @@
-#include "setupDialogs.hpp"
+#include "player\gui_custom.hpp"
 
-#include "player\buymenu\gui_base.hpp"
+#include "player\setup\setupErrorDialogs.hpp"
+#include "player\setup\setupWaitResources.hpp"
+
 #include "player\buymenu\ui_toolkit.hpp"
 #include "player\buymenu\common.hpp"
 #include "player\buymenu\buymenu_dialog.hpp"

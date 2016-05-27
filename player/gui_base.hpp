@@ -689,3 +689,7 @@ class RscControlsGroup_NoScroll : RscControlsGroup
 		colorDisabled[] = {0, 0, 0, 0};
 	};
 };
+
+
+
+// CUSTOM ======================================================================
