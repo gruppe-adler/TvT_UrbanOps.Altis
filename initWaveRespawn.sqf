@@ -82,12 +82,7 @@ if (isServer) then {
             deadPlayersOpf = deadPlayersOpf - [_respawnedPlayer];
             diag_log format ["removeRespawnedFromList - Player %1 disconnected and has been removed from deadPlayersOpf", _respawnedPlayer];
           } else {
-            if (_respawnedPlayer in deadPlayersInd) then {
-              deadPlayersInd = deadPlayersInd - [_respawnedPlayer];
-              diag_log format ["removeRespawnedFromList - Player %1 disconnected and has been removed from deadPlayersInd", _respawnedPlayer];
-            } else {
-              diag_log format ["removeRespawnedFromList - Player %1 disconnected but was not waiting for respawn", _respawnedPlayer];
-            };
+            diag_log format ["removeRespawnedFromList - Player %1 disconnected but was not waiting for respawn", _respawnedPlayer];
           };
         };
       };

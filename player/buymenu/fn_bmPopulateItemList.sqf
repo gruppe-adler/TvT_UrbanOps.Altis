@@ -1,23 +1,28 @@
 #include "buymenu_defines.sqf";
 disableSerialization;
-params ["_categoryID"];
+_categoryID = param [0, bmCurrentCategory];
+_side = param [1, "UNDEF"];
 
-bmCurrentCategory = _categoryID;
+if (_side != "UNDEF" && originalSide != _side) exitWith {};
+if (isNull findDisplay 2009) exitWith {};
 
 _dialog = findDisplay buymenu_DIALOG;
 _listCtrl = _dialog displayCtrl buymenu_item_list;
+_curSel = lbCurSel _listCtrl;
 lbClear _listCtrl ;
 
-_categoryData = call compile format ["bmItemData%1", _categoryID];
+_categoryData = call compile format ["BM_ITEMDATA_%1_%2", originalSide, _categoryID];
 
 for [{_i=0}, {_i<(count _categoryData)}, {_i=_i+1}] do {
 	_itemData = _categoryData select _i;
 	_itemName = _itemData select 0;
-	_itemPrice = _itemData select 1;
-	_itemDesc = _itemData select 2;
-	_listCtrl lbAdd format ["%2Cr - %1", _itemName, _itemPrice];
+	_itemAvailable = _itemData select 1;
+	_itemPrice = _itemData select 2;
+	_itemDesc = _itemData select 3;
+
+	_listCtrl lbAdd format ["%1Cr - %2", _itemPrice, _itemName];
 	_listCtrl lbSetData [_i, _itemDesc];
+	if (_itemAvailable < 1) then {_listCtrl lbSetColor [_i, [0.4,0.4,0.4,1]]};
 };
 
-[-1] call mcd_fnc_bmGetDescription;
-[] call mcd_fnc_bmDisplayPicture
+_listCtrl lbsetcursel _curSel;

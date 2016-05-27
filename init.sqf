@@ -12,6 +12,7 @@ if (isServer) then {
 	mcd_fnc_emptyContainer = compile preprocessFileLineNumbers "functions\fn_emptyContainer.sqf";
 	mcd_fnc_spawnStaticCivilian = compile preprocessFileLineNumbers "functions\fn_spawnStaticCivilian.sqf";
 	mcd_fnc_spawnNonstaticCivilian = compile preprocessFileLineNumbers "functions\fn_spawnNonstaticCivilian.sqf";
+	mcd_fnc_bmBuyServer = compile preprocessFileLineNumbers "server\buymenu\fn_bmBuyServer.sqf";
 
 	//Dynamic Groups
 	["Initialize", [true]] call BIS_fnc_dynamicGroups;
@@ -108,6 +109,7 @@ if (isServer) then {
 	//setup
 	[] execVM "server\setup\setTime.sqf";
 	[] execVM "server\setup\setWeather.sqf";
+	[] execVM "server\buymenu\bm_itemConfig.sqf";
 	[] execVM "server\setup\mapRespawnPos.sqf";
 	[] execVM "server\setup\allLocationMarkers.sqf";
 	[] execVM "server\setup\chosenCityListener.sqf";

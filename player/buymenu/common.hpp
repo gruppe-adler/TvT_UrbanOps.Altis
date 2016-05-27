@@ -396,7 +396,7 @@ class mcd_RscButton
 	type = CT_BUTTON;
 	text = "";
 	colorText[] = {1,1,1,1};
-	colorDisabled[] = {1,1,1,0.25};
+	colorDisabled[] = {1,1,1,0.1};
 	colorBackground[] = {0,0,0,0.5};
 	colorFocused[] = {1,1,1,0.5};
 	colorBackgroundActive[] = {1,1,1,0.8}; // hover

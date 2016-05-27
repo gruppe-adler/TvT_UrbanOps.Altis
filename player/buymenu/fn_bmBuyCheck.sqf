@@ -4,7 +4,8 @@ disableSerialization;
 _dialog = findDisplay buymenu_DIALOG;
 _itemDesc = _dialog displayCtrl buymenu_item_desc;
 _moneyLeft = _dialog displayCtrl buymenu_money;
-_itemData = call compile format ["bmItemData%1 select %2", bmCurrentCategory, bmCurrentItemID];
+_itemData = call compile format ["BM_ITEMDATA_%1_%2 select %3", originalSide, bmCurrentCategory, bmCurrentItemID];
+_playerMoney = player getVariable "playerMoney";
 
 //NO ITEM SELECTED =============================================================
 if (bmCurrentItemID == -1) exitWith {
@@ -20,8 +21,8 @@ if (bmCurrentItemID == -1) exitWith {
 };
 
 //NOT ENOUGH MONEY =============================================================
-_price = _itemData select 1;
-if (playerMoney < _price) exitWith {
+_price = _itemData select 2;
+if (_playerMoney < _price) exitWith {
   [_moneyLeft] spawn {
     disableSerialization;
     params ["_moneyLeft"];
@@ -31,12 +32,14 @@ if (playerMoney < _price) exitWith {
     asd2 = ctrlText _moneyLeft;
     player say "AddItemFailed";
     sleep 0.4;
-    _moneyLeft ctrlSetStructuredText parseText format	["<t size='0.5'>&#160;</t><br/><t size='1' align='center'>Funds: %1Cr&#160;&#160;</t>", playerMoney];
+    _moneyLeft ctrlSetStructuredText parseText format	["<t size='0.5'>&#160;</t><br/><t size='1' align='center'>Funds: %1Cr&#160;&#160;</t>", __playerMoney];
   };
 };
 
 //BUY ITEM =====================================================================
-_itemCode = _itemData select 3;
-playerMoney = playerMoney - _price;
+_playerMoney = _playerMoney - _price;
+player setVariable ["playerMoney", _playerMoney];
 [] call mcd_fnc_bmUpdateMoney;
-[] call _itemCode;
+
+//send to server
+[player, originalSide, bmCurrentCategory, bmCurrentItemID] remoteExec ["mcd_fnc_bmBuyServer", 2, false];

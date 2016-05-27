@@ -32,3 +32,8 @@ _hintArray = [_rule];
 } forEach _this;
 _hintArray pushBack _rule;
 hint composeText _hintArray;
+
+[] spawn {
+  sleep 4;
+  hint "";
+};

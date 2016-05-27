@@ -90,11 +90,25 @@ class buymenu
 
   class Controls
   {
+    class BuyButton: mcd_RscButton
+    {
+      idc = buymenu_buy;
+      action = "[] call mcd_fnc_bmBuyCheck";
+      text = "Buy";
+      sizeEx = bmButton_textSize;
+      style = 2;
+
+      x = (bmBG_X + bmPadding_X + bmButton_W + bmPadding_X) + bmList_W + bmPadding_X + bmList_W - ((bmList_W - bmPadding_X) / 2);
+      y = bmBG_Y + + bmPadding_Y + bmList_H + bmPadding_Y;
+      w = (bmList_W - bmPadding_X) / 2;
+      h = bmBuyButton_H;
+    };
+
     class SelectionList: w_RscList
     {
       idc = buymenu_item_list;
       onLBSelChanged = "[] call mcd_fnc_bmGetDescription; [] call mcd_fnc_bmDisplayPicture";
-      onload = "[0] call mcd_fnc_bmPopulateItemList";
+      onload = "[0] call mcd_fnc_bmLoadCategory";
       sizeEx = 0.04 * TEXT_SCALE;
       rowHeight = 0.05 * TEXT_SCALE;
 
@@ -138,20 +152,6 @@ class buymenu
       h = (bmList_H - bmPadding_Y) / 2;
     };
 
-    class BuyButton: mcd_RscButton
-    {
-      idc = buymenu_buy;
-      action = "[] call mcd_fnc_bmBuy";
-      text = "Buy";
-      sizeEx = bmButton_textSize;
-      style = 2;
-
-      x = (bmBG_X + bmPadding_X + bmButton_W + bmPadding_X) + bmList_W + bmPadding_X + bmList_W - ((bmList_W - bmPadding_X) / 2);
-      y = bmBG_Y + + bmPadding_Y + bmList_H + bmPadding_Y;
-      w = (bmList_W - bmPadding_X) / 2;
-      h = bmBuyButton_H;
-    };
-
     class RemainingFunds: w_RscStructuredTextLeft
     {
       idc = buymenu_money;
@@ -168,7 +168,7 @@ class buymenu
     class CategoryButton0: mcd_RscButton
     {
       idc = buymenu_cat0;
-      action = "[0] call mcd_fnc_bmPopulateItemList";
+      action = "[0] call mcd_fnc_bmLoadCategory";
       text = "Category 0";
       sizeEx = bmButton_textSize;
 
@@ -181,7 +181,7 @@ class buymenu
     class CategoryButton1: mcd_RscButton
     {
       idc = buymenu_cat1;
-      action = "[1] call mcd_fnc_bmPopulateItemList";
+      action = "[1] call mcd_fnc_bmLoadCategory";
       text = "Category 1";
       sizeEx = bmButton_textSize;
 
@@ -194,7 +194,7 @@ class buymenu
     class CategoryButton2: mcd_RscButton
     {
       idc = buymenu_cat2;
-      action = "[2] call mcd_fnc_bmPopulateItemList";
+      action = "[2] call mcd_fnc_bmLoadCategory";
       text = "Category 2";
       sizeEx = bmButton_textSize;
 
@@ -207,7 +207,7 @@ class buymenu
     class CategoryButton3: mcd_RscButton
     {
       idc = buymenu_cat3;
-      action = "[3] call mcd_fnc_bmPopulateItemList";
+      action = "[3] call mcd_fnc_bmLoadCategory";
       text = "Category 3";
       sizeEx = bmButton_textSize;
 
@@ -220,7 +220,7 @@ class buymenu
     class CategoryButton4: mcd_RscButton
     {
       idc = buymenu_cat4;
-      action = "[4] call mcd_fnc_bmPopulateItemList";
+      action = "[4] call mcd_fnc_bmLoadCategory";
       text = "Category 4";
       sizeEx = bmButton_textSize;
 
@@ -233,7 +233,7 @@ class buymenu
     class CategoryButton5: mcd_RscButton
     {
       idc = buymenu_cat5;
-      action = "[5] call mcd_fnc_bmPopulateItemList";
+      action = "[5] call mcd_fnc_bmLoadCategory";
       text = "Category 5";
       sizeEx = bmButton_textSize;
 

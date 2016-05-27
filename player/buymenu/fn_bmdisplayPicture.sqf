@@ -9,8 +9,8 @@ _picBGCtrl = _dialog displayCtrl buymenu_item_pictureBG;
 if (bmCurrentItemID == -1) exitWith {_picBGCtrl ctrlSetBackgroundColor [0, 0, 0, 0.3]; _picCtrl ctrlSetText ""};
 
 _picBGCtrl ctrlSetBackgroundColor [1, 1, 1, 0.3];
-_itemData = call compile format ["bmItemData%1 select %2", bmCurrentCategory, bmCurrentItemID];
-_picture = _itemData select 4;
+_itemData = call compile format ["BM_ITEMDATA_%1_%2 select %3", originalSide, bmCurrentCategory, bmCurrentItemID];
+_picture = _itemData select 5;
 
 _isPath = [".paa", _picture, false] call BIS_fnc_inString;
 if (_isPath) then {
