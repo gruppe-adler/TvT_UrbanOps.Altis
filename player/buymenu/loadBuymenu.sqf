@@ -7,7 +7,7 @@ if (isNil "originalSide") exitWith {"loadBuymenu.sqf - ERROR: PLAYER HAS NO orig
 #include "buymenu_defines.sqf";
 disableSerialization;
 
-_buymenuDialog = createDialog "buymenu";
+createDialog "buymenu";
 _dialog = findDisplay buymenu_DIALOG;
 _bmHighestCatID = call compile format ["BM_HIGHESTCATID_%1", originalSide];
 _categoryVariableStr = format ["BM_CATEGORYNAME_%1_", originalSide];

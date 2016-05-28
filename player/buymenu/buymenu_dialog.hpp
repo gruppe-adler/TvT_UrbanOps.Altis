@@ -246,7 +246,7 @@ class buymenu
     class CloseButton: mcd_RscCloseButton
     {
       idc = -1;
-      x= bmBG_X + bmBG_W - bmItemSpace_Y - bmCloseButton_W;
+      x = bmBG_X + bmBG_W - bmItemSpace_Y - bmCloseButton_W;
       y = bmTopBar_Y + bmItemSpace_Y;
       w = bmCloseButton_W;
       h = bmCloseButton_W;

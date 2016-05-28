@@ -4,5 +4,3 @@ mcd_fnc_bmBuyCheck = compile preprocessFileLineNumbers "player\buymenu\fn_bmBuyC
 mcd_fnc_bmUpdateMoney = compile preprocessFileLineNumbers "player\buymenu\fn_bmUpdateMoney.sqf";
 mcd_fnc_bmDisplayPicture = compile preprocessFileLineNumbers "player\buymenu\fn_bmDisplayPicture.sqf";
 mcd_fnc_bmLoadCategory = compile preprocessFileLineNumbers "player\buymenu\fn_bmLoadCategory.sqf";
-
-player setVariable ["playerMoney",20000];

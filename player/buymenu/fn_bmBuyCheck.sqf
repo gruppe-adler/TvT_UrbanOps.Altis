@@ -27,9 +27,7 @@ if (_playerMoney < _price) exitWith {
     disableSerialization;
     params ["_moneyLeft"];
     _moneyText = ctrlText _moneyLeft;
-    asd = ctrlText _moneyLeft;
     _moneyLeft ctrlSetStructuredText parseText format ["<t size='0.5'>&#160;</t><br/><t color='#ff0000'>%1</t>",_moneyText];
-    asd2 = ctrlText _moneyLeft;
     player say "AddItemFailed";
     sleep 0.4;
     _moneyLeft ctrlSetStructuredText parseText format	["<t size='0.5'>&#160;</t><br/><t size='1' align='center'>Funds: %1Cr&#160;&#160;</t>", __playerMoney];

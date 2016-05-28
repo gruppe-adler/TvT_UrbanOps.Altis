@@ -1,6 +1,6 @@
 this = player;
 
-_commander = {
+_commander_must_be_selected = {
   comment "Exported from Arsenal by McDiod";
 
   comment "Remove existing items";
@@ -14,34 +14,39 @@ _commander = {
   removeGoggles this;
 
   comment "Add containers";
-  this forceAddUniform "U_CombatUniShirtMercA_E";
-  this addItemToUniform "FirstAidKit";
-  for "_i" from 1 to 3 do {this addItemToUniform "10Rnd_762x54_Mag";};
-  this addItemToUniform "16Rnd_9x21_Mag";
-  this addVest "ARC_Common_Cbr_Plate_Carrier";
-  this addItemToVest "SmokeShell";
+  this forceAddUniform "rhs_uniform_cu_ocp";
+  for "_i" from 1 to 10 do {this addItemToUniform "ACE_fieldDressing";};
+  for "_i" from 1 to 4 do {this addItemToUniform "ACE_morphine";};
+  this addItemToUniform "ACE_epinephrine";
+  for "_i" from 1 to 2 do {this addItemToUniform "ACE_EarPlugs";};
+  this addItemToUniform "ACE_MapTools";
+  for "_i" from 1 to 2 do {this addItemToUniform "ACE_CableTie";};
+  this addVest "rhsusf_iotv_ocp_Squadleader";
+  for "_i" from 1 to 2 do {this addItemToVest "rhsusf_mag_15Rnd_9x19_JHP";};
+  for "_i" from 1 to 10 do {this addItemToVest "rhs_mag_30Rnd_556x45_Mk262_Stanag";};
+  for "_i" from 1 to 2 do {this addItemToVest "rhs_mag_an_m8hc";};
+  for "_i" from 1 to 2 do {this addItemToVest "rhs_mag_m67";};
+  this addItemToVest "SmokeShellBlue";
   this addItemToVest "SmokeShellGreen";
-  for "_i" from 1 to 2 do {this addItemToVest "Chemlight_green";};
-  for "_i" from 1 to 2 do {this addItemToVest "HandGrenade";};
-  for "_i" from 1 to 2 do {this addItemToVest "16Rnd_9x21_Mag";};
-  this addBackpack "RHS_NSV_Tripod_Bag";
-  this addHeadgear "rhs_6b26_green";
-  this addGoggles "NeckTight_ODBLK";
+  this addItemToVest "SmokeShellOrange";
+  this addItemToVest "SmokeShellPurple";
+  this addItemToVest "SmokeShellRed";
+  this addBackpack "tf_rt1523g_big_rhs";
+  this addHeadgear "rhsusf_ach_helmet_headset_ocp";
 
   comment "Add weapons";
-  this addWeapon "srifle_DMR_01_F";
-  this addPrimaryWeaponItem "acc_pointer_IR";
-  this addPrimaryWeaponItem "optic_Aco";
-  this addWeapon "rhs_weap_smaw_green";
-  this addSecondaryWeaponItem "ACE_acc_pointer_green_IR";
-  this addSecondaryWeaponItem "rhs_weap_optic_smaw_3";
-  this addWeapon "Pstl9x19_NP42";
-  this addWeapon "ACE_MX2A";
+  this addWeapon "rhs_weap_m4a1_carryhandle";
+
+  this addPrimaryWeaponItem "rhsusf_acc_compm4";
+  this addWeapon "rhsusf_weap_m9";
+  this addWeapon "Binocular";
 
   comment "Add items";
-  this linkItem "tf_microdagr";
-  this linkItem "tf_rf7800str";
-  this linkItem "O_UavTerminal";
+  this linkItem "ItemMap";
+  this linkItem "ItemCompass";
+  this linkItem "ItemWatch";
+  this linkItem "ItemGPS";
+	this linkItem "tf_anprc152";
 };
 
 

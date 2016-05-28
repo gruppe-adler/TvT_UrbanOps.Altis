@@ -3,9 +3,10 @@
 #include "player\setup\setupErrorDialogs.hpp"
 #include "player\setup\setupWaitResources.hpp"
 
-#include "player\buymenu\ui_toolkit.hpp"
+#include "player\ui_toolkit.hpp"
 #include "player\buymenu\common.hpp"
 #include "player\buymenu\buymenu_dialog.hpp"
+#include "player\moneymenu\moneymenu_dialog.hpp"
 
 //======================================================================= HEADER
 class Header
@@ -30,7 +31,7 @@ respawnVehicleDelay = 0;
 respawnTemplates[] = {"Base"};
 respawnOnStart = -1;
 respawnDialog = 0;
-disabledAI = 1;
+disabledAI = 0;
 enableDebugConsole = 1;
 
 //======================================================================= PARAMETERS

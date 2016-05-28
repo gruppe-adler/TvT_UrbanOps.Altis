@@ -1,3 +1,5 @@
+player setVariable ["playerMoney",20000];
+
 if (hasInterface) then {
 
   call compile preprocessFile "islandConfig.sqf";
@@ -12,7 +14,9 @@ if (hasInterface) then {
   mcd_fnc_deleteSideMarkerRemote = compile preprocessFileLineNumbers "functions\fn_deleteSideMarkerRemote.sqf";
   mcd_fnc_teleport = compile preprocessFileLineNumbers "functions\fn_teleport.sqf";
   mcd_fnc_findOpfSpawnPos = compile preprocessFileLineNumbers "functions\fn_findOpfSpawnPos.sqf";
+
   KK_fnc_fileExists = compile preprocessFileLineNumbers "functions\fn_fileExists.sqf";
+
 
   //dyn groups
   ["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
@@ -25,6 +29,7 @@ if (hasInterface) then {
   [] execVM "player\captureTimeCountdown.sqf";
   [] execVM "player\endMission.sqf";
   [] execVM "player\buymenu\buymenuInit.sqf";
+  [] execVM "player\moneymenu\moneymenuInit.sqf";
   [] execVM "loadouts\loadoutinit.sqf";
 
 
