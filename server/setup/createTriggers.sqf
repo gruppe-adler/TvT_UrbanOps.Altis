@@ -90,8 +90,8 @@ _onDeactivation = "
 ";
 
 _trigger = createTrigger ["EmptyDetector", CITYPOSITION];
-_trigger setTriggerArea [BLUFORSPAWNDIST+BLUFORSPAWNBAND,BLUFORSPAWNDIST+BLUFORSPAWNBAND,0,false];
 _trigger setTriggerActivation ["ANY", "PRESENT", true];
+_trigger setTriggerTimeout [5,5,5,true];
 _trigger setTriggerStatements [_condition,_onActivation,_onDeactivation];
 
 diag_log format ["createTriggers.sqf - cvactive trigger created: %1", _trigger];
