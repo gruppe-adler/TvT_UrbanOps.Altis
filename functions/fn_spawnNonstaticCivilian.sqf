@@ -19,3 +19,5 @@ _unit addGoggles (selectRandom civGoggles);
 _wpPos = _pos vectorAdd [2,0,0];
 _wp = _group addWaypoint [_wpPos,1];
 _wp setWaypointType "DISMISS";
+
+_unit addEventHandler ["killed", {[_this] call mcd_fnc_getKillerSide}];

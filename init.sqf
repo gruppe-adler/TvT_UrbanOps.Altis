@@ -16,6 +16,7 @@ if (isServer) then {
 	mcd_fnc_emptyContainer = compile preprocessFileLineNumbers "functions\fn_emptyContainer.sqf";
 	mcd_fnc_spawnStaticCivilian = compile preprocessFileLineNumbers "functions\fn_spawnStaticCivilian.sqf";
 	mcd_fnc_spawnNonstaticCivilian = compile preprocessFileLineNumbers "functions\fn_spawnNonstaticCivilian.sqf";
+	mcd_fnc_getKillerSide = compile preprocessFileLineNumbers "functions\fn_getKillerSide.sqf";
 	mcd_fnc_bmBuyServer = compile preprocessFileLineNumbers "server\buymenu\fn_bmBuyServer.sqf";
 
 	//Dynamic Groups =============================================================

@@ -15,6 +15,9 @@ CVINOUTER = false;
 CVACTIVE = false;
 DEALERKILLED = false;
 
+CIVSKILLEDBLU = 0;
+CIVSKILLEDOPF = 0;
+
 publicVariable "OPFORTELEPORTED";
 publicVariable "BLUFORTELEPORTED";
 
@@ -31,3 +34,6 @@ publicVariable "CVININNER";
 publicVariable "CVINOUTER";
 publicVariable "CVACTIVE";
 publicVariable "DEALERKILLED";
+
+publicVariable "CIVSKILLEDBLU";
+publicVariable "CIVSKILLEDOPF";

@@ -17,3 +17,5 @@ _unit setDir (random 360);
 _unit forceAddUniform (selectRandom civUniforms);
 _unit addHeadgear (selectRandom civHeadgear);
 _unit addGoggles (selectRandom civGoggles);
+
+_unit addEventHandler ["killed", {[_this] call mcd_fnc_getKillerSide}];
