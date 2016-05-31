@@ -10,7 +10,7 @@ waitUntil {!isNil "SPAWNCHOSEN"};
 [] execVM "server\setup\teleportBlufor.sqf";
 
 //CREATE CITY TRIGGER ==========================================================
-[] execVM "server\setup\cityTrigger.sqf";
+[] execVM "server\setup\createTriggers.sqf";
 
 //GAME HAS STARTED =============================================================
 GAMESTARTED = true;

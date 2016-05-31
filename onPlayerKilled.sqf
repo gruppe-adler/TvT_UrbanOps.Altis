@@ -94,6 +94,16 @@ while _waitCondition do {
 
 if (_interrupted) exitWith {call mcd_fnc_startSpectator};
 
+
+//wait until commandvehicle is active, if blufor ===============================
+if (originalSide == "WEST") then {
+  while {!CVACTIVE} do {
+    _status = parseText "<t align='center' size='1.4'>Commandvehicle ist in Bewegung oder nicht im Spawnbereich.</t>";
+    _wait = parseText "<t align='center' size='1.4' color='#ff0000'>Warte...</t>";
+    hint composeText [_rule, _status, _lineBreak, _wait, _lineBreak, _rule];
+  };
+};
+
 //respawn ======================================================================
 //respawn hint
 _respawning = parseText format ["<t align='center' color='#00ff00' size='1.4'>Respawning...</t>"];

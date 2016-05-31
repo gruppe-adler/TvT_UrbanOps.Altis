@@ -1,6 +1,3 @@
-WAVERESPAWNTIME = "waverespawntime" call BIS_fnc_getParamValue;
-RESPAWNTIME = "respawntime" call BIS_fnc_getParamValue;
-OPFORRESPAWNENABLED = ("OpforRespawn" call BIS_fnc_getParamValue) == 1;
 RESPAWNWAVEEXTRATIME = 30;
 
 if (hasInterface) then {

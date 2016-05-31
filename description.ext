@@ -69,6 +69,14 @@ class Params
     default = 2;
   };
 
+  class Preset
+  {
+    title = "Preset";
+    values[] = {0,1};
+    texts[] = {"Custom", "Debug (Parameters below will be ignored.)"};
+    default = 0;
+  };
+
   class DefenseTime
   {
     title = "Time to Defend the City (Minutes)";
