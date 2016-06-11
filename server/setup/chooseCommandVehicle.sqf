@@ -7,7 +7,7 @@ waitUntil {!isNil "ISWOODLAND"};
 waitUntil {!isNil "BLUFORFACTION"};
 
 _commandVehicles = [
-	["rhsusf_m998_w_s_4dr_fulltop", "rhsusf_m998_d_s_4dr_fulltop"],								//US MARINES
+	["rhsusf_m998_w_s_4dr_fulltop", "rhsusf_m998_d_s_4dr_fulltop"],								//US ARMY
 	["Fennek_Flecktarn","Fennek_Tropen"],																					//GERMANY HEER
 	["rhs_tigr_msv","rhs_tigr_3camo_msv"],																				//RUSSIA MSV
 	["rhsgref_nat_ural","rhsgref_nat_ural"],																			//IND EASTERN REBELS

@@ -57,7 +57,7 @@ class Params
   {
     title = "Blufor Faction";
     values[] = {0,1,2,3,4};
-    texts[] = {"USA - USMC", "Germany - Heer", "Russia - MSV", "Independent - Eastern European Rebels", "Independent - Islamic Terrorists"};
+    texts[] = {"USA - Army", "Germany - Heer", "Russia - MSV", "Independent - Eastern European Rebels", "Independent - Islamic Terrorists"};
     default = 0;
   };
 
@@ -65,7 +65,7 @@ class Params
   {
     title = "Opfor Faction";
     values[] = {0,1,2,3,4};
-    texts[] = {"USA - USMC", "Germany - Heer", "Russia - MSV", "Independent - Eastern European Rebels", "Independent - Islamic Terrorists"};
+    texts[] = {"USA - Army", "Germany - Heer", "Russia - MSV", "Independent - Eastern European Rebels", "Independent - Islamic Terrorists"};
     default = 2;
   };
 

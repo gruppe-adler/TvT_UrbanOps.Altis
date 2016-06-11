@@ -7,14 +7,14 @@
 WEATHER_SETTING = "WeatherSetting" call BIS_fnc_getParamValue;
 TIME_OF_DAY = "TimeOfDay" call BIS_fnc_getParamValue;
 BLUFORFACTION = [
-  "us_marines",
+  "us_army",
   "ger_heer",
   "rus_msv",
   "ind_eastRebels",
   "ind_terrorists"
 ] select ("BluforFaction" call BIS_fnc_getParamValue);
 OPFORFACTION = [
-  "us_marines",
+  "us_army",
   "ger_heer",
   "rus_msv",
   "ind_eastRebels",

@@ -1,4 +1,14 @@
-/*[player, originalSide, bmCurrentCategory, bmCurrentItemID] remoteExec ["mcd_fnc_bmBuyServer", 2, false];*/
+/*  Handles players buying from shop
+*
+*   Parameters:
+*   0:  buyer (object)
+*   1:  originalSide (string)
+*   2:  category (number)
+*   3:  item ID (number)
+*
+*   remote executed on server by buyer:
+*   [player, originalSide, bmCurrentCategory, bmCurrentItemID] remoteExec ["mcd_fnc_bmBuyServer", 2, false];
+*/
 
 params ["_unit", "_side", "_category", "_itemID"];
 

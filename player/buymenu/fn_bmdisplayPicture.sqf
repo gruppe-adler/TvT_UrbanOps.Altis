@@ -18,10 +18,21 @@ if (_isPath) then {
 
 
 } else {
-  _picturePath = getText (configFile >> "CfgWeapons" >> _picture >> "picture");
-  if (_picturePath == "") then {
-    _picturePath = getText (configFile >> "CfgWeapons" >> _picture >> "uipicture");
+  //item is a weapon
+  if (isClass (configFile >> "CfgWeapons" >> _picture)) then {
+    _picturePath = getText (configFile >> "CfgWeapons" >> _picture >> "picture");
+    if (_picturePath == "") then {
+      _picturePath = getText (configFile >> "CfgWeapons" >> _picture >> "uipicture");
+    };
+
+  //item is a magazine
+  } else {
+    _picturePath = getText (configFile >> "CfgMagazines" >> _picture >> "picture");
+    if (_picturePath == "") then {
+      _picturePath = getText (configFile >> "CfgMagazines" >> _picture >> "uipicture");
+    };
   };
+
 };
 
 _picCtrl ctrlSetText _picturePath;
