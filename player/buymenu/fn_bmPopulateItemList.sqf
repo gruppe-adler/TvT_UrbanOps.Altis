@@ -12,13 +12,14 @@ _curSel = lbCurSel _listCtrl;
 lbClear _listCtrl ;
 
 _categoryData = call compile format ["BM_ITEMDATA_%1_%2", originalSide, _categoryID];
+_itemAmount = call compile format ["BM_ITEMAMOUNT_%1_%2", originalSide, _categoryID];
 
 for [{_i=0}, {_i<(count _categoryData)}, {_i=_i+1}] do {
 	_itemData = _categoryData select _i;
 	_itemName = _itemData select 0;
-	_itemAvailable = _itemData select 1;
-	_itemPrice = _itemData select 2;
-	_itemDesc = _itemData select 3;
+	_itemPrice = _itemData select 1;
+	_itemDesc = _itemData select 2;
+	_itemAvailable = _itemAmount select _i;
 
 	_listCtrl lbAdd format ["%1Cr - %2", _itemPrice, _itemName];
 	_listCtrl lbSetData [_i, _itemDesc];

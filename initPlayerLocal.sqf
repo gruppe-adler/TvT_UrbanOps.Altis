@@ -1,6 +1,6 @@
 player setVariable ["playerMoney",20000];
 
-enableSaving false;
+enableSaving [false, false];
 call compile preprocessFile "islandConfig.sqf";
 
 //functions

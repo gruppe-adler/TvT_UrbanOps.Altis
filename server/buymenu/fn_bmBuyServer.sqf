@@ -2,12 +2,15 @@
 
 params ["_unit", "_side", "_category", "_itemID"];
 
+diag_log str _this;
+
 _dataArray = format ["BM_ITEMDATA_%1_%2", _side, _category];
+_itemAmount = call compile format ["BM_ITEMAMOUNT_%1_%2", _side, _category];
 _itemData = (call compile _dataArray) select _itemID;
 _itemName = _itemData select 0;
-_itemAvailable = _itemData select 1;
-_itemPrice = _itemData select 2;
-_code = _itemData select 4;
+_itemAvailable = _itemAmount select _itemID;
+_itemPrice = _itemData select 1;
+_code = _itemData select 3;
 _remoteExecTarget = if (hasInterface) then {0} else {-2};
 
 //reimburse and exit if item out of stock
@@ -17,9 +20,7 @@ if (_itemAvailable < 1) exitWith {
 };
 
 //detract from stock
-_itemData set [1, (_itemAvailable - 1)];
-call compile format ["%1 set [%2, %3]", _dataArray, _itemID, _itemData];
-publicVariable _dataArray;
+call compile format ["BM_ITEMAMOUNT_%1_%2 set [%3, %4]; publicVariable 'BM_ITEMAMOUNT_%1_%2'", _side, _category, _itemID, _itemAvailable - 1];
 
 //call code
 [_unit, _side] call _code;

@@ -44,6 +44,13 @@ while {!_allBroadcasted} do {
     _total = _total + 1;
   };
 
+  _variable = format ["BM_ITEMAMOUNT_WEST_%1", _ID];
+  if (!isNil _variable) then {
+    publicVariable _variable;
+    _allBroadcasted = false;
+    _total = _total + 1;
+  };
+
   _variable = format ["BM_CATEGORYNAME_EAST_%1", _ID];
   if (!isNil _variable) then {
     publicVariable _variable;
@@ -52,6 +59,13 @@ while {!_allBroadcasted} do {
   };
 
   _variable = format ["BM_ITEMDATA_EAST_%1", _ID];
+  if (!isNil _variable) then {
+    publicVariable _variable;
+    _allBroadcasted = false;
+    _total = _total + 1;
+  };
+
+  _variable = format ["BM_ITEMAMOUNT_EAST_%1", _ID];
   if (!isNil _variable) then {
     publicVariable _variable;
     _allBroadcasted = false;

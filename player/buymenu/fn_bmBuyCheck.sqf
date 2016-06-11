@@ -21,7 +21,7 @@ if (bmCurrentItemID == -1) exitWith {
 };
 
 //NOT ENOUGH MONEY =============================================================
-_price = _itemData select 2;
+_price = _itemData select 1;
 if (_playerMoney < _price) exitWith {
   [_moneyLeft] spawn {
     disableSerialization;

@@ -28,8 +28,9 @@ if (_mode == -1 ||_itemIndex == -1) then {
   bmCurrentItemID = -1;
 } else {
   _itemData = call compile format ["BM_ITEMDATA_%1_%2 select %3", originalSide, bmCurrentCategory, _itemIndex];
-  _itemAvailable = _itemData select 1;
-  _description = _itemData select 3;
+  _itemAmount = call compile format ["BM_ITEMAMOUNT_%1_%2", originalSide, bmCurrentCategory];
+  _itemAvailable = _itemAmount select _itemIndex;
+  _description = _itemData select 2;
 
   _inStockText = if (_itemAvailable < 1) then {"<t color='#FF0000'>OUT OF STOCK</t><br/>"} else {format ["IN STOCK: %1<br/>", _itemAvailable]};
   _itemDesc ctrlSetStructuredText parseText (_inStockText + _description);
