@@ -42,12 +42,16 @@ while {!_allBroadcasted} do {
     publicVariable _variable;
     _allBroadcasted = false;
     _total = _total + 1;
-  };
 
-  _variable = format ["BM_ITEMAMOUNT_WEST_%1", _ID];
-  if (!isNil _variable) then {
+    _amountVariable = format ["BM_ITEMAMOUNT_WEST_%1", _ID];
+    call compile format ["%1 = []", _amountVariable];
+    call compile format ["
+      {
+        _amount = _x select 5;
+        %2 pushBack _amount;
+      } forEach %1;
+    ",_variable, _amountVariable];
     publicVariable _variable;
-    _allBroadcasted = false;
     _total = _total + 1;
   };
 
@@ -63,12 +67,16 @@ while {!_allBroadcasted} do {
     publicVariable _variable;
     _allBroadcasted = false;
     _total = _total + 1;
-  };
 
-  _variable = format ["BM_ITEMAMOUNT_EAST_%1", _ID];
-  if (!isNil _variable) then {
+    _amountVariable = format ["BM_ITEMAMOUNT_EAST_%1", _ID];
+    call compile format ["%1 = []", _amountVariable];
+    call compile format ["
+      {
+        _amount = _x select 5;
+        %2 pushBack _amount;
+      } forEach %1;
+    ",_variable, _amountVariable];
     publicVariable _variable;
-    _allBroadcasted = false;
     _total = _total + 1;
   };
 
