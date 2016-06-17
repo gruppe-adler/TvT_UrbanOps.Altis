@@ -18,6 +18,18 @@ call compile preprocessFileLineNumbers _westPath;
 _eastPath = format ["server\buymenu\EAST_%1.sqf", OPFORFACTION];
 call compile preprocessFileLineNumbers _eastPath;
 
+//GET HIGHEST CATEGORY ID ======================================================
+_i=0;
+while {call compile format ["!isNil 'BM_CATEGORYNAME_WEST_%1'", _i]} do {
+  _i = _i + 1;
+};
+BM_HIGHESTCATID_WEST = _i - 1;
+
+_i=0;
+while {call compile format ["!isNil 'BM_CATEGORYNAME_EAST_%1'", _i]} do {
+  _i = _i + 1;
+};
+BM_HIGHESTCATID_EAST = _i - 1;
 
 //BROADCAST ====================================================================
 publicVariable "BM_MAXCATEGORIES";

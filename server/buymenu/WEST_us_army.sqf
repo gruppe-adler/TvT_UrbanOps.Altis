@@ -7,10 +7,11 @@
 *   3:  code
 *   4:  picture or classname
 *   5:  available amount
+*
+*   Template:
+["", , "", {}, ,],
 */
 
-
-BM_HIGHESTCATID_WEST = 3;
 
 BM_CATEGORYNAME_WEST_0 = "Weapons";
 BM_ITEMDATA_WEST_0 = [
@@ -18,7 +19,7 @@ BM_ITEMDATA_WEST_0 = [
   ["M136 (HEAT)", 2000, "The M136 is an 84-mm unguided, portable, single-shot launcher. The high explosive anti tank projectile can penetrate up to 420 mm of RHA.", {[_this select 0, _this select 1, "rhs_weap_M136"] remoteExec ["mcd_fnc_bmBuyWeapon", 0, false]}, "rhs_weap_M136", 10],
   ["M136 (HEDP)", 2000, "The M136 is an 84-mm unguided, portable, single-shot launcher. The high explosive dual purpose projectile is used against bunkers, buildings and personnel.", {[_this select 0, _this select 1, "rhs_weap_M136_hedp"] remoteExec ["mcd_fnc_bmBuyWeapon", 0, false]}, "rhs_weap_M136_hedp", 10],
   ["M136 (HP)", 2000, "The M136 is an 84-mm unguided, portable, single-shot launcher. The high penetration projectile can penetrate up to 600mm of RHA.", {[_this select 0, _this select 1, "rhs_weap_M136_hp"] remoteExec ["mcd_fnc_bmBuyWeapon", 0, false]}, "rhs_weap_M136_hp", 10],
-  ["M240G", 2000, "The M240 is a belt-fed, gas-operated general purpose machine gun firing the 7.62x51mm NATO cartridge.<br/>Weight: 12kg.<br/>Rate of fire: 800 rounds/min.<br/>Effective range: 800m.", {[_this select 0, _this select 1, "rhs_weap_m240G"] remoteExec ["mcd_fnc_bmBuyWeapon", 0, false]}, "rhs_weap_m240G", 10],
+  ["M240G", 2000, "The M240 is a belt-fed, gas-operated general purpose machine gun firing the 7.62x51mm NATO cartridge.<br/>Weight: 12kg.<br/>Rate of fire: 800 rounds/min.<br/>Effective range: 1100m.", {[_this select 0, _this select 1, "rhs_weap_m240G"] remoteExec ["mcd_fnc_bmBuyWeapon", 0, false]}, "rhs_weap_m240G", 10],
   ["Mk11 Mod 0 + 3x red dot", 2000, "The Mk 11 Mod 0 is a semi automatic designated marksman rifle firing the 7.62x51mm NATO cartridge. Comes with Aimpoint red dot sight and 3x magnifier.", {[_this select 0, _this select 1, "rhs_weap_sr25", "FHQ_optic_AimM_BLK"] remoteExec ["mcd_fnc_bmBuyWeapon", 0, false]}, "rhs_weap_sr25", 10]
 ];
 

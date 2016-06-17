@@ -33,7 +33,7 @@ if (_mode == -1 ||_itemIndex == -1) then {
   _description = _itemData select 2;
 
   _inStockText = if (_itemAvailable < 1) then {"<t color='#FF0000'>OUT OF STOCK</t><br/>"} else {format ["IN STOCK: %1<br/>", _itemAvailable]};
-  _itemDesc ctrlSetStructuredText parseText (_inStockText + _description);
+  _itemDesc ctrlSetStructuredText parseText (_inStockText + format["<t size='0.9'>%1</t>",_description]);
 
   if (_itemAvailable < 1) then {_buyButton ctrlEnable false} else {_buyButton ctrlEnable true};
 
