@@ -1,6 +1,7 @@
 player setVariable ["playerMoney",20000];
 
 enableSaving [false, false];
+enableEngineArtillery false;
 call compile preprocessFile "islandConfig.sqf";
 
 //functions

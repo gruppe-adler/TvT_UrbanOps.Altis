@@ -56,6 +56,6 @@ BM_ITEMDATA_WEST_3 = [
   ["HuntIR Monitor", 1000, "Used to view live feed from HuntIR rounds.", {[_this select 0, _this select 1, "ACE_HuntIR_monitor"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "ACE_HuntIR_monitor", 5],
   ["Kestrel 4500", 1000, "The Kestrel applied ballistics meter 4500 combines sophisticated environmental sensing features with long-range shooting ballistics information in one hand-held device.", {[_this select 0, _this select 1, "ACE_Kestrel4500"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "ACE_Kestrel4500", 5],
   ["M57 Firing Device", 1000, "The M57 electrcal firing device is more commonly referred to as The Clacker. Used to remotely trigger explosives.", {[_this select 0, _this select 1, "ACE_Clacker"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "ACE_Clacker", 5],
-  ["Mine Detector", 1000, "Detects all mines in range.", {[_this select 0, _this select 1, "MineDetector"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "MineDetector", 5],
-  ["Wirecutter", 1000, "Used to cut down fences.", {[_this select 0, _this select 1, "ACE_wirecutter"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "ACE_wirecutter", 5]
+  ["Mine Detector", 1000, "A metal detector designed to detect mines. Small and light. Weight: 900g.", {[_this select 0, _this select 1, "MineDetector"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "MineDetector", 5],
+  ["Wirecutter", 1000, "Mechanical wirecutter used to cut down fences. Heavy but sturdy. Weight: 3kg.", {[_this select 0, _this select 1, "ACE_wirecutter"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "ACE_wirecutter", 5]
 ];

@@ -26,13 +26,27 @@ if (player canAddItemToBackpack _item) exitWith {
   player addItemToBackpack _item;
 };
 
-_isMagazine = isClass (configfile >> "CfgMagazines" >> "rhs_mag_smaw_HEAA");
-if (_isMagazine) then {
+//add magazine
+_isMagazine = isClass (configfile >> "CfgMagazines" >> _item);
+if (_isMagazine) exitWith {
   [["Not enough inventory space."], ["Your purchase is " + _cargospacetext]] call mcd_fnc_formattedHint;
   player say "taskSucceeded";
   _cargospace addMagazineCargoGlobal [_item, 1];
-} else {
-  [["Not enough inventory space."], ["Your purchase is " + _cargospacetext]] call mcd_fnc_formattedHint;
-  player say "taskSucceeded";
-  _cargospace addItemCargoGlobal [_item, 1];
 };
+
+//add backpack
+_isBackpack = (getNumber (configfile >> "CfgVehicles" >> _item >> "isBackpack") == 1);
+if (_isBackpack) exitWith {
+  if (backpack player == "") then {
+    player addBackpackGlobal _item;
+  } else {
+    [["You already have a backpack."], ["Your purchase is " + _cargospacetext]] call mcd_fnc_formattedHint;
+    player say "taskSucceeded";
+    _cargospace addBackpackCargoGlobal [_item, 1];
+  };
+};
+
+//add item
+[["Not enough inventory space."], ["Your purchase is " + _cargospacetext]] call mcd_fnc_formattedHint;
+player say "taskSucceeded";
+_cargospace addItemCargoGlobal [_item, 1];

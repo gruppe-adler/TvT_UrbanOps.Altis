@@ -18,7 +18,9 @@ BM_ITEMDATA_EAST_0 = [
   ["PKP", 2000, "The PKP is a Russian General-purpose machine gun chambered for the 7.62×54mmR round.<br/>Weight: 8.2kg.<br/>Rate of fire: 700 rounds/min.<br/>Effective range: 1500m.", {[_this select 0, _this select 1, "rhs_weap_pkp"] remoteExec ["mcd_fnc_bmBuyWeapon", 0, false]}, "rhs_weap_pkp", 10],
   ["RPG-26", 2000, "The RPG-26 Aglen is a disposable anti-tank rocket launcher. The rocket carries a 72.5 millimeter diameter high explosive anti-tank single shaped charge warhead capable of penetrating 440mm RHA. It has a maximum effective range of around 250 meters.", {[_this select 0, _this select 1, "rhs_weap_rpg26"] remoteExec ["mcd_fnc_bmBuyWeapon", 0, false]}, "rhs_weap_rpg26", 10],
   ["RPG-7", 2000, "The RPG-7 is a portable, reusable, unguided, shoulder-launched, anti-tank rocket-propelled grenade launcher.", {[_this select 0, _this select 1, "rhs_weap_rpg7"] remoteExec ["mcd_fnc_bmBuyWeapon", 0, false]}, "rhs_weap_rpg7", 10],
-  ["SVDM + 3x red dot", 2000, "The Dragunov sniper rifle is a semi-automatic sniper/designated marksman rifle chambered in 7.62×54mmR. Comes with Aimpoint red dot sight and 3x magnifier.", {[_this select 0, _this select 1, "rhs_weap_svdp_npz", "FHQ_optic_AimM_BLK"] remoteExec ["mcd_fnc_bmBuyWeapon", 0, false]}, "rhs_weap_svdp_npz", 10]
+  ["SVDM + 3x red dot", 2000, "The Dragunov sniper rifle is a semi-automatic sniper/designated marksman rifle chambered in 7.62×54mmR. Comes with Aimpoint red dot sight and 3x magnifier.", {[_this select 0, _this select 1, "rhs_weap_svdp_npz", "FHQ_optic_AimM_BLK"] remoteExec ["mcd_fnc_bmBuyWeapon", 0, false]}, "rhs_weap_svdp_npz", 10],
+  ["Kord Gun Bag", 1000, "The Kord 12.7mm heavy machine gun is a Russian design replacing the older NSV machine gun. Comes with 5x50 round belts.<br/>Weight: 11.3kg.<br/>Rate of fire: 700 rounds/min.<br/>Effective range: 2000m.", {[_this select 0, _this select 1, "RHS_Kord_Gun_Bag"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "RHS_Kord_Gun_Bag", 5],
+  ["Kord Tripod Bag", 1000, "6T7 low tripod for the Kord machine gun.<br/>Weight: 20.4kg.", {[_this select 0, _this select 1, "RHS_Kord_Tripod_Bag"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "RHS_Kord_Tripod_Bag", 5]
 ];
 
 
@@ -40,11 +42,14 @@ BM_ITEMDATA_EAST_2 = [
   ["RPG PG-7VL", 1000, "Used in: RPG-7 <br/>Improved 93 mm HEAT warhead effective against most vehicles and fortified targets.", {[_this select 0, _this select 1, "rhs_rpg7_PG7VL_mag"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "rhs_rpg7_PG7VL_mag", 5],
   ["RPG PG-7VR", 1000, "Used in: RPG-7 <br/>Dual 64 mm/105 mm HEAT warhead for defeating modern armored vehicles equipped with reactive armor blocks.", {[_this select 0, _this select 1, "rhs_rpg7_PG7VR_mag"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "rhs_rpg7_PG7VR_mag", 5],
   ["RPG OG-7V", 1000, "Used in: RPG-7 <br/>40 mm fragmentation warhead for anti-personnel warfare.", {[_this select 0, _this select 1, "rhs_rpg7_OG7V_mag"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "rhs_rpg7_OG7V_mag", 5],
-  ["RPG TBG-7V", 1000, "Used in: RPG-7 <br/>105 mm Thermobaric warhead for anti-personnel and urban warfare.", {[_this select 0, _this select 1, "rhs_rpg7_TBG7V_mag"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "rhs_rpg7_TBG7V_mag", 5]
+  ["RPG TBG-7V", 1000, "Used in: RPG-7 <br/>105 mm Thermobaric warhead for anti-personnel and urban warfare.", {[_this select 0, _this select 1, "rhs_rpg7_TBG7V_mag"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "rhs_rpg7_TBG7V_mag", 5],
+  ["PMN-2 Mine", 1000, "The PMN-2 is a Russian anti-personnel mine. The filling is an RDX/TNT based explosive that is unusually large when compared to many other anti-personnel landmines.", {[_this select 0, _this select 1, "rhs_mine_pmn2_mag"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "rhs_mine_pmn2_mag", 5],
+  ["PMR-3 Mine", 1000, "The PMR-3 is an anti-personnel stake mine, triggered by a tripwire. It has a greater effective radius than a PMN-2, but is easier to spot on open ground.", {[_this select 0, _this select 1, "APERSTripMine_Wire_Mag"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "APERSTripMine_Wire_Mag", 5],
+  ["TM-62M Mine", 1000, "The TM-62M is a Russian anti-tank blast mine. Infantry will be unable to trigger it. Weight: 4.5kg.", {[_this select 0, _this select 1, "rhs_mine_tm62m_mag"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "rhs_mine_tm62m_mag", 5]
 ];
-
 
 BM_CATEGORYNAME_EAST_3 = "Items";
 BM_ITEMDATA_EAST_3 = [
-
+  ["M57 Firing Device", 1000, "The M57 electrcal firing device is more commonly referred to as The Clacker. Used to remotely trigger explosives.", {[_this select 0, _this select 1, "ACE_Clacker"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "ACE_Clacker", 5],
+  ["Wirecutter", 1000, "Mechanical wirecutter used to cut down fences. Heavy but sturdy. Weight: 3kg.", {[_this select 0, _this select 1, "ACE_wirecutter"] remoteExec ["mcd_fnc_bmBuyItem", 0, false]}, "ACE_wirecutter", 5]
 ];
