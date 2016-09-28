@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8789.2441,98.176804,7368.3354};
-		dir[]={-0.42256871,-0.36773315,0.82850564};
-		up[]={-0.16712476,0.92987221,0.3276698};
-		aside[]={0.89089686,2.8833747e-006,0.45439619};
+		pos[]={8783.5605,67.517845,7370.8687};
+		dir[]={-0.68929237,-0.58449996,0.42831856};
+		up[]={-0.49650377,0.81133425,0.30852041};
+		aside[]={0.52783459,1.603039e-006,0.84945476};
 	};
 };
 binarizationWanted=0;
@@ -44,7 +44,7 @@ class AddonsMetaData
 		class Item1
 		{
 			className="A3_Modules_F_Curator";
-			name="Arma 3 Zeus Update - Scripted features";
+			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
@@ -74,6 +74,10 @@ class Mission
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
+		rainForced=1;
+		lightningsForced=1;
+		wavesForced=1;
+		windForced=1;
 		year=2035;
 		month=6;
 		day=24;

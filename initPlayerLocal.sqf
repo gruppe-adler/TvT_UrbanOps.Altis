@@ -4,6 +4,24 @@ enableSaving [false, false];
 enableEngineArtillery false;
 call compile preprocessFile "islandConfig.sqf";
 
+["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //functions
 mcd_fnc_formattedHint = compile preprocessFileLineNumbers "functions\fn_formattedHint.sqf";
 mcd_fnc_startSpectator = compile preProcessFileLineNumbers "functions\fn_startSpectator.sqf";
@@ -17,9 +35,6 @@ mcd_fnc_findOpfSpawnPos = compile preprocessFileLineNumbers "functions\fn_findOp
 
 KK_fnc_fileExists = compile preprocessFileLineNumbers "functions\fn_fileExists.sqf";
 
-
-//dyn groups
-["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
 
 //setup
 [] execVM "helpers\originalSide.sqf";
