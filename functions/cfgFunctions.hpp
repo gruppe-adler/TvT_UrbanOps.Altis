@@ -7,7 +7,10 @@ class mcd {
 
   class misc {
     class diagReport {};
+    class findOpfSpawnPos {};
     class intro {postInit = 1;};
+    class originalSide {};
+    class teleport {};
   };
 
   class waverespawn {
@@ -15,11 +18,14 @@ class mcd {
     class addToWave {};
     class blockMap {};
     class initWaveRespawn {postInit = 1;};
-    class originalSide {};
     class removeFromWave {};
+    class respawnHint {};
+    class respawnPlayer {};
     class setWaveSize {};
     class startWaveLoops {};
+    class waveCvCheck {};
+    class wavePlayerCountdown {};
     class wavePlayerKilled {};
+    class waveWaveCountdown {};
   };
-
 };

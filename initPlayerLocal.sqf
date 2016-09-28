@@ -6,7 +6,7 @@ call compile preprocessFile "islandConfig.sqf";
 
 ["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
 
-
+[] execVM "loadouts\getLoadoutFaction.sqf";
 
 
 

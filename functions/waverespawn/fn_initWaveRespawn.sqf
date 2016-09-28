@@ -1,4 +1,6 @@
 RESPAWNWAVEEXTRATIME = 30;
+MAXRESPAWNTIME = 1000;
+publicVariable "MAXRESPAWNTIME";
 
 if (hasInterface) then {
   player setVariable ["joinTime", serverTime];
@@ -9,13 +11,15 @@ if (hasInterface) then {
     player setVariable ["wr_waitCondition", {!WAVERESPAWNBLU}];
     player setVariable ["wr_interruptCondition", {COMMANDVEHICLEDESTROYED}];
     player setVariable ["wr_playersLeft", {WAVERESPAWNPLAYERSLEFTBLU}];
-    player setVariable ["wr_waveTimeLeft", WAVERESPAWNTIMELEFTBLU]
+    player setVariable ["wr_waveTimeLeft", WAVERESPAWNTIMELEFTBLU];
+    player setVariable ["wr_waveSize", BLUFORWAVESIZE];
   };
   if (_originalSide == "EAST") then {
     player setVariable ["wr_waitCondition", {!WAVERESPAWNOPF}];
     player setVariable ["wr_interruptCondition", {DEALERKILLED}];
     player setVariable ["wr_playersLeft", {WAVERESPAWNPLAYERSLEFTOPF}];
-    player setVariable ["wr_waveTimeLeft", WAVERESPAWNTIMELEFTOPF]
+    player setVariable ["wr_waveTimeLeft", WAVERESPAWNTIMELEFTOPF];
+    player setVariable ["wr_waveSize", OPFORWAVESIZE];
   };
 };
 
