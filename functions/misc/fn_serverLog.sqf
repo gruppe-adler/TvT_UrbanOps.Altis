@@ -1,9 +1,11 @@
 if (typeName _this == "ARRAY") then {
-  diag_log format _this;
+  _log = format _this;
 } else {
   if (typeName _this  == "STRING") then {
-    diag_log _this;
+    _log = _this;
   } else {
-    diag_log str _this;
+    _log = str _this;
   };
 };
+
+_log remoteExec ["diag_log", 2, false];

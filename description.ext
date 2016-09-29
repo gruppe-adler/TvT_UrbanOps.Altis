@@ -1,6 +1,8 @@
 #define MODULES_DIRECTORY node_modules
 #include "cfgParams.hpp"
 #include "cfgIslands.hpp"
+#include "cfgFactions.hpp"
+#include "dialogs\cfgDialogs.hpp"
 
 //HEADER =======================================================================
 class Header

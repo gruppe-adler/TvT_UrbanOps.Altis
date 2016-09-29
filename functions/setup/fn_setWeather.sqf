@@ -1,9 +1,6 @@
-/*  Sets weather
-*
-*   executed via init.sqf on server
-*/
-
 private ["_overcast"];
+
+if (!isServer) exitWith {};
 
 //OVERCAST =====================================================================
 //random
@@ -17,7 +14,7 @@ if (WEATHER_SETTING == -1) then {
   _overcast = WEATHER_SETTING;
 };
 
-diag_log format ["setWeather.sqf - Setting overcast to %1.", _overcast];
+["LOG", "SERVER_SETUP", format ["fn_setWeather - Set overcast to %1.", _overcast]] call mcd_fnc_diagReport;
 [_overcast * 0.01] call bis_fnc_setOvercast;
 
 //FOG ==========================================================================
@@ -35,5 +32,5 @@ if (TIME_OF_DAY <= 8) then {
 
 _fog = random [0,_mid,0.4];
 
-["LOG", "SERVER SETUP", format ["setWeather.sqf - Setting fog to %1.", _fog]] call mcd_fnc_diagReport;
+["LOG", "SERVER_SETUP", format ["fn_setWeather - Set fog to %1.", _fog]] call mcd_fnc_diagReport;
 0 setFog _fog;

@@ -21,6 +21,10 @@ publicVariable "BLUFORFACTION";
 publicVariable "OPFORFACTION";
 publicVariable "ISWOODLAND";
 
+["LOG", "SERVER_SETUP", "BLUFORFACTION"] call mcd_fnc_diagReport;
+["LOG", "SERVER_SETUP", "OPFORFACTION"] call mcd_fnc_diagReport;
+["LOG", "SERVER_SETUP", "ISWOODLAND"] call mcd_fnc_diagReport;
+
 //NON PRESET PARAMS ============================================================
 WEATHER_SETTING = "WeatherSetting" call BIS_fnc_getParamValue;
 TIME_OF_DAY = "TimeOfDay" call BIS_fnc_getParamValue;
@@ -42,6 +46,8 @@ PRESET = [
 
 publicVariable "PRESET";
 
+["LOG", "SERVER_SETUP", "PRESET"] call mcd_fnc_diagReport;
+
 //SET PRESET PARAMS ============================================================
 if (PRESET == "CUSTOM") then {
   CONTROLRATIO = "ControlRatio" call BIS_fnc_getParamValue;
@@ -57,7 +63,7 @@ if (PRESET == "DEBUG") then {
   CONTROLRATIO = 2;
   CAPTURETIME = 60;
   DEFENSETIME = 900;
-  SETUPTIME = 10;
+  SETUPTIME = 30;
   WAVERESPAWNTIME = 10;
   RESPAWNTIME = 10;
   OPFORRESPAWNENABLED = true;
@@ -70,6 +76,14 @@ publicVariable "SETUPTIME";
 publicVariable "WAVERESPAWNTIME";
 publicVariable "RESPAWNTIME";
 publicVariable "OPFORRESPAWNENABLED";
+
+["LOG", "SERVER_SETUP", "CONTROLRATIO"] call mcd_fnc_diagReport;
+["LOG", "SERVER_SETUP", "CAPTURETIME"] call mcd_fnc_diagReport;
+["LOG", "SERVER_SETUP", "DEFENSETIME"] call mcd_fnc_diagReport;
+["LOG", "SERVER_SETUP", "SETUPTIME"] call mcd_fnc_diagReport;
+["LOG", "SERVER_SETUP", "WAVERESPAWNTIME"] call mcd_fnc_diagReport;
+["LOG", "SERVER_SETUP", "RESPAWNTIME"] call mcd_fnc_diagReport;
+["LOG", "SERVER_SETUP", "OPFORRESPAWNENABLED"] call mcd_fnc_diagReport;
 
 //DONE =========================================================================
 missionNamespace setVariable ["uo_init_missionParamsDone", true, true];

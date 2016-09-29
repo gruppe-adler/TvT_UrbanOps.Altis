@@ -1,3 +1,5 @@
+if (!hasInterface) exitWith {};
+
 private ["_originalSide"];
 
 while {isNil "_originalSide"} do {
@@ -6,4 +8,4 @@ while {isNil "_originalSide"} do {
   };
 };
 
-_originalSide
+player setVariable ["originalSide", _originalSide];

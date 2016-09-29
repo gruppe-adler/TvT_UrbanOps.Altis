@@ -1,20 +1,48 @@
 class mcd {
+  class choosePlayArea {
+    class bluforWaitDialog {};
+    class chooseCity {};
+    class chooseSpawn {};
+    class createSideMarker {};
+    class createSideMarkerRemote {};
+    class deleteSideMarker {};
+    class deleteSideMarkerRemote {};
+    class opforWaitDialog {};
+  };
+
   class init {
-    class initLocationMarkers {};
     class initPubVars {};
     class initSystems {postInit = 1;};
     class sequentialInit {};
-    class setMissionParams {};
   };
 
   class misc {
     class diagReport {};
     class findOpfSpawnPos {};
+    class findRandomPos {};
     class getIslandCfgValue {};
     class intro {};
-    class originalSide {};
     class serverLog {};
     class teleport {};
+  };
+
+  class missionstart {
+    class findOpfStartPos {};
+    class playAreaSetup {};
+    class tpBlufor {};
+    class tpOpfor {};
+  };
+
+  class setup {
+    class moveToMapStart {postInit = 1;};
+    class setCommandVehicle {};
+    class setLocationMarkers {};
+    class setMapRespawnPos {};
+    class setMissionParams {};
+    class setOriginalSide {};
+    class setTime {};
+    class setupCountdown {};
+    class setWeather {};
   };
 
   class waverespawn {

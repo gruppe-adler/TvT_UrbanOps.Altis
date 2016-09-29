@@ -23,18 +23,8 @@ KK_fnc_fileExists = compile preprocessFileLineNumbers "functions\fn_fileExists.s
 
 
 //setup
-[] execVM "helpers\originalSide.sqf";
-[] execVM "player\setup\mapStartPos.sqf";
-[] execVM "player\setup\chooseCity.sqf";
-[] execVM "player\setup\chooseSpawn.sqf";
 [] execVM "player\captureTimeCountdown.sqf";
 [] execVM "player\endMission.sqf";
 [] execVM "player\buymenu\buymenuInit.sqf";
 [] execVM "player\moneymenu\moneymenuInit.sqf";
 [] execVM "loadouts\loadoutinit.sqf";
-
-
-//register in respawn system
-if (!isServer) then {
-  [] execVM "initWaveRespawn.sqf";
-};

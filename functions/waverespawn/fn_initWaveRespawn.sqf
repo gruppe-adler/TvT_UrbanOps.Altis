@@ -5,8 +5,10 @@ newOpfSpawns = [];
 
 if (hasInterface) then {
   player setVariable ["joinTime", serverTime];
-  _originalSide = [] call mcd_fnc_originalSide;
-  player setVariable ["originalSide", _originalSide];
+  _originalSide = player getVariable "originalSide";
+  if (isNil "_originalSide") exitWith {
+    ["fn_initWaveRespawn - ERROR: PLAYER %1 DOES NOT HAVE ORIGINALSIDE.", profileName] call mcd_fnc_serverLog;
+  };
 
   if (_originalSide == "WEST") then {
     player setVariable ["wr_waitCondition", {!WAVERESPAWNBLU}];

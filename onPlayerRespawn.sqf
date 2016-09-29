@@ -18,7 +18,7 @@ if (_originalSide == "EAST") then {
 };
 
 if (_originalSide == "UNKNOWN") then {
-  ["onPlayerRespawn.sqf - ERROR: PLAYER %1 HAS UNKNOWN SIDE.", profileName] remoteExec ["mcd_fnc_serverLog", 2, false];
+  ["onPlayerRespawn.sqf - ERROR: PLAYER %1 HAS UNKNOWN SIDE.", profileName] call mcd_fnc_serverLog;
 };
 
 //check JIP player is spawning for the first time
