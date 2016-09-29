@@ -37,7 +37,7 @@ class Params
     title = "Preset";
     values[] = {0,1};
     texts[] = {"Custom", "Debug (Parameters below will be ignored.)"};
-    default = 0;
+    default = 1;
   };
 
   class DefenseTime

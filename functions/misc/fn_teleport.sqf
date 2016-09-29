@@ -5,7 +5,7 @@
 *   1:  destination
 */
 
-params ["_unit", "_pos"];
+params ["_unit", ["_pos", [0,0,0]]];
 
 _unit allowDamage false;
 _unit setPos _pos;

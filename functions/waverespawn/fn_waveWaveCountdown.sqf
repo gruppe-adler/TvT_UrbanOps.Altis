@@ -1,7 +1,7 @@
 if (player getVariable "wr_interrupted") exitWith {player setVariable ["wr_waveCountdownDone", true]};
 if (player getVariable "wr_isFreeRespawn") exitWith {player setVariable ["wr_waveCountdownDone", true]};
 
-[profileName, originalSide] remoteExec ["mcd_fnc_addToWave",2,false];
+[profileName, player getVariable ["originalSide", "UNKNOWN"]] remoteExec ["mcd_fnc_addToWave",2,false];
 
 [{
   private ["_explanation"];
@@ -16,7 +16,7 @@ if (player getVariable "wr_isFreeRespawn") exitWith {player setVariable ["wr_wav
   };
 
   //check max respawn time
-  if (time - _timeOfDeath > MAXRESPAWNTIME) then {
+  if ((time - _timeOfDeath) > MAXRESPAWNTIME) then {
     [_this select 1] call CBA_fnc_removePerFrameHandler;
     player setVariable ["wr_isFreeRespawn", true];
     player setVariable ["wr_waveCountdownDone", true];
@@ -25,10 +25,10 @@ if (player getVariable "wr_isFreeRespawn") exitWith {player setVariable ["wr_wav
 
   _respawnIn = parseText format ["<t align='center' size='1.4'>Spieler <t color='#00ff00'>bereit</t></t>"];
   _waveTimeLeft = call (player getVariable "wr_waveTimeLeft");
-  _timeLeftStr [_waveTimeLeft, "MM:SS"] call BIS_fnc_secondsToString;
+  _timeLeftStr = [_waveTimeLeft, "MM:SS"] call BIS_fnc_secondsToString;
   _playersLeft = call (player getVariable "wr_playersLeft");
   _waveSize = player getVariable "wr_waveSize";
-  _waveLeft = parseText format ["<t align='center' size='1.4'>Welle: <t color='%3'>%1/%2</t> - <t color ='%4'>%5</t></t>", _waveSize - _playersLeft, _waveSize, if (_playersLeft == 0) then {"#00ff00"} else {"#ffff00"},if _waveTimeLeft <= 0 then {"#00ff00"} else {"#ffff00"}, _timeLeftStr];
+  _waveLeft = parseText format ["<t align='center' size='1.4'>Welle: <t color='%3'>%1/%2</t> - <t color ='%4'>%5</t></t>", _waveSize - _playersLeft, _waveSize, if (_playersLeft == 0) then {"#00ff00"} else {"#ffff00"},if (_waveTimeLeft <= 0) then {"#00ff00"} else {"#ffff00"}, _timeLeftStr];
   if (_waveTimeLeft > 0) then {
     _explanation = parseText "<t align='center' size='1.4'>Warte auf Wellen-Countdown.</t>";
   } else {

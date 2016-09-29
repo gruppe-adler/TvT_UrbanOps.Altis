@@ -1,15 +1,19 @@
 class mcd {
   class init {
-    class createLocationMarkers {postInit = 1;};
+    class initLocationMarkers {};
+    class initPubVars {};
+    class initSystems {postInit = 1;};
     class sequentialInit {};
-    class setMissionParams {postInit = 1;};
+    class setMissionParams {};
   };
 
   class misc {
     class diagReport {};
     class findOpfSpawnPos {};
-    class intro {postInit = 1;};
+    class getIslandCfgValue {};
+    class intro {};
     class originalSide {};
+    class serverLog {};
     class teleport {};
   };
 
@@ -17,7 +21,7 @@ class mcd {
     class addRespawnedToGroup {};
     class addToWave {};
     class blockMap {};
-    class initWaveRespawn {postInit = 1;};
+    class initWaveRespawn {};
     class removeFromWave {};
     class respawnHint {};
     class respawnPlayer {};

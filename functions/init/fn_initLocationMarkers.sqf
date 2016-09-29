@@ -1,6 +1,5 @@
 /* Draws all locations on the entire map
 *
-* executed via init.sqf on server
 */
 
 if (!isServer) exitWith {};

@@ -19,7 +19,5 @@ if (_opforWaveSize == 0) then {
   OPFORWAVESIZE = _opforWaveSize;
 };
 
-publicVariable "BLUFORWAVESIZE";
-publicVariable "OPFORWAVESIZE";
-diag_log format ["Wave Respawn - Blufor wave size is %1", BLUFORWAVESIZE];
-diag_log format ["Wave Respawn - Opfor wave size is %1", OPFORWAVESIZE];
+diag_log format ["fn_setWaveSize - Blufor wave size is %1", BLUFORWAVESIZE];
+diag_log format ["fn_setWaveSize - Opfor wave size is %1", OPFORWAVESIZE];

@@ -21,5 +21,6 @@ setPlayerRespawnTime 0;
 forceRespawn player;
 [] spawn {
   sleep 5;
+  hint "";
   setPlayerRespawnTime 9999;
 };

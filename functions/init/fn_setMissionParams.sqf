@@ -1,8 +1,6 @@
 if (!isServer) exitWith {};
 
-//MUST SELECT ==================================================================
-WEATHER_SETTING = "WeatherSetting" call BIS_fnc_getParamValue;
-TIME_OF_DAY = "TimeOfDay" call BIS_fnc_getParamValue;
+//FACTIONS =====================================================================
 BLUFORFACTION = [
   "us_army",
   "ger_heer",
@@ -17,12 +15,34 @@ OPFORFACTION = [
   "ind_eastRebels",
   "ind_terrorists"
 ] select ("OpforFaction" call BIS_fnc_getParamValue);
+ISWOODLAND = ["isWoodland"] call mcd_fnc_getIslandCfgValue;
+
+publicVariable "BLUFORFACTION";
+publicVariable "OPFORFACTION";
+publicVariable "ISWOODLAND";
+
+//NON PRESET PARAMS ============================================================
+WEATHER_SETTING = "WeatherSetting" call BIS_fnc_getParamValue;
+TIME_OF_DAY = "TimeOfDay" call BIS_fnc_getParamValue;
+
+publicVariable "WEATHER_SETTING";
+publicVariable "TIME_OF_DAY";
+
+//WAVE SIZE ====================================================================
+[] call mcd_fnc_setWaveSize;
+
+publicVariable "BLUFORWAVESIZE";
+publicVariable "OPFORWAVESIZE";
+
+//GET PRESET ===================================================================
 PRESET = [
   "CUSTOM",
   "DEBUG"
 ] select ("Preset" call BIS_fnc_getParamValue);
 
-//ONLY USE USER SETTINGS IF PRESET IS CUSTOM
+publicVariable "PRESET";
+
+//SET PRESET PARAMS ============================================================
 if (PRESET == "CUSTOM") then {
   CONTROLRATIO = "ControlRatio" call BIS_fnc_getParamValue;
   CAPTURETIME = "CaptureTime" call BIS_fnc_getParamValue;
@@ -43,12 +63,6 @@ if (PRESET == "DEBUG") then {
   OPFORRESPAWNENABLED = true;
 };
 
-publicVariable "WEATHER_SETTING";
-publicVariable "TIME_OF_DAY";
-publicVariable "BLUFORFACTION";
-publicVariable "OPFORFACTION";
-publicVariable "PRESET";
-
 publicVariable "CONTROLRATIO";
 publicVariable "CAPTURETIME";
 publicVariable "DEFENSETIME";
@@ -56,3 +70,6 @@ publicVariable "SETUPTIME";
 publicVariable "WAVERESPAWNTIME";
 publicVariable "RESPAWNTIME";
 publicVariable "OPFORRESPAWNENABLED";
+
+//DONE =========================================================================
+missionNamespace setVariable ["uo_init_missionParamsDone", true, true];

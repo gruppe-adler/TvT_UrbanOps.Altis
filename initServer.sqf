@@ -1,8 +1,5 @@
-call compile preprocessFile "islandConfig.sqf";
-
 ["Initialize", [true]] call BIS_fnc_dynamicGroups;
 
-[] execVM "initPublicVariables.sqf";
 [] execVM "tfarsettings.sqf";
 [
   "setup\setTime.sqf",
@@ -16,12 +13,7 @@ call compile preprocessFile "islandConfig.sqf";
 
 
 
-
-
-
-
-
-
+/*
 //Setup ======================================================================
 [] execVM "server\buymenu\bm_itemConfig.sqf";
 [] execVM "server\setup\allLocationMarkers.sqf";

@@ -1,4 +1,4 @@
-params ["_deadPlayer", "_deadPlayerSide"];
+params ["_deadPlayer", ["_deadPlayerSide", "UNKNOWN"]];
 
 if (isNil "deadPlayersBlu") then {deadPlayersBlu = []};
 if (isNil "deadPlayersOpf") then {deadPlayersOpf = []};
@@ -11,7 +11,7 @@ if (_deadPlayerSide == "WEST") then {
   if (_deadPlayerSide == "EAST") then {
     deadPlayersOpf pushBack _deadPlayer;
     diag_log format ["addDeadPlayerToWave - added player %1 to deadPlayersOpf. %2 dead opfor total.", _deadPlayer, count deadPlayersOpf];
-  } else {
+  } else {    
     diag_log format ["addDeadPlayerToWave - ERROR, unknown side for player %1", _deadPlayer];
   };
 };

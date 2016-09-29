@@ -1,20 +1,3 @@
-//initial definition of variables
-WAVERESPAWNBLU = false;
-publicVariable "WAVERESPAWNBLU";
-WAVERESPAWNOPF = false;
-publicVariable "WAVERESPAWNOPF";
-WAVERESPAWNPLAYERSLEFTBLU = BLUFORWAVESIZE;
-publicVariable "WAVERESPAWNPLAYERSLEFTBLU";
-WAVERESPAWNPLAYERSLEFTOPF = OPFORWAVESIZE;
-publicVariable "WAVERESPAWNPLAYERSLEFTOPF";
-WAVERESPAWNTIMELEFTBLU = WAVERESPAWNTIME;
-publicVariable "WAVERESPAWNTIMELEFTBLU";
-WAVERESPAWNTIMELEFTOPF = WAVERESPAWNTIME;
-publicVariable "WAVERESPAWNTIMELEFTOPF";
-
-deadPlayersBlu = [];
-deadPlayersOpf = [];
-
 //BLUFOR =======================================================================
 [{
   //dont execute while respawning is possible

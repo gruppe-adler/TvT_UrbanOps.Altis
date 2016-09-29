@@ -1,4 +1,6 @@
-#include "params.hpp"
+#define MODULES_DIRECTORY node_modules
+#include "cfgParams.hpp"
+#include "cfgIslands.hpp"
 
 //HEADER =======================================================================
 class Header

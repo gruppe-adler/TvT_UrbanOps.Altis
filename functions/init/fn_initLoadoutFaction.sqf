@@ -1,5 +1,7 @@
 private ["_loadoutFaction"];
 
+if (!hasInterface) exitWith {};
+
 _originalSide = [] call mcd_fnc_originalSide;
 
 if (_originalSide == "WEST") then {

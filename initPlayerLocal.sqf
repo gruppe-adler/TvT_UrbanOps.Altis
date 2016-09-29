@@ -2,26 +2,12 @@ player setVariable ["playerMoney",20000];
 
 enableSaving [false, false];
 enableEngineArtillery false;
-call compile preprocessFile "islandConfig.sqf";
 
 ["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
 
-[] execVM "loadouts\getLoadoutFaction.sqf";
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
 //functions
 mcd_fnc_formattedHint = compile preprocessFileLineNumbers "functions\fn_formattedHint.sqf";
 mcd_fnc_startSpectator = compile preProcessFileLineNumbers "functions\fn_startSpectator.sqf";
