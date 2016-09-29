@@ -27,4 +27,3 @@ KK_fnc_fileExists = compile preprocessFileLineNumbers "functions\fn_fileExists.s
 [] execVM "player\endMission.sqf";
 [] execVM "player\buymenu\buymenuInit.sqf";
 [] execVM "player\moneymenu\moneymenuInit.sqf";
-[] execVM "loadouts\loadoutinit.sqf";

@@ -11,7 +11,7 @@
 [{missionNamespace getVariable ["uo_init_missionParamsDone", false]}, {[] call mcd_fnc_setTime}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_missionParamsDone", false]}, {[] call mcd_fnc_setWeather}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_missionParamsDone", false]}, {[] call mcd_fnc_setMapRespawnPos}, []] call CBA_fnc_waitUntilAndExecute;
-[{missionNamespace getVariable ["uo_init_missionParamsDone", false]}, {[] call mcd_fnc_setupCountdown}, []] call CBA_fnc_waitUntilAndExecute;
+[{(missionNamespace getVariable ["uo_init_missionParamsDone", false]) && (!isNil "bis_fnc_init")}, {[] call mcd_fnc_setupCountdown}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_pubVarsDone", false]}, {[] call mcd_fnc_chooseCity; [] call mcd_fnc_chooseSpawn}, []] call CBA_fnc_waitUntilAndExecute;
 
 //report
@@ -19,5 +19,14 @@ if (isServer) then {[{["PRINT", "SERVER_SETUP"] call mcd_fnc_diagReport}, [], 15
 
 //setup after player choices
 [{(!isNil "CHOSENLOCATION" && !isNil "CITYCHOSEN")}, {[] call mcd_fnc_playAreaSetup; [] call mcd_fnc_findOpfStartPos}, []] call CBA_fnc_waitUntilAndExecute;
-[{missionNamespace getVariable ["uo_init_opforSpawnSet", false]}, {[] call mcd_fnc_tpOpfor}, []] call CBA_fnc_waitUntilAndExecute;
-[{(!isNil "BLUFORSPAWN" && !isNil "SPAWNCHOSEN")}, {[] call mcd_fnc_tpBlufor}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_opforSpawnSet", false]}, {[EAST] call mcd_fnc_tpSide}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_bluforSpawnSet", false]}, {[WEST] call mcd_fnc_tpSide}, []] call CBA_fnc_waitUntilAndExecute;
+[{(!isNil "BLUFORSPAWN" && !isNil "SPAWNCHOSEN")}, {[] call mcd_fnc_createCommandVehicle}, []] call CBA_fnc_waitUntilAndExecute;
+[{(!isNil "CITYPOSITION" && !isNil "CITYAREASIZE")}, {[] call mcd_fnc_createTriggers}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_cvCreated", false]}, {[] call mcd_fnc_findBluStartPos}, []] call CBA_fnc_waitUntilAndExecute;
+
+//start ending checks
+[{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call mcd_fnc_endByBluKilled}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call mcd_fnc_endByOpfKilled}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call mcd_fnc_endByTimeout}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call mcd_fnc_endByControl}, []] call CBA_fnc_waitUntilAndExecute;

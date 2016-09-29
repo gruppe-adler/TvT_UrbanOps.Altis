@@ -10,6 +10,13 @@ class mcd {
     class opforWaitDialog {};
   };
 
+  class endings {
+    class endByBluKilled {};
+    class endByControl {};
+    class endByOpfKilled {};
+    class endByTimeout {};
+  };
+
   class init {
     class initPubVars {};
     class initSystems {postInit = 1;};
@@ -27,10 +34,12 @@ class mcd {
   };
 
   class missionstart {
+    class createCommandVehicle {};
+    class createTriggers {};
     class findOpfStartPos {};
+    class findBluStartPos {};
     class playAreaSetup {};
-    class tpBlufor {};
-    class tpOpfor {};
+    class tpSide {};
   };
 
   class setup {

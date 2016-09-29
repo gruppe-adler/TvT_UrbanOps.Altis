@@ -1,5 +1,15 @@
+params ["_side"];
+
+if (isServer) then {
+	if (_side == WEST) then {
+		missionNamespace setVariable ["uo_init_gamestarted", true, true];
+	};
+};
+
 if (!hasInterface) exitWith {};
-if (side player != EAST) exitWith {};
+if (side player != _side) exitWith {};
+
+player say "taskSucceeded";
 
 private ["_pos"];
 [{_pos = player getVariable "startPosition"; !isNil "_pos"}, {
