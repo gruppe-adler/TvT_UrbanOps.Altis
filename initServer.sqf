@@ -1,6 +1,6 @@
 //DEBUGDEBUGDEBUGDEBUGDEBUGDEBUG
 CHOSENLOCATION = nearestLocation [[13991.4,18699.7,0], "NameCity"];
-CITYCHOSEN = true;
+uo_init_cityChosen = true;
 
 
 

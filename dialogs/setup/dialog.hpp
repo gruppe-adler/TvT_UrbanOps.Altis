@@ -84,7 +84,7 @@ class spawnselectErrorMessage2
 			idc = 9201;
 			x = safeZoneX + safeZoneW * 0.5 - 0.5 * 3/4;
 			y = safeZoneY + safeZoneH * 0.5 - 0.05;
-			text = "PLEASE CHOOSE A SPAWN POSITION INSIDE THE BLUE RING";
+			text = "PLEASE CHOOSE A SPAWN POSITION OUTSIDE THE BLUE RING";
 		};
 	};
 

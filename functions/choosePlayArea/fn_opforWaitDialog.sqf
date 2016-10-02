@@ -11,5 +11,4 @@ if (_isCommander) then {
   } else {
     titleRsc ["bluforWaitMessage1", "PLAIN", 1, true];
   };
-
 };

@@ -1,3 +1,5 @@
+if (!hasInterface) exitWith {};
+
 mcd_fnc_waitDialogText = {((_this select 0) displayCtrl 1401) ctrlSetText format ["TIME REMAINING: %1", ([SETUPTIMEREMAINING,"MM:SS"] call BIS_fnc_secondsToString)]};
 
 titleRsc ["bluforWaitMessage1", "PLAIN", 1, true];

@@ -7,7 +7,9 @@
 
 params ["_unit", ["_pos", [0,0,0]]];
 
-_unit allowDamage false;
-_unit setPos _pos;
-sleep 1;
-_unit allowDamage true;
+[] spawn {
+  _unit allowDamage false;
+  _unit setPos _pos;
+  sleep 1;
+  _unit allowDamage true;
+};

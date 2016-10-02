@@ -25,7 +25,6 @@ class mcd {
 
   class misc {
     class diagReport {};
-    class findOpfSpawnPos {};
     class findRandomPos {};
     class getIslandCfgValue {};
     class intro {};
@@ -34,8 +33,10 @@ class mcd {
   };
 
   class missionstart {
+    class checkCommandVehicle {};
     class createCommandVehicle {};
-    class createTriggers {};
+    class createTrigger {};
+    class findOpfSpawnPos {};
     class findOpfStartPos {};
     class findBluStartPos {};
     class playAreaSetup {};
@@ -43,6 +44,7 @@ class mcd {
   };
 
   class setup {
+    class briefingDone {postInit = 1;};
     class moveToMapStart {postInit = 1;};
     class setCommandVehicle {};
     class setLocationMarkers {};

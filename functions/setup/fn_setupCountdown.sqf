@@ -3,7 +3,7 @@ if (!isServer) exitWith {};
 SETUPTIMEREMAINING = SETUPTIME;
 publicVariable "SETUPTIMEREMAINING";
 
-[{!isNil "CITYPOSITION"}, {
+[{!isNil "CITYPOSITION" && (missionNamespace getVariable ["uo_init_briefingDone", false])}, {
   diag_log "fn_setupCountdown starting...";
   _countdown = {
     SETUPTIMEREMAINING = SETUPTIMEREMAINING - 1;

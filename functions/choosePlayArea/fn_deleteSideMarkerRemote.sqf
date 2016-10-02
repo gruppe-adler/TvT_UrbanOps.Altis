@@ -14,6 +14,6 @@ params [
 
 if (side player != _side) exitWith {};
 
-if (getMarkerType _name != "") then {
+if (getMarkerType _name != "" || getMarkerColor _name != "") then {
   deleteMarkerLocal _name;
 };

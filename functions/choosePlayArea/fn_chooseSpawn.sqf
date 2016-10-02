@@ -34,7 +34,7 @@ if (player != bluforcommander) exitWith {};
       } else {
 
         //position not in blue area
-        if (CHOSENLOCATION distance BLUFORSPAWN < BLUFORSPAWNDIST || CHOSENLOCATION distance BLUFORSPAWN > BLUFORSPAWNDIST + BLUFORSPAWNBAND) then {
+        if (CHOSENLOCATION distance BLUFORSPAWN < BLUFORSPAWNDIST + BLUFORSPAWNBAND) then {
           createDialog "spawnselectErrorMessage2";
         } else {
 
@@ -46,9 +46,14 @@ if (player != bluforcommander) exitWith {};
             //position successfully chosen
             ["fn_chooseSpawn - %1 chose spawn at %2.", profileName, BLUFORSPAWN] call mcd_fnc_serverLog;
 
-            SPAWNCHOSEN = true;
-            publicVariable "SPAWNCHOSEN";
+            uo_init_spawnChosen = true;
+            publicVariable "uo_init_spawnChosen";
             publicVariable "BLUFORSPAWN";
+
+            [WEST,"EXPLANATIONMARKER_CAPTURE"] call mcd_fnc_deleteSideMarker;
+            [WEST,"EXPLANATIONMARKER_CAPTURE_TEXT"] call mcd_fnc_deleteSideMarker;
+            [WEST,"EXPLANATIONMARKER_RESPAWN"] call mcd_fnc_deleteSideMarker;
+            [WEST,"EXPLANATIONMARKER_RESPAWN_TEXT"] call mcd_fnc_deleteSideMarker;
 
             ["mcd_chooseSpawn", "onMapSingleClick"] call BIS_fnc_removeStackedEventHandler;
             (findDisplay 46) displayRemoveEventHandler ["KeyDown", mcd_onSpawnKeyDown];

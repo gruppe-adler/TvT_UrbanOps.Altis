@@ -10,3 +10,5 @@ diag_log "fn_findOpfStartPos - Finding spawn positions for Opfor.";
 } forEach playableUnits;
 
 missionNamespace setVariable ["uo_init_opforSpawnSet", true, true];
+
+diag_log format ["fn_findOpfStartPos - Positions found for %1 players.", {side _x == EAST} count playableUnits];

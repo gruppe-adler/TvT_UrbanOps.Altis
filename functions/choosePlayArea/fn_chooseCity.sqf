@@ -47,8 +47,8 @@ if (player getVariable ["originalSide", "UNKNOWN"] != "EAST") exitWith {};
         ["fn_chooseCity - %1 chose location %2", profileName, text CHOSENLOCATION] call mcd_fnc_serverLog;
         [EAST,"selectionMarker"] call mcd_fnc_deleteSideMarker;
 
-        CITYCHOSEN = true;
-        publicVariable "CITYCHOSEN";
+        uo_init_cityChosen = true;
+        publicVariable "uo_init_cityChosen";
         publicVariable "CHOSENLOCATION";
 
         ["mcd_chooseCity", "onMapSingleClick"] call BIS_fnc_removeStackedEventHandler;

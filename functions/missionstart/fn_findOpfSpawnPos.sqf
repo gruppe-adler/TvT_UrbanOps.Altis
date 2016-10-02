@@ -29,7 +29,7 @@ while {_tooCloseFound || _isWater} do {
     if (side _x != east) then {
       if (_pos distance2D _x < OPFORRESPAWNDIST) exitWith {_tooCloseFound = true};
     };
-    if (_tooCloseFound) exitWith {diag_log "onPlayerRespawn.sqf - Blufor player too close to spawnposition. Repeating."};
+    if (_tooCloseFound) exitWith {diag_log "fn_findOpfSpawnPos - Blufor player too close to spawnposition. Repeating."};
   } forEach playableUnits;
 
   if (_repetitions >= 15) then {

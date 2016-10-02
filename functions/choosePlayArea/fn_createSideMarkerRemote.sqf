@@ -51,6 +51,11 @@ _marker setMarkerAlphaLocal _alpha;
 _marker setMarkerBrushLocal _brush;
 _marker setMarkerColorLocal _color;
 _marker setMarkerShapeLocal _shape;
-_marker setMarkerSizeLocal [_size, _size];
 _marker setMarkerTypeLocal _type;
 _marker setMarkerTextLocal _text;
+
+if (typeName _size == "ARRAY") then {
+  _marker setMarkerSizeLocal _size;
+} else {
+  _marker setMarkerSizeLocal [_size, _size];
+};
