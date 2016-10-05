@@ -19,14 +19,13 @@
 if (isServer) then {[{["PRINT", "SERVER_SETUP"] call mcd_fnc_diagReport}, [], 15] call CBA_fnc_waitAndExecute};
 
 //setup after player choices
-[{(missionNamespace getVariable ["uo_init_cityChosen", false]}, {[] call mcd_fnc_findOpfStartPos}, []] call CBA_fnc_waitUntilAndExecute;
-[{(missionNamespace getVariable ["uo_init_cityChosen", false]}, {[] call mcd_fnc_playAreaSetup}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_cityChosen", false]}, {[] call mcd_fnc_findOpfStartPos}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_cityChosen", false]}, {[] call mcd_fnc_playAreaSetup}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_opforSpawnSet", false]}, {[EAST] call mcd_fnc_tpSide}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_bluforSpawnSet", false]}, {[WEST] call mcd_fnc_tpSide}, []] call CBA_fnc_waitUntilAndExecute;
-[{missionNamespace getVariable ["uo_init_spawnChosen", false]}, {[] call mcd_fnc_createCommandVehicle}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_spawnChosen", false]}, {[BLUFORSPAWN] call mcd_fnc_createCommandVehicle}, []] call CBA_fnc_waitUntilAndExecute;
 [{(!isNil "CITYPOSITION" && !isNil "CITYAREASIZE")}, {[] call mcd_fnc_createTrigger}, []] call CBA_fnc_waitUntilAndExecute;
-[{missionNamespace getVariable ["uo_init_cvCreated", false]}, {[] call mcd_fnc_findBluStartPos}, []] call CBA_fnc_waitUntilAndExecute;
-[{missionNamespace getVariable ["uo_init_cvCreated", false]}, {[] call mcd_fnc_checkCommandVehicle}, []] call CBA_fnc_waitUntilAndExecute;
+  [{missionNamespace getVariable ["uo_init_cvCreated", false]}, {[] call mcd_fnc_findBluStartPos}, []] call CBA_fnc_waitUntilAndExecute;
 
 //start ending checks
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call mcd_fnc_endByBluKilled}, []] call CBA_fnc_waitUntilAndExecute;

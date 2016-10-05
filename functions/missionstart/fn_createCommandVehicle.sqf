@@ -1,18 +1,24 @@
 if (!isServer) exitWith {};
 
-//find pos
-_pos = BLUFORSPAWN findEmptyPosition [0,150,COMMANDVEHICLECLASS];
-if (str _pos == "[]") then {_pos = BLUFORSPAWN};
+params ["_searchPos"];
+_pos = _searchPos findEmptyPosition [0,150,COMMANDVEHICLECLASS];
+if (str _pos == "[]") then {_pos = _searchPos};
 
 //spawn vehicle
-COMMANDVEHICLE = COMMANDVEHICLECLASS createVehicle _pos;
-[{!isNull COMMANDVEHICLE}, {
-  publicVariable "COMMANDVEHICLE";
+_cv = COMMANDVEHICLECLASS createVehicle _pos;
+[{!isNull (_this select 0)}, {
+  diag_log str _this;
+
+  params ["_cv"];
+  diag_log format ["fn_createCommandVehicle - Command vehicle %1 created.", _cv];
   missionNamespace setVariable ["uo_init_cvCreated", true, true];
-  [COMMANDVEHICLE] call mcd_fnc_emptyContainer;
-}, []] call CBA_fnc_waitUntilAndExecute;
 
-//add EH
-_h = COMMANDVEHICLE addEventHandler ["killed", {COMMANDVEHICLEDESTROYED = true; publicVariable "COMMANDVEHICLEDESTROYED"}];
-
-diag_log format ["fn_createCommandVehicle - Killed EH created. Handle: %1.", _h];
+  _cv setDir (_cv getDir CITYPOSITION);
+  _cv setVariable ["uo_cv_isActive", false, true];
+  [_cv] call mcd_fnc_emptyContainer;
+  [_cv] call mcd_fnc_checkCommandVehicle;
+  
+  _allCVs = missionNamespace getVariable ["uo_cv_allCVs", []];
+  _allCVs pushBack _cv;
+  missionNamespace setVariable ["uo_cv_allCVs", _allCVs, true];
+}, [_cv]] call CBA_fnc_waitUntilAndExecute;

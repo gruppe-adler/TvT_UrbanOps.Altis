@@ -16,14 +16,14 @@
   if (count deadPlayersBlu >= BLUFORWAVESIZE && WAVERESPAWNTIMELEFTBLU <= 0) then {
     WAVERESPAWNBLU = true;
     publicVariable "WAVERESPAWNBLU";
-    diag_log "handleRespawns.sqf - Respawning now possible for Blufor.";
+    diag_log "fn_startWaveLoops - Respawning now possible for Blufor.";
 
     [{
         WAVERESPAWNBLU = false;
         publicVariable "WAVERESPAWNBLU";
         WAVERESPAWNTIMELEFTBLU = WAVERESPAWNTIME;
         publicVariable  "WAVERESPAWNTIMELEFTBLU";
-        diag_log "handleRespawns.sqf - Respawning no longer possible for Blufor.";
+        diag_log "fn_startWaveLoops - Respawning no longer possible for Blufor.";
     },[],(RESPAWNWAVEEXTRATIME max 7)] call CBA_fnc_waitAndExecute;
   };
 }, 3, []] call CBA_fnc_addPerFrameHandler;
@@ -43,17 +43,17 @@
   };
 
   //enable respawning when wave is full
-  if (count deadPlayersOpf >= OPFORWAVESIZE && WAVERESPAWNTIMELEFTOPF <= 0) then {
+  if (count deadPlayersOpf >= OPFORWAVESIZE && WAVERESPAWNTIMELEFTOPF <= 0 && !DEALERKILLED) then {
     WAVERESPAWNOPF = true;
     publicVariable "WAVERESPAWNOPF";
-    diag_log "handleRespawns.sqf - Respawning now possible for Opfor.";
+    diag_log "fn_startWaveLoops - Respawning now possible for Opfor.";
 
     [{
         WAVERESPAWNOPF = false;
         publicVariable "WAVERESPAWNOPF";
         WAVERESPAWNTIMELEFTOPF = WAVERESPAWNTIME;
         publicVariable  "WAVERESPAWNTIMELEFTOPF";
-        diag_log "handleRespawns.sqf - Respawning no longer possible for Opfor.";
+        diag_log "fn_startWaveLoops - Respawning no longer possible for Opfor.";
     },[],(RESPAWNWAVEEXTRATIME max 7)] call CBA_fnc_waitAndExecute;
   };
 }, 3, []] call CBA_fnc_addPerFrameHandler;

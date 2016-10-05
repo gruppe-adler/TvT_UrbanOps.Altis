@@ -1,1 +1,1 @@
-[] call mcd_fnc_wavePlayerKilled;
+[] call mcd_fnc_onWavePlayerKilled;

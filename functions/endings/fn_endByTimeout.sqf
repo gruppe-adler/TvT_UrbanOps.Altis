@@ -1,6 +1,6 @@
 if (!isServer) exitWith {};
 
-diag_log format ["fn_endByTimeout - Opfor has to defend the city for %1s.", DEFENSETIME];
+diag_log format ["fn_endByTimeout - Starting... Opfor has to defend the city for %1s.", DEFENSETIME];
 
 [{
   missionNamespace setVariable ["uo_gameEnded", true, true];

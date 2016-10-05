@@ -5,7 +5,7 @@ if (isServer) then {
 		missionNamespace setVariable ["uo_init_gamestarted", true, true];
 	};
 
-	diag_log format ["fn_tpSide - Players of side %1 teleported." _side];
+	diag_log format ["fn_tpSide - Players of side %1 teleported.", _side];
 };
 
 if (!hasInterface) exitWith {};

@@ -61,6 +61,8 @@ class mcd {
     class addToWave {};
     class blockMap {};
     class initWaveRespawn {};
+    class onWavePlayerKilled {};
+    class onWavePlayerRespawn {};
     class removeFromWave {};
     class respawnHint {};
     class respawnPlayer {};
@@ -68,7 +70,6 @@ class mcd {
     class startWaveLoops {};
     class waveCvCheck {};
     class wavePlayerCountdown {};
-    class wavePlayerKilled {};
     class waveWaveCountdown {};
   };
 };

@@ -5,9 +5,9 @@
 *   1:  destination
 */
 
-params ["_unit", ["_pos", [0,0,0]]];
+_this spawn {
+  params ["_unit", ["_pos", [0,0,0]]];
 
-[] spawn {
   _unit allowDamage false;
   _unit setPos _pos;
   sleep 1;
