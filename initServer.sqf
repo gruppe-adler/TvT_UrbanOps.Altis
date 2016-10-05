@@ -15,9 +15,3 @@ uo_init_cityChosen = true;
 //Setup ======================================================================
 [] execVM "server\buymenu\bm_itemConfig.sqf";
 [] execVM "server\setup\createCivilians.sqf";
-
-//Main =======================================================================
-[] execVM "server\endByControl.sqf";
-[] execVM "server\endByTimeout.sqf";
-[] execVM "server\endByBluKilled.sqf";
-[] execVM "server\endByOpfKilled.sqf";

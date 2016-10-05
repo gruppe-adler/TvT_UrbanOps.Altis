@@ -21,6 +21,7 @@ if (isServer) then {[{["PRINT", "SERVER_SETUP"] call mcd_fnc_diagReport}, [], 15
 //setup after player choices
 [{missionNamespace getVariable ["uo_init_cityChosen", false]}, {[] call mcd_fnc_findOpfStartPos}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_cityChosen", false]}, {[] call mcd_fnc_playAreaSetup}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_cityChosen", false]}, {[] call mcd_fnc_initCivs}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_opforSpawnSet", false]}, {[EAST] call mcd_fnc_tpSide}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_bluforSpawnSet", false]}, {[WEST] call mcd_fnc_tpSide}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_spawnChosen", false]}, {[BLUFORSPAWN] call mcd_fnc_createCommandVehicle}, []] call CBA_fnc_waitUntilAndExecute;

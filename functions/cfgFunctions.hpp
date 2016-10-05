@@ -3,11 +3,31 @@ class mcd {
     class bluforWaitDialog {};
     class chooseCity {};
     class chooseSpawn {};
+    class opforWaitDialog {};
+  };
+
+  class civs {
+    class createCivs {};
+    class findBuildingPositions {};
+    class findHouses {};
+    class getKillerSide {};
+    class initCivs {};
+    class spawnDealer {};
+    class spawnNonstaticCiv {};
+    class spawnStaticCiv {};
+  };
+
+  class common {
     class createSideMarker {};
     class createSideMarkerRemote {};
     class deleteSideMarker {};
     class deleteSideMarkerRemote {};
-    class opforWaitDialog {};
+    class diagReport {};
+    class findRandomPos {};
+    class getIslandCfgValue {};
+    class intro {};
+    class serverLog {};
+    class teleport {};
   };
 
   class endings {
@@ -21,15 +41,6 @@ class mcd {
     class initPubVars {};
     class initSystems {postInit = 1;};
     class sequentialInit {};
-  };
-
-  class misc {
-    class diagReport {};
-    class findRandomPos {};
-    class getIslandCfgValue {};
-    class intro {};
-    class serverLog {};
-    class teleport {};
   };
 
   class missionstart {
