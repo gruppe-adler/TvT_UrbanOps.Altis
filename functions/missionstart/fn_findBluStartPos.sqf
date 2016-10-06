@@ -1,7 +1,5 @@
 if (!isServer) exitWith {};
 
-diag_log "fn_findBluStartPos - Finding spawn positions for Blufor.";
-
 {
 	if (side _x == WEST) then {
 		_startPos = [getPos (uo_cv_allCVs select 0), [3,15]] call mcd_fnc_findRandomPos;

@@ -6,9 +6,7 @@ if (!isServer) exitWith {};
     publicVariable "CAPTURETIMEREMAINING";
 
     if (CAPTURETIMEREMAINING <= 0) then {
-      CITYCAPTURED = true;
-      publicVariable "CITYCAPTURED";
-      missionNamespace setVariable ["uo_gameEnded", true, true];
+      missionNamespace setVariable ["uo_gameEnded", ["WEST", "CITY CAPTURED!"], true];
       [_this select 1] call CBA_fnc_removePerFrameHandler;
     };
   };

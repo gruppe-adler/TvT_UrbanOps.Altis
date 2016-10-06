@@ -8,4 +8,4 @@ while {isNil "_originalSide"} do {
   };
 };
 
-player setVariable ["originalSide", _originalSide];
+player setVariable ["originalSide", _originalSide, true];

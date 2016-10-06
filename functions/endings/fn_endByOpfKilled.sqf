@@ -22,8 +22,7 @@ mcd_fnc_endByOpfKilled_eliminated = {
     };
 
     if (missionNamespace getVariable ["uo_opfDownSince", 0] > 15) then {
-      missionNamespace setVariable ["uo_gameEnded", true, true];
-      missionNamespace setVariable ["uo_opfEliminated", true, true];
+      missionNamespace setVariable ["uo_gameEnded", ["WEST", "OPFOR ELIMINATED!"], true];
       [_this select 1] call CBA_fnc_removePerFrameHandler;
     };
   } , 1, []] call CBA_fnc_addPerFrameHandler;

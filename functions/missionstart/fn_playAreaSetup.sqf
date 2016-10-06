@@ -96,4 +96,5 @@ _marker setMarkerSize [BLUFORSPAWNDIST+BLUFORSPAWNBAND, BLUFORSPAWNDIST+BLUFORSP
   1
 ] call mcd_fnc_createSideMarker;
 
+missionNamespace setVariable ["uo_init_playAreaSetupDone", true, true];
 diag_log "fn_playAreaSetup - Player area set up.";

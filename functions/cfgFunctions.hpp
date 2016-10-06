@@ -7,10 +7,10 @@ class mcd {
   };
 
   class civs {
+    class civKilled {};
     class createCivs {};
     class findBuildingPositions {};
     class findHouses {};
-    class getKillerSide {};
     class initCivs {};
     class spawnDealer {};
     class spawnNonstaticCiv {};
@@ -23,6 +23,7 @@ class mcd {
     class deleteSideMarker {};
     class deleteSideMarkerRemote {};
     class diagReport {};
+    class emptyContainer {};
     class findRandomPos {};
     class getIslandCfgValue {};
     class intro {};
@@ -35,6 +36,7 @@ class mcd {
     class endByControl {};
     class endByOpfKilled {};
     class endByTimeout {};
+    class endMission {};
   };
 
   class init {
@@ -45,6 +47,7 @@ class mcd {
 
   class missionstart {
     class checkCommandVehicle {};
+    class commandVehicleMarker {};
     class createCommandVehicle {};
     class createTrigger {};
     class findOpfSpawnPos {};
