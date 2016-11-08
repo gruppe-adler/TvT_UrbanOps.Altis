@@ -27,12 +27,9 @@ class Params
     class OpforFaction
     {
         title = "Opfor Faction";
-        values[] = {0};
-        texts[] = {"Russia - MSV"};
-        default = 0;
-        /*values[] = {0,1,2,3,4};*/
-        /*texts[] = {"USA - Army", "Germany - Heer", "Russia - MSV", "Independent - Eastern European Rebels", "Independent - Islamic Terrorists"};*/
-        /*default = 2;*/
+        values[] = {0,1,2,3,4};
+        texts[] = {"USA - Army", "Germany - Heer", "Russia - MSV", "Independent - Eastern European Rebels", "Independent - Islamic Terrorists"};
+        default = 2;
     };
 
     class Preset
