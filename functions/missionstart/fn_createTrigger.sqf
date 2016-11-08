@@ -2,17 +2,17 @@ if (!isServer) exitWith {};
 
 //city trigger =================================================================
 _condition = "
-  (west countSide thisList)/((east countSide thisList) max 1) >= CONTROLRATIO;
+    (west countSide thisList)/((east countSide thisList) max 1) >= CONTROLRATIO;
 ";
 
 _onActivation = "
-  BLUFORINCONTROL = true;
-  publicVariable 'BLUFORINCONTROL';
+    BLUFORINCONTROL = true;
+    publicVariable 'BLUFORINCONTROL';
 ";
 
 _onDeactivation = "
-  BLUFORINCONTROL = false;
-  publicVariable 'BLUFORINCONTROL';
+    BLUFORINCONTROL = false;
+    publicVariable 'BLUFORINCONTROL';
 ";
 
 _trigger = createTrigger ["EmptyDetector", CITYPOSITION, false];

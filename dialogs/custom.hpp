@@ -90,7 +90,7 @@ class mcd_RscPicture
 
 class mcd_RscButton
 {
-  access = 0;
+    access = 0;
 	type = CT_BUTTON;
 	text = "";
 	colorText[] = {1,1,1,1};
@@ -129,7 +129,7 @@ class mcd_RscButton
 
 class mcd_RscCloseButton
 {
-  access = 0;
+    access = 0;
 	type = CT_BUTTON;
 	action = "closeDialog 0";
 	text = "X";

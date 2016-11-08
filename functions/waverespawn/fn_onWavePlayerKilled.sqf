@@ -1,6 +1,6 @@
-/*  handles player respawn
+/*    handles player respawn
 *
-*   executed locally when player dies
+*     executed locally when player dies
 */
 
 //check JIP player is spawning for the first time

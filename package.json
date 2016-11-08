@@ -1,6 +1,6 @@
 {
-    "dependencies": {
-        "grad-loadout": "^3.1.0",
-        "grad-customGear": "^1.0.0"
-    }
+        "dependencies": {
+                "grad-loadout": "^3.1.0",
+                "grad-customGear": "^1.0.0"
+        }
 }

@@ -1,6 +1,6 @@
-/*  Gets side of killer, adds reputation points
+/*    Gets side of killer, adds reputation points
 *
-*   used in fnc_spawnStaticCivilian
+*     used in fnc_spawnStaticCivilian
 */
 
 params ["_victim"];
@@ -16,11 +16,11 @@ if (side _shooter == CIVILIAN) exitWith {diag_log format ["fn_getKillerSide - %1
 
 //add point
 if (side _shooter == WEST) then {
-  CIVSKILLEDBLU = CIVSKILLEDBLU + 1;
-  publicVariable "CIVSKILLEDBLU";
+    CIVSKILLEDBLU = CIVSKILLEDBLU + 1;
+    publicVariable "CIVSKILLEDBLU";
 };
 
 if (side _shooter == EAST) then {
-  CIVSKILLEDOPF = CIVSKILLEDOPF + 1;
-  publicVariable "CIVSKILLEDOPF";
+    CIVSKILLEDOPF = CIVSKILLEDOPF + 1;
+    publicVariable "CIVSKILLEDOPF";
 };

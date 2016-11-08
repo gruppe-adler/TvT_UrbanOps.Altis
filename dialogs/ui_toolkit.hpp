@@ -35,9 +35,9 @@
 #define RES_Y (getResolution select 1) // Resolution height in pixels
 
 // ----- Safezone & scales -----
-#define SZ_LEFT safezoneX      // X left
+#define SZ_LEFT safezoneX            // X left
 #define SZ_RIGHT (1 - SZ_LEFT) // X right
-#define SZ_TOP safezoneY       // Y top
+#define SZ_TOP safezoneY             // Y top
 #define SZ_BOTTOM (1 - SZ_TOP) // Y bottom
 
 // Determine if UI & text scales are relative to UI size

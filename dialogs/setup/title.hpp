@@ -20,13 +20,13 @@ class chooseCityGUI
 			y = safeZoneY + safeZoneH - 1.6;
 		};
 
-    class confirmPlayZoneButton: mcd_RscConfirmBar
-    {
-      idc = -1;
-      text = "CONFIRM (ENTER)";
-      x = safeZoneX + safeZoneW - 0.6 * 3/4;
-      y = safeZoneY + safeZoneH - 1.545;
-    };
+        class confirmPlayZoneButton: mcd_RscConfirmBar
+        {
+            idc = -1;
+            text = "CONFIRM (ENTER)";
+            x = safeZoneX + safeZoneW - 0.6 * 3/4;
+            y = safeZoneY + safeZoneH - 1.545;
+        };
 	};
 };
 
@@ -49,13 +49,13 @@ class chooseSpawnGUI
 			y = safeZoneY + safeZoneH - 1.6;
 		};
 
-    class waitMessage: mcd_RscConfirmBar
-    {
-      idc = -1;
-      text = "CONFIRM (ENTER)";
-      x = safeZoneX + safeZoneW - 0.6 * 3/4;
-      y = safeZoneY + safeZoneH - 1.545;
-    };
+        class waitMessage: mcd_RscConfirmBar
+        {
+            idc = -1;
+            text = "CONFIRM (ENTER)";
+            x = safeZoneX + safeZoneW - 0.6 * 3/4;
+            y = safeZoneY + safeZoneH - 1.545;
+        };
 	};
 };
 
@@ -78,13 +78,13 @@ class opforWaitMessage
 			y = safeZoneY + safeZoneH - 1.6;
 		};
 
-    class waitMessage: mcd_RscMapTextSmall
-    {
-      idc = -1;
-      text = "PLEASE WAIT";
-      x = safeZoneX + safeZoneW - 0.6 * 3/4;
-      y = safeZoneY + safeZoneH - 1.545;
-    };
+        class waitMessage: mcd_RscMapTextSmall
+        {
+            idc = -1;
+            text = "PLEASE WAIT";
+            x = safeZoneX + safeZoneW - 0.6 * 3/4;
+            y = safeZoneY + safeZoneH - 1.545;
+        };
 	};
 };
 
@@ -107,13 +107,13 @@ class bluforWaitMessage1
 			text = "OPFOR IS CHOOSING CITY";
 		};
 
-    class waitMessage: mcd_RscMapTextSmall
-    {
-      idc = 1302;
-      text = "PLEASE WAIT";
-      x = safeZoneX + safeZoneW - 0.6 * 3/4;
-      y = safeZoneY + safeZoneH - 1.545;
-    };
+        class waitMessage: mcd_RscMapTextSmall
+        {
+            idc = 1302;
+            text = "PLEASE WAIT";
+            x = safeZoneX + safeZoneW - 0.6 * 3/4;
+            y = safeZoneY + safeZoneH - 1.545;
+        };
 	};
 };
 
@@ -136,13 +136,13 @@ class bluforWaitMessage2
 			y = safeZoneY + safeZoneH - 1.6;
 		};
 
-    class waitMessage: mcd_RscMapTextSmall
-    {
-      idc = 1402;
-      text = "PLEASE WAIT";
-      x = safeZoneX + safeZoneW - 0.6 * 3/4;
-      y = safeZoneY + safeZoneH - 1.545;
-    };
+        class waitMessage: mcd_RscMapTextSmall
+        {
+            idc = 1402;
+            text = "PLEASE WAIT";
+            x = safeZoneX + safeZoneW - 0.6 * 3/4;
+            y = safeZoneY + safeZoneH - 1.545;
+        };
 	};
 };
 
@@ -166,12 +166,12 @@ class bluforWaitMessage3
 			y = safeZoneY + safeZoneH - 1.6;
 		};
 
-    class waitMessage: mcd_RscMapTextSmall
-    {
-      idc = 1502;
-      text = "PLEASE WAIT";
-      x = safeZoneX + safeZoneW - 0.6 * 3/4;
-      y = safeZoneY + safeZoneH - 1.545;
-    };
+        class waitMessage: mcd_RscMapTextSmall
+        {
+            idc = 1502;
+            text = "PLEASE WAIT";
+            x = safeZoneX + safeZoneW - 0.6 * 3/4;
+            y = safeZoneY + safeZoneH - 1.545;
+        };
 	};
 };

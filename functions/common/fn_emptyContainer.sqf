@@ -1,7 +1,7 @@
-/*  Clears inventory of a container
+/*    Clears inventory of a container
 *
-*   Parameters:
-*   0:  container (object)
+*     Parameters:
+*     0:    container (object)
 */
 
 params ["_container"];

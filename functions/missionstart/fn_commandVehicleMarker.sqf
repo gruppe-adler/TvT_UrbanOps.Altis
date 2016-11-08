@@ -10,33 +10,43 @@ _markerText = format ["Commandvehicle %1", _id];
 _marker setMarkerTextLocal _markerText;
 
 [{
-  params ["_args", "_handle"];
-  _args params ["_cv", "_marker", "_markerText"];
+    params ["_args", "_handle"];
+    _args params ["_cv", "_id", "_marker", "_markerText"];
 
-  //vehicle is gone
-  if (isNull _cv) exitWith {
-    deleteMarkerLocal _marker;
-    [_handle] call CBA_fnc_removePerFrameHandler;
-  };
+    //vehicle is gone
+    if (isNull _cv) exitWith {
+        deleteMarkerLocal _marker;
+        [_handle] call CBA_fnc_removePerFrameHandler;
+    };
 
-  _marker setMarkerPos (getPos _cv);
+    //refresh position
+    _marker setMarkerPos (getPos _cv);
 
-  //vehicle is destroyed
-  if (!alive _cv) exitWith {
-    _marker setMarkerTextLocal format ["%1 (destroyed)", _markerText];
-    [_handle] call CBA_fnc_removePerFrameHandler;
-  };
+    //respawn on vehicle possible?
+    if (_cv getVariable ["uo_cv_isActive", false]) then {
+        _marker setMarkerColorLocal "COLORBLUFOR";
+        _marker setMarkerTextLocal format ["Commandvehicle %1"];
+    } else {
+        _marker setMarkerColor "COLORUNKNOWN";
+        _marker setMarkerTextLocal format ["Commandvehicle %1 (no respawn)"];
+    };
 
-  //vehicle is immobilized
-  if (!canMove _cv && !(_cv getVariable ["uo_cv_immobilizedMarker", false])) then {
-    _cv setVariable ["uo_cv_immobilizedMarker", true];
-    _marker setMarkerTextLocal format ["%1 (immobilized)", _markerText];
-  };
+    //vehicle is destroyed
+    if (!alive _cv) exitWith {
+        _marker setMarkerTextLocal format ["%1 (destroyed)", _markerText];
+        [_handle] call CBA_fnc_removePerFrameHandler;
+    };
 
-  //vehicle is no longer immobilized
-  if (canMove _cv && (_cv getVariable ["uo_cv_immobilizedMarker", false])) then {
-    _cv setVariable ["uo_cv_immobilizedMarker", false];
-    _marker setMarkerTextLocal _markerText;
-  };
+    //vehicle is immobilized
+    if (!canMove _cv && !(_cv getVariable ["uo_cv_immobilizedMarker", false])) then {
+        _cv setVariable ["uo_cv_immobilizedMarker", true];
+        _marker setMarkerTextLocal format ["%1 (immobilized)", _markerText];
+    };
 
-} , 2, [_cv, _marker, _markerText]] call CBA_fnc_addPerFrameHandler;
+    //vehicle is no longer immobilized
+    if (canMove _cv && (_cv getVariable ["uo_cv_immobilizedMarker", false])) then {
+        _cv setVariable ["uo_cv_immobilizedMarker", false];
+        _marker setMarkerTextLocal _markerText;
+    };
+
+} , 2, [_cv, _id, _marker, _markerText]] call CBA_fnc_addPerFrameHandler;

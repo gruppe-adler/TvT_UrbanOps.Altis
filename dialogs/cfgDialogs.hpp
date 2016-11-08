@@ -5,12 +5,12 @@
 #include "setup\dialog.hpp"
 
 class RscTitles {
-  #include "setup\title.hpp"
+    #include "setup\title.hpp"
 
-  class Default {
-    idd = -1;
-    fadein = 0;
-    fadeout = 0;
-    duration = 0;
-  };
+    class Default {
+        idd = -1;
+        fadein = 0;
+        fadeout = 0;
+        duration = 0;
+    };
 };

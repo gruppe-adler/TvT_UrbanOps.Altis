@@ -16,7 +16,7 @@ _houseCounter = 0;
 
 		if (CIVILIANPROBABILITY > random 100) then {
 			[_buildingPos] call mcd_fnc_spawnStaticCiv;
-      _staticCivilianCounter = _staticCivilianCounter +1;
+            _staticCivilianCounter = _staticCivilianCounter +1;
 		};
 
 		_bPosCounter = _bPosCounter +1;

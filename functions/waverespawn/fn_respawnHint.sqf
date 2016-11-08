@@ -1,4 +1,4 @@
-/*  Shows formatted hint during wave respawn time
+/*    Shows formatted hint during wave respawn time
 *
 */
 
@@ -7,8 +7,8 @@ _lineBreak = parseText "<br />";
 
 _hintArray = [_rule];
 {
-  _hintArray pushBack _x;
-  _hintArray pushBack _lineBreak;
+    _hintArray pushBack _x;
+    _hintArray pushBack _lineBreak;
 } forEach _this;
 _hintArray pushBack _rule;
 

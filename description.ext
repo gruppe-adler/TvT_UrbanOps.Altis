@@ -7,9 +7,9 @@
 //HEADER =======================================================================
 class Header
 {
-  gameType = Seize;
-  minPlayers = 2;
-  maxPlayers = 150;
+    gameType = Seize;
+    minPlayers = 2;
+    maxPlayers = 150;
 };
 
 //LOAD SCREEN ==================================================================
@@ -30,16 +30,16 @@ enableDebugConsole = 2;
 
 //FUNCTIONS ====================================================================
 class CfgFunctions {
-  #include "functions\cfgFunctions.hpp"
-  #include "node_modules\grad-loadout\cfgFunctions.hpp"
-  #include "node_modules\grad-customGear\cfgFunctions.hpp"
+    #include "functions\cfgFunctions.hpp"
+    #include "node_modules\grad-loadout\cfgFunctions.hpp"
+    #include "node_modules\grad-customGear\cfgFunctions.hpp"
 };
 
 //CUSTOM GEAR ==================================================================
 class grad_customGear {
-  allowHelmet = 0;
-  allowGoggles = 1;
-  allowSimpleScopes = 1;
-  allowMagnifyingScopes = 0;
-  allowMarksmanScopes = 0;
+    allowHelmet = 0;
+    allowGoggles = 1;
+    allowSimpleScopes = 1;
+    allowMagnifyingScopes = 0;
+    allowMarksmanScopes = 0;
 };

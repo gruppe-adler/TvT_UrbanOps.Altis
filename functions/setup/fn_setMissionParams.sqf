@@ -2,18 +2,18 @@ if (!isServer) exitWith {};
 
 //FACTIONS =====================================================================
 BLUFORFACTION = [
-  "us_army",
-  "ger_heer",
-  "rus_msv",
-  "ind_eastRebels",
-  "ind_terrorists"
+    "us_army",
+    "ger_heer",
+    "rus_msv",
+    "ind_eastRebels",
+    "ind_terrorists"
 ] select ("BluforFaction" call BIS_fnc_getParamValue);
 OPFORFACTION = [
-  "us_army",
-  "ger_heer",
-  "rus_msv",
-  "ind_eastRebels",
-  "ind_terrorists"
+    "us_army",
+    "ger_heer",
+    "rus_msv",
+    "ind_eastRebels",
+    "ind_terrorists"
 ] select ("OpforFaction" call BIS_fnc_getParamValue);
 ISWOODLAND = ["isWoodland"] call mcd_fnc_getIslandCfgValue;
 
@@ -40,8 +40,8 @@ publicVariable "OPFORWAVESIZE";
 
 //GET PRESET ===================================================================
 PRESET = [
-  "CUSTOM",
-  "DEBUG"
+    "CUSTOM",
+    "DEBUG"
 ] select ("Preset" call BIS_fnc_getParamValue);
 
 publicVariable "PRESET";
@@ -50,23 +50,23 @@ publicVariable "PRESET";
 
 //SET PRESET PARAMS ============================================================
 if (PRESET == "CUSTOM") then {
-  CONTROLRATIO = "ControlRatio" call BIS_fnc_getParamValue;
-  CAPTURETIME = "CaptureTime" call BIS_fnc_getParamValue;
-  DEFENSETIME = "DefenseTime" call BIS_fnc_getParamValue;
-  SETUPTIME = "SetupTime" call BIS_fnc_getParamValue;
-  WAVERESPAWNTIME = "waverespawntime" call BIS_fnc_getParamValue;
-  RESPAWNTIME = "respawntime" call BIS_fnc_getParamValue;
-  OPFORRESPAWNENABLED = ("OpforRespawn" call BIS_fnc_getParamValue) == 1;
+    CONTROLRATIO = "ControlRatio" call BIS_fnc_getParamValue;
+    CAPTURETIME = "CaptureTime" call BIS_fnc_getParamValue;
+    DEFENSETIME = "DefenseTime" call BIS_fnc_getParamValue;
+    SETUPTIME = "SetupTime" call BIS_fnc_getParamValue;
+    WAVERESPAWNTIME = "waverespawntime" call BIS_fnc_getParamValue;
+    RESPAWNTIME = "respawntime" call BIS_fnc_getParamValue;
+    OPFORRESPAWNENABLED = ("OpforRespawn" call BIS_fnc_getParamValue) == 1;
 };
 
 if (PRESET == "DEBUG") then {
-  CONTROLRATIO = 2;
-  CAPTURETIME = 60;
-  DEFENSETIME = 900;
-  SETUPTIME = 10;
-  WAVERESPAWNTIME = 10;
-  RESPAWNTIME = 10;
-  OPFORRESPAWNENABLED = true;
+    CONTROLRATIO = 2;
+    CAPTURETIME = 60;
+    DEFENSETIME = 900;
+    SETUPTIME = 10;
+    WAVERESPAWNTIME = 10;
+    RESPAWNTIME = 10;
+    OPFORRESPAWNENABLED = true;
 };
 
 publicVariable "CONTROLRATIO";
