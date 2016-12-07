@@ -1,4 +1,4 @@
-player setVariable ["playerMoney",20000];
+player setVariable ["grad_lbm_myFunds", 90000];
 
 enableSaving [false, false];
 enableEngineArtillery false;

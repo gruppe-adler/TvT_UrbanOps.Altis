@@ -27,7 +27,7 @@ _marker setMarkerTextLocal _markerText;
         _marker setMarkerColorLocal "COLORBLUFOR";
         _marker setMarkerTextLocal format ["Commandvehicle %1"];
     } else {
-        _marker setMarkerColor "COLORUNKNOWN";
+        _marker setMarkerColor "COLORRED";
         _marker setMarkerTextLocal format ["Commandvehicle %1 (no respawn)"];
     };
 

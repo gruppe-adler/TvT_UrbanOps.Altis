@@ -2,7 +2,9 @@
 #include "cfgParams.hpp"
 #include "cfgIslands.hpp"
 #include "cfgFactions.hpp"
+#include "cfgBuyables.hpp"
 #include "dialogs\cfgDialogs.hpp"
+#include "node_modules\grad-listBuymenu\grad_listBuymenu.hpp"
 
 //HEADER =======================================================================
 class Header
@@ -33,6 +35,7 @@ class CfgFunctions {
     #include "functions\cfgFunctions.hpp"
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "node_modules\grad-customGear\cfgFunctions.hpp"
+    #include "node_modules\grad-listbuymenu\cfgFunctions.hpp"
 };
 
 //CUSTOM GEAR ==================================================================

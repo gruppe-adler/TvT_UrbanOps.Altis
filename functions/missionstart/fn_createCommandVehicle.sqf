@@ -22,6 +22,7 @@ _cv = COMMANDVEHICLECLASS createVehicle _pos;
 
     [_cv] call mcd_fnc_emptyContainer;
     [_cv] call mcd_fnc_checkCommandVehicle;
+    [_cv,"blu_" + BLUFORFACTION,_cv,_cv,"COMMANDVEHICLE","Buy Equipment", {side player == WEST}] remoteExec ["grad_lbm_fnc_addInteraction",0,false];
     [_cv, _id+1] remoteExec ["mcd_fnc_commandVehicleMarker",0,true];
 
 }, [_cv]] call CBA_fnc_waitUntilAndExecute;
