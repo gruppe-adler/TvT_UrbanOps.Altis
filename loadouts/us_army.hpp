@@ -17,7 +17,7 @@ class us_army {
 			LIST_6("ACE_fieldDressing"),
 			LIST_2("ACE_morphine"),
 			"ACE_epinephrine",
-			"ACE_Flashlight_KSF1",
+			"ACE_Flashlight_MX991",
 			"ACE_key_west",
 			"ACE_MapTools"
 	  	};
@@ -54,7 +54,7 @@ class us_army {
 		};
 
         //light AT
-		class Soldier_LAT_F: Soldier_F {
+		class Soldier_LAT_F {
 			secondaryWeapon = "rhs_weap_M136";
 		};
 
@@ -97,7 +97,7 @@ class us_army {
 			primaryWeapon = "rhs_weap_m4a1_carryhandle_m203";
 			primaryWeaponOptics = "rhsusf_acc_compm4";
 			vest = "rhsusf_iotv_ocp_Teamleader";
-			backpack = "tf_rt1523g_rhs";
+			backpack = "rhsusf_assault_eagleaiii_ocp";
 			headgear = "rhsusf_ach_helmet_headset_ocp";
 			addItemsToBackpack[] = {
 				LIST_2("1Rnd_SmokeGreen_Grenade_shell"),

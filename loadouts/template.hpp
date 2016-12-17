@@ -5,6 +5,7 @@ class CLASSNAME {
 		primaryWeaponOptics = "";
 		primaryWeaponPointer = "";
 		primaryWeaponUnderbarrel = "";
+		secondaryWeapon = "";
 		handgunWeapon = "";
 		uniform = "";
         vest = "";

@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=474;
+		nextID=486;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14748.571,20.755531,16776.17};
-		dir[]={-0.87257677,-0.44428086,0.20360987};
-		up[]={-0.43291846,0.89576942,0.10101616};
-		aside[]={0.2272623,2.1256856e-006,0.97395116};
+		pos[]={14674.609,34.15258,16755.611};
+		dir[]={0.038635403,-0.45566553,-0.88944697};
+		up[]={0.01978809,0.8900255,-0.45550051};
+		aside[]={-0.99917191,1.5842961e-006,-0.043403622};
 	};
 };
 binarizationWanted=0;
@@ -27,14 +27,13 @@ addons[]=
 {
 	"A3_Modules_F_Curator_Curator",
 	"A3_Ui_F",
-	"A3_Characters_F",
-	"rhsusf_c_troops"
+	"A3_Characters_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=3;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -55,13 +54,6 @@ class AddonsMetaData
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
-		};
-		class Item3
-		{
-			className="rhsusf_c_troops";
-			name="RHSUSF Infantry & Equipment";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
 		};
 	};
 };
@@ -96,7 +88,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=12;
+		items=11;
 		class Item0
 		{
 			dataType="Logic";
@@ -5784,36 +5776,6 @@ class Mission
 			{
 			};
 			id=438;
-		};
-		class Item11
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14744.53,17.911446,16777.775};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=473;
-					type="rhsusf_army_ocp_medic";
-					atlOffset=7.6293945e-006;
-				};
-			};
-			class Attributes
-			{
-			};
-			id=472;
-			atlOffset=7.6293945e-006;
 		};
 	};
 };
