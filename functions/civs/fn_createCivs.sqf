@@ -27,7 +27,6 @@ diag_log format ["fn_createCivs - %1 static civilians created.", _staticCivilian
 
 //SPAWN NON-STATIC CIVILIANS ===================================================
 _nonstaticAmount = ceil (CITYAREASIZE * 0.08);
-diag_log str _nonstaticAmount;
 
 /*for _i from 1 to _nonstaticAmount do {*/
 for [{private _i=0},{_i<_nonstaticAmount},{_i=_i+1}] do {

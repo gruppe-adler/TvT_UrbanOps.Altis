@@ -40,12 +40,14 @@ class mcd {
     };
 
     class init {
+        class initLoadoutFaction {};
         class initPubVars {};
         class initSystems {postInit = 1;};
         class sequentialInit {};
     };
 
     class missionstart {
+        class bluforBuyAction {};
         class checkCommandVehicle {};
         class commandVehicleMarker {};
         class createCommandVehicle {};
