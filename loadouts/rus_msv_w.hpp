@@ -1,4 +1,4 @@
-class rus_msv {
+class rus_msv_w {
 	class AllUnits {
         primaryWeapon = "rhs_weap_ak74m";
 		primaryWeaponMuzzle = "";

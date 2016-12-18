@@ -8,6 +8,7 @@ class Loadouts {
     class Faction {
         #include "us_army.hpp"
 
-        #include "rus_msv.hpp"
+        #include "rus_msv_w.hpp"
+        #include "rus_msv_d.hpp"
     };
 };

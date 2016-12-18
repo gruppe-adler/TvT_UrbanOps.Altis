@@ -1,6 +1,6 @@
 class cfgFactions {
     class NATO {
-        commandVehicles[] = {"B_MRAP_01_F", "B_MRAP_01_F"};                                                 //0 - woodland, 1 - other
+        commandVehicles[] = {"B_MRAP_01_F", "B_MRAP_01_F"};
         loadoutWood = "";
         loadoutDes = "";
     };
@@ -16,7 +16,9 @@ class cfgFactions {
     };
 
     class rus_msv {
-
+        commandVehicles[] = {"rhs_tigr_msv", "rhs_tigr_3camo_msv"};
+        loadoutWood = "rus_msv_w";
+        loadoutDes = "rus_msv_d";
     };
 
     class ind_eastRebels {
