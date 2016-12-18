@@ -6,3 +6,8 @@ if (isNull _cv) exitWith {};
 
 
 [_cv,"blu_" + BLUFORFACTION,_cv,_cv,"COMMANDVEHICLE","Buy Equipment", {side player == WEST}] call grad_lbm_fnc_addInteraction;
+
+
+
+//access opfor menu from commandvehicle (for debug purposes)
+/*[_cv,"opf_" + OPFORFACTION,_cv,_cv,"COMMANDVEHICLE","Buy Equipment", {side player == WEST}] call grad_lbm_fnc_addInteraction;*/

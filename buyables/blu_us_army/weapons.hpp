@@ -26,6 +26,14 @@ class Weapons {
         stock = 40;
     };
 
+    class acc_flashlight {
+        kindOf = "Items";
+
+        displayName = "UTG Defender 126 Gunlight";
+        price = 100;
+        stock = 40;
+    };
+
     class rhsusf_acc_nt4_black {
         kindOf = "Items";
 
