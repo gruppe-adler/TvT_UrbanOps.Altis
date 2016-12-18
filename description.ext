@@ -2,7 +2,8 @@
 #include "cfgParams.hpp"
 #include "cfgIslands.hpp"
 #include "cfgFactions.hpp"
-#include "cfgBuyables.hpp"
+#include "buyables\cfgBuyables.hpp"
+#include "loadouts\loadouts.hpp"
 #include "dialogs\cfgDialogs.hpp"
 #include "node_modules\grad-listBuymenu\grad_listBuymenu.hpp"
 
@@ -27,7 +28,7 @@ respawnVehicleDelay = 0;
 respawnTemplates[] = {"Base"};
 respawnOnStart = -1;
 respawnDialog = 0;
-disabledAI = 1;
+disabledAI = 0;
 enableDebugConsole = 2;
 
 //FUNCTIONS ====================================================================
