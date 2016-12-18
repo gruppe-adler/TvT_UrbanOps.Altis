@@ -13,6 +13,10 @@ class rus_msv_w {
 		headgear = "rhs_6b26";
 		nvgoggles = "";
 		radio = "tf_fadak";
+		binoculars = "Binocular";
+		map = "ItemMap";
+		gps = "ItemGPS";
+		compass = "ItemCompass";
         addItemsToUniform[] = {
 			LIST_6("ACE_fieldDressing"),
 			LIST_2("ACE_morphine"),
@@ -99,6 +103,12 @@ class rus_msv_w {
 				LIST_2("rhs_GRD40_Green"),
 				LIST_2("rhs_GRD40_Red")
 			};
+		};
+	};
+
+	class Rank {
+		class LIEUTENANT {
+			headgear = "rhs_fieldcap";
 		};
 	};
 };

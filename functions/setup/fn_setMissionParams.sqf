@@ -15,15 +15,15 @@ OPFORFACTION = [
     "ind_eastRebels",
     "ind_terrorists"
 ] select ("OpforFaction" call BIS_fnc_getParamValue);
-ISWOODLAND = ["isWoodland"] call mcd_fnc_getIslandCfgValue;
+UO_ISWOODLAND = ["isWoodland"] call mcd_fnc_getIslandCfgValue;
 
 publicVariable "BLUFORFACTION";
 publicVariable "OPFORFACTION";
-publicVariable "ISWOODLAND";
+publicVariable "UO_ISWOODLAND";
 
 ["LOG", "SERVER_SETUP", "BLUFORFACTION"] call mcd_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "OPFORFACTION"] call mcd_fnc_diagReport;
-["LOG", "SERVER_SETUP", "ISWOODLAND"] call mcd_fnc_diagReport;
+["LOG", "SERVER_SETUP", "UO_ISWOODLAND"] call mcd_fnc_diagReport;
 
 //NON PRESET PARAMS ============================================================
 WEATHER_SETTING = "WeatherSetting" call BIS_fnc_getParamValue;

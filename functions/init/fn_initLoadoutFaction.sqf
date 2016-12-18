@@ -1,4 +1,4 @@
-_terrainClass = if (ISWOODLAND) then {"loadoutWood"} else {"loadoutDes"};
+_terrainClass = if (UO_ISWOODLAND) then {"loadoutWood"} else {"loadoutDes"};
 _blufor = getText (missionConfigFile >> "cfgFactions" >> BLUFORFACTION >> _terrainClass);
 _opfor = getText (missionConfigFile >> "cfgFactions" >> OPFORFACTION >> _terrainClass);
 

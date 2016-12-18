@@ -43,4 +43,10 @@ class rus_msv_d: rus_msv_w {
             headgear = "rhs_6b27m_green_ess";
         };
     };
+
+    class Rank: Rank {
+        class LIEUTENANT: LIEUTENANT {
+            headgear = "rhs_fieldcap_khk";
+        };
+    };
 };

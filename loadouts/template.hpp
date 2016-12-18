@@ -13,6 +13,10 @@ class CLASSNAME {
 		headgear = "";
 		nvgoggles = "";
 		radio = "";
+		binoculars = "Binocular";
+		map = "ItemMap";
+		gps = "ItemGPS";
+		compass = "ItemCompass";
         addItemsToUniform[] = {};
         addItemsToVest[] = {};
         addItemsToBackpack[] = {};
@@ -51,6 +55,12 @@ class CLASSNAME {
 
         //team leader
 		class Soldier_TL_F {
+
+		};
+	};
+
+	class Rank {
+		class LIEUTENANT {
 
 		};
 	};
@@ -109,6 +119,12 @@ class CLASSNAME: CLASSNAME {
 
         //team leader
 		class Soldier_TL_F: Soldier_TL_F {
+
+		};
+	};
+
+	class Rank: Rank {
+		class LIEUTENANT: LIEUTENANT {
 
 		};
 	};
