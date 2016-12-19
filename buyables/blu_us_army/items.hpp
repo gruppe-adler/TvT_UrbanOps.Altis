@@ -57,6 +57,12 @@ class Items {
         stock = 2;
     };
 
+    class ACE_Clacker {
+        displayName = "M57 Firing Device";
+        price = 100;
+        stock = 10;
+    };
+
     class rhsusf_falconii_mc {
         kindOf = "Apparel";
 

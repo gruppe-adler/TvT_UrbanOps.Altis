@@ -36,4 +36,16 @@ class Ammo {
         price = 200;
         stock = 8;
     };
+    
+    class DemoCharge_Remote_Mag {
+        displayName = "M112 Demo Charge";
+        price = 600;
+        stock = 6;
+    };
+
+    class SatchelCharge_Remote_Mag {
+        displayName = "M183 Satchel Charge";
+        price = 1400;
+        stock = 6;
+    };
 };
