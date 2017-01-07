@@ -34,6 +34,7 @@ class mcd {
         class getIslandCfgValue {};
         class intro {};
         class serverLog {};
+        class setCommandVehicle {};
         class teleport {};
     };
 

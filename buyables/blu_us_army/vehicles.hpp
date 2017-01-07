@@ -13,6 +13,26 @@ class Vehicles {
         stock = 10;
     };
 
+    class rhsusf_m998_w_s_4dr_fulltop {
+        condition = "UO_ISWOODLAND";
+        displayName = "Commandvehicle";
+        description = "Functions as a backup respawn and buymenu access position.";
+        price = 10000;
+        stock = 1;
+
+        code = "[_this select 2] call mcd_fnc_setCommandVehicle;";
+    };
+
+    class rhsusf_m998_d_s_4dr_fulltop {
+        condition = "!UO_ISWOODLAND";
+        displayName = "Commandvehicle";
+        description = "Functions as a backup respawn and buymenu access position.";
+        price = 10000;
+        stock = 1;
+
+        code = "[_this select 2] call mcd_fnc_setCommandVehicle;";
+    };
+
     class rhsusf_m1025_w {
         condition = "UO_ISWOODLAND";
         displayName = "HMMWV (unarmed)";
