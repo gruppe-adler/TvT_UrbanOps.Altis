@@ -69,4 +69,16 @@ class Ammo {
         price = 1400;
         stock = 6;
     };
+
+    class HandGrenade {
+        displayName = "M67 Fragmentation Grenade";
+        price = 600;
+        stock = 20;
+    };
+
+    class SmokeShell {
+        displayName = "M83 Smoke Grenade";
+        price = 200;
+        stock = 20;
+    };
 };

@@ -36,7 +36,7 @@ class Ammo {
         price = 200;
         stock = 8;
     };
-    
+
     class DemoCharge_Remote_Mag {
         displayName = "M112 Demo Charge";
         price = 600;
@@ -47,5 +47,17 @@ class Ammo {
         displayName = "M183 Satchel Charge";
         price = 1400;
         stock = 6;
+    };
+
+    class rhs_mag_rgo {
+        displayName = "RGO Fragmentation Grenade";
+        price = 600;
+        stock = 20;
+    };
+
+    class rhs_mag_rdg2_white {
+        displayName = "RDG-2 Smoke Grenade (White)";
+        price = 200;
+        stock = 20;
     };
 };
