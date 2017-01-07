@@ -35,6 +35,7 @@ class mcd {
         class intro {};
         class serverLog {};
         class setCommandVehicle {};
+        class sideHint {};
         class teleport {};
     };
 
