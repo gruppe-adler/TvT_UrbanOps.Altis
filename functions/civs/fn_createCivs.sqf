@@ -15,7 +15,7 @@ _houseCounter = 0;
 	while {((str _buildingPos) != "[0,0,0]")} do {
 
 		if (CIVILIANPROBABILITY > random 100) then {
-			[_buildingPos] call mcd_fnc_spawnStaticCiv;
+			[_buildingPos] call uo_fnc_spawnStaticCiv;
             _staticCivilianCounter = _staticCivilianCounter +1;
 		};
 
@@ -32,10 +32,10 @@ _nonstaticAmount = ceil (CITYAREASIZE * 0.08);
 for [{private _i=0},{_i<_nonstaticAmount},{_i=_i+1}] do {
 	_isWater = true;
 	while {_isWater} do {
-		_pos = [CITYPOSITION,[0,(CITYAREASIZE * 0.6)], [0,360]] call mcd_fnc_findRandomPos;
+		_pos = [CITYPOSITION,[0,(CITYAREASIZE * 0.6)], [0,360]] call uo_fnc_findRandomPos;
 		_isWater = surfaceIsWater _pos;
 	};
 
-	[_pos] call mcd_fnc_spawnNonstaticCiv;
+	[_pos] call uo_fnc_spawnNonstaticCiv;
 };
 diag_log format ["fn_createCivs - %1 non-static civilians created.", _nonstaticAmount];

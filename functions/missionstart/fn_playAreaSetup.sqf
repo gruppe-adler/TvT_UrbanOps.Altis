@@ -54,7 +54,7 @@ _marker setMarkerSize [BLUFORSPAWNDIST+BLUFORSPAWNBAND, BLUFORSPAWNDIST+BLUFORSP
     [CITYAREASIZE,5],
     1,
     "SolidFull"
-] call mcd_fnc_createSideMarker;
+] call uo_fnc_createSideMarker;
 
 [
     WEST,
@@ -67,7 +67,7 @@ _marker setMarkerSize [BLUFORSPAWNDIST+BLUFORSPAWNBAND, BLUFORSPAWNDIST+BLUFORSP
     "ICON",
     1,
     1
-] call mcd_fnc_createSideMarker;
+] call uo_fnc_createSideMarker;
 
 [
     WEST,
@@ -81,7 +81,7 @@ _marker setMarkerSize [BLUFORSPAWNDIST+BLUFORSPAWNBAND, BLUFORSPAWNDIST+BLUFORSP
     [BLUFORSPAWNBAND/2,5],
     1,
     "SolidFull"
-] call mcd_fnc_createSideMarker;
+] call uo_fnc_createSideMarker;
 
 [
     WEST,
@@ -94,7 +94,7 @@ _marker setMarkerSize [BLUFORSPAWNDIST+BLUFORSPAWNBAND, BLUFORSPAWNDIST+BLUFORSP
     "ICON",
     1,
     1
-] call mcd_fnc_createSideMarker;
+] call uo_fnc_createSideMarker;
 
 missionNamespace setVariable ["uo_init_playAreaSetupDone", true, true];
 diag_log "fn_playAreaSetup - Player area set up.";

@@ -74,4 +74,4 @@ for "_i" from 0 to count LOCATION_ALLOTHER -1 do {
 	LOCATIONMARKERS pushBack _markername;
 };
 
-["LOG", "SERVER_SETUP", format ["fn_setLocationMarkers - Created %1 location markers.", count LOCATIONMARKERS]] call mcd_fnc_diagReport;
+["LOG", "SERVER_SETUP", format ["fn_setLocationMarkers - Created %1 location markers.", count LOCATIONMARKERS]] call uo_fnc_diagReport;

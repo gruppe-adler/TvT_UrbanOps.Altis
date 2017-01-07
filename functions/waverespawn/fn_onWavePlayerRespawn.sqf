@@ -1,6 +1,6 @@
 private ["_pos"];
 
-[false] call mcd_fnc_blockMap;
+[false] call uo_fnc_blockMap;
 _originalSide = player getVariable ["originalSide", "UNKNOWN"];
 if (count uo_cv_allCVs == 0) exitWith {diag_log "fn_onWavePlayerRespawn - ERROR: NO COMMAND VEHICLES."};
 
@@ -8,17 +8,17 @@ if (count uo_cv_allCVs == 0) exitWith {diag_log "fn_onWavePlayerRespawn - ERROR:
 if (_originalSide == "WEST") then {
     _respawnObject = missionNamespace getVariable ["uo_selectedRespawnObject", uo_cv_allCVs select 0];
     _pos = (getPos _respawnObject) findEmptyPosition [1, 30];
-    [player, _pos] call mcd_fnc_teleport;
+    [player, _pos] call uo_fnc_teleport;
 };
 
 //teleport to city
 if (_originalSide == "EAST") then {
-    _pos = [] call mcd_fnc_findOpfSpawnPos;
-    [player, _pos] call mcd_fnc_teleport;
+    _pos = [] call uo_fnc_findOpfSpawnPos;
+    [player, _pos] call uo_fnc_teleport;
 };
 
 if (_originalSide == "UNKNOWN") then {
-    ["onPlayerRespawn.sqf - ERROR: PLAYER %1 HAS UNKNOWN SIDE.", profileName] call mcd_fnc_serverLog;
+    ["onPlayerRespawn.sqf - ERROR: PLAYER %1 HAS UNKNOWN SIDE.", profileName] call uo_fnc_serverLog;
 };
 
 //check JIP player is spawning for the first time

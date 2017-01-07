@@ -1,1 +1,1 @@
-[] call mcd_fnc_onWavePlayerRespawn;
+[] call uo_fnc_onWavePlayerRespawn;

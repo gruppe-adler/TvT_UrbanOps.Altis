@@ -1,5 +1,5 @@
 if (!isServer) exitWith {};
 
-_houses = [] call mcd_fnc_findHouses;
-[_houses] call mcd_fnc_spawnDealer;
-[_houses] call mcd_fnc_createCivs;
+_houses = [] call uo_fnc_findHouses;
+[_houses] call uo_fnc_spawnDealer;
+[_houses] call uo_fnc_createCivs;

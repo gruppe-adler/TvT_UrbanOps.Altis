@@ -1,4 +1,4 @@
-/*    Deletes local marker for one side, remote executed by mcd_fnc_deleteSideMarker
+/*    Deletes local marker for one side, remote executed by uo_fnc_deleteSideMarker
 *
 *     Params:
 *     0:    side

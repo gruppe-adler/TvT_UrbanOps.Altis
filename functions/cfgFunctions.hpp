@@ -1,4 +1,4 @@
-class mcd {
+class uo {
     class choosePlayArea {
         class bluforWaitDialog {};
         class chooseCity {};

@@ -18,5 +18,5 @@ _unit = _group createUnit ["C_man_1",_pos,[],0,"NONE"];
     _unit addHeadgear (selectRandom uo_civHeadgear);
     _unit addGoggles (selectRandom uo_civGoggles);
 
-    _unit addEventHandler ["killed", {_this call mcd_fnc_getKillerSide}];
+    _unit addEventHandler ["killed", {_this call uo_fnc_getKillerSide}];
 }, [_unit]] call CBA_fnc_waitUntilAndExecute;

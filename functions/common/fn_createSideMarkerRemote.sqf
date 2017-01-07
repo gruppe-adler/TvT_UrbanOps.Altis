@@ -1,4 +1,4 @@
-/*    Creates local marker, remote executed by mcd_fnc_createSideMarker
+/*    Creates local marker, remote executed by uo_fnc_createSideMarker
 *
 *     Params:
 *     0:    side

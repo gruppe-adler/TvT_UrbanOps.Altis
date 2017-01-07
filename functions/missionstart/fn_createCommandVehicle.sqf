@@ -9,7 +9,7 @@ _cv = COMMANDVEHICLECLASS createVehicle _pos;
 [{!isNull (_this select 0)}, {
     params ["_cv"];
 
-    [_cv] call mcd_fnc_setCommandVehicle;
+    [_cv] call uo_fnc_setCommandVehicle;
     diag_log format ["fn_createCommandVehicle - Command vehicle %1 created.", _cv];
     missionNamespace setVariable ["uo_init_cvCreated", true, true];
     

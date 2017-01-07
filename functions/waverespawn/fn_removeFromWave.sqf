@@ -22,12 +22,12 @@ switch (_respawnedSide) do {
     case "UNKNOWN": {
         if (_respawnedPlayer in deadPlayersBlu) then {
             deadPlayersBlu = deadPlayersBlu - [_respawnedPlayer];
-            [_respawnedPlayer, "WEST"] call mcd_fnc_addRespawnedToGroup;
+            [_respawnedPlayer, "WEST"] call uo_fnc_addRespawnedToGroup;
             diag_log format ["fn_removeFromWave - Player %1 disconnected and has been removed from deadPlayersBlu", _respawnedPlayer];
         } else {
             if (_respawnedPlayer in deadPlayersOpf) then {
                 deadPlayersOpf = deadPlayersOpf - [_respawnedPlayer];
-                [_respawnedPlayer, "EAST"] call mcd_fnc_addRespawnedToGroup;
+                [_respawnedPlayer, "EAST"] call uo_fnc_addRespawnedToGroup;
                 diag_log format ["fn_removeFromWave - Player %1 disconnected and has been removed from deadPlayersOpf", _respawnedPlayer];
             } else {
                 diag_log format ["fn_removeFromWave - Player %1 disconnected but was not waiting for respawn", _respawnedPlayer];
@@ -38,7 +38,7 @@ switch (_respawnedSide) do {
     default {diag_log format ["fn_removeFromWave - ERROR, player %1 is neither WEST nor EAST nor UNKNOWN", _respawnedPlayer]};
 };
 
-[_respawnedUnit, _respawnedSide] call mcd_fnc_addRespawnedToGroup;
+[_respawnedUnit, _respawnedSide] call uo_fnc_addRespawnedToGroup;
 
 [
     {

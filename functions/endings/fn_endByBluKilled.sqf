@@ -1,26 +1,26 @@
 if (!isServer) exitWith {};
 
-mcd_fnc_endByBluKilled_preEliminated = {
+uo_fnc_endByBluKilled_preEliminated = {
     [{
         if (({side _x == west} count playableUnits) == 0) then {
             diag_log "fn_endByBluKilled - All Blufor down.";
             if ({_x getVariable ["uo_respawnObject_isActive", false]} count uo_cv_allCVs == 0) then {
                 diag_log "fn_endByBluKilled - All commandvehicles inactive";
-                [] call mcd_fnc_endByBluKilled_eliminated;
+                [] call uo_fnc_endByBluKilled_eliminated;
                 [_this select 1] call CBA_fnc_removePerFrameHandler;
             };
         };
     } , 5, []] call CBA_fnc_addPerFrameHandler;
 };
 
-mcd_fnc_endByBluKilled_eliminated = {
+uo_fnc_endByBluKilled_eliminated = {
     [{
         if (({side _x == west} count playableUnits) == 0) then {
             _downSince = missionNamespace getVariable ["uo_bluDownSince", 0];
             missionNamespace setVariable ["uo_bluDownSince", _downSince + 1];
         } else {
             missionNamespace setVariable ["uo_bluDownSince", 0];
-            [] call mcd_fnc_endByBluKilled_preEliminated;
+            [] call uo_fnc_endByBluKilled_preEliminated;
             [_this select 1] call CBA_fnc_removePerFrameHandler;
         };
 
@@ -31,4 +31,4 @@ mcd_fnc_endByBluKilled_eliminated = {
     } , 1, []] call CBA_fnc_addPerFrameHandler;
 };
 
-[] call mcd_fnc_endByBluKilled_preEliminated;
+[] call uo_fnc_endByBluKilled_preEliminated;
