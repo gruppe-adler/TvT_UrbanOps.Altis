@@ -29,4 +29,4 @@ player setVariable ["wr_cvCheckDone", false];
 [_timeOfDeath] call mcd_fnc_wavePlayerCountdown;
 [{player getVariable "wr_playerCountdownDone"}, {_this call mcd_fnc_waveWaveCountdown}, [_timeOfDeath]] call CBA_fnc_waitUntilAndExecute;
 [{player getVariable "wr_waveCountdownDone"}, {[] call mcd_fnc_waveCvCheck}, []] call CBA_fnc_waitUntilAndExecute;
-[{player getVariable "wr_cvCheckDone"}, {[] call mcd_fnc_respawnPlayer}, []] call CBA_fnc_waitUntilAndExecute;
+[{player getVariable "wr_cvCheckDone"}, {[] call mcd_fnc_prepareRespawn}, []] call CBA_fnc_waitUntilAndExecute;

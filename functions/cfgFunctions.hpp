@@ -6,6 +6,12 @@ class mcd {
         class opforWaitDialog {};
     };
 
+    class chooseRespawn {
+        class chooseRespawn {};
+        class findNearestRespawnObject {};
+        class respawnSelectorMarker {};
+    };
+
     class civs {
         class civKilled {};
         class createCivs {};
@@ -62,7 +68,7 @@ class mcd {
     class setup {
         class briefingDone {postInit = 1;};
         class moveToMapStart {postInit = 1;};
-        class setCommandVehicle {};
+        class setCommandVehicleClass {};
         class setLocationMarkers {};
         class setMapRespawnPos {};
         class setMissionParams {};
@@ -76,12 +82,13 @@ class mcd {
         class addRespawnedToGroup {};
         class addToWave {};
         class blockMap {};
+        class doRespawn {};
         class initWaveRespawn {};
         class onWavePlayerKilled {};
         class onWavePlayerRespawn {};
+        class prepareRespawn {};
         class removeFromWave {};
         class respawnHint {};
-        class respawnPlayer {};
         class setWaveSize {};
         class startWaveLoops {};
         class waveCvCheck {};

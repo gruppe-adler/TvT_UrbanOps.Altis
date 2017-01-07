@@ -6,7 +6,8 @@ if (count uo_cv_allCVs == 0) exitWith {diag_log "fn_onWavePlayerRespawn - ERROR:
 
 //teleport to commandvehicle
 if (_originalSide == "WEST") then {
-    _pos = (getPos (uo_cv_allCVs select 0)) findEmptyPosition [1, 30];
+    _respawnObject = missionNamespace getVariable ["uo_selectedRespawnObject", uo_cv_allCVs select 0];
+    _pos = (getPos _respawnObject) findEmptyPosition [1, 30];
     [player, _pos] call mcd_fnc_teleport;
 };
 
@@ -23,5 +24,8 @@ if (_originalSide == "UNKNOWN") then {
 //check JIP player is spawning for the first time
 if (serverTime - (player getVariable ["joinTime", 0]) < 30 && didJIP) exitWith {diag_log "onPlayerRespawn.sqf - Player is JIP, not executing fnc_removeRespawnedFromList."};
 
-//notify server
-[profileName, player getVariable ["originalSide", "UNKNOWN"]] remoteExec ["mcd_fnc_removeFromWave",2,false];
+//remove hint
+hint "";
+
+//re-set respawn time
+setPlayerRespawnTime 99999;

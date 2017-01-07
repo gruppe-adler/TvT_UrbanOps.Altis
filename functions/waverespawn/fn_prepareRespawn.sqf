@@ -19,11 +19,7 @@ _respawning = parseText format ["<t align='center' color='#00ff00' size='1.4'>Re
 
 _waitCondition = if (player getVariable "originalSide" == "WEST") then {{WAVERESPAWNBLU}} else {{WAVERESPAWNOPF}};
 [{call (_this select 0)}, {
-    setPlayerRespawnTime 0;
-    forceRespawn player;
-    [] spawn {
-        sleep 5;
-        hint "";
-        setPlayerRespawnTime 99999;
-    };
+    [profileName, player getVariable ["originalSide", "UNKNOWN"]] remoteExec ["mcd_fnc_removeFromWave",2,false];
+    _availableOptions = if (player getVariable ["originalSide", "UNKNOWN"] == "WEST") then {count uo_cv_allCVs} else {1};
+    if (_availableOptions > 1) then {[] call mcd_fnc_chooseRespawn} else {[] call mcd_fnc_doRespawn};
 }, [_waitCondition]] call CBA_fnc_waitUntilAndExecute;

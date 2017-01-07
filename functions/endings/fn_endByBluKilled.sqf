@@ -4,7 +4,7 @@ mcd_fnc_endByBluKilled_preEliminated = {
     [{
         if (({side _x == west} count playableUnits) == 0) then {
             diag_log "fn_endByBluKilled - All Blufor down.";
-            if ({_x getVariable ["uo_cv_isActive", false]} count uo_cv_allCVs == 0) then {
+            if ({_x getVariable ["uo_respawnObject_isActive", false]} count uo_cv_allCVs == 0) then {
                 diag_log "fn_endByBluKilled - All commandvehicles inactive";
                 [] call mcd_fnc_endByBluKilled_eliminated;
                 [_this select 1] call CBA_fnc_removePerFrameHandler;

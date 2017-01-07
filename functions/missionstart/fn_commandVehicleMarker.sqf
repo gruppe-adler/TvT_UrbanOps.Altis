@@ -23,12 +23,12 @@ _marker setMarkerTextLocal _markerText;
     _marker setMarkerPos (getPos _cv);
 
     //respawn on vehicle possible?
-    if (_cv getVariable ["uo_cv_isActive", false]) then {
+    if (_cv getVariable ["uo_respawnObject_isActive", false]) then {
         _marker setMarkerColorLocal "COLORBLUFOR";
-        _marker setMarkerTextLocal format ["Commandvehicle %1"];
+        _marker setMarkerTextLocal format ["Commandvehicle %1", _id];
     } else {
         _marker setMarkerColor "COLORRED";
-        _marker setMarkerTextLocal format ["Commandvehicle %1 (no respawn)"];
+        _marker setMarkerTextLocal format ["Commandvehicle %1 (no respawn)", _id];
     };
 
     //vehicle is destroyed

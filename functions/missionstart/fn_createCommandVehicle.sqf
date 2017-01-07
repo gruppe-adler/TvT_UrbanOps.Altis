@@ -14,7 +14,7 @@ _cv = COMMANDVEHICLECLASS createVehicle _pos;
     missionNamespace setVariable ["uo_init_cvCreated", true, true];
 
     _cv setDir (_cv getDir CITYPOSITION);
-    _cv setVariable ["uo_cv_isActive", false, true];
+    _cv setVariable ["uo_respawnObject_isActive", false, true];
 
     _allCVs = missionNamespace getVariable ["uo_cv_allCVs", []];
     _id = _allCVs pushBack _cv;
