@@ -29,18 +29,18 @@ if (player != bluforcommander) exitWith {};
     mcd_onSpawnKeyDown = (findDisplay 46) displayAddEventHandler ["KeyDown", {
         if ((_this select 1 == 28)||(_this select 1 == 156)) then {
             if (isNil "BLUFORSPAWN") then {
-                createDialog "spawnselectErrorMessage1";
+                ["PLEASE CHOOSE A SPAWN POSITION BY CLICKING ON THE MAP"] call uo_ui_fnc_confirmHint;
 
             } else {
 
                 //position not in blue area
                 if (CHOSENLOCATION distance BLUFORSPAWN < BLUFORSPAWNDIST + BLUFORSPAWNBAND) then {
-                    createDialog "spawnselectErrorMessage2";
+                    ["PLEASE CHOOSE A SPAWN POSITION OUTSIDE THE BLUE RING"] call uo_ui_fnc_confirmHint;
                 } else {
 
                     //position in water
                     if (surfaceIsWater BLUFORSPAWN) then {
-                        createDialog "spawnselectErrorMessage3";
+                        ["PLEASE CHOOSE A SPAWN POSITION ON LAND"] call uo_ui_fnc_confirmHint;
                     } else {
 
                         //position successfully chosen

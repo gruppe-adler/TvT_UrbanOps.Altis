@@ -15,7 +15,7 @@ player say "taskSucceeded";
 
 private ["_pos"];
 [{_pos = player getVariable "startPosition"; !isNil "_pos"}, {
-	titleRsc ["Default", "PLAIN"];
+	[false] call uo_ui_fnc_twoLineHint;
 
 	_pos = player getVariable "startPosition";
 	diag_log format ["fn_tpOpfor - Teleporting player to %1.", _pos];

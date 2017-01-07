@@ -4,11 +4,11 @@ _isCommander = false;
 if (!isNil "opforcommander") then {_isCommander = (player == opforcommander)};
 
 if (_isCommander) then {
-    titleRsc ["chooseCityGUI", "PLAIN", 1, true];
+    [true,"CHOOSE PLAYZONE (LMOUSE)","CONFIRM (ENTER)"] call uo_ui_fnc_twoLineHint;
 } else {
     if (side player == EAST) then {
-        titleRsc ["opforwaitmessage", "PLAIN", 1, true];
+        [true,"COMMANDER IS CHOOSING CITY","PLEASE WAIT"] call uo_ui_fnc_twoLineHint;
     } else {
-        titleRsc ["bluforWaitMessage1", "PLAIN", 1, true];
+        [true,"OPFOR IS CHOOSING CITY","PLEASE WAIT"] call uo_ui_fnc_twoLineHint;
     };
 };

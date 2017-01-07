@@ -41,7 +41,7 @@ if (player getVariable ["originalSide", "UNKNOWN"] != "EAST") exitWith {};
     mcd_onCityKeyDown = (findDisplay 46) displayAddEventHandler ["KeyDown", {
         if ((_this select 1 == 28)||(_this select 1 == 156)) then {
             if (isNil "CHOSENLOCATION") then {
-                createDialog "chooseCityErrorMessage";
+                ["PLEASE CHOOSE A LOCATION!"] call uo_ui_fnc_confirmHint;
 
             } else {
                 ["fn_chooseCity - %1 chose location %2", profileName, text CHOSENLOCATION] call mcd_fnc_serverLog;

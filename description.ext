@@ -34,6 +34,7 @@ enableDebugConsole = 2;
 //FUNCTIONS ====================================================================
 class CfgFunctions {
     #include "functions\cfgFunctions.hpp"
+    #include "dialogs\cfgFunctions.hpp"
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "node_modules\grad-customGear\cfgFunctions.hpp"
     #include "node_modules\grad-listbuymenu\cfgFunctions.hpp"

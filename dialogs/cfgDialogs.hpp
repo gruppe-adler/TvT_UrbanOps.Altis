@@ -1,11 +1,11 @@
-#include "base.hpp"
-#include "custom.hpp"
 #include "ui_toolkit.hpp"
+#include "baseDefines.hpp"
+#include "baseRsc.hpp"
 
-#include "setup\dialog.hpp"
+#include "confirmHint\dialog.hpp"
 
 class RscTitles {
-    #include "setup\title.hpp"
+    #include "twoLineHint\title.hpp"
 
     class Default {
         idd = -1;
