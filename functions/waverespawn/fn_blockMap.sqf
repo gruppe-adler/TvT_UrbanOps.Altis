@@ -24,8 +24,8 @@ if (_disable) then {
 
 //enable map
 if (!_disable) then {
-    if (isNil "blockMapEHs") exitWith {diag_log "fnc_blockMap - blockMapEHs is nil."};
-    if (count blockMapEHs == 0) exitWith {diag_log "fnc_blockMap - blockMapEHs is empty."};
+    if (isNil "blockMapEHs") exitWith {};
+    if (count blockMapEHs == 0) exitWith {};
 
     {
         (findDisplay 46) displayRemoveEventHandler ["KeyDown", _x];

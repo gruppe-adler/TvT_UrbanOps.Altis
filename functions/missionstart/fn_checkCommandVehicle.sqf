@@ -17,12 +17,13 @@ _h = [{
     _dist = CITYPOSITION distance2D _cv;
 
     //check if enemies near
-
+    _nearestObjects = nearestObjects [_cv, ["Man"], CVENEMYRADIUS];
 
     _cvactive = switch (true) do {
         case (_dist < _inner): {false};
         case (_dist > _outer): {false};
         case (speed _cv > 2): {false};
+        case ({alive _x && side _x == east} count _nearestObjects > 0): {false};
         default {true}
     };
 
