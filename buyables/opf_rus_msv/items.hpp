@@ -52,7 +52,7 @@ class Items {
     };
 
     class rhs_assault_umbts {
-        kindOf = "Apparel";
+        kindOf = "Wearables";
 
         displayName = "UMBTS Backpack";
         price = 200;
@@ -60,7 +60,7 @@ class Items {
     };
 
     class tf_mr3000_rhs {
-        kindOf = "Apparel";
+        kindOf = "Wearables";
 
         displayName = "MR3000 Manpack";
         price = 1100;

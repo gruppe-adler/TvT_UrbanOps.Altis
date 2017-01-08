@@ -64,7 +64,7 @@ class Items {
     };
 
     class rhsusf_falconii_mc {
-        kindOf = "Apparel";
+        kindOf = "Wearables";
 
         displayName = "Falcon-II Backpack";
         price = 100;
@@ -72,7 +72,7 @@ class Items {
     };
 
     class rhsusf_assault_eagleaiii_ocp {
-        kindOf = "Apparel";
+        kindOf = "Wearables";
 
         displayName = "Eagle A-III Backpack";
         price = 200;
@@ -80,7 +80,7 @@ class Items {
     };
 
     class B_Kitbag_mcamo {
-        kindOf = "Apparel";
+        kindOf = "Wearables";
 
         displayName = "Kitbag Backpack";
         price = 300;
@@ -88,7 +88,7 @@ class Items {
     };
 
     class tf_rt1523g {
-        kindOf = "Apparel";
+        kindOf = "Wearables";
 
         displayName = "RT-1523G Manpack";
         price = 1000;
