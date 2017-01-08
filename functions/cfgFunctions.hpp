@@ -18,7 +18,6 @@ class uo {
         class findBuildingPositions {};
         class findHouses {};
         class initCivs {};
-        class spawnDealer {};
         class spawnNonstaticCiv {};
         class spawnStaticCiv {};
     };
@@ -34,7 +33,6 @@ class uo {
         class getIslandCfgValue {};
         class intro {};
         class serverLog {};
-        class setCommandVehicle {};
         class sideHint {};
         class teleport {};
     };
@@ -54,11 +52,17 @@ class uo {
         class sequentialInit {};
     };
 
-    class missionstart {
+    class missionObjectives {
         class bluforBuyAction {};
         class checkCommandVehicle {};
         class commandVehicleMarker {};
         class createCommandVehicle {};
+        class opforBuyAction {};
+        class setCommandVehicle {};
+        class spawnDealer {};
+    };
+
+    class missionstart {
         class createTrigger {};
         class findOpfSpawnPos {};
         class findOpfStartPos {};

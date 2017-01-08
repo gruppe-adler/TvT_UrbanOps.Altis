@@ -29,8 +29,8 @@ uo_DEALER = _group createUnit ["C_man_1",_dealerPos,[],0,"NONE"];
     for "_i" from 1 to 4 do {_unit addItemToUniform "ACE_morphine";};
 
     publicVariable "uo_DEALER";
-    uo_DEALER addEventHandler ["killed", {uo_DEALERKILLED = true; publicVariable "uo_DEALERKILLED"}];
+    _unit addEventHandler ["killed", {uo_DEALERKILLED = true; publicVariable "uo_DEALERKILLED"}];
 
     [EAST,"uo_dealerMarker",true,_dealerPos,"mil_marker","COLOREAST"] call uo_fnc_createSideMarker;
-    diag_log format ["spawnDealer.sqf - Dealer spawned at %1.", _dealerPos];
+    [_unit] remoteExec ["uo_fnc_opforBuyAction",0,true];
 }, [_dealerPos]] call CBA_fnc_waitUntilAndExecute;
