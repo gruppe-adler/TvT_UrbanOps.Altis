@@ -72,6 +72,14 @@ class Params
         default = 3;
     };
 
+    class MoneyFactor
+    {
+        title = "Money";
+        values[] = {0.75,1,1.5};
+        texts[] = {"Less", "Normal", "More"};
+        default = 1;
+    };
+
     class OpforRespawn
     {
         title = "Opfor Respawn";

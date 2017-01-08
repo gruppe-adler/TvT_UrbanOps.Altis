@@ -31,7 +31,9 @@ class uo {
         class emptyContainer {};
         class findRandomPos {};
         class getIslandCfgValue {};
+        class getNumberOfTeammates {};
         class intro {};
+        class isCommander {};
         class serverLog {};
         class sideHint {};
         class teleport {};
@@ -78,6 +80,7 @@ class uo {
         class setLocationMarkers {};
         class setMapRespawnPos {};
         class setMissionParams {};
+        class setMoney {};
         class setOriginalSide {};
         class setTime {};
         class setupCountdown {};

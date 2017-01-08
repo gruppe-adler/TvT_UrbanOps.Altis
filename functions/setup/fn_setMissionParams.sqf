@@ -51,6 +51,7 @@ publicVariable "PRESET";
 //SET PRESET PARAMS ============================================================
 if (PRESET == "CUSTOM") then {
     CONTROLRATIO = "ControlRatio" call BIS_fnc_getParamValue;
+    MONEYFACTOR = "MoneyFactor" call BIS_fnc_getParamValue;
     CAPTURETIME = "CaptureTime" call BIS_fnc_getParamValue;
     DEFENSETIME = "DefenseTime" call BIS_fnc_getParamValue;
     SETUPTIME = "SetupTime" call BIS_fnc_getParamValue;
@@ -61,6 +62,7 @@ if (PRESET == "CUSTOM") then {
 
 if (PRESET == "DEBUG") then {
     CONTROLRATIO = 2;
+    MONEYFACTOR = 1;
     CAPTURETIME = 60;
     DEFENSETIME = 900;
     SETUPTIME = 5;
@@ -70,6 +72,7 @@ if (PRESET == "DEBUG") then {
 };
 
 publicVariable "CONTROLRATIO";
+publicVariable "MONEYFACTOR";
 publicVariable "CAPTURETIME";
 publicVariable "DEFENSETIME";
 publicVariable "SETUPTIME";
@@ -78,6 +81,7 @@ publicVariable "RESPAWNTIME";
 publicVariable "OPFORRESPAWNENABLED";
 
 ["LOG", "SERVER_SETUP", "CONTROLRATIO"] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", "MONEYFACTOR"] call uo_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "CAPTURETIME"] call uo_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "DEFENSETIME"] call uo_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "SETUPTIME"] call uo_fnc_diagReport;

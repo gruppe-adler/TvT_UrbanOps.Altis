@@ -9,11 +9,3 @@ if ("Preset" call BIS_fnc_getParamValue == 1) then {
 ["Initialize", [true]] call BIS_fnc_dynamicGroups;
 
 [] execVM "tfarsettings.sqf";
-
-
-
-
-/*
-//Setup ======================================================================
-[] execVM "server\buymenu\bm_itemConfig.sqf";
-[] execVM "server\setup\createCivilians.sqf";

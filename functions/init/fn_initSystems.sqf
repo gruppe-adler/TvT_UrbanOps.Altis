@@ -14,6 +14,7 @@
 [{missionNamespace getVariable ["uo_init_pubVarsDone", false]}, {[] call uo_fnc_setLocationMarkers}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_pubVarsDone", false]}, {[] call uo_fnc_chooseCity}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_pubVarsDone", false]}, {[] call uo_fnc_chooseSpawn}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_pubVarsDone", false]}, {[] call uo_fnc_setMoney}, []] call CBA_fnc_waitUntilAndExecute;
 
 //report
 if (isServer) then {[{["PRINT", "SERVER_SETUP"] call uo_fnc_diagReport}, [], 15] call CBA_fnc_waitAndExecute};
