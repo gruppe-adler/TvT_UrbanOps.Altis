@@ -1,36 +1,36 @@
 if (!isServer) exitWith {};
 
 //FACTIONS =====================================================================
-BLUFORFACTION = [
+uo_missionParam_BLUFORFACTION = [
     "us_army",
     "ger_heer",
     "rus_msv",
     "ind_eastRebels",
     "ind_terrorists"
 ] select ("BluforFaction" call BIS_fnc_getParamValue);
-OPFORFACTION = [
+uo_missionParam_OPFORFACTION = [
     "us_army",
     "ger_heer",
     "rus_msv",
     "ind_eastRebels",
     "ind_terrorists"
 ] select ("OpforFaction" call BIS_fnc_getParamValue);
-UO_ISWOODLAND = ["isWoodland"] call uo_fnc_getIslandCfgValue;
+uo_missionParam_ISWOODLAND = ["isWoodland"] call uo_fnc_getIslandCfgValue;
 
-publicVariable "BLUFORFACTION";
-publicVariable "OPFORFACTION";
-publicVariable "UO_ISWOODLAND";
+publicVariable "uo_missionParam_BLUFORFACTION";
+publicVariable "uo_missionParam_OPFORFACTION";
+publicVariable "uo_missionParam_ISWOODLAND";
 
-["LOG", "SERVER_SETUP", "BLUFORFACTION"] call uo_fnc_diagReport;
-["LOG", "SERVER_SETUP", "OPFORFACTION"] call uo_fnc_diagReport;
-["LOG", "SERVER_SETUP", "UO_ISWOODLAND"] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_BLUFORFACTION"] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_OPFORFACTION"] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_ISWOODLAND"] call uo_fnc_diagReport;
 
-//NON PRESET PARAMS ============================================================
-WEATHER_SETTING = "WeatherSetting" call BIS_fnc_getParamValue;
-TIME_OF_DAY = "TimeOfDay" call BIS_fnc_getParamValue;
+//NON uo_missionParam_PRESET PARAMS ============================================================
+uo_missionParam_WEATHERSETTING = "WeatherSetting" call BIS_fnc_getParamValue;
+uo_missionParam_TIMEOFDAY = "TimeOfDay" call BIS_fnc_getParamValue;
 
-publicVariable "WEATHER_SETTING";
-publicVariable "TIME_OF_DAY";
+publicVariable "uo_missionParam_WEATHERSETTING";
+publicVariable "uo_missionParam_TIMEOFDAY";
 
 //WAVE SIZE ====================================================================
 [] call uo_fnc_setWaveSize;
@@ -38,56 +38,56 @@ publicVariable "TIME_OF_DAY";
 publicVariable "BLUFORWAVESIZE";
 publicVariable "OPFORWAVESIZE";
 
-//GET PRESET ===================================================================
-PRESET = [
+//GET uo_missionParam_PRESET ===================================================================
+uo_missionParam_PRESET = [
     "CUSTOM",
     "DEBUG"
 ] select ("Preset" call BIS_fnc_getParamValue);
 
-publicVariable "PRESET";
+publicVariable "uo_missionParam_PRESET";
 
-["LOG", "SERVER_SETUP", "PRESET"] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_PRESET"] call uo_fnc_diagReport;
 
-//SET PRESET PARAMS ============================================================
-if (PRESET == "CUSTOM") then {
-    CONTROLRATIO = "ControlRatio" call BIS_fnc_getParamValue;
-    MONEYFACTOR = "MoneyFactor" call BIS_fnc_getParamValue;
-    CAPTURETIME = "CaptureTime" call BIS_fnc_getParamValue;
-    DEFENSETIME = "DefenseTime" call BIS_fnc_getParamValue;
-    SETUPTIME = "SetupTime" call BIS_fnc_getParamValue;
-    WAVERESPAWNTIME = "waverespawntime" call BIS_fnc_getParamValue;
-    RESPAWNTIME = "respawntime" call BIS_fnc_getParamValue;
-    OPFORRESPAWNENABLED = ("OpforRespawn" call BIS_fnc_getParamValue) == 1;
+//SET uo_missionParam_PRESET PARAMS ============================================================
+if (uo_missionParam_PRESET == "CUSTOM") then {
+    uo_missionParam_CONTROLRATIO = "ControlRatio" call BIS_fnc_getParamValue;
+    uo_missionParam_MONEYFACTOR = "MoneyFactor" call BIS_fnc_getParamValue;
+    uo_missionParam_CAPTURETIME= "CaptureTime" call BIS_fnc_getParamValue;
+    uo_missionParam_DEFENSETIME = "DefenseTime" call BIS_fnc_getParamValue;
+    uo_missionParam_SETUPTIME = "SetupTime" call BIS_fnc_getParamValue;
+    uo_missionParam_WAVERESPAWNTIME = "waverespawntime" call BIS_fnc_getParamValue;
+    uo_missionParam_RESPAWNTIME = "respawntime" call BIS_fnc_getParamValue;
+    uo_missionParam_OPFORRESPAWNENABLED = ("OpforRespawn" call BIS_fnc_getParamValue) == 1;
 };
 
-if (PRESET == "DEBUG") then {
-    CONTROLRATIO = 2;
-    MONEYFACTOR = 1;
-    CAPTURETIME = 60;
-    DEFENSETIME = 900;
-    SETUPTIME = 5;
-    WAVERESPAWNTIME = 10;
-    RESPAWNTIME = 10;
-    OPFORRESPAWNENABLED = true;
+if (uo_missionParam_PRESET == "DEBUG") then {
+    uo_missionParam_CONTROLRATIO = 2;
+    uo_missionParam_MONEYFACTOR = 1;
+    uo_missionParam_CAPTURETIME= 60;
+    uo_missionParam_DEFENSETIME = 900;
+    uo_missionParam_SETUPTIME = 5;
+    uo_missionParam_WAVERESPAWNTIME = 10;
+    uo_missionParam_RESPAWNTIME = 10;
+    uo_missionParam_OPFORRESPAWNENABLED = true;
 };
 
-publicVariable "CONTROLRATIO";
-publicVariable "MONEYFACTOR";
-publicVariable "CAPTURETIME";
-publicVariable "DEFENSETIME";
-publicVariable "SETUPTIME";
-publicVariable "WAVERESPAWNTIME";
-publicVariable "RESPAWNTIME";
-publicVariable "OPFORRESPAWNENABLED";
+publicVariable "uo_missionParam_CONTROLRATIO";
+publicVariable "uo_missionParam_MONEYFACTOR";
+publicVariable "uo_missionParam_CAPTURETIME";
+publicVariable "uo_missionParam_DEFENSETIME";
+publicVariable "uo_missionParam_SETUPTIME";
+publicVariable "uo_missionParam_WAVERESPAWNTIME";
+publicVariable "uo_missionParam_RESPAWNTIME";
+publicVariable "uo_missionParam_OPFORRESPAWNENABLED";
 
-["LOG", "SERVER_SETUP", "CONTROLRATIO"] call uo_fnc_diagReport;
-["LOG", "SERVER_SETUP", "MONEYFACTOR"] call uo_fnc_diagReport;
-["LOG", "SERVER_SETUP", "CAPTURETIME"] call uo_fnc_diagReport;
-["LOG", "SERVER_SETUP", "DEFENSETIME"] call uo_fnc_diagReport;
-["LOG", "SERVER_SETUP", "SETUPTIME"] call uo_fnc_diagReport;
-["LOG", "SERVER_SETUP", "WAVERESPAWNTIME"] call uo_fnc_diagReport;
-["LOG", "SERVER_SETUP", "RESPAWNTIME"] call uo_fnc_diagReport;
-["LOG", "SERVER_SETUP", "OPFORRESPAWNENABLED"] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_CONTROLRATIO"] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_MONEYFACTOR"] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_CAPTURETIME"] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_DEFENSETIME"] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_SETUPTIME"] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_WAVERESPAWNTIME"] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_RESPAWNTIME"] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_OPFORRESPAWNENABLED"] call uo_fnc_diagReport;
 
 //DONE =========================================================================
 missionNamespace setVariable ["uo_init_missionParamsDone", true, true];

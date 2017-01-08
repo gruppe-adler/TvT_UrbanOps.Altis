@@ -1,6 +1,6 @@
 if (!isServer) exitWith {};
 
-SETUPTIMEREMAINING = SETUPTIME;
+SETUPTIMEREMAINING = uo_missionParam_SETUPTIME;
 publicVariable "SETUPTIMEREMAINING";
 
 [{!isNil "CITYPOSITION" && (missionNamespace getVariable ["uo_init_briefingDone", false])}, {

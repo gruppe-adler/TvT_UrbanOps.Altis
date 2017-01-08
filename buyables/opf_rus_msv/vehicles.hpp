@@ -14,21 +14,21 @@ class Vehicles {
     };
 
     class rhs_tigr_m_msv {
-        condition = "UO_ISWOODLAND";
+        condition = "uo_missionParam_ISWOODLAND";
         displayName = "TIGR (unarmed)";
         price = 2000;
         stock = 10;
     };
 
     class rhs_tigr_m_3camo_msv {
-        condition = "!UO_ISWOODLAND";
+        condition = "!uo_missionParam_ISWOODLAND";
         displayName = "TIGR (unarmed)";
         price = 2000;
         stock = 10;
     };
 
     class rhs_tigr_sts_msv {
-        condition = "UO_ISWOODLAND";
+        condition = "uo_missionParam_ISWOODLAND";
         displayName = "TIGR (PK)";
         price = 2000;
         stock = 10;
@@ -36,7 +36,7 @@ class Vehicles {
     };
 
     class rhs_tigr_sts_3camo_msv {
-        condition = "!UO_ISWOODLAND";
+        condition = "!uo_missionParam_ISWOODLAND";
         displayName = "TIGR (PK)";
         price = 2000;
         stock = 10;

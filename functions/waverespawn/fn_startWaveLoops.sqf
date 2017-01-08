@@ -4,7 +4,7 @@
     if (WAVERESPAWNBLU) exitWith {};
 
     //start countdown once first player is added to wave
-    if (count deadPlayersBlu >= 1 && WAVERESPAWNTIMELEFTBLU == WAVERESPAWNTIME) then {
+    if (count deadPlayersBlu >= 1 && WAVERESPAWNTIMELEFTBLU == uo_missionParam_WAVERESPAWNTIME) then {
         [{
             WAVERESPAWNTIMELEFTBLU = WAVERESPAWNTIMELEFTBLU - 1;
             publicVariable "WAVERESPAWNTIMELEFTBLU";
@@ -21,7 +21,7 @@
         [{
                 WAVERESPAWNBLU = false;
                 publicVariable "WAVERESPAWNBLU";
-                WAVERESPAWNTIMELEFTBLU = WAVERESPAWNTIME;
+                WAVERESPAWNTIMELEFTBLU = uo_missionParam_WAVERESPAWNTIME;
                 publicVariable    "WAVERESPAWNTIMELEFTBLU";
                 diag_log "fn_startWaveLoops - Respawning no longer possible for Blufor.";
         },[],(RESPAWNWAVEEXTRATIME max 7)] call CBA_fnc_waitAndExecute;
@@ -34,7 +34,7 @@
     if (WAVERESPAWNOPF) exitWith {};
 
     //start countdown once first player is added to wave
-    if (count deadPlayersOpf >= 1 && WAVERESPAWNTIMELEFTOPF == WAVERESPAWNTIME) then {
+    if (count deadPlayersOpf >= 1 && WAVERESPAWNTIMELEFTOPF == uo_missionParam_WAVERESPAWNTIME) then {
         [{
             WAVERESPAWNTIMELEFTOPF = WAVERESPAWNTIMELEFTOPF - 1;
             publicVariable "WAVERESPAWNTIMELEFTOPF";
@@ -51,7 +51,7 @@
         [{
                 WAVERESPAWNOPF = false;
                 publicVariable "WAVERESPAWNOPF";
-                WAVERESPAWNTIMELEFTOPF = WAVERESPAWNTIME;
+                WAVERESPAWNTIMELEFTOPF = uo_missionParam_WAVERESPAWNTIME;
                 publicVariable    "WAVERESPAWNTIMELEFTOPF";
                 diag_log "fn_startWaveLoops - Respawning no longer possible for Opfor.";
         },[],(RESPAWNWAVEEXTRATIME max 7)] call CBA_fnc_waitAndExecute;

@@ -17,7 +17,7 @@ _timeOfDeath = time;
 setPlayerRespawnTime 9999;
 
 //reset variables
-player setVariable ["wr_playerRespawnTimeLeft", RESPAWNTIME];
+player setVariable ["wr_playerRespawnTimeLeft", uo_missionParam_RESPAWNTIME];
 player setVariable ["wr_interrupted", false];
 player setVariable ["wr_isFreeRespawn", false];
 player setVariable ["wr_playerCountdownDone", false];

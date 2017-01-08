@@ -2,7 +2,7 @@ if (!isServer) exitWith {};
 
 //city trigger =================================================================
 _condition = "
-    (west countSide thisList)/((east countSide thisList) max 1) >= CONTROLRATIO;
+    (west countSide thisList)/((east countSide thisList) max 1) >= uo_missionParam_CONTROLRATIO;
 ";
 
 _onActivation = "

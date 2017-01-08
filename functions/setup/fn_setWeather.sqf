@@ -4,14 +4,14 @@ if (!isServer) exitWith {};
 
 //OVERCAST =====================================================================
 //random
-if (WEATHER_SETTING == -1) then {
+if (uo_missionParam_WEATHERSETTING == -1) then {
     _availableSettings = getArray (missionConfigFile >> "Params" >> "WeatherSetting" >> "values");
     _availableSettings = _availableSettings - [-1];
     _overcast = selectRandom _availableSettings;
 
 //fixed
 } else {
-    _overcast = WEATHER_SETTING;
+    _overcast = uo_missionParam_WEATHERSETTING;
 };
 
 ["LOG", "SERVER_SETUP", format ["fn_setWeather - Set overcast to %1.", _overcast]] call uo_fnc_diagReport;
@@ -26,7 +26,7 @@ if (_overcast >= 75) then {
 };
 
 //extra chance of fog in the morning
-if (TIME_OF_DAY <= 8) then {
+if (uo_missionParam_TIMEOFDAY <= 8) then {
     _mid = _mid + 0.12;
 };
 
