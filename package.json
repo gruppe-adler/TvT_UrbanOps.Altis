@@ -2,6 +2,7 @@
         "dependencies": {
                 "grad-loadout": "4.x",
                 "grad-customGear": "^1.0.0",
-                "grad-listbuymenu": ">0.0.3"
+                "grad-listbuymenu": ">0.0.3",
+                "grad-moneymenu": "^0.0.1"
         }
 }
