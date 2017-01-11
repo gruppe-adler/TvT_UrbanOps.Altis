@@ -1,4 +1,5 @@
 #define MODULES_DIRECTORY node_modules
+
 #include "cfgParams.hpp"
 #include "cfgIslands.hpp"
 #include "cfgFactions.hpp"
@@ -6,6 +7,7 @@
 #include "loadouts\loadouts.hpp"
 #include "dialogs\cfgDialogs.hpp"
 #include "node_modules\grad-listBuymenu\grad_listBuymenu.hpp"
+#include "node_modules\grad-moneymenu\grad_moneymenu.hpp"
 
 //HEADER =======================================================================
 class Header
@@ -38,6 +40,7 @@ class CfgFunctions {
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "node_modules\grad-customGear\cfgFunctions.hpp"
     #include "node_modules\grad-listbuymenu\cfgFunctions.hpp"
+    #include "node_modules\grad-moneymenu\cfgFunctions.hpp"
 };
 
 //CUSTOM GEAR ==================================================================
@@ -47,4 +50,16 @@ class grad_customGear {
     allowSimpleScopes = 1;
     allowMagnifyingScopes = 0;
     allowMarksmanScopes = 0;
+};
+
+//MONEY MENU ===================================================================
+class CfgGradMoneymenu {
+    canGiveDefault = 1;
+    canTransferToSidesDefault[] = {};
+    canTakeFromDeadDefault = 0;
+    canSendDirectlyDefault = 0;
+    canTakeFromSurrenderedDefault = 1;
+    startMoney = 0;
+    startBankBalance = 0;
+    atmObjects[] = {};
 };
