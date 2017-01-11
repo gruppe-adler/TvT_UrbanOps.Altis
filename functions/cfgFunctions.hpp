@@ -17,9 +17,11 @@ class uo {
         class createCivs {};
         class findBuildingPositions {};
         class findHouses {};
+        class findPositionOfInterest {};
         class initCivs {};
         class spawnNonstaticCiv {};
         class spawnStaticCiv {};
+        class taskPatrol {};
     };
 
     class common {
