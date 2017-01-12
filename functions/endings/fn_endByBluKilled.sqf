@@ -25,6 +25,9 @@ uo_fnc_endByBluKilled_eliminated = {
         };
 
         if (missionNamespace getVariable ["uo_bluDownSince", 0] > 15) then {
+            uo_missionStats = [uo_teammembersOpfor,uo_teammembersBlufor,["OPFOR"],["BLUFOR"]] call grad_winrateTracker_fnc_saveWinrate;
+            publicVariable "uo_missionStats";
+
             missionNamespace setVariable ["uo_gameEnded", ["EAST", "BLUFOR ELIMINATED!"], true];
             [_this select 1] call CBA_fnc_removePerFrameHandler;
         };

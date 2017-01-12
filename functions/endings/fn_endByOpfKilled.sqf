@@ -22,6 +22,9 @@ uo_fnc_endByOpfKilled_eliminated = {
         };
 
         if (missionNamespace getVariable ["uo_opfDownSince", 0] > 15) then {
+            uo_missionStats = [uo_teammembersBlufor,uo_teammembersOpfor,["BLUFOR"],["OPFOR"]] call grad_winrateTracker_fnc_saveWinrate;
+            publicVariable "uo_missionStats";
+
             missionNamespace setVariable ["uo_gameEnded", ["WEST", "OPFOR ELIMINATED!"], true];
             [_this select 1] call CBA_fnc_removePerFrameHandler;
         };

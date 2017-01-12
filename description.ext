@@ -6,8 +6,10 @@
 #include "buyables\cfgBuyables.hpp"
 #include "loadouts\loadouts.hpp"
 #include "dialogs\cfgDialogs.hpp"
+
 #include "node_modules\grad-listBuymenu\grad_listBuymenu.hpp"
 #include "node_modules\grad-moneymenu\grad_moneymenu.hpp"
+#include "node_modules\grad-scoreboard\grad_scoreboard.hpp"
 
 //HEADER =======================================================================
 class Header
@@ -37,11 +39,15 @@ enableDebugConsole = 2;
 class CfgFunctions {
     #include "functions\cfgFunctions.hpp"
     #include "dialogs\cfgFunctions.hpp"
+
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "node_modules\grad-customGear\cfgFunctions.hpp"
     #include "node_modules\grad-listbuymenu\cfgFunctions.hpp"
     #include "node_modules\grad-moneymenu\cfgFunctions.hpp"
+    #include "node_modules\grad-winrateTracker\cfgFunctions.hpp"
+    #include "node_modules\grad-scoreboard\cfgFunctions.hpp"
 };
+
 
 //CUSTOM GEAR ==================================================================
 class grad_customGear {
@@ -62,4 +68,14 @@ class CfgGradMoneymenu {
     startMoney = 0;
     startBankBalance = 0;
     atmObjects[] = {};
+};
+
+//WINRATE TRACKER ==============================================================
+class CfgWinrateTracker {
+    scoreBoardDuration = 20;                            //duration that the scoreboard will stay open
+    sortBy = "WINRATES";                                //what to sort by, can be "GAMES","WINS","LOSSES","WINRATES"
+    minGamesForSort = 5;                                //minimum number of games a player needs to have to be in the upper ranks
+    playerStatsHeadline = "PLAYER WINRATES";            //headline for scoreboard
+    teamStatsHeadline = "TEAM WINRATES";                //headline for team stats
+    missionName = "TvT_UrbanOps";                       //missionName that these stats are to be saved under (if not provided, actual mission name of current mission is used)
 };

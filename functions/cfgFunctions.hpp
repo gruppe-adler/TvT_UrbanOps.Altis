@@ -36,6 +36,7 @@ class uo {
         class getNumberOfTeammates {};
         class intro {};
         class isCommander {};
+        class saveTeammembers {};
         class serverLog {};
         class sideHint {};
         class teleport {};
