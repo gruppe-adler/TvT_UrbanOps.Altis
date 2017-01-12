@@ -79,3 +79,15 @@ class CfgWinrateTracker {
     teamStatsHeadline = "TEAM WINRATES";                //headline for team stats
     missionName = "TvT_UrbanOps";                       //missionName that these stats are to be saved under (if not provided, actual mission name of current mission is used)
 };
+
+//NOTIFICATIONS ================================================================
+class CfgNotifications
+{
+    class uo_notification {
+        title = "%1";
+        iconPicture = "\A3\ui_f\data\map\markers\military\warning_CA.paa";
+        description = "%2";
+        duration = 5;
+        priority = 0;
+    };
+};

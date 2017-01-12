@@ -40,6 +40,7 @@ class uo {
         class saveTeammembers {};
         class serverLog {};
         class sideHint {};
+        class sideNotification {};
         class teleport {};
     };
 
