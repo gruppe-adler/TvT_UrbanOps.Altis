@@ -1,10 +1,31 @@
-params ["_side","_accuracy"];
+params ["_side","_accuracy",["_mode","UNITS"]];
+private ["_enemies","_markerType"];
 
 if (typeName _accuracy == "ARRAY") then {_accuracy = (random ((_accuracy select 1)-(_accuracy select 0))) + (_accuracy select 0)};
 
-_enemyUnits = playableUnits select {alive _x && (side _x == _side) && (_x distance CITYPOSITION) < CITYAREASIZE};
+switch (true) do {
+    //mark unit
+    case (_mode == "UNITS"): {
+        _enemies = playableUnits select {alive _x && (side _x == _side) && (_x distance CITYPOSITION) < CITYAREASIZE*1.5};
+        _markerType = if (_side == east) then {"o_inf"} else {"b_inf"};
+    };
 
-if (count _enemyUnits > 0) then {
-    _enemyUnit = selectRandom _enemyUnits;
-    [_side,_enemyUnit,_accuracy] remoteExec ['uo_fnc_createCivEnemyMarker',0,false];
+    //mark dealer
+    case (_mode == "RESPAWNOBJECT" && _side == EAST): {
+        _enemies = [uo_DEALER];
+        _markerType = "o_hq";
+    };
+
+    //mark commandvehicle
+    case (_mode == "RESPAWNOBJECT" && _side == WEST): {
+        _enemies = missionNamespace getVariable ["uo_cv_allCVs", []];
+        _markerType = "b_hq";
+    };
+};
+
+if (count _enemies > 0) then {
+    _enemyUnit = selectRandom _enemies;
+    if (!isNull _enemyUnit) then {
+        [_side,_enemyUnit,_accuracy,_markerType] remoteExec ['uo_fnc_createCivEnemyMarker',0,false];
+    };
 };

@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2502.3228,40.301479,3531.9429};
-		dir[]={-0.1964502,-0.77241814,-0.60398299};
-		up[]={-0.23891547,0.63511389,-0.73454213};
-		aside[]={-0.95097196,2.339948e-007,0.30931175};
+		pos[]={2485.5127,1.5048076,3552.7388};
+		dir[]={0.32919458,-0.39398658,-0.85815251};
+		up[]={0.14111435,0.91911334,-0.36785963};
+		aside[]={-0.93367225,-5.4482371e-008,-0.35816419};
 	};
 };
 binarizationWanted=0;
@@ -8040,7 +8040,7 @@ class Mission
 			{
 				position[]={1998.599,-185.922,1998.6479};
 			};
-			name="voteCurator";
+			name="votedCurator";
 			id=545;
 			type="ModuleCurator_F";
 			atlOffset=0.04800415;
@@ -8840,11 +8840,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2686.1902,0.0021849629,3387.1602};
+				position[]={2686.1899,0.0019989014,3387.1599};
 			};
 			id=553;
 			type="ModuleCuratorAddEditableObjects";
-			atlOffset=185.97218;
+			atlOffset=185.972;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8862,7 +8862,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="voteCurator, loggedCurator";
+							value="votedCurator, loggedCurator";
 						};
 					};
 				};
@@ -8912,11 +8912,11 @@ class Mission
 	{
 		class LinkIDProvider
 		{
-			nextID=84;
+			nextID=86;
 		};
 		class Links
 		{
-			items=84;
+			items=86;
 			class Item0
 			{
 				linkID=0;
@@ -9751,6 +9751,26 @@ class Mission
 			{
 				linkID=83;
 				item0=451;
+				item1=553;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item84
+			{
+				linkID=84;
+				item0=528;
+				item1=553;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item85
+			{
+				linkID=85;
+				item0=545;
 				item1=553;
 				class CustomData
 				{
