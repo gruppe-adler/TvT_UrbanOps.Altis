@@ -1,6 +1,6 @@
 # Urban Ops
 Urban Ops is a dynamic seize/defend mission for all maps.  
-OPFOR chooses a city that it will have to defend for X minutes, while BLUFOR tries to capture it. Both teams have to be careful not to hurt any civilians or else they might start helping the opponent.
+OPFOR chooses a city that they will have to defend for X minutes (*Capture Time*), while BLUFOR tries to capture it. Both teams have to be careful not to hurt any civilians or else they might start helping the opponent.
 
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
@@ -12,6 +12,7 @@ OPFOR chooses a city that it will have to defend for X minutes, while BLUFOR tri
 - [The Dealer (OPFOR)](#the-dealer-opfor)
 - [Commandvehicles (BLUFOR)](#commandvehicles-blufor)
 - [Factions](#factions)
+- [Civilians](#civilians)
 - [Parameters](#parameters)
 - [Pictures](#pictures)
 
@@ -28,7 +29,7 @@ OPFOR chooses a city that it will have to defend for X minutes, while BLUFOR tri
 1. OPFOR commander chooses one of the available *Locations* from the map (OPFOR players can watch)
 2. OPFOR spawns at the chosen *Location* and has X minutes (*SetupTime*) to prepare for the attack
 3. OPFOR can buy equipment from the *Dealer* (position marked on map, visible to OPFOR)
-4. BLUFOR sees the map (including the chosen *Location*) during preparation time and can make plans to attack
+4. BLUFOR is on the map during preparation time and can make plans to attack (they see the chosen *Location*)
 5. BLUFOR commander chooses a start position outside the *Respawn Zone*
 6. BLUFOR can buy equipment at the *Commandvehicle* (spawns on start position, marked on map, visible to BLUFOR)
 
@@ -37,8 +38,8 @@ OPFOR chooses a city that it will have to defend for X minutes, while BLUFOR tri
 BLUFOR wins when:
 * all OPFOR units (including AI) have been eliminated and OPFOR is unable to respawn
 * BLUFOR controls the *Location* for X minutes (*CaptureTime*)
-  * BLUFOR is in control when the ratio of BLUFOR units to OPFOR units (including AI) is at least the preset *ControlRatio*
-  * if BLUFOR loses control, the time needed to win is not reset
+  * BLUFOR is in control when the ratio of BLUFOR units to OPFOR units (including AI) is at X:Y (*ControlRatio*)
+  * if BLUFOR loses control, the capture time needed to win is not reset
 
 ### OPFOR
 OPFOR wins when:
@@ -59,7 +60,7 @@ Each *Commandvehicle's* position is marked on BLUFOR's map. The markers will be 
 
 * is inside the *Respawn Zone*
 * is not moving
-* is not disabled (engine or hull in critical condition)
+* is not disabled (engine or hull in critical condition) or destroyed
 * does not have any enemies near it (100m)
 
 Respawning *BLUFOR* units will be prompted to choose which *Commandvehicle* to respawn on from the map, if their team has more than one.
@@ -77,6 +78,18 @@ planned:
 * Germany - Heer
 * Independent - Eastern European Rebels
 * Independent - Islamic Terrorists
+
+## Civilians
+Civilians will go about their lives in the *Location*. The more buildings there are in a *Location* the more civilians will usually be present. Some civilians will be in or around their houses while others will walk around.
+
+When civilians are killed by one side, they will start supporting the other. The amount of kills that one side has over the other is relevant. When each level of support is reached for the first time, both sides will get a notification.
+
+Kills more | Effect
+-----------|-----------------------------------------------------------------------------------------------------------------------------------
+2          | markers on enemy units near the *Location*
+4          | more accurate, more frequent markers on enemy units near the *Location*; markers on the *Dealer* or *Commandvehicles* respectively
+6          | more accurate markers on *Dealer* or *Commandvehicles*; civilians will start taking up arms and fight
+
 
 ## Parameters
 

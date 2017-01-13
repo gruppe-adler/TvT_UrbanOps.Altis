@@ -4,7 +4,7 @@ uo_civkillRatio = 0;
 
     switch (true) do {
         //support blufor
-        case (_killRatio < -6): {
+        case (_killRatio < -5): {
             if (uo_civkillRatio >= -6) then {[WEST,'Report','Civilians are starting to actively resist the occupying forces.'] remoteExec ['uo_fnc_sideNotification',0,false]};
             if (50 > random 100) then {[EAST,[0,100]] call uo_fnc_civMarkEnemy};
             if (20 > random 100) then {[selectRandom (missionNamespace getVariable ["uo_cv_allCivs",[]])] call uo_fnc_makeMilitia};
@@ -30,7 +30,7 @@ uo_civkillRatio = 0;
         };
 
         //support opfor
-        case (_killRatio > 6): {
+        case (_killRatio > 5): {
             if (uo_civkillRatio <= 6) then {[EAST,'Report','Civilians are starting to actively resist the invading forces.'] remoteExec ['uo_fnc_sideNotification',0,false]};
             if (50 > random 100) then {[WEST,[0,100]] call uo_fnc_civMarkEnemy};
             if (20 > random 100) then {[selectRandom (missionNamespace getVariable ["uo_cv_allCivs",[]])] call uo_fnc_makeMilitia};
