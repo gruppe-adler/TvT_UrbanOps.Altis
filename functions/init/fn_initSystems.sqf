@@ -30,7 +30,7 @@ if (isServer) then {[{["PRINT", "SERVER_SETUP"] call uo_fnc_diagReport}, [], 15]
 [{missionNamespace getVariable ["uo_init_cvCreated", false]}, {[] call uo_fnc_findBluStartPos}, []] call CBA_fnc_waitUntilAndExecute;
 
 //on game start
-[{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_fnc_saveTeammebers}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_fnc_saveTeammembers}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_fnc_endByBluKilled}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_fnc_endByOpfKilled}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_fnc_endByTimeout}, []] call CBA_fnc_waitUntilAndExecute;
