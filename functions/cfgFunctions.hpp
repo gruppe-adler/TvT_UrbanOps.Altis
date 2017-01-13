@@ -15,6 +15,8 @@ class uo {
     class civs {
         class civKilled {};
         class civKillPunishments {};
+        class civMarkEnemy {};
+        class createCivEnemyMarker {};
         class createCivs {};
         class findBuildingPositions {};
         class findHouses {};

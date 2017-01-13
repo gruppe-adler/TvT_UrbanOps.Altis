@@ -19,6 +19,7 @@ _unit = _group createUnit ["C_man_1",_pos,[],0,"NONE"];
     _unit addGoggles (selectRandom uo_civGoggles);
 
     _unit addEventHandler ["killed", {[_this] call uo_fnc_civKilled}];
+    _unit setVariable ["uo_killedEH",_ehID];
 }, [_unit]] call CBA_fnc_waitUntilAndExecute;
 
 _unit

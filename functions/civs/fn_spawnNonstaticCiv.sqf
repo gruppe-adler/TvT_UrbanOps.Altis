@@ -15,13 +15,10 @@ _unit = _group createUnit ["C_man_1",_pos,[],0,"NONE"];
     _unit addHeadgear (selectRandom uo_civHeadgear);
     _unit addGoggles (selectRandom uo_civGoggles);
 
-    /*_wpPos = _pos vectorAdd [2,0,0];
-    _wp = _group addWaypoint [_wpPos,1];
-    _wp setWaypointType "DISMISS";*/
-
     [group _unit, getPos _unit, 300, [2,5], [0,10,40]] call uo_fnc_taskPatrol;
 
-    _unit addEventHandler ["killed", {[_this] call uo_fnc_civKilled}];
+    _ehID = _unit addEventHandler ["killed", {[_this] call uo_fnc_civKilled}];
+    _unit setVariable ["uo_killedEH",_ehID];
 }, [_unit]] call CBA_fnc_waitUntilAndExecute;
 
 _unit

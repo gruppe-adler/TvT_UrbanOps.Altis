@@ -11,12 +11,12 @@
 */
 
 params ["_group","_centerPosition","_radius","_count",["_timeout",[0,0,0]]];
-private ["_waypoint","_group"];
+private ["_waypoint","_group","_position"];
 
 _group = if (typeName _group == "OBJECT") then {group _group} else {_group};
 _centerPosition = if (typeName _centerPosition == "OBJECT") then {getPos _centerPosition} else {_centerPosition};
-_radius = if (typeName _radius == "ARRAY") then {(random ((_radius select 2) - (_radius select 1))) + (_radius select 2)} else {_radius};
-_count = if (typeName _count == "ARRAY") then {(random ((_count select 2) - (_count select 1))) + (_count select 2)} else {_count};
+_radius = if (typeName _radius == "ARRAY") then {(random ((_radius select 1) - (_radius select 0))) + (_radius select 1)} else {_radius};
+_count = if (typeName _count == "ARRAY") then {(random ((_count select 1) - (_count select 0))) + (_count select 1)} else {_count};
 
 if !(local _group) exitWith {};
 [_group] call CBA_fnc_clearWaypoints;
@@ -26,6 +26,7 @@ if !(local _group) exitWith {};
 for [{_i=0}, {_i<_count}, {_i=_i+1}] do {
     _searchPosition = [_centerPosition,[0,_radius],[0,360]] call uo_fnc_findRandomPos;
     _position = if (80 > random 100) then {[_searchPosition] call uo_fnc_findPositionOfInterest} else {_searchPosition};
+    diag_log str _position;
     _waypoint = _group addWaypoint [_position, 0];
 
     _waypoint setWaypointType "MOVE";
@@ -38,7 +39,7 @@ for [{_i=0}, {_i<_count}, {_i=_i+1}] do {
 
 
 //cycle
-_lastPos = waypointPosition _waypoint;
-_waypoint = _group addWaypoint [_lastPos vectorAdd [10,0,0], 0];
+diag_log str _position;
+_waypoint = _group addWaypoint [_position vectorAdd [10,0,0], 0];
 _waypoint setWaypointType "CYCLE";
 _waypoint setWaypointBehaviour "SAFE";
