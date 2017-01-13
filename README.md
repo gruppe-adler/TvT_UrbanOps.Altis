@@ -67,6 +67,8 @@ Respawning *BLUFOR* units will be prompted to choose which *Commandvehicle* to r
 ## Factions
 Different factions for BLUFOR and OPFOR can be chosen during mission setup. The chosen faction will determine the loadouts, the *Commandvehicles* and the supplies that players can buy. Typical BLUFOR factions (e.g. USA - Army) can be chosen for the OPFOR side to put them in the defending role.
 
+Buyables for each faction depending on side (click the *EAST* tab on the bottom) can be found [here (Google Docs)](https://docs.google.com/spreadsheets/d/1w11wbEgCwPNKWOaUPZlpDI1xXoBMm5X9WyYgqM6s26w/edit?usp=sharing).
+
 playable:
 * USA - Army
 * Russia - MSV
