@@ -19,6 +19,7 @@ class rus_msv_w {
 		compass = "ItemCompass";
         addItemsToUniform[] = {
 			LIST_6("ACE_fieldDressing"),
+			LIST_3("ACE_CableTie"),
 			LIST_2("ACE_morphine"),
 			LIST_2("rhs_mag_rdg2_white"),
 			"ACE_epinephrine",

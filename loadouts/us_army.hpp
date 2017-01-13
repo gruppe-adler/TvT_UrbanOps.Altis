@@ -19,7 +19,8 @@ class us_army {
 		compass = "ItemCompass";
         addItemsToUniform[] = {
 			LIST_6("ACE_fieldDressing"),
-			LIST_2("ACE_morphine"),
+			LIST_3("ACE_CableTie"),
+			LIST_2("ACE_morphine"),			
 			"ACE_epinephrine",
 			"ACE_Flashlight_MX991",
 			"ACE_key_west",
