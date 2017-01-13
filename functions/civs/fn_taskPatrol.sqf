@@ -26,7 +26,6 @@ if !(local _group) exitWith {};
 for [{_i=0}, {_i<_count}, {_i=_i+1}] do {
     _searchPosition = [_centerPosition,[0,_radius],[0,360]] call uo_fnc_findRandomPos;
     _position = if (80 > random 100) then {[_searchPosition] call uo_fnc_findPositionOfInterest} else {_searchPosition};
-    diag_log str _position;
     _waypoint = _group addWaypoint [_position, 0];
 
     _waypoint setWaypointType "MOVE";

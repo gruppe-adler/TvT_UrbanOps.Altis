@@ -3,6 +3,7 @@
 #include "cfgParams.hpp"
 #include "cfgIslands.hpp"
 #include "cfgFactions.hpp"
+#include "cfgCivilians.hpp"
 #include "buyables\cfgBuyables.hpp"
 #include "loadouts\loadouts.hpp"
 #include "dialogs\cfgDialogs.hpp"

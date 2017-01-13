@@ -19,6 +19,10 @@ _unit = _group createUnit ["C_man_1",_pos,[],0,"NONE"];
 
     _ehID = _unit addEventHandler ["killed", {[_this] call uo_fnc_civKilled}];
     _unit setVariable ["uo_killedEH",_ehID];
+
+    _allCivs = missionNamespace getVariable ["uo_cv_allCivs", []];
+    _allCivs pushBack _unit;
+    missionNamespace setVariable ["uo_cv_allCivs", _allCivs, true];
 }, [_unit]] call CBA_fnc_waitUntilAndExecute;
 
 _unit

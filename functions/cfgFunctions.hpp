@@ -22,12 +22,14 @@ class uo {
         class findHouses {};
         class findPositionOfInterest {};
         class initCivs {};
+        class makeMilitia {};
         class spawnNonstaticCiv {};
         class spawnStaticCiv {};
         class taskPatrol {};
     };
 
     class common {
+        class copyWaypoints {};
         class createSideMarker {};
         class createSideMarkerRemote {};
         class deleteSideMarker {};
