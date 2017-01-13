@@ -13,6 +13,7 @@ OPFOR chooses a city that it will have to defend for X minutes, while BLUFOR tri
 - [Commandvehicles (BLUFOR)](#commandvehicles-blufor)
 - [Factions](#factions)
 - [Parameters](#parameters)
+- [Pictures](#pictures)
 
 <!-- /TOC -->
 
@@ -94,3 +95,20 @@ BLUFOR Wave Size    | Automatic    | BLUFOR wave respawn wave size
 OPFOR Wave Size     | Automatic    | OPFOR wave respawn wave size
 Player Respawn Time | 2.5 min      | player respawn time for wave respawn
 Wave Respawn Time   | 4.5 min      | wave respawn time for wave respawn
+
+## Pictures
+
+**OPFOR commander is choosing a location:**
+![](http://i.imgur.com/bYgqxTH.jpg)
+
+**BLUFOR commander is choosing a start position outside the *Respawn Zone***
+![](http://i.imgur.com/2Rf5cOX.jpg)
+
+**Buy menu on a *Commandvehicle*:**
+![](http://i.imgur.com/Dr8qG8a.jpg)
+
+**Two *Commandvehicles* near BLUFOR spawn, one inside, one outside the *Respawn Zone*:**
+![](http://i.imgur.com/1ZJhQLg.jpg)
+
+**Drugs in the *Dealer's* inventory:**
+![](http://i.imgur.com/AoB0YpU.jpg)
