@@ -20,7 +20,7 @@ class Params
     {
         title = "Blufor Faction";
         values[] = {0,1,2,3,4};
-        texts[] = {"USA - Army", "Germany - Heer", "Russia - MSV", "Independent - Eastern European Rebels", "Independent - Islamic Terrorists"};
+        texts[] = {"USA - Army (ONLY THIS WORKS)", "Germany - Heer", "Russia - MSV", "Independent - Eastern European Rebels", "Independent - Islamic Terrorists"};
         default = 0;
     };
 
@@ -28,7 +28,7 @@ class Params
     {
         title = "Opfor Faction";
         values[] = {0,1,2,3,4};
-        texts[] = {"USA - Army", "Germany - Heer", "Russia - MSV", "Independent - Eastern European Rebels", "Independent - Islamic Terrorists"};
+        texts[] = {"USA - Army", "Germany - Heer", "Russia - MSV (ONLY THIS WORKS)", "Independent - Eastern European Rebels", "Independent - Islamic Terrorists"};
         default = 2;
     };
 
@@ -36,7 +36,7 @@ class Params
     {
         title = "Preset";
         values[] = {0,1};
-        texts[] = {"Custom", "Debug (Parameters below will be ignored.)"};
+        texts[] = {"Custom", "Debug (PARAMETERS BELOW WILL BE IGNORED.)"};
         default = 1;
     };
 
@@ -45,15 +45,15 @@ class Params
         title = "Time to Defend the City (Minutes)";
         values[] = {120,900,1200,1500,1800,2100,2400,2700,3000,3300,3600};
         texts[] = {"2","15","20","25","30","35","40","45","50","55","60"};
-        default = 120;
+        default = 2700;
     };
 
     class CaptureTime
     {
-        title = "Time in Control to Capture City (Minutes:Seconds)";
+        title = "Time in Control to Capture City (Minutes)";
         values[] = {150,300,450,600,750,900};
         texts[] = {"2:30", "05:00", "07:30", "10:00", "12:30", "15:00"};
-        default = 300;
+        default = 600;
     };
 
     class SetupTime
@@ -61,7 +61,7 @@ class Params
         title = "Opfor Setup Time (Minutes)";
         values[] = {0,60,120,180,240,300,360,420,480,540,600};
         texts[] = {"0","1", "2", "3","4","5","6","8","9","10"};
-        default = 0;
+        default = 180;
     };
 
     class ControlRatio
@@ -69,7 +69,7 @@ class Params
         title = "Ratio to Control the City - Blufor:Opfor";
         values[] = {1,1.5,2,2.5,3,3.5,4,4.5,5};
         texts[] = {"1:1","1.5:1","2:1","2.5:1","3:1","3.5:1","4:1","4.5:1","5:1"};
-        default = 3;
+        default = 2;
     };
 
     class MoneyFactor
