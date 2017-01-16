@@ -49,6 +49,17 @@ class CfgFunctions {
     #include "node_modules\grad-scoreboard\cfgFunctions.hpp"
 };
 
+//SOUNDS =======================================================================
+class CfgSounds
+{
+	sounds[] = {};
+	class uo_morse
+	{
+		name = "uo_morse";
+		sound[] = {"data\morse.ogg", 0.7, 1, 5};
+		titles[] = {};
+	};
+};
 
 //CUSTOM GEAR ==================================================================
 class grad_customGear {

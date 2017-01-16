@@ -10,4 +10,10 @@ class uo_ui {
 
         class twoLineHint {};
     };
+
+    class animatedHint {
+        file = dialogs\animatedHint\functions;
+
+        class animatedHint {};
+    };
 };

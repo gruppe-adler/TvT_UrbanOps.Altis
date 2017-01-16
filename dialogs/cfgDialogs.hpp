@@ -6,6 +6,7 @@
 
 class RscTitles {
     #include "twoLineHint\title.hpp"
+    #include "animatedHint\title.hpp"
 
     class Default {
         idd = -1;

@@ -1,3 +1,35 @@
+class uo_RscPicture
+{
+    access = 0;
+    type = CT_STATIC;
+    idc = -1;
+    style = ST_PICTURE;
+    colorBackground[] = {0,0,0,0};
+    colorText[] = {1,1,1,1};
+    font = "TahomaB";
+    sizeEx = 0;
+    lineSpacing = 0;
+    text = "";
+    fixedWidth = 0;
+    shadow = 0;
+};
+
+class uo_RscText
+{
+    access = 0;
+    type = CT_STATIC;
+    idc = -1;
+    style = ST_LEFT;
+    w = 0.1; h = 0.05;
+    font = "PuristaLight";
+    sizeEx = 0.04 * TEXT_SCALE;
+    colorBackground[] = {0,0,0,0};
+    colorText[] = {1,1,1,1};
+    text = "";
+    fixedWidth = 0;
+    shadow = 0;
+};
+
 class uo_RscButton
 {
 	access = 0;

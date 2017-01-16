@@ -3,6 +3,8 @@ params ["_side","_enemyUnit","_accuracy","_markerType"];
 if !(hasInterface) exitWith {};
 if (side player == _side) exitWith {};
 
+["data\report.paa","Report incoming...","uo_morse"] call uo_ui_fnc_animatedHint;
+
 _pos = _enemyUnit getRelPos [random _accuracy, random 360];
 _dir = getDir _enemyUnit;
 _name = format ["uo_enemyMarker_%1_%2_%3",str _side,str round time,str round random 100];   //super unique marker name, yo
