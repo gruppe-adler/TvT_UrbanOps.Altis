@@ -64,7 +64,7 @@ if (uo_missionParam_PRESET == "DEBUG") then {
     uo_missionParam_CONTROLRATIO = 2;
     uo_missionParam_MONEYFACTOR = 1;
     uo_missionParam_CAPTURETIME= 60;
-    uo_missionParam_DEFENSETIME = 900;
+    uo_missionParam_DEFENSETIME = 3600;
     uo_missionParam_SETUPTIME = 5;
     uo_missionParam_WAVERESPAWNTIME = 10;
     uo_missionParam_RESPAWNTIME = 10;

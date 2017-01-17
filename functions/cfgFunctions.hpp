@@ -35,6 +35,7 @@ class uo {
         class deleteSideMarker {};
         class deleteSideMarkerRemote {};
         class diagReport {};
+        class doAnimation {};
         class emptyContainer {};
         class findRandomPos {};
         class getIslandCfgValue {};
@@ -45,6 +46,7 @@ class uo {
         class serverLog {};
         class sideHint {};
         class sideNotification {};
+        class stopAnimation {};
         class teleport {};
     };
 
@@ -68,6 +70,7 @@ class uo {
         class checkCommandVehicle {};
         class commandVehicleMarker {};
         class createCommandVehicle {};
+        class cvDestroyAction {};
         class opforBuyAction {};
         class setCommandVehicle {};
         class spawnDealer {};
