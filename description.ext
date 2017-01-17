@@ -24,7 +24,7 @@ class Header
 onLoadName = "URBAN OPS";
 onLoadMission = "";
 author = "McDiod für Gruppe Adler";
-loadScreen = "data\logo.paa";
+loadScreen = "data\loadpic.paa";
 
 //MISC =========================================================================
 respawn = 3;
