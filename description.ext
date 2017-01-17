@@ -42,7 +42,6 @@ class CfgFunctions {
     #include "dialogs\cfgFunctions.hpp"
 
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
-    #include "node_modules\grad-customGear\cfgFunctions.hpp"
     #include "node_modules\grad-listbuymenu\cfgFunctions.hpp"
     #include "node_modules\grad-moneymenu\cfgFunctions.hpp"
     #include "node_modules\grad-winrateTracker\cfgFunctions.hpp"
@@ -59,15 +58,6 @@ class CfgSounds
 		sound[] = {"data\morse.ogg", 0.7, 1, 5};
 		titles[] = {};
 	};
-};
-
-//CUSTOM GEAR ==================================================================
-class grad_customGear {
-    allowHelmet = 0;
-    allowGoggles = 1;
-    allowSimpleScopes = 1;
-    allowMagnifyingScopes = 0;
-    allowMarksmanScopes = 0;
 };
 
 //MONEY MENU ===================================================================
