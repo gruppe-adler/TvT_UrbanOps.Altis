@@ -34,7 +34,13 @@ uo_DEALER = _group createUnit ["C_man_1",_dealerPos,[],0,"NONE"];
     for "_i" from 1 to 4 do {_unit addItemToUniform "ACE_morphine";};
 
     publicVariable "uo_DEALER";
-    _unit addEventHandler ["killed", {uo_DEALERKILLED = true; publicVariable "uo_DEALERKILLED"}];
+    _unit addEventHandler ["killed", {
+        uo_DEALERKILLED = true;
+        publicVariable "uo_DEALERKILLED";
+        [missionNamespace getVariable ["bluforcommander",objNull],10000] grad_lbm_fnc_addFunds;
+        [[EAST,WEST,CIVILIAN],'Report','The dealer has been killed.'] remoteExec ['uo_common_fnc_sideNotification',0,false];
+        [WEST,'Funds received','You received 10000Cr.',{[player] call uo_common_fnc_isCommander}] remoteExec ['uo_common_fnc_sideNotification',0,false];
+    }];
 
     [EAST,"uo_dealerMarker",true,_dealerPos,"mil_marker","COLOREAST"] call uo_common_fnc_createSideMarker;
     [_unit] remoteExec ["uo_missionObjectives_fnc_opforBuyAction",0,true];
