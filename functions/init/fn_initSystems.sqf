@@ -37,3 +37,4 @@ if (isServer) then {[{["PRINT", "SERVER_SETUP"] call uo_fnc_diagReport}, [], 15]
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_fnc_endByControl}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_fnc_endMission}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_fnc_civKillPunishments}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_fnc_createCivLegendMarkers}, []] call CBA_fnc_waitUntilAndExecute;

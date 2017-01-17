@@ -17,6 +17,7 @@ class uo {
         class civKillPunishments {};
         class civMarkEnemy {};
         class createCivEnemyMarker {};
+        class createCivLegendMarkers {};
         class createCivs {};
         class findBuildingPositions {};
         class findHouses {};
@@ -30,6 +31,7 @@ class uo {
 
     class common {
         class copyWaypoints {};
+        class createLegendMarker {};
         class createSideMarker {};
         class createSideMarkerRemote {};
         class deleteSideMarker {};
