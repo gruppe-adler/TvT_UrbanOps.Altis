@@ -15,7 +15,7 @@ _houseCounter = 0;
 	while {((str _buildingPos) != "[0,0,0]")} do {
 
 		if (CIVILIANPROBABILITY > random 100) then {
-			[_buildingPos] call uo_fnc_spawnStaticCiv;
+			[_buildingPos,true] call uo_fnc_spawnCiv;
             _staticCivilianCounter = _staticCivilianCounter +1;
 		};
 
@@ -36,6 +36,6 @@ for [{private _i=0},{_i<_nonstaticAmount},{_i=_i+1}] do {
 		_isWater = surfaceIsWater _pos;
 	};
 
-	[_pos] call uo_fnc_spawnNonstaticCiv;
+	[_pos] call uo_fnc_spawnCiv;
 };
 diag_log format ["fn_createCivs - %1 non-static civilians created.", _nonstaticAmount];

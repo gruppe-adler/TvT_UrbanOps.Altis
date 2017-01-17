@@ -13,6 +13,7 @@ class uo {
     };
 
     class civs {
+        class civDoSurrender {};
         class civKilled {};
         class civKillPunishments {};
         class civMarkEnemy {};
@@ -24,8 +25,7 @@ class uo {
         class findPositionOfInterest {};
         class initCivs {};
         class makeMilitia {};
-        class spawnNonstaticCiv {};
-        class spawnStaticCiv {};
+        class spawnCiv {};
         class taskPatrol {};
     };
 

@@ -1,6 +1,6 @@
 /*    Gets side of killer, adds reputation points
 *
-*     used in fnc_spawnStaticCivilian
+*     used in fnc_spawnCivilian
 */
 
 #define PREFIX uo

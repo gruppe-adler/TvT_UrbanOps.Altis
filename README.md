@@ -54,7 +54,7 @@ The *Dealer*'s position is marked on OPFOR's map. OPFOR units can buy supplies f
 The *Dealer* will most likely have his shop in a building of some sort. He will look like a normal civilian, but is identifiable by the drugs that he has in his inventory.
 
 ## Commandvehicles (BLUFOR)
-BLUFOR will start their game with a *Commandvehicle*. Supplies, including additional *Commandvehicles* can be bought from each one.
+BLUFOR will start their game with a *Commandvehicle*. Supplies, including additional *Commandvehicles* can be bought from each one. *OPFOR* can destroy *Commandvehicles* with an ACE-Interaction.
 
 Each *Commandvehicle's* position is marked on BLUFOR's map. The markers will be blue if respawn is possible and red if respawn is not possible on the respective vehicle. Respawning on a *Commandvehicle* is possible if all conditions are met:
 
