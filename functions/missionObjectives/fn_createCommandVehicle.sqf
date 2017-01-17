@@ -1,3 +1,8 @@
+#define PREFIX uo
+#define COMPONENT missionObjectives
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
+
 if (!isServer) exitWith {};
 
 params ["_searchPos"];
@@ -10,7 +15,7 @@ _cv = COMMANDVEHICLECLASS createVehicle _pos;
     params ["_cv"];
 
     [_cv] call uo_missionObjectives_fnc_setCommandVehicle;
-    diag_log format ["fn_createCommandVehicle - Command vehicle %1 created.", _cv];
+    INFO_1("Command vehicle %1 created.", _cv);
     missionNamespace setVariable ["uo_init_cvCreated", true, true];
-    
+
 }, [_cv]] call CBA_fnc_waitUntilAndExecute;

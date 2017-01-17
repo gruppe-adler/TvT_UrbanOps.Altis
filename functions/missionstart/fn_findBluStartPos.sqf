@@ -8,5 +8,3 @@ if (!isServer) exitWith {};
 } forEach playableUnits;
 
 missionNamespace setVariable ["uo_init_bluforSpawnSet", true, true];
-
-diag_log format ["fn_findBluStartPos - Positions found for %1 players.", {side _x == WEST} count playableUnits];

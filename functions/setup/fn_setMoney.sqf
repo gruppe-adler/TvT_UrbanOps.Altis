@@ -1,3 +1,8 @@
+#define PREFIX uo
+#define COMPONENT setup
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
+
 if (!hasInterface) exitWith {};
 
 [{!isNull player}, {
@@ -9,6 +14,6 @@ if (!hasInterface) exitWith {};
         _money = 600 * uo_missionParam_MONEYFACTOR;
     };
 
-    diag_log format ["fn_setMoney - Giving player %1 credits.", _money];
+    INFO_1("Giving player %1 credits.", _money);
     [player, _money] call grad_lbm_fnc_addFunds;
 }, []] call CBA_fnc_waitUntilAndExecute;

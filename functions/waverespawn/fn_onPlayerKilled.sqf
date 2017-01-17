@@ -3,10 +3,14 @@
 *     executed locally when player dies
 */
 
+#define PREFIX uo
+#define COMPONENT waverespawn
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 //check JIP player is spawning for the first time
 _joinTime = player getVariable ["joinTime", 0];
 _originalSide = player getVariable ["originalSide", "UNKNOWN"];
-if (serverTime-joinTime < 30 && didJIP) exitWith {diag_log "fn_wavePlayerKilled - Player is JIP. Exiting..."};
+if (serverTime-joinTime < 30 && didJIP) exitWith {INFO("Player is JIP. Exiting onPlayerKilled."};
 
 [player, true] call TFAR_fnc_forceSpectator;
 [true] call uo_waverespawn_fnc_blockMap;

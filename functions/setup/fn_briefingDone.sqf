@@ -6,7 +6,7 @@ if (!hasInterface) exitWith {};
 
 [{getClientState == "BRIEFING READ"}, {
     if (!(missionNamespace getVariable ["uo_init_briefingDone", false])) then {
-        diag_log "fn_briefingDone - First to complete briefing. Setting variable.";
+        ["%1 was first to complete briefing.", name player] call uo_common_fnc_serverLog;
         missionNamespace setVariable ["uo_init_briefingDone", true, true];
     };
 }, []] call CBA_fnc_waitUntilAndExecute;

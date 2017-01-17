@@ -1,3 +1,8 @@
+#define PREFIX uo
+#define COMPONENT missionObjectives
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
+
 if (!isServer) exitWith {};
 
 params ["_cv"];
@@ -32,8 +37,9 @@ _h = [{
     _current = _cv getVariable ["uo_respawnObject_isActive", false];
     if ((_cvactive && !_current) || (!_cvactive && _current)) then {
         _cv setVariable ["uo_respawnObject_isActive", _cvactive, true];
-        diag_log format ["fn_checkCommandVehicle - Command Vehicle %1 is now %2.", _cv, if (_cvactive) then {"active"} else {"inactive"}];
+
+        INFO_2("Command vehicle %1 is now %2",_cv,if (_cvactive) then {"active"} else {"inactive"});
     };
 } , 2, [_cv, BLUFORSPAWNDIST, BLUFORSPAWNDIST+BLUFORSPAWNBAND, CVENEMYRADIUS]] call CBA_fnc_addPerFrameHandler;
 
-diag_log format ["fn_checkCommandVehicle - Loop created. Handle: %1.", _h];
+INFO_1("Command vehicle check created for %1. Handle: %2",_cv,_h);

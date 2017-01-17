@@ -1,6 +1,10 @@
+#define PREFIX uo
+#define COMPONENT common
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 params ["_entry"];
 _cfg = missionConfigFile >> "CfgIslands" >> worldName;
-if (!isClass _cfg) exitWith {diag_log format ["fn_getIslandCfgValue - ERROR: CONFIG FOR ISLAND %1 NOT FOUND.", worldName]};
+if (!isClass _cfg) exitWith {ERROR_1("Config for island %1 not found.", worldName)};
 
 if (isNumber (_cfg >> _entry)) exitWith {getNumber (_cfg >> _entry)};
 if (isArray (_cfg >> _entry)) exitWith {getArray (_cfg >> _entry)};
@@ -14,5 +18,5 @@ if (isText (_cfg >> _entry)) exitWith {
     _return
 };
 
-diag_log format ["fn_getIslandCfgValue - ERROR: %1 NOT FOUND IN CONFIG FOR %2.", _entry, worldName];
+ERROR_2("%1 not found in config for %2.",_entry, worldName);
 -1;

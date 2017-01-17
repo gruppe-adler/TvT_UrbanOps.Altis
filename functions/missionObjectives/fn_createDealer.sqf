@@ -1,3 +1,8 @@
+#define PREFIX uo
+#define COMPONENT missionObjectives
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
+
 params ["_houseList"];
 private ["_dealerHouse","_buildingPos", "_dealerMarkerType"];
 
@@ -6,7 +11,7 @@ for [{_i=0}, {_i<30}, {_i=_i+1}] do {
     _dealerHouse = selectRandom _houseList;
     if (getpos _dealerHouse distance2D CITYPOSITION < CITYAREASIZE * DEALERRADIUSFACTOR) exitWith {};
 };
-diag_log format ["fn_spawnDealer - House selected for dealer: %1.",_dealerHouse];
+INFO_1("House selected for dealer: %1",_dealerHouse);
 
 //select position and spawn dealer
 _dealerPos = selectRandom ([_dealerHouse] call uo_civs_fnc_findBuildingPositions);

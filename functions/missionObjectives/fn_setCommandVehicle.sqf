@@ -1,5 +1,4 @@
 params ["_cv"];
-diag_log format ["fn_setCommandVehicle - %1 is now a commandvehicle.", _cv];
 
 _cv setDir (_cv getDir CITYPOSITION);
 _cv setVariable ["uo_respawnObject_isActive", false, true];

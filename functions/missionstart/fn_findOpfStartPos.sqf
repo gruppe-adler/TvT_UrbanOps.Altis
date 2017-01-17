@@ -8,5 +8,3 @@ if (!isServer) exitWith {};
 } forEach playableUnits;
 
 missionNamespace setVariable ["uo_init_opforSpawnSet", true, true];
-
-diag_log format ["fn_findOpfStartPos - Positions found for %1 players.", {side _x == EAST} count playableUnits];

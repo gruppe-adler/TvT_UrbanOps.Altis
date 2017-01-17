@@ -21,7 +21,7 @@ switch (_mode) do {
     };
 
     case "PRINT": {
-        if (isNil _varName) exitWith {diag_log format ["fn_diagReport - %1 is not an existing category.", _category]};
+        if (isNil _varName) exitWith {};
         _var = call compile _varName;
         diag_log format ["%1 REPORT ===================================================================================", _category];
         {

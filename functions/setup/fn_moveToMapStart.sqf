@@ -1,3 +1,8 @@
+#define PREFIX uo
+#define COMPONENT setup
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
+
 if (!hasInterface) exitWith {};
 
 [{_originalSide = player getVariable "originalSide"; !isNil "_originalSide"}, {
@@ -13,5 +18,5 @@ if (!hasInterface) exitWith {};
     player allowDamage false;
     player setPos _pos;
     [{player allowDamage true}, [], 5] call CBA_fnc_waitAndExecute;
-    diag_log format ["fn_moveToMapStart - Moved player to startposition %1. Configposition was %2", _pos, _configpos];
+    INFO_2("Moved player to startposition %1. Configposition was %2", _pos, _configpos);
 }, []] call CBA_fnc_waitUntilAndExecute;

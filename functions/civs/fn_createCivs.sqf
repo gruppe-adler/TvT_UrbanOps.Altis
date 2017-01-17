@@ -1,3 +1,7 @@
+#define PREFIX uo
+#define COMPONENT civs
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 params ["_houseList"];
 private ["_dealerHouse","_buildingPos", "_pos"];
 
@@ -23,7 +27,7 @@ _houseCounter = 0;
 		_buildingPos = _x buildingPos _bPosCounter;
 	};
 } foreach _houseList;
-diag_log format ["fn_createCivs - %1 static civilians created.", _staticCivilianCounter];
+INFO_1("%1 static civilians created.", _staticCivilianCounter);
 
 //SPAWN NON-STATIC CIVILIANS ===================================================
 _nonstaticAmount = ceil (CITYAREASIZE * 0.08);
@@ -38,4 +42,4 @@ for [{private _i=0},{_i<_nonstaticAmount},{_i=_i+1}] do {
 
 	[_pos] call uo_civs_fnc_spawnCiv;
 };
-diag_log format ["fn_createCivs - %1 non-static civilians created.", _nonstaticAmount];
+INFO_1("%1 non-static civilians created.", _nonstaticAmount);

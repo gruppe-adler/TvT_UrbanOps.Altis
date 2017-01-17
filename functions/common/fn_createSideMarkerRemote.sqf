@@ -34,8 +34,6 @@ if (side player != _side) exitWith {};
 if (getMarkerType _name != "") then {
     if (_overwrite) then {
         deleteMarkerLocal _name;
-    } else {
-        diag_log format ["fn_createSideMarkerRemote - Markername %1 is already in use.", _name];
     };
 };
 

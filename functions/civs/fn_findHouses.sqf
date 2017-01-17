@@ -1,3 +1,7 @@
+#define PREFIX uo
+#define COMPONENT civs
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 //exclusion list for houses
 _exclusionList = [
 	"Land_Pier_F",
@@ -9,7 +13,7 @@ _exclusionList = [
 
 //HOUSE LIST ===================================================================
 _houseList =    CITYPOSITION nearObjects ["House",CITYAREASIZE+80];
-diag_log format ["fn_findHouses - %1 houses found:", (count _houseList)];
+INFO_1("%1 houses found.", count _houseList);
 
 //Clean up house list (remove buildings that have no positions)
 _cleanUpCounter = 0;
@@ -25,7 +29,6 @@ _cleanUpCounter = 0;
         };
     };
 }forEach _houseList;
-
-diag_log format ["fn_findHouses - %1 houses without positions have been cleaned from list. %2 houses remaining.", _cleanUpCounter,(count _houseList)];
+INFO_2("%1 houses without positions removed from list. %2 remaining.", _cleanUpCounter, count _houseList);
 
 _houseList

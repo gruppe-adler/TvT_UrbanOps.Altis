@@ -1,3 +1,7 @@
+#define PREFIX uo
+#define COMPONENT missionstart
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 if (!isServer) exitWith {};
 
 CITYPOSITION = locationPosition CHOSENLOCATION;
@@ -97,4 +101,4 @@ _marker setMarkerSize [BLUFORSPAWNDIST+BLUFORSPAWNBAND, BLUFORSPAWNDIST+BLUFORSP
 ] call uo_common_fnc_createSideMarker;
 
 missionNamespace setVariable ["uo_init_playAreaSetupDone", true, true];
-diag_log "fn_playAreaSetup - Player area set up.";
+INFO("Play area setup complete.");

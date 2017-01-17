@@ -1,3 +1,7 @@
+#define PREFIX uo
+#define COMPONENT endings
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 
 if (hasInterface) then {
     _endMission = {
@@ -7,7 +11,7 @@ if (hasInterface) then {
         [_winningSide,_endText] spawn {
             params ["_winningSide","_endText"];
 
-            if (missionNamespace getVariable ["uo_endInProgress", false]) exitWith {diag_log "fn_endMission - A different ending is already in progress."};
+            if (missionNamespace getVariable ["uo_endInProgress", false]) exitWith {INFO("A different ending is already in progress.")};
             uo_endInProgress = true;
 
             _winningText = switch (_winningSide) do {

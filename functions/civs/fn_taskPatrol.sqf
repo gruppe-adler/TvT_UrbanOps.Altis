@@ -38,7 +38,6 @@ for [{_i=0}, {_i<_count}, {_i=_i+1}] do {
 
 
 //cycle
-diag_log str _position;
 _waypoint = _group addWaypoint [_position vectorAdd [10,0,0], 0];
 _waypoint setWaypointType "CYCLE";
 _waypoint setWaypointBehaviour "SAFE";
