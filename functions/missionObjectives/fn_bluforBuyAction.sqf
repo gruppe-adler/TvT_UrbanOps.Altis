@@ -5,7 +5,7 @@ if (isNil "_cv") exitWith {};
 if (isNull _cv) exitWith {};
 
 
-[_cv,"blu_" + uo_missionParam_BLUFORFACTION,_cv,_cv,"COMMANDVEHICLE","Buy Equipment", {side player == WEST}] call grad_lbm_fnc_addInteraction;
+[_cv,"blu_" + uo_missionParam_BLUFORFACTION,_cv,_cv,"COMMANDVEHICLE","Buy Equipment", {side (_this select 1) == WEST && !((_this select 0) getVariable ["uo_respawnObject_isDestroyed",false])}] call grad_lbm_fnc_addInteraction;
 
 
 
