@@ -10,4 +10,4 @@ params [
     "_name"
 ];
 
-[_side,_name] remoteExec ["uo_fnc_deleteSideMarkerRemote", 0, false];
+[_side,_name] remoteExec ["uo_common_fnc_deleteSideMarkerRemote", 0, false];

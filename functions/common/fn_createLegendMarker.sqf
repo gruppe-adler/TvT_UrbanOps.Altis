@@ -9,7 +9,7 @@ missionNamespace setVariable ["uo_allLegendMarkers",_allLegendMarkers];
 
 
 if (!isNil "_side") then {
-    [_side,_markername,_false,_markerPos,_type,_color,_text] call uo_fnc_createSideMarkerRemote;
+    [_side,_markername,_false,_markerPos,_type,_color,_text] call uo_common_fnc_createSideMarkerRemote;
 
 } else {
     _marker = createMarker [_markername,_markerPos];

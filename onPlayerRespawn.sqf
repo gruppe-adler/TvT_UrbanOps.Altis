@@ -1,1 +1,1 @@
-[] call uo_fnc_onWavePlayerRespawn;
+[] call uo_waverespawn_fnc_onPlayerRespawn;

@@ -46,11 +46,11 @@ if (_ehID > 0) then {
 
 
 //SET TO INDEPENDENT ===========================================================
-_oldWaypointSettings = [group _civ,"COPY",false,false] call uo_fnc_copyWaypoints;
+_oldWaypointSettings = [group _civ,"COPY",false,false] call uo_common_fnc_copyWaypoints;
 
 _group = createGroup INDEPENDENT;
 [_civ] joinSilent _group;
 _group setBehaviour "COMBAT";
 _group setCombatMode "RED";
 
-[_group,"PASTE",false,false,_oldWaypointSettings] call uo_fnc_copyWaypoints;
+[_group,"PASTE",false,false,_oldWaypointSettings] call uo_common_fnc_copyWaypoints;

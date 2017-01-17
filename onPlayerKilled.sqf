@@ -1,1 +1,1 @@
-[] call uo_fnc_onWavePlayerKilled;
+[] call uo_waverespawn_fnc_onPlayerKilled;

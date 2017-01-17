@@ -20,9 +20,9 @@ _unit = _group createUnit ["C_man_1",_pos,[],0,"NONE"];
     _unit addHeadgear (selectRandom uo_civHeadgear);
     _unit addGoggles (selectRandom uo_civGoggles);
 
-    [group _unit, getPos _unit, 300, [2,5], [0,10,40]] call uo_fnc_taskPatrol;
+    [group _unit, getPos _unit, 300, [2,5], [0,10,40]] call uo_civs_fnc_taskPatrol;
 
-    _ehID = _unit addEventHandler ["killed", {[_this] call uo_fnc_civKilled}];
+    _ehID = _unit addEventHandler ["killed", {[_this] call uo_civs_fnc_onKilled}];
     _unit setVariable ["uo_killedEH",_ehID];
 
     _allCivs = missionNamespace getVariable ["uo_cv_allCivs", []];

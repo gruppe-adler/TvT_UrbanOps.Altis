@@ -1,7 +1,7 @@
 if (player getVariable "wr_interrupted") exitWith {player setVariable ["wr_waveCountdownDone", true]};
 if (player getVariable "wr_isFreeRespawn") exitWith {player setVariable ["wr_waveCountdownDone", true]};
 
-[profileName, player getVariable ["originalSide", "UNKNOWN"]] remoteExec ["uo_fnc_addToWave",2,false];
+[profileName, player getVariable ["originalSide", "UNKNOWN"]] remoteExec ["uo_waverespawn_fnc_addToWave",2,false];
 
 [{
     private ["_explanation"];
@@ -34,7 +34,7 @@ if (player getVariable "wr_isFreeRespawn") exitWith {player setVariable ["wr_wav
     } else {
         _explanation = parseText "<t align='center' size='1.4'>Warte auf weitere Spieler.</t>";
     };
-    [_respawnIn, _waveLeft, _explanation] call uo_fnc_respawnHint;
+    [_respawnIn, _waveLeft, _explanation] call uo_waverespawn_fnc_respawnHint;
 
     if (_waveTimeLeft <= 0) exitWith {
     [_this select 1] call CBA_fnc_removePerFrameHandler;

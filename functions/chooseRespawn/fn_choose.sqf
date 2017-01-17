@@ -1,4 +1,4 @@
-[false] call uo_fnc_blockMap;
+[false] call uo_waverespawn_fnc_blockMap;
 openMap [true, false];
 
 [true, "CHOOSE RESPAWN LOCATION", "CONFIRM (ENTER)"] call uo_ui_fnc_twoLineHint;
@@ -8,13 +8,13 @@ mcd_chooseRespawnClick = [
     "mcd_chooseRespawn",
     "onMapSingleClick",
     {
-        _respawnObject = [_pos, 300, player getVariable ["originalSide", "UNKNOWN"]] call uo_fnc_findNearestRespawnObject;
+        _respawnObject = [_pos, 300, player getVariable ["originalSide", "UNKNOWN"]] call uo_chooseRespawn_fnc_findNearestRespawnObject;
         uo_selectedRespawnObject = _respawnObject;
 
         if (isNull _respawnObject || !(_respawnObject getVariable ["uo_respawnObject_isActive", false])) then {
-            [objNull] call uo_fnc_respawnSelectorMarker;
+            [objNull] call uo_chooseRespawn_fnc_respawnSelectorMarker;
         } else {
-            [_respawnObject] call uo_fnc_respawnSelectorMarker;
+            [_respawnObject] call uo_chooseRespawn_fnc_respawnSelectorMarker;
         };
     }
 ] call BIS_fnc_addStackedEventHandler;
@@ -32,9 +32,9 @@ mcd_onRespawnKeyDown = (findDisplay 46) displayAddEventHandler ["KeyUp", {
             (findDisplay 46) displayRemoveEventHandler ["KeyDown", mcd_onRespawnKeyDown];
 
             [false] call uo_ui_fnc_twoLineHint;
-            [objNull] call uo_fnc_respawnSelectorMarker;
+            [objNull] call uo_chooseRespawn_fnc_respawnSelectorMarker;
             openMap [false, false];
-            [] call uo_fnc_doRespawn;
+            [] call uo_waverespawn_fnc_doRespawn;
         };
     };
 }];

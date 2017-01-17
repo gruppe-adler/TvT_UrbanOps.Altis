@@ -13,4 +13,4 @@ _legendMarkers = if (side player == WEST) then {
 };
 
 
-{_x call uo_fnc_createLegendMarker} forEach _legendMarkers;
+{_x call uo_common_fnc_createLegendMarker} forEach _legendMarkers;

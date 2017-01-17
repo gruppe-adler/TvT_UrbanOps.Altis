@@ -9,7 +9,7 @@ for [{_i=0}, {_i<30}, {_i=_i+1}] do {
 diag_log format ["fn_spawnDealer - House selected for dealer: %1.",_dealerHouse];
 
 //select position and spawn dealer
-_dealerPos = selectRandom ([_dealerHouse] call uo_fnc_findBuildingPositions);
+_dealerPos = selectRandom ([_dealerHouse] call uo_civs_fnc_findBuildingPositions);
 _group = createGroup civilian;
 uo_DEALER = _group createUnit ["C_man_1",_dealerPos,[],0,"NONE"];
 
@@ -31,6 +31,6 @@ uo_DEALER = _group createUnit ["C_man_1",_dealerPos,[],0,"NONE"];
     publicVariable "uo_DEALER";
     _unit addEventHandler ["killed", {uo_DEALERKILLED = true; publicVariable "uo_DEALERKILLED"}];
 
-    [EAST,"uo_dealerMarker",true,_dealerPos,"mil_marker","COLOREAST"] call uo_fnc_createSideMarker;
-    [_unit] remoteExec ["uo_fnc_opforBuyAction",0,true];
+    [EAST,"uo_dealerMarker",true,_dealerPos,"mil_marker","COLOREAST"] call uo_common_fnc_createSideMarker;
+    [_unit] remoteExec ["uo_missionObjectives_fnc_opforBuyAction",0,true];
 }, [_dealerPos]] call CBA_fnc_waitUntilAndExecute;

@@ -7,7 +7,7 @@ if (hasInterface) then {
     player setVariable ["joinTime", serverTime];
     _originalSide = player getVariable "originalSide";
     if (isNil "_originalSide") exitWith {
-        ["fn_initWaveRespawn - ERROR: PLAYER %1 DOES NOT HAVE ORIGINALSIDE.", profileName] call uo_fnc_serverLog;
+        ["fn_initWaveRespawn - ERROR: PLAYER %1 DOES NOT HAVE ORIGINALSIDE.", profileName] call uo_common_fnc_serverLog;
     };
 
     if (_originalSide == "WEST") then {
@@ -27,6 +27,6 @@ if (hasInterface) then {
 };
 
 if (isServer) then {
-    [] call uo_fnc_startWaveLoops;
-    addMissionEventHandler ["HandleDisconnect", {[_this select 3] call uo_fnc_removeFromWave}];
+    [] call uo_waverespawn_fnc_startWaveLoops;
+    addMissionEventHandler ["HandleDisconnect", {[_this select 3] call uo_waverespawn_fnc_removeFromWave}];
 };

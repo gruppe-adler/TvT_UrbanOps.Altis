@@ -4,7 +4,7 @@ if (player getVariable ["originalSide", "UNKNOWN"] != "WEST") exitWith {};
 
 [{!isNull (findDisplay 46)}, {
     openMap [true, false];
-    [] call uo_fnc_bluforWaitDialog;
+    [] call uo_choosePlayArea_fnc_bluforWaitDialog;
 }, []] call CBA_fnc_waitUntilAndExecute;
 
 
@@ -13,14 +13,14 @@ if (player != bluforcommander) exitWith {};
 
 
 [{SETUPTIMEREMAINING <= 0}, {
-    ["Blufor Commander %1 is now choosing a city.", profileName] call uo_fnc_serverLog;
+    ["Blufor Commander %1 is now choosing a city.", profileName] call uo_common_fnc_serverLog;
 
     //MAPCLICK EVENT ===============================================================
     mcd_chooseSpawnClick = [
         "mcd_chooseSpawn",
         "onMapSingleClick",
         {
-            [WEST,"spawnMarker",true,_pos,"hd_start","COLORWEST"] call uo_fnc_createSideMarker;
+            [WEST,"spawnMarker",true,_pos,"hd_start","COLORWEST"] call uo_common_fnc_createSideMarker;
             BLUFORSPAWN = _pos;
         }
     ] call BIS_fnc_addStackedEventHandler;
@@ -44,16 +44,16 @@ if (player != bluforcommander) exitWith {};
                     } else {
 
                         //position successfully chosen
-                        ["fn_chooseSpawn - %1 chose spawn at %2.", profileName, BLUFORSPAWN] call uo_fnc_serverLog;
+                        ["fn_chooseSpawn - %1 chose spawn at %2.", profileName, BLUFORSPAWN] call uo_common_fnc_serverLog;
 
                         uo_init_spawnChosen = true;
                         publicVariable "uo_init_spawnChosen";
                         publicVariable "BLUFORSPAWN";
 
-                        [WEST,"EXPLANATIONMARKER_CAPTURE"] call uo_fnc_deleteSideMarker;
-                        [WEST,"EXPLANATIONMARKER_CAPTURE_TEXT"] call uo_fnc_deleteSideMarker;
-                        [WEST,"EXPLANATIONMARKER_RESPAWN"] call uo_fnc_deleteSideMarker;
-                        [WEST,"EXPLANATIONMARKER_RESPAWN_TEXT"] call uo_fnc_deleteSideMarker;
+                        [WEST,"EXPLANATIONMARKER_CAPTURE"] call uo_common_fnc_deleteSideMarker;
+                        [WEST,"EXPLANATIONMARKER_CAPTURE_TEXT"] call uo_common_fnc_deleteSideMarker;
+                        [WEST,"EXPLANATIONMARKER_RESPAWN"] call uo_common_fnc_deleteSideMarker;
+                        [WEST,"EXPLANATIONMARKER_RESPAWN_TEXT"] call uo_common_fnc_deleteSideMarker;
 
                         ["mcd_chooseSpawn", "onMapSingleClick"] call BIS_fnc_removeStackedEventHandler;
                         (findDisplay 46) displayRemoveEventHandler ["KeyDown", mcd_onSpawnKeyDown];

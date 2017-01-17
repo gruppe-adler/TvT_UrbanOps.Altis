@@ -28,4 +28,4 @@ params [
     ["_brush", "Solid"]
 ];
 
-[_side,_name,_overwrite,_pos,_type,_color,_text,_shape,_size,_alpha,_brush] remoteExec ["uo_fnc_createSideMarkerRemote", 0, false];
+[_side,_name,_overwrite,_pos,_type,_color,_text,_shape,_size,_alpha,_brush] remoteExec ["uo_common_fnc_createSideMarkerRemote", 0, false];

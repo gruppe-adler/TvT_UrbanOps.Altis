@@ -8,13 +8,13 @@ _condition = "
 _onActivation = "
     BLUFORINCONTROL = true;
     publicVariable 'BLUFORINCONTROL';
-    [east,'Report','BLUFOR has taken control!'] remoteExec ['uo_fnc_sideNotification',0,false];
+    [east,'Report','BLUFOR has taken control!'] remoteExec ['uo_common_fnc_sideNotification',0,false];
 ";
 
 _onDeactivation = "
     BLUFORINCONTROL = false;
     publicVariable 'BLUFORINCONTROL';
-    [east,'Report','BLUFOR is no longer in control.'] remoteExec ['uo_fnc_sideNotification',0,false];
+    [east,'Report','BLUFOR is no longer in control.'] remoteExec ['uo_common_fnc_sideNotification',0,false];
 ";
 
 _trigger = createTrigger ["EmptyDetector", CITYPOSITION, false];

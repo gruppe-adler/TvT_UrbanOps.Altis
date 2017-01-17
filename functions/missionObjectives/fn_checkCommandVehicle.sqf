@@ -12,7 +12,7 @@ _h = [{
         _cv setVariable ["uo_respawnObject_isDestroyed", true, true];
         missionNamespace setVariable ["uo_cv_allCVs", (missionNamespace getVariable ["uo_cv_allCVs", []]) - [_cv], true];
 
-        [[EAST,WEST,CIVILIAN],'Report','A commandvehicle has been destroyed.'] remoteExec ['uo_fnc_sideNotification',0,false];
+        [[EAST,WEST,CIVILIAN],'Report','A commandvehicle has been destroyed.'] remoteExec ['uo_common_fnc_sideNotification',0,false];
 
         [_this select 1] call CBA_fnc_removePerFrameHandler;
     };

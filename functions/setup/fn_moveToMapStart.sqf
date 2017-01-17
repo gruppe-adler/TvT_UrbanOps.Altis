@@ -3,9 +3,9 @@ if (!hasInterface) exitWith {};
 [{_originalSide = player getVariable "originalSide"; !isNil "_originalSide"}, {
     private ["_configpos"];
     if (player getVariable "originalSide" == "WEST") then {
-        _configpos = ["spawnPosBlu"] call uo_fnc_getIslandCfgValue;
+        _configpos = ["spawnPosBlu"] call uo_common_fnc_getIslandCfgValue;
     } else {
-        _configpos = ["spawnPosOpf"] call uo_fnc_getIslandCfgValue;
+        _configpos = ["spawnPosOpf"] call uo_common_fnc_getIslandCfgValue;
     };
 
     _pos = _configpos findEmptyPosition [0,10];

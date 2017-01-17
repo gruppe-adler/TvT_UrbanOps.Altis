@@ -35,7 +35,7 @@ params ["_timeOfDeath"];
     _waveLeft = parseText format ["<t align='center' size='1.4'>Welle: <t color='%3'>%1/%2</t> - <t color ='%4'>%5</t></t>", _waveSize - _playersLeft, _waveSize, if (_playersLeft == 0) then {"#00ff00"} else {"#ffff00"},if (_waveTimeLeft <= 0) then {"#00ff00"} else {"#ffff00"}, _timeLeftStr];
 
     _explanation = parseText "<t align ='center' size='1.4'>Warte auf Spieler-Countdown.</t>";
-    [_respawnIn, _waveLeft, _explanation] call uo_fnc_respawnHint;
+    [_respawnIn, _waveLeft, _explanation] call uo_waverespawn_fnc_respawnHint;
 
     if (_playerTimeLeft <= 0) exitWith {
         [_this select 1] call CBA_fnc_removePerFrameHandler;

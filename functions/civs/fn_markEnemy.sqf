@@ -26,6 +26,6 @@ switch (true) do {
 if (count _enemies > 0) then {
     _enemyUnit = selectRandom _enemies;
     if (!isNull _enemyUnit) then {
-        [_side,_enemyUnit,_accuracy,_markerType] remoteExec ['uo_fnc_createCivEnemyMarker',0,false];
+        [_side,_enemyUnit,_accuracy,_markerType] remoteExec ['uo_civs_fnc_createEnemyMarker',0,false];
     };
 };

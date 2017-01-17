@@ -4,12 +4,12 @@ if (player getVariable ["originalSide", "UNKNOWN"] != "EAST") exitWith {};
 
 [{!isNull (findDisplay 46)}, {
     openMap [true, false];
-    [] call uo_fnc_opforWaitDialog;
+    [] call uo_choosePlayArea_fnc_opforWaitDialog;
 
     if (isNil "opforcommander") exitWith {};
     if (player != opforcommander) exitWith {};
 
-    ["Opfor Commander %1 is now choosing a city.", profileName] call uo_fnc_serverLog;
+    ["Opfor Commander %1 is now choosing a city.", profileName] call uo_common_fnc_serverLog;
 
     //MAPCLICK EVENT ===============================================================
     mcd_chooseCityClick = [
@@ -26,13 +26,13 @@ if (player getVariable ["originalSide", "UNKNOWN"] != "EAST") exitWith {};
                 case "NameLocal": {OTHERMARKERSIZE};
             };
 
-            ["fn_chooseCity - %1 clicked on %2", profileName, text CHOSENLOCATION] call uo_fnc_serverLog;
+            ["fn_chooseCity - %1 clicked on %2", profileName, text CHOSENLOCATION] call uo_common_fnc_serverLog;
 
             //create marker
             if (!isNil "CHOSENLOCATION") then {
-                [EAST,"selectionMarker",true,getPos CHOSENLOCATION,"hd_start","ColorGreen","","ELLIPSE",_drawRadius,0.45,"Solid"] call uo_fnc_createSideMarker;
+                [EAST,"selectionMarker",true,getPos CHOSENLOCATION,"hd_start","ColorGreen","","ELLIPSE",_drawRadius,0.45,"Solid"] call uo_common_fnc_createSideMarker;
             } else {
-                [EAST,"selectionMarker"] call uo_fnc_deleteSideMarker;
+                [EAST,"selectionMarker"] call uo_common_fnc_deleteSideMarker;
             };
         }
     ] call BIS_fnc_addStackedEventHandler;
@@ -44,8 +44,8 @@ if (player getVariable ["originalSide", "UNKNOWN"] != "EAST") exitWith {};
                 ["PLEASE CHOOSE A LOCATION!"] call uo_ui_fnc_confirmHint;
 
             } else {
-                ["fn_chooseCity - %1 chose location %2", profileName, text CHOSENLOCATION] call uo_fnc_serverLog;
-                [EAST,"selectionMarker"] call uo_fnc_deleteSideMarker;
+                ["fn_chooseCity - %1 chose location %2", profileName, text CHOSENLOCATION] call uo_common_fnc_serverLog;
+                [EAST,"selectionMarker"] call uo_common_fnc_deleteSideMarker;
 
                 uo_init_cityChosen = true;
                 publicVariable "uo_init_cityChosen";

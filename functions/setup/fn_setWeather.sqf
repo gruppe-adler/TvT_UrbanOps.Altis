@@ -14,7 +14,7 @@ if (uo_missionParam_WEATHERSETTING == -1) then {
     _overcast = uo_missionParam_WEATHERSETTING;
 };
 
-["LOG", "SERVER_SETUP", format ["fn_setWeather - Set overcast to %1.", _overcast]] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", format ["fn_setWeather - Set overcast to %1.", _overcast]] call uo_common_fnc_diagReport;
 [_overcast * 0.01] call bis_fnc_setOvercast;
 
 //FOG ==========================================================================
@@ -32,5 +32,5 @@ if (uo_missionParam_TIMEOFDAY <= 8) then {
 
 _fog = random [0,_mid,0.4];
 
-["LOG", "SERVER_SETUP", format ["fn_setWeather - Set fog to %1.", _fog]] call uo_fnc_diagReport;
+["LOG", "SERVER_SETUP", format ["fn_setWeather - Set fog to %1.", _fog]] call uo_common_fnc_diagReport;
 0 setFog _fog;
