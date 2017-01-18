@@ -4,6 +4,8 @@
 
 params ["_timeOfDeath"];
 
+INFO("Starting player countdown...");
+
 [{
     _timeOfDeath = (_this select 0) select 0;
 

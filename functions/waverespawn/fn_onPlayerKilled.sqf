@@ -10,15 +10,19 @@
 //check JIP player is spawning for the first time
 _joinTime = player getVariable ["joinTime", 0];
 _originalSide = player getVariable ["originalSide", "UNKNOWN"];
-if (serverTime-joinTime < 30 && didJIP) exitWith {INFO("Player is JIP. Exiting onPlayerKilled."};
+if (serverTime - _joinTime < 30 && didJIP) exitWith {INFO("Player is JIP. Exiting onPlayerKilled.")};
 
-[player, true] call TFAR_fnc_forceSpectator;
+INFO("Starting waverespawn procedude...");
+
+/*[player, true] call TFAR_fnc_forceSpectator;*/
 [true] call uo_waverespawn_fnc_blockMap;
 [player] joinSilent grpNull;
 _timeOfDeath = time;
 
+
 //keep player from respawning
 setPlayerRespawnTime 9999;
+
 
 //reset variables
 player setVariable ["wr_playerRespawnTimeLeft", uo_missionParam_RESPAWNTIME];

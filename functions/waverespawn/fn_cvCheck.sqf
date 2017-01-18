@@ -1,9 +1,17 @@
+#define PREFIX uo
+#define COMPONENT waverespawn
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 //check interrupt
 if (player getVariable "wr_interrupted") exitWith {
     player setVariable ["wr_cvCheckDone", true];
 };
 
+
 if (player getVariable ["originalSide", "UNKNOWN"] == "WEST") then {
+
+    INFO("Wave countdown done. Checking available commandvehicles.");
+
     if ({_x getVariable ["uo_respawnObject_isActive", false]} count uo_cv_allCVs == 0) then {
         [{
             _who = if (count uo_cv_allCVs > 1) then {"Kommandofahrzeuge sind"} else {"Kommandofahrzeug ist"};

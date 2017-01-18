@@ -1,3 +1,9 @@
+#define PREFIX uo
+#define COMPONENT waverespawn
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
+INFO("Ready to respawn. Preparing...");
+
 //respawn not possible
 if (player getVariable ["wr_interrupted", false]) exitWith {
     private ["_explanation"];
