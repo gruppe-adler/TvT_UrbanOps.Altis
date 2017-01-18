@@ -3,7 +3,7 @@ if (player getVariable ["originalSide", "UNKNOWN"] != "WEST") exitWith {};
 
 
 [{!isNull (findDisplay 46)}, {
-    openMap [true, false];
+    openMap [true, true];
     [] call uo_choosePlayArea_fnc_bluforWaitDialog;
 }, []] call CBA_fnc_waitUntilAndExecute;
 

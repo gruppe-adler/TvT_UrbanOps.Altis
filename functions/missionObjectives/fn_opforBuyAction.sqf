@@ -21,7 +21,7 @@ _barrel = createVehicle ["Land_BarrelEmpty_F", _randomPos, [], 0, "can_Collide"]
         _inventoryPosition = [_randomPos select 0, _randomPos select 1,((getPos _barrel) select 2)];
         deletevehicle _barrel;
 
-        [_dealer,"opf_" + uo_missionParam_OPFORFACTION,_inventoryPosition,_vehicleSpawn,"THE DEALER","Buy Equipment", {side player == EAST}] call grad_lbm_fnc_addInteraction;
+        [_dealer,"opf_" + uo_missionParam_OPFORFACTION,_inventoryPosition,_vehicleSpawn,"THE DEALER","Buy Equipment", {side (_this select 1) == EAST && alive (_this select 0)}] call grad_lbm_fnc_addInteraction;
     }, _this, 2] call CBA_fnc_waitAndExecute;
 
 }, [_barrel,_dealer,_vehicleSpawn,_randomPos]] call CBA_fnc_waitUntilAndExecute;

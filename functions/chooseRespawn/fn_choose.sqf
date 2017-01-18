@@ -1,5 +1,5 @@
 [false] call uo_waverespawn_fnc_blockMap;
-openMap [true, false];
+openMap [true, true];
 
 [true, "CHOOSE RESPAWN LOCATION", "CONFIRM (ENTER)"] call uo_ui_fnc_twoLineHint;
 

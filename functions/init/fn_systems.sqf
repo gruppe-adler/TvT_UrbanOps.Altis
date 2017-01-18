@@ -31,11 +31,12 @@ if (isServer) then {[{["PRINT", "SERVER_SETUP"] call uo_common_fnc_diagReport}, 
 
 //on game start
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_common_fnc_saveTeammembers}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_missionstart_fnc_createLegendMarkers}, []] call CBA_fnc_waitUntilAndExecute;
+[{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_missionstart_fnc_setCanGiveMoney}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_checkBluKilled}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_checkOpfKilled}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_checkDefense}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_checkCapture}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_endMission}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_civs_fnc_initPunishments}, []] call CBA_fnc_waitUntilAndExecute;
-[{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_civs_fnc_createLegendMarkers}, []] call CBA_fnc_waitUntilAndExecute;
 [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[[EAST],"BLUFOR SPAWNED","Game started."] call uo_common_fnc_sideNotification}, []] call CBA_fnc_waitUntilAndExecute;

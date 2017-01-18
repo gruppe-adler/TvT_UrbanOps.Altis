@@ -20,19 +20,19 @@ _marker setMarkerTextLocal _markerText;
     };
 
     //refresh position
-    _marker setMarkerPos (getPos _cv);
+    _marker setMarkerPosLocal (getPos _cv);
 
     //respawn on vehicle possible?
     if (_cv getVariable ["uo_respawnObject_isActive", false]) then {
         _marker setMarkerColorLocal "COLORBLUFOR";
         _marker setMarkerTextLocal format ["Commandvehicle %1", _id];
     } else {
-        _marker setMarkerColor "COLORRED";
+        _marker setMarkerColorLocal "COLORRED";
         _marker setMarkerTextLocal format ["Commandvehicle %1 (no respawn)", _id];
     };
 
     //vehicle is destroyed
-    if (!alive _cv) exitWith {
+    if (!alive _cv || _cv getVariable ["uo_respawnObject_isDestroyed",false]) exitWith {
         _marker setMarkerTextLocal format ["%1 (destroyed)", _markerText];
         [_handle] call CBA_fnc_removePerFrameHandler;
     };

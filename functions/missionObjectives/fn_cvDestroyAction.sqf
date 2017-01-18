@@ -13,7 +13,7 @@ _action = ["uo_cv_destroyAction","Destroy vehicle","",{
     _onComplete = {
         _args = _this select 0;
         _args params ["_cv","_caller"];
-        _cv setHitPointDamage ["HitEngine", 1];
+        [_cv] remoteExec ["uo_missionObjectives_fnc_destroyCV",0,false];
         [_caller] call uo_common_fnc_stopAnimation;
     };
 

@@ -18,7 +18,6 @@ class uo_chooseRespawn {
 class uo_civs {
     class civs {
         class createEnemyMarker {};
-        class createLegendMarkers {};
         class doFlee {};
         class doSurrender {};
         class createCivs {};
@@ -87,6 +86,7 @@ class uo_missionObjectives {
         class createCommandVehicle {};
         class createDealer {};
         class cvDestroyAction {};
+        class destroyCV {};
         class opforBuyAction {};
         class setCommandVehicle {};
     };
@@ -95,6 +95,7 @@ class uo_missionObjectives {
 class uo_missionstart {
     class missionstart {
         class createTrigger {};
+        class createLegendMarkers {};
         class findOpfSpawnPos {};
         class findOpfStartPos {};
         class findBluStartPos {};

@@ -8,7 +8,7 @@ if (!hasInterface) exitWith {};
         if (SETUPTIMEREMAINING <= 1) then {
             [_this select 1] call CBA_fnc_removePerFrameHandler;
         };
-        [true, format ["TIME REMAINING: %1", ([SETUPTIMEREMAINING,"MM:SS"] call BIS_fnc_secondsToString)], "PLEASE WAIT"] call uo_ui_fnc_twoLineHint;
+        [true, format ["SETUP TIME REMAINING: %1", ([SETUPTIMEREMAINING,"MM:SS"] call BIS_fnc_secondsToString)], "PLEASE WAIT"] call uo_ui_fnc_twoLineHint;
     } , 1, []] call CBA_fnc_addPerFrameHandler;
 }, []] call CBA_fnc_waitUntilAndExecute;
 

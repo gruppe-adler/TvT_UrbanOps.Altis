@@ -62,7 +62,7 @@ class CfgSounds
 
 //MONEY MENU ===================================================================
 class CfgGradMoneymenu {
-    canGiveDefault = 1;
+    canGiveDefault = 0;
     canTransferToSidesDefault[] = {};
     canTakeFromDeadDefault = 0;
     canSendDirectlyDefault = 0;

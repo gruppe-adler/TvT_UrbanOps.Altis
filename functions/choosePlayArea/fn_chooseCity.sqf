@@ -3,7 +3,7 @@ if (player getVariable ["originalSide", "UNKNOWN"] != "EAST") exitWith {};
 
 
 [{!isNull (findDisplay 46)}, {
-    openMap [true, false];
+    openMap [true, true];
     [] call uo_choosePlayArea_fnc_opforWaitDialog;
 
     if (isNil "opforcommander") exitWith {};
