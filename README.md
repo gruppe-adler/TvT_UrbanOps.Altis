@@ -5,6 +5,7 @@ OPFOR chooses a city that they will have to defend for X minutes (*Capture Time*
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Info](#info)
+- [Dependencies](#dependencies)
 - [Game Flow](#game-flow)
 - [Objectives](#objectives)
 	- [BLUFOR](#blufor)
@@ -18,6 +19,13 @@ OPFOR chooses a city that they will have to defend for X minutes (*Capture Time*
 
 <!-- /TOC -->
 
+
+## Info
+* Gamemode: TvT - seize/defend
+* Map: Can be used on all maps that are included in [cfgIslands](https://github.com/gruppe-adler/TvT_UrbanOps.Altis/blob/master/cfgIslands.hpp)
+* Medical system: ACE basic
+* Respawn: Wave-respawn / conditional permadeath
+
 ## Dependencies
 These addons are required to run the scenario:
 * [CBA](https://github.com/CBATeam/CBA_A3/releases)
@@ -30,13 +38,6 @@ These addons give civilians a lot more variety, but are optional:
 * [Apex Expansion](https://arma3.com/apex)
 * [RDS Civ](http://www.armaholic.com/page.php?id=26188)
 * [Project Opfor](http://www.armaholic.com/page.php?id=31310)
-
-
-## Info
-* Gamemode: TvT - seize/defend
-* Map: Can be used on all maps that are included in [cfgIslands](https://github.com/gruppe-adler/TvT_UrbanOps.Altis/blob/master/cfgIslands.hpp)
-* Medical system: ACE basic
-* Respawn: Wave-respawn / conditional permadeath
 
 ## Game Flow
 1. OPFOR commander chooses one of the available *Locations* from the map (OPFOR players can watch)

@@ -28,7 +28,7 @@ _houseCounter = 0;
 INFO_1("%1 static civilians created.", _staticCivilianCounter);
 
 //SPAWN NON-STATIC CIVILIANS ===================================================
-_nonstaticAmount = ceil (CITYAREASIZE * 0.08);
+_nonstaticAmount = ceil (CITYAREASIZE * 0.05);
 
 /*for _i from 1 to _nonstaticAmount do {*/
 for [{private _i=0},{_i<_nonstaticAmount},{_i=_i+1}] do {
