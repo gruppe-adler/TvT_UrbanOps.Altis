@@ -47,7 +47,7 @@
     };
 
     //enable respawning when wave is full
-    if (count deadPlayersOpf >= OPFORWAVESIZE && WAVERESPAWNTIMELEFTOPF <= 0 && !DEALERKILLED) then {
+    if (count deadPlayersOpf >= OPFORWAVESIZE && WAVERESPAWNTIMELEFTOPF <= 0 && !uo_DEALERKILLED) then {
         WAVERESPAWNOPF = true;
         publicVariable "WAVERESPAWNOPF";
         INFO("Respawning now possible for Opfor.");
