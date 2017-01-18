@@ -23,9 +23,9 @@ uo_DEALER = _group createUnit ["C_man_1",_dealerPos,[],0,"NONE"];
     _unit = uo_DEALER;
     _unit disableAI "PATH";
     _unit setDir (random 360);
-    _unit forceAddUniform (selectRandom uo_civUniforms);
-    _unit addHeadgear (selectRandom uo_civHeadgear);
-    _unit addGoggles (selectRandom uo_civGoggles);
+    _unit forceAddUniform (selectRandom uo_civs_uniforms);
+    if (10 max (2 * count uo_civs_headgear) > random 100) then {_unit addHeadgear (selectRandom uo_civs_headgear)};
+    if (10 max (2 * count uo_civs_goggles) > random 100) then {_unit addGoggles (selectRandom uo_civs_goggles)};
 
     _unit addItemToUniform "ACE_Cellphone";
     for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_adenosine";};

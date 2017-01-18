@@ -19,7 +19,7 @@ _numberOfTeammates = switch (_side) do {
     };
 
     default {
-        0
+        1
     };
 };
 

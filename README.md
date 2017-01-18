@@ -18,6 +18,19 @@ OPFOR chooses a city that they will have to defend for X minutes (*Capture Time*
 
 <!-- /TOC -->
 
+## Dependencies
+These addons are required to run the scenario:
+* [CBA](https://github.com/CBATeam/CBA_A3/releases)
+* [ACE](https://github.com/acemod/ACE3/releases)
+* [RHS: AFRF](http://www.rhsmods.org/mod/1)
+* [RHS: USAF](http://www.rhsmods.org/mod/2)
+* [RHS: GREF](http://www.rhsmods.org/mod/3)
+
+These addons give civilians a lot more variety, but are optional:
+* [Apex Expansion](https://arma3.com/apex)
+* [RDS Civ](http://www.armaholic.com/page.php?id=26188)
+* [Project Opfor](http://www.armaholic.com/page.php?id=31310)
+
 
 ## Info
 * Gamemode: TvT - seize/defend

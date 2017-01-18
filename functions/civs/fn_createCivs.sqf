@@ -5,8 +5,6 @@
 params ["_houseList"];
 private ["_dealerHouse","_buildingPos", "_pos"];
 
-//load gear
-call compile preprocessFileLineNumbers "loadouts\civilianGear.sqf";
 
 //SPAWN STATIC CIVILIANS =======================================================
 _staticCivilianCounter = 0;
