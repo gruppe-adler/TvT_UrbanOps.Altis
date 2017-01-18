@@ -2,7 +2,7 @@ if (!isServer) exitWith {};
 
 {
 	if (side _x == EAST) then {
-		_startPos = [CITYPOSITION, [0,15]] call uo_common_fnc_findRandomPos;
+		_startPos = [getPos uo_DEALER, [0,50]] call uo_common_fnc_findRandomPos;
 		_x setVariable ["startPosition", _startPos, true];
 	};
 } forEach playableUnits;
