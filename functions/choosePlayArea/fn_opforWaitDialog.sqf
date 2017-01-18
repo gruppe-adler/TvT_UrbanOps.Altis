@@ -1,9 +1,6 @@
 if (!hasInterface) exitWith {};
 
-_isCommander = false;
-if (!isNil "opforcommander") then {_isCommander = (player == opforcommander)};
-
-if (_isCommander) then {
+if ([player] call uo_common_fnc_isCommander) then {
     [true,"CHOOSE PLAYZONE (LMOUSE)","CONFIRM (ENTER)"] call uo_ui_fnc_twoLineHint;
 } else {
     if (side player == EAST) then {

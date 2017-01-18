@@ -46,6 +46,9 @@ if (player != bluforcommander) exitWith {};
                         //position successfully chosen
                         ["fn_chooseSpawn - %1 chose spawn at %2.", profileName, BLUFORSPAWN] call uo_common_fnc_serverLog;
 
+                        player say "taskSucceeded";
+                        [true,"SETTING UP SPAWN","PLEASE WAIT"] call uo_ui_fnc_twoLineHint;                        
+
                         uo_init_spawnChosen = true;
                         publicVariable "uo_init_spawnChosen";
                         publicVariable "BLUFORSPAWN";

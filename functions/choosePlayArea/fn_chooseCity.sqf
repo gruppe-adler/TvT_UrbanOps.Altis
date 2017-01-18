@@ -47,6 +47,9 @@ if (player getVariable ["originalSide", "UNKNOWN"] != "EAST") exitWith {};
                 ["fn_chooseCity - %1 chose location %2", profileName, text CHOSENLOCATION] call uo_common_fnc_serverLog;
                 [EAST,"selectionMarker"] call uo_common_fnc_deleteSideMarker;
 
+                player say "taskSucceeded";
+                [true,"SETTING UP PLAYZONE","PLEASE WAIT"] call uo_ui_fnc_twoLineHint;
+
                 uo_init_cityChosen = true;
                 publicVariable "uo_init_cityChosen";
                 publicVariable "CHOSENLOCATION";
