@@ -19,6 +19,7 @@ class uo_civs {
     class civs {
         class createEnemyMarker {};
         class createLegendMarkers {};
+        class doFlee {};
         class doSurrender {};
         class createCivs {};
         class findBuildingPositions {};

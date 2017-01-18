@@ -80,9 +80,9 @@ planned:
 * Independent - Islamic Terrorists
 
 ## Civilians
-Civilians will go about their lives in the *Location*. The more buildings there are in a *Location* the more civilians will usually be present. Some civilians will be in or around their houses while others will walk around.
+Civilians will go about their lives in the *Location*. The more buildings there are in a *Location* the more civilians will usually be present. Some civilians will be in or around their houses while others will walk around. When civilians are killed by one side, they will start supporting the other. The amount of kills that one side has over the other is relevant. When each level of support is reached for the first time, both sides will get a notification.
 
-When civilians are killed by one side, they will start supporting the other. The amount of kills that one side has over the other is relevant. When each level of support is reached for the first time, both sides will get a notification.
+Civilians can be ordered to surrender by ACE-interacting with them. If they actually do it and if so for how long, or if they just try to flee instead, depends on how much they trust you.
 
 Kills more | Effect
 -----------|-----------------------------------------------------------------------------------------------------------------------------------
