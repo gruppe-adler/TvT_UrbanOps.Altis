@@ -1,3 +1,7 @@
+#define PREFIX uo
+#define COMPONENT waverespawn
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 if (player getVariable "wr_interrupted") exitWith {player setVariable ["wr_waveCountdownDone", true]};
 if (player getVariable "wr_isFreeRespawn") exitWith {player setVariable ["wr_waveCountdownDone", true]};
 
@@ -12,7 +16,7 @@ if (player getVariable "wr_isFreeRespawn") exitWith {player setVariable ["wr_wav
         [_this select 1] call CBA_fnc_removePerFrameHandler;
         player setVariable ["wr_interrupted", true];
         player setVariable ["wr_waveCountdownDone", true];
-        diag_log "fn_waveWaveCountdown - Respawn interrupted.";
+        INFO("Respawn interrupted.");
     };
 
     //check max respawn time
@@ -20,7 +24,7 @@ if (player getVariable "wr_isFreeRespawn") exitWith {player setVariable ["wr_wav
         [_this select 1] call CBA_fnc_removePerFrameHandler;
         player setVariable ["wr_isFreeRespawn", true];
         player setVariable ["wr_waveCountdownDone", true];
-        diag_log "fn_waveWaveCountdown - Max respawn time reached.";
+        INFO("Max respawn time reached.");
     };
 
     _respawnIn = parseText format ["<t align='center' size='1.4'>Spieler <t color='#00ff00'>bereit</t></t>"];

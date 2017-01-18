@@ -2,6 +2,10 @@
 *
 */
 
+#define PREFIX uo
+#define COMPONENT waverespawn
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 _bluforWaveSize = "bluforwavesize" call BIS_fnc_getParamValue;
 _opforWaveSize = "opforwavesize" call BIS_fnc_getParamValue;
 
@@ -19,5 +23,5 @@ if (_opforWaveSize == 0) then {
     OPFORWAVESIZE = _opforWaveSize;
 };
 
-diag_log format ["fn_setWaveSize - Blufor wave size is %1", BLUFORWAVESIZE];
-diag_log format ["fn_setWaveSize - Opfor wave size is %1", OPFORWAVESIZE];
+INFO_1("Blufor wave size is %1", BLUFORWAVESIZE);
+INFO_1("Opfor wave size is %1", OPFORWAVESIZE);

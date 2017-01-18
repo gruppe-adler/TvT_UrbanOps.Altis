@@ -2,7 +2,6 @@
 #define COMPONENT missionObjectives
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
-
 params ["_houseList"];
 private ["_dealerHouse","_buildingPos", "_dealerMarkerType"];
 
@@ -37,7 +36,7 @@ uo_DEALER = _group createUnit ["C_man_1",_dealerPos,[],0,"NONE"];
     _unit addEventHandler ["killed", {
         uo_DEALERKILLED = true;
         publicVariable "uo_DEALERKILLED";
-        [missionNamespace getVariable ["bluforcommander",objNull],10000] grad_lbm_fnc_addFunds;
+        [missionNamespace getVariable ["bluforcommander",objNull],10000] call grad_lbm_fnc_addFunds;
         [[EAST,WEST,CIVILIAN],'Report','The dealer has been killed.'] remoteExec ['uo_common_fnc_sideNotification',0,false];
         [WEST,'Funds received','You received 10000Cr.',{[player] call uo_common_fnc_isCommander}] remoteExec ['uo_common_fnc_sideNotification',0,false];
     }];

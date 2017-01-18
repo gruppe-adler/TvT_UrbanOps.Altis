@@ -1,3 +1,7 @@
+#define PREFIX uo
+#define COMPONENT waverespawn
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 params ["_timeOfDeath"];
 
 [{
@@ -13,14 +17,14 @@ params ["_timeOfDeath"];
         [_this select 1] call CBA_fnc_removePerFrameHandler;
         player setVariable ["wr_interrupted", true];
         player setVariable ["wr_playerCountdownDone", true];
-        diag_log "fn_wavePlayerCountdown - Respawn interrupted.";
+        INFO("Respawn interrupted.");
     };
 
     if (time - _timeOfDeath > MAXRESPAWNTIME) then {
         [_this select 1] call CBA_fnc_removePerFrameHandler;
         player setVariable ["wr_isFreeRespawn", true];
         player setVariable ["wr_playerCountdownDone", true];
-        diag_log "fn_wavePlayerCountdown - Max respawn time reached.";
+        INFO("Max respawn time reached.");
     };
 
     player setVariable ["wr_playerRespawnTimeLeft", (player getVariable "wr_playerRespawnTimeLeft") - 1];

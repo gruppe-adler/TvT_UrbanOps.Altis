@@ -1,3 +1,7 @@
+#define PREFIX uo
+#define COMPONENT missionstart
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 if (!isServer) exitWith {};
 
 //city trigger =================================================================
@@ -25,4 +29,4 @@ _trigger setTriggerTimeout [5,10,20,true];
 
 missionNamespace setVariable ["uo_init_triggerCreated", true, true];
 
-diag_log format ["fn_createTrigger - City trigger created: %1.", _trigger];
+INFO_1("City trigger created: %1.", _trigger);

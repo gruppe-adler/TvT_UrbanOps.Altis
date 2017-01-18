@@ -1,10 +1,14 @@
+#define PREFIX uo
+#define COMPONENT missionObjectives
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 if (!isServer) exitWith {};
 
 SETUPTIMEREMAINING = uo_missionParam_SETUPTIME;
 publicVariable "SETUPTIMEREMAINING";
 
 [{!isNil "CITYPOSITION" && (missionNamespace getVariable ["uo_init_briefingDone", false])}, {
-    diag_log "fn_setupCountdown starting...";
+    INFO("Setup countdown starting...");
     _countdown = {
         SETUPTIMEREMAINING = SETUPTIMEREMAINING - 1;
         publicVariable "SETUPTIMEREMAINING";

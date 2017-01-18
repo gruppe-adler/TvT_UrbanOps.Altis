@@ -1,8 +1,12 @@
+#define PREFIX uo
+#define COMPONENT waverespawn
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 private ["_pos"];
 
 [false] call uo_waverespawn_fnc_blockMap;
 _originalSide = player getVariable ["originalSide", "UNKNOWN"];
-if (count uo_cv_allCVs == 0) exitWith {diag_log "fn_onWavePlayerRespawn - ERROR: NO COMMAND VEHICLES."};
+if (_originalSide == "WEST" && count uo_cv_allCVs == 0) exitWith {ERROR("Player respawned but there are no commandvehicles"};
 
 //teleport to commandvehicle
 if (_originalSide == "WEST") then {
@@ -22,7 +26,7 @@ if (_originalSide == "UNKNOWN") then {
 };
 
 //check JIP player is spawning for the first time
-if (serverTime - (player getVariable ["joinTime", 0]) < 30 && didJIP) exitWith {diag_log "onPlayerRespawn.sqf - Player is JIP, not executing fnc_removeRespawnedFromList."};
+if (serverTime - (player getVariable ["joinTime", 0]) < 30 && didJIP) exitWith {};
 
 //remove hint
 hint "";

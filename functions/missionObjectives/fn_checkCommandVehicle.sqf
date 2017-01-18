@@ -18,7 +18,7 @@ _h = [{
         missionNamespace setVariable ["uo_cv_allCVs", (missionNamespace getVariable ["uo_cv_allCVs", []]) - [_cv], true];
 
         [[EAST,WEST,CIVILIAN],'Report','A commandvehicle has been destroyed.'] remoteExec ['uo_common_fnc_sideNotification',0,false];
-        [missionNamespace getVariable ["opforcommander",objNull],5000] grad_lbm_fnc_addFunds;
+        [missionNamespace getVariable ["opforcommander",objNull],5000] call grad_lbm_fnc_addFunds;
         [EAST,'Funds received','You received 5000Cr.',{[player] call uo_common_fnc_isCommander}] remoteExec ['uo_common_fnc_sideNotification',0,false];
 
         [_this select 1] call CBA_fnc_removePerFrameHandler;

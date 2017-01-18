@@ -1,11 +1,14 @@
+#define PREFIX uo
+#define COMPONENT missionstart
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 params ["_side"];
 
 if (isServer) then {
 	if (_side == WEST) then {
 		missionNamespace setVariable ["uo_init_gamestarted", true, true];
 	};
-
-	diag_log format ["fn_tpSide - Players of side %1 teleported.", _side];
+	INFO_1("Players of side %1 teleported.", _side);
 };
 
 if (!hasInterface) exitWith {};
@@ -18,7 +21,7 @@ private ["_pos"];
 	[false] call uo_ui_fnc_twoLineHint;
 
 	_pos = player getVariable "startPosition";
-	diag_log format ["fn_tpOpfor - Teleporting player to %1.", _pos];
+	INFO_1("Teleporting player to %1 for game start.", _pos);
 	player allowDamage false;
 	player setPos _pos;
 	[{
