@@ -45,60 +45,19 @@ _marker setMarkerBrush "Border";
 _marker setMarkerSize [BLUFORSPAWNDIST+BLUFORSPAWNBAND, BLUFORSPAWNDIST+BLUFORSPAWNBAND];
 
 
-//CREATE EXPLANATION MARKERS FOR BLUFOR ========================================
-[
-    WEST,
-    "EXPLANATIONMARKER_CAPTURE",
-    true,
-    CITYPOSITION,
-    "",
-    "COLOREAST",
-    "",
-    "RECTANGLE",
-    [CITYAREASIZE,5],
-    1,
-    "SolidFull"
-] call uo_common_fnc_createSideMarker;
+//CREATE EXTRA MARKERS FOR BLUFOR ==============================================
 
-[
-    WEST,
-    "EXPLANATIONMARKER_CAPTURE_TEXT",
-    true,
-    CITYPOSITION vectorAdd [CITYAREASIZE,0,0],
-    "hd_dot",
-    "COLOREAST",
-    "CAPTURE ZONE",
-    "ICON",
-    1,
-    1
-] call uo_common_fnc_createSideMarker;
+[WEST,"STARTDISTMARKER",true,CITYPOSITION,"","COLORBLACK","","ELLIPSE",BLUFORSTARTDIST,1,"Border"] call uo_common_fnc_createSideMarker;
+[WEST,"STARTDISTMARKER_TEXT",true,CITYPOSITION vectorAdd [0,BLUFORSTARTDIST,0],"hd_dot","COLORBLACK","START ZONE","ICON",1,1] call uo_common_fnc_createSideMarker;
+[WEST,"STARTDISTMARKER_ARROW1",CITYPOSITION vectorAdd [0,BLUFORSTARTDIST+300,0],0,"COLORBLACK",600] remoteExec ["uo_common_fnc_createArrowMarkerSide",0,false];
 
-[
-    WEST,
-    "EXPLANATIONMARKER_RESPAWN",
-    true,
-    CITYPOSITION vectorAdd [-(BLUFORSPAWNDIST + 0.5 * BLUFORSPAWNBAND), 0,0],
-    "",
-    "COLORWEST",
-    "",
-    "RECTANGLE",
-    [BLUFORSPAWNBAND/2,5],
-    1,
-    "SolidFull"
-] call uo_common_fnc_createSideMarker;
+[WEST,"CAPTUREMARKER_TEXT",true,CITYPOSITION vectorAdd [0,CITYAREASIZE,0],"hd_dot","COLOREAST","CAPTURE ZONE","ICON",1,1] call uo_common_fnc_createSideMarker;
+[WEST,"CAPTUREMARKER_ARROW1",CITYPOSITION vectorAdd [0,CITYAREASIZE/2,0],0,"COLOREAST",CITYAREASIZE] remoteExec ["uo_common_fnc_createArrowMarkerSide",0,false];
+[WEST,"CAPTUREMARKER_ARROW2",CITYPOSITION vectorAdd [0,-(CITYAREASIZE/2),0],180,"COLOREAST",CITYAREASIZE] remoteExec ["uo_common_fnc_createArrowMarkerSide",0,false];
 
-[
-    WEST,
-    "EXPLANATIONMARKER_RESPAWN_TEXT",
-    true,
-    CITYPOSITION vectorAdd [- BLUFORSPAWNDIST, 0,0],
-    "hd_dot",
-    "COLORWEST",
-    "RESPAWN ZONE",
-    "ICON",
-    1,
-    1
-] call uo_common_fnc_createSideMarker;
+[WEST,"RESPAWNMARKER_TEXT",true,CITYPOSITION vectorAdd [0,BLUFORSPAWNDIST + BLUFORSPAWNBAND,0],"hd_dot","COLORWEST","RESPAWN ZONE","ICON",1,1] call uo_common_fnc_createSideMarker;
+[WEST,"RESPAWNMARKER_ARROW1",CITYPOSITION vectorAdd [0,BLUFORSPAWNDIST + 0.75 * BLUFORSPAWNBAND,0],0,"COLORWEST",BLUFORSPAWNBAND/2] remoteExec ["uo_common_fnc_createArrowMarkerSide",0,false];
+[WEST,"RESPAWNMARKER_ARROW2",CITYPOSITION vectorAdd [0,BLUFORSPAWNDIST + 0.25 * BLUFORSPAWNBAND,0],180,"COLORWEST",BLUFORSPAWNBAND/2] remoteExec ["uo_common_fnc_createArrowMarkerSide",0,false];
 
 missionNamespace setVariable ["uo_init_playAreaSetupDone", true, true];
 INFO("Play area setup complete.");

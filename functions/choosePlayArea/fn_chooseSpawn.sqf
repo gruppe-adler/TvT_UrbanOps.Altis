@@ -34,8 +34,8 @@ if (player != bluforcommander) exitWith {};
             } else {
 
                 //position not in blue area
-                if (CHOSENLOCATION distance BLUFORSPAWN < BLUFORSPAWNDIST + BLUFORSPAWNBAND) then {
-                    ["PLEASE CHOOSE A SPAWN POSITION OUTSIDE THE BLUE RING"] call uo_ui_fnc_confirmHint;
+                if (CHOSENLOCATION distance BLUFORSPAWN < BLUFORSTARTDIST) then {
+                    ["PLEASE CHOOSE A SPAWN POSITION OUTSIDE THE BLACK CIRCLE"] call uo_ui_fnc_confirmHint;
                 } else {
 
                     //position in water
@@ -47,16 +47,21 @@ if (player != bluforcommander) exitWith {};
                         ["fn_chooseSpawn - %1 chose spawn at %2.", profileName, BLUFORSPAWN] call uo_common_fnc_serverLog;
 
                         player say "taskSucceeded";
-                        [true,"SETTING UP SPAWN","PLEASE WAIT"] call uo_ui_fnc_twoLineHint;                        
+                        [true,"SETTING UP SPAWN","PLEASE WAIT"] call uo_ui_fnc_twoLineHint;
 
                         uo_init_spawnChosen = true;
                         publicVariable "uo_init_spawnChosen";
                         publicVariable "BLUFORSPAWN";
 
-                        [WEST,"EXPLANATIONMARKER_CAPTURE"] call uo_common_fnc_deleteSideMarker;
-                        [WEST,"EXPLANATIONMARKER_CAPTURE_TEXT"] call uo_common_fnc_deleteSideMarker;
-                        [WEST,"EXPLANATIONMARKER_RESPAWN"] call uo_common_fnc_deleteSideMarker;
-                        [WEST,"EXPLANATIONMARKER_RESPAWN_TEXT"] call uo_common_fnc_deleteSideMarker;
+                        [WEST,"STARTDISTMARKER"] call uo_common_fnc_deleteSideMarker;
+                        [WEST,"STARTDISTMARKER_TEXT"] call uo_common_fnc_deleteSideMarker;
+                        [WEST,"CAPTUREMARKER_TEXT"] call uo_common_fnc_deleteSideMarker;
+                        [WEST,"RESPAWNMARKER_TEXT"] call uo_common_fnc_deleteSideMarker;
+                        [WEST,"STARTDISTMARKER_ARROW1"] remoteExec ["uo_common_fnc_deleteArrowMarkerSide",0,false];
+                        [WEST,"CAPTUREMARKER_ARROW1"] remoteExec ["uo_common_fnc_deleteArrowMarkerSide",0,false];
+                        [WEST,"CAPTUREMARKER_ARROW2"] remoteExec ["uo_common_fnc_deleteArrowMarkerSide",0,false];
+                        [WEST,"RESPAWNMARKER_ARROW1"] remoteExec ["uo_common_fnc_deleteArrowMarkerSide",0,false];
+                        [WEST,"RESPAWNMARKER_ARROW2"] remoteExec ["uo_common_fnc_deleteArrowMarkerSide",0,false];
 
                         ["mcd_chooseSpawn", "onMapSingleClick"] call BIS_fnc_removeStackedEventHandler;
                         (findDisplay 46) displayRemoveEventHandler ["KeyDown", mcd_onSpawnKeyDown];

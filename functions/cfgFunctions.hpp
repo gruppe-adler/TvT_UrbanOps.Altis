@@ -37,9 +37,13 @@ class uo_civs {
 class uo_common {
     class common {
         class copyWaypoints {};
+        class createArrowMarker {};
+        class createArrowMarkerSide {};
         class createLegendMarker {};
         class createSideMarker {};
         class createSideMarkerRemote {};
+        class deleteArrowMarker {};
+        class deleteArrowMarkerSide {};
         class deleteSideMarker {};
         class deleteSideMarkerRemote {};
         class diagReport {};
