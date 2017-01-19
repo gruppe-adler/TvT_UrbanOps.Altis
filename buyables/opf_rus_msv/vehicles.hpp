@@ -32,7 +32,7 @@ class Vehicles {
         displayName = "TIGR (PK)";
         price = 2000;
         stock = 10;
-        code = "for '_i' from 0 to 12 do {(_this select 2) removeMagazinesTurret ['RHS_mag_VOG30_30',[1]]}";
+        code = "if (isServer) then {for '_i' from 0 to 12 do {(_this select 2) removeMagazinesTurret ['RHS_mag_VOG30_30',[1]]}}";
     };
 
     class rhs_tigr_sts_3camo_msv {
@@ -40,7 +40,7 @@ class Vehicles {
         displayName = "TIGR (PK)";
         price = 2000;
         stock = 10;
-        code = "for '_i' from 0 to 12 do {(_this select 2) removeMagazinesTurret ['RHS_mag_VOG30_30',[1]]}";
+        code = "if (isServer) then {for '_i' from 0 to 12 do {(_this select 2) removeMagazinesTurret ['RHS_mag_VOG30_30',[1]]}}";
     };
 
     class rhsgref_BRDM2_msv {

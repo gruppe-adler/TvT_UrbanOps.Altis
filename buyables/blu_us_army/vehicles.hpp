@@ -20,7 +20,7 @@ class Vehicles {
         price = 10000;
         stock = 1;
 
-        code = "[_this select 2] call uo_missionObjectives_fnc_setCommandVehicle;";
+        code = "if (isServer) then {[_this select 2] call uo_missionObjectives_fnc_setCommandVehicle};";
     };
 
     class rhsusf_m998_d_s_4dr_fulltop {
@@ -30,7 +30,7 @@ class Vehicles {
         price = 10000;
         stock = 1;
 
-        code = "[_this select 2] call uo_missionObjectives_fnc_setCommandVehicle;";
+        code = "if (isServer) then {[_this select 2] call uo_missionObjectives_fnc_setCommandVehicle};";
     };
 
     class rhsusf_m1025_w {
