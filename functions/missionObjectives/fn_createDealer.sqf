@@ -16,6 +16,7 @@ INFO_1("House selected for dealer: %1",_dealerHouse);
 _dealerPos = selectRandom ([_dealerHouse] call uo_civs_fnc_findBuildingPositions);
 _group = createGroup civilian;
 uo_DEALER = _group createUnit ["C_man_1",_dealerPos,[],0,"NONE"];
+uo_DEALER allowDamage false;
 
 [{!isNull (missionNamespace getVariable ["uo_DEALER", objNull])}, {
     params ["_dealerPos"];
@@ -43,4 +44,6 @@ uo_DEALER = _group createUnit ["C_man_1",_dealerPos,[],0,"NONE"];
 
     [EAST,"uo_dealerMarker",true,_dealerPos,"mil_marker","COLOREAST"] call uo_common_fnc_createSideMarker;
     [_unit] remoteExec ["uo_missionObjectives_fnc_opforBuyAction",0,true];
+
+    [{uo_DEALER allowDamage true}, [], 5] call CBA_fnc_waitAndExecute;
 }, [_dealerPos]] call CBA_fnc_waitUntilAndExecute;
