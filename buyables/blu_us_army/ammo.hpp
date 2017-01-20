@@ -54,7 +54,7 @@ class Ammo {
     class rhs_mag_smaw_SR {
         displayName = "SMAW Spotting Rounds";
         description = "Used in:<br/>SMAW";
-        price = 100;
+        price = 300;
         stock = 4;
     };
 

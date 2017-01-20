@@ -1,5 +1,10 @@
 #define MODULES_DIRECTORY node_modules
 
+#include "node_modules\grad-listBuymenu\grad_listBuymenu.hpp"
+#include "node_modules\grad-moneymenu\grad_moneymenu.hpp"
+#include "node_modules\grad-scoreboard\grad_scoreboard.hpp"
+#include "node_modules\grad-fortifications\grad_fortifications.hpp"
+
 #include "cfgParams.hpp"
 #include "cfgIslands.hpp"
 #include "cfgFactions.hpp"
@@ -8,9 +13,6 @@
 #include "loadouts\loadouts.hpp"
 #include "dialogs\cfgDialogs.hpp"
 
-#include "node_modules\grad-listBuymenu\grad_listBuymenu.hpp"
-#include "node_modules\grad-moneymenu\grad_moneymenu.hpp"
-#include "node_modules\grad-scoreboard\grad_scoreboard.hpp"
 
 //HEADER =======================================================================
 class Header
@@ -47,6 +49,7 @@ class CfgFunctions {
     #include "node_modules\grad-moneymenu\cfgFunctions.hpp"
     #include "node_modules\grad-winrateTracker\cfgFunctions.hpp"
     #include "node_modules\grad-scoreboard\cfgFunctions.hpp"
+    #include "node_modules\grad-fortifications\cfgFunctions.hpp"
 };
 
 //SOUNDS =======================================================================

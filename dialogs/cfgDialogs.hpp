@@ -7,6 +7,7 @@
 class RscTitles {
     #include "twoLineHint\title.hpp"
     #include "animatedHint\title.hpp"
+    #include "..\node_modules\grad-fortifications\dialog\hint\title.hpp"
 
     class Default {
         idd = -1;

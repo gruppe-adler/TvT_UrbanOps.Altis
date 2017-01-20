@@ -38,7 +38,7 @@ class Weapons {
         kindOf = "Items";
 
         displayName = "NT4 QDSS Suppressor";
-        price = 1200;
+        price = 1500;
         stock = 20;
     };
 

@@ -16,6 +16,7 @@ OPFOR chooses a city that they will have to defend for X minutes (*Capture Time*
 - [Civilians](#civilians)
 - [Parameters](#parameters)
 - [Pictures](#pictures)
+- [Credits](#credits)
 
 <!-- /TOC -->
 
@@ -141,3 +142,10 @@ Wave Respawn Time   | 4.5 min      | wave respawn time for wave respawn
 
 **Drugs in the *Dealer's* inventory:**
 ![](http://i.imgur.com/AoB0YpU.jpg)
+
+
+## Credits
+### Creative Commons
+https://creativecommons.org/licenses/by/3.0/
+
+1. City icon in logo: *City* by Made Somewhere from the Noun Project
