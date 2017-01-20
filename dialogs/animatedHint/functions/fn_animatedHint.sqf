@@ -27,7 +27,7 @@ _xScale = X_SCALE;
 {
     _curPos = ctrlPosition _x;
     _x ctrlSetPosition [(_curPos select 0) - (0.23 * _xScale), uo_animatedHint_Y];
-    _x ctrlCommit 0.75;
+    _x ctrlCommit 0.5;
 } forEach [_bgCtrl,_picCtrl,_textCtrl];
 
 
@@ -38,7 +38,7 @@ _xScale = X_SCALE;
     {
         _curPos = ctrlPosition _x;
         _x ctrlSetPosition [(_curPos select 0) + (0.23 * _xScale), uo_animatedHint_Y];
-        _x ctrlCommit 0.75;
+        _x ctrlCommit 0.5;
     } forEach [_bgCtrl,_picCtrl,_textCtrl];
 
     [{

@@ -11,6 +11,7 @@ CVENEMYRADIUS = 100;
 
 publicVariable "BLUFORSPAWNDIST";
 publicVariable "BLUFORSPAWNBAND";
+publicVariable "BLUFORSTARTDIST";
 publicVariable "OPFORRESPAWNDIST";
 publicVariable "CIVILIANPROBABILITY";
 publicVariable "DEALERRADIUSFACTOR";

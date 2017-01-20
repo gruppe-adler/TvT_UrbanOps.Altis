@@ -8,8 +8,7 @@ if (player getVariable ["originalSide", "UNKNOWN"] != "WEST") exitWith {};
 }, []] call CBA_fnc_waitUntilAndExecute;
 
 
-if (isNil "bluforcommander") exitWith {};
-if (player != bluforcommander) exitWith {};
+if !([player] call uo_common_fnc_isCommander) exitWith {};
 
 
 [{SETUPTIMEREMAINING <= 0}, {
@@ -27,6 +26,7 @@ if (player != bluforcommander) exitWith {};
 
     //CONFIRM SELECTION ============================================================
     mcd_onSpawnKeyDown = (findDisplay 46) displayAddEventHandler ["KeyDown", {
+
         if ((_this select 1 == 28)||(_this select 1 == 156)) then {
             if (isNil "BLUFORSPAWN") then {
                 ["PLEASE CHOOSE A SPAWN POSITION BY CLICKING ON THE MAP"] call uo_ui_fnc_confirmHint;

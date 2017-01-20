@@ -17,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={11661.02,27.53227,11902.854};
-		dir[]={0.14566088,-0.56633961,-0.81121629};
-		up[]={0.10009146,0.82416713,-0.55743104};
-		aside[]={-0.98427272,-9.4179995e-008,-0.17673473};
+		dir[]={-0.11546273,-0.21175665,-0.97049308};
+		up[]={-0.025018724,0.97731829,-0.21028784};
+		aside[]={-0.99301142,-7.2061084e-008,0.11814174};
 	};
 };
 binarizationWanted=0;
@@ -46,14 +46,13 @@ addons[]=
 	"ace_cargo",
 	"ace_map",
 	"ace_hearing",
-	"A3_Modules_F_Heli_Misc",
-	"po_factions_me"
+	"A3_Modules_F_Heli_Misc"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=23;
+		items=22;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -208,12 +207,6 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item22
-		{
-			className="po_factions_me";
-			name="po_factions_me";
-			author="Leight, Keeway";
-		};
 	};
 };
 randomSeed=12065692;
@@ -247,7 +240,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=37;
+		items=36;
 		class Item0
 		{
 			dataType="Marker";
@@ -8913,36 +8906,6 @@ class Mission
 				};
 				nAttributes=3;
 			};
-		};
-		class Item36
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11661.606,23.525145,11898.512};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=641;
-					type="LOP_Tak_Civ_Man_06";
-					atlOffset=-2.4795532e-005;
-				};
-			};
-			class Attributes
-			{
-			};
-			id=640;
-			atlOffset=-2.4795532e-005;
 		};
 	};
 	class Connections
