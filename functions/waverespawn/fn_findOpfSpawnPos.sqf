@@ -34,10 +34,10 @@ while {_tooCloseFound || _isWater} do {
         if (side _x != east) then {
             if (_pos distance2D _x < OPFORRESPAWNDIST) exitWith {_tooCloseFound = true};
         };
-        if (_tooCloseFound) exitWith {INFO("Blufor player too close to spawnposition. Repeating.")};
+        if (_tooCloseFound) exitWith {};
     } forEach playableUnits;
 
-    if (_repetitions >= 15) then {
+    if (_repetitions > 20) then {
         _tooCloseFound = false;
     };
 
@@ -45,6 +45,13 @@ while {_tooCloseFound || _isWater} do {
     _spawnradius = _spawnradius + 0.15 * _originalspawnradius;
     _repetitions = _repetitions + 1;
 };
+
+if (_repetitions > 20) then {
+    INFO("Cannot find OPFOR respawn position with sufficient distance to all BLUFOR players. Using random position instead.");
+} else {
+    INFO_1("Respawnposition for OPFOR found. %1 repetitions for sufficient distance to all BLUFOR players.",_repetitions);
+};
+
 
 //return
 _pos

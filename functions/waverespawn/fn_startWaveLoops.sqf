@@ -48,7 +48,8 @@
 
     //enable respawning when wave is full
     if (count deadPlayersOpf >= OPFORWAVESIZE && WAVERESPAWNTIMELEFTOPF <= 0 && !uo_DEALERKILLED) then {
-        missionNamespace setVariable ["uo_opf_safeRespawnPos",[] call uo_waverespawn_fnc_findOpfSpawnPos,true];
+        _opf_safeRespawnPos = [] call uo_waverespawn_fnc_findOpfSpawnPos;
+        missionNamespace setVariable ["uo_opf_safeRespawnPos",_opf_safeRespawnPos,true];
 
         [{
             WAVERESPAWNOPF = true;
