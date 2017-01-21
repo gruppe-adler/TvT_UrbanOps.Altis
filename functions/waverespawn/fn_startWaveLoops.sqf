@@ -48,9 +48,13 @@
 
     //enable respawning when wave is full
     if (count deadPlayersOpf >= OPFORWAVESIZE && WAVERESPAWNTIMELEFTOPF <= 0 && !uo_DEALERKILLED) then {
-        WAVERESPAWNOPF = true;
-        publicVariable "WAVERESPAWNOPF";
-        INFO("Respawning now possible for Opfor.");
+        missionNamespace setVariable ["uo_opf_safeRespawnPos",[] call uo_waverespawn_fnc_findOpfSpawnPos,true];
+
+        [{
+            WAVERESPAWNOPF = true;
+            publicVariable "WAVERESPAWNOPF";
+            INFO("Respawning now possible for Opfor.");
+        },[],2] call CBA_fnc_waitAndExecute;
 
         [{
                 WAVERESPAWNOPF = false;
@@ -58,6 +62,7 @@
                 WAVERESPAWNTIMELEFTOPF = uo_missionParam_WAVERESPAWNTIME;
                 publicVariable    "WAVERESPAWNTIMELEFTOPF";
                 INFO("Respawning no longer possible for Opfor.");
-        },[],(RESPAWNWAVEEXTRATIME max 7)] call CBA_fnc_waitAndExecute;
+                missionNamespace setVariable ["uo_opf_safeRespawnPos",nil,true];
+        },[],(RESPAWNWAVEEXTRATIME max 8)] call CBA_fnc_waitAndExecute;
     };
 }, 3, []] call CBA_fnc_addPerFrameHandler;

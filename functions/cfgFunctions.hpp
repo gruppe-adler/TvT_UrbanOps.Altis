@@ -100,7 +100,6 @@ class uo_missionstart {
     class missionstart {
         class createTrigger {};
         class createLegendMarkers {};
-        class findOpfSpawnPos {};
         class findOpfStartPos {};
         class findBluStartPos {};
         class playAreaSetup {};
@@ -131,6 +130,7 @@ class uo_waverespawn {
         class blockMap {};
         class cvCheck {};
         class doRespawn {};
+        class findOpfSpawnPos {};
         class initWaveRespawn {};
         class onPlayerKilled {};
         class onPlayerRespawn {};

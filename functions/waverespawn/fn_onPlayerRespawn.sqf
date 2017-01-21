@@ -17,7 +17,7 @@ if (_originalSide == "WEST") then {
 
 //teleport to city
 if (_originalSide == "EAST") then {
-    _pos = [] call uo_missionstart_fnc_findOpfSpawnPos;
+    _pos = missionNamespace getVariable ["uo_opf_safeRespawnPos",[] call uo_waverespawn_fnc_findOpfSpawnPos];
     [player, _pos] call uo_common_fnc_teleport;
 };
 
