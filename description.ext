@@ -86,6 +86,12 @@ class CfgWinrateTracker {
     missionName = "TvT_UrbanOps";                       //missionName that these stats are to be saved under (if not provided, actual mission name of current mission is used)
 };
 
+//FORTIFICATIONS ===============================================================
+class CfgGradFortifications {
+    canDemolishDefault = 1;
+    demolitionTimeFactor = 1.6;
+};
+
 //NOTIFICATIONS ================================================================
 class CfgNotifications
 {
