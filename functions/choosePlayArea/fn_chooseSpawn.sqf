@@ -1,6 +1,6 @@
 if (!hasInterface) exitWith {};
 if (player getVariable ["originalSide", "UNKNOWN"] != "WEST") exitWith {};
-
+if (missionNamespace getVariable ["uo_init_spawnChosen", false]) exitWith {};
 
 [{!isNull (findDisplay 46)}, {
     openMap [true, true];
