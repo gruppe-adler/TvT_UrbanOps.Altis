@@ -35,8 +35,8 @@ class Params
     class Preset
     {
         title = "Preset";
-        values[] = {0,1};
-        texts[] = {"Custom", "Debug (PARAMETERS BELOW WILL BE IGNORED.)"};
+        values[] = {0,1,2};
+        texts[] = {"Custom", "Debug Singleplayer", "Debug Multiplayer"};
         default = 1;
     };
 

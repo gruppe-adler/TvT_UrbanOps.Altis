@@ -6,7 +6,7 @@ private ["_pos"];
 
 [false] call uo_waverespawn_fnc_blockMap;
 _originalSide = player getVariable ["originalSide", "UNKNOWN"];
-if (_originalSide == "WEST" && count uo_cv_allCVs == 0) exitWith {ERROR("Player respawned but there are no commandvehicles")};
+if (_originalSide == "WEST" && count (missionNamespace getVariable ["uo_cv_allCVs",[]]) == 0) exitWith {ERROR("Player respawned but there are no commandvehicles")};
 
 //teleport to commandvehicle
 if (_originalSide == "WEST") then {

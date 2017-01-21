@@ -25,7 +25,7 @@ while {_tooCloseFound || _isWater} do {
 
     //check water
     while {_isWater} do {
-        _pos = [CITYPOSITION,[0,_spawnradius], [0,360]] call SHK_pos;
+        _pos = [CITYPOSITION,[0,_spawnradius], [0,360]] call uo_common_fnc_findRandomPos;
         _isWater = surfaceIsWater _pos;
     };
 

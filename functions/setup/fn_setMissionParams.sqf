@@ -41,7 +41,8 @@ publicVariable "OPFORWAVESIZE";
 //GET uo_missionParam_PRESET ===================================================================
 uo_missionParam_PRESET = [
     "CUSTOM",
-    "DEBUG"
+    "DEBUG_SINGLE",
+    "DEBUG_MULTI"
 ] select ("Preset" call BIS_fnc_getParamValue);
 
 publicVariable "uo_missionParam_PRESET";
@@ -49,27 +50,41 @@ publicVariable "uo_missionParam_PRESET";
 ["LOG", "SERVER_SETUP", "uo_missionParam_PRESET"] call uo_common_fnc_diagReport;
 
 //SET uo_missionParam_PRESET PARAMS ============================================================
-if (uo_missionParam_PRESET == "CUSTOM") then {
-    uo_missionParam_CONTROLRATIO = "ControlRatio" call BIS_fnc_getParamValue;
-    uo_missionParam_MONEYFACTOR = "MoneyFactor" call BIS_fnc_getParamValue;
-    uo_missionParam_CAPTURETIME= "CaptureTime" call BIS_fnc_getParamValue;
-    uo_missionParam_DEFENSETIME = "DefenseTime" call BIS_fnc_getParamValue;
-    uo_missionParam_SETUPTIME = "SetupTime" call BIS_fnc_getParamValue;
-    uo_missionParam_WAVERESPAWNTIME = "waverespawntime" call BIS_fnc_getParamValue;
-    uo_missionParam_RESPAWNTIME = "respawntime" call BIS_fnc_getParamValue;
-    uo_missionParam_OPFORRESPAWNENABLED = ("OpforRespawn" call BIS_fnc_getParamValue) == 1;
+switch (uo_missionParam_PRESET) do {
+    case ("CUSTOM"): {
+        uo_missionParam_CONTROLRATIO = "ControlRatio" call BIS_fnc_getParamValue;
+        uo_missionParam_MONEYFACTOR = "MoneyFactor" call BIS_fnc_getParamValue;
+        uo_missionParam_CAPTURETIME= "CaptureTime" call BIS_fnc_getParamValue;
+        uo_missionParam_DEFENSETIME = "DefenseTime" call BIS_fnc_getParamValue;
+        uo_missionParam_SETUPTIME = "SetupTime" call BIS_fnc_getParamValue;
+        uo_missionParam_WAVERESPAWNTIME = "waverespawntime" call BIS_fnc_getParamValue;
+        uo_missionParam_RESPAWNTIME = "respawntime" call BIS_fnc_getParamValue;
+        uo_missionParam_OPFORRESPAWNENABLED = ("OpforRespawn" call BIS_fnc_getParamValue) == 1;
+    };
+
+    case ("DEBUG_SINGLE"): {
+        uo_missionParam_CONTROLRATIO = 2;
+        uo_missionParam_MONEYFACTOR = 1;
+        uo_missionParam_CAPTURETIME= 60;
+        uo_missionParam_DEFENSETIME = 3600;
+        uo_missionParam_SETUPTIME = 5;
+        uo_missionParam_WAVERESPAWNTIME = 10;
+        uo_missionParam_RESPAWNTIME = 10;
+        uo_missionParam_OPFORRESPAWNENABLED = true;
+    };
+
+    case ("DEBUG_MULTI"): {
+        uo_missionParam_CONTROLRATIO = 1;
+        uo_missionParam_MONEYFACTOR = 1;
+        uo_missionParam_CAPTURETIME= 60;
+        uo_missionParam_DEFENSETIME = 3600;
+        uo_missionParam_SETUPTIME = 30;
+        uo_missionParam_WAVERESPAWNTIME = 10;
+        uo_missionParam_RESPAWNTIME = 10;
+        uo_missionParam_OPFORRESPAWNENABLED = true;
+    };
 };
 
-if (uo_missionParam_PRESET == "DEBUG") then {
-    uo_missionParam_CONTROLRATIO = 2;
-    uo_missionParam_MONEYFACTOR = 1;
-    uo_missionParam_CAPTURETIME= 60;
-    uo_missionParam_DEFENSETIME = 3600;
-    uo_missionParam_SETUPTIME = 5;
-    uo_missionParam_WAVERESPAWNTIME = 10;
-    uo_missionParam_RESPAWNTIME = 10;
-    uo_missionParam_OPFORRESPAWNENABLED = true;
-};
 
 publicVariable "uo_missionParam_CONTROLRATIO";
 publicVariable "uo_missionParam_MONEYFACTOR";
