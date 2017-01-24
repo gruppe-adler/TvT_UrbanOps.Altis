@@ -58,6 +58,7 @@ class uo_common {
         class serverLog {};
         class sideHint {};
         class sideNotification {};
+        class startSpectator {};
         class stopAnimation {};
         class teleport {};
     };

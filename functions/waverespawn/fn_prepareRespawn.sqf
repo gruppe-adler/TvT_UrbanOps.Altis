@@ -15,7 +15,7 @@ if (player getVariable ["wr_interrupted", false]) exitWith {
     _respawnIn = parseText format ["<t align='center' size='1.4'>Respawn <t color='#cc0000'>nicht mehr verfügbar.</t></t>"];
     [_explanation, _respawnIn] call uo_waverespawn_fnc_respawnHint;
 
-    ["Initialize", [player, [], true]] call BIS_fnc_EGSpectator;
+    [] call uo_common_fnc_startSpectator;
 };
 
 
