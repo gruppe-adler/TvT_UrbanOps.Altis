@@ -6,6 +6,7 @@ params ["_side"];
 
 if (isServer) then {
 	if (_side == WEST) then {
+		missionNamespace setVariable ["uo_init_gameStartTime", serverTime, true];
 		missionNamespace setVariable ["uo_init_gamestarted", true, true];
 	};
 	INFO_1("Players of side %1 teleported.", _side);
