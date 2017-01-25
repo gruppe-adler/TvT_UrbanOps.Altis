@@ -52,6 +52,7 @@ class uo_common {
         class findRandomPos {};
         class getIslandCfgValue {};
         class getNumberOfTeammates {};
+        class handleJIP {};
         class intro {};
         class isCommander {};
         class saveTeammembers {};

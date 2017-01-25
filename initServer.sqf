@@ -5,6 +5,9 @@ if ("Preset" call BIS_fnc_getParamValue == 1) then {
     publicVariable "uo_init_cityChosen";
 };
 
+["uo_handleJIP", "onPlayerConnected", {
+    _this call uo_common_fnc_handleJIP;
+}] call BIS_fnc_addStackedEventHandler;
 
 ["Initialize", [true]] call BIS_fnc_dynamicGroups;
 

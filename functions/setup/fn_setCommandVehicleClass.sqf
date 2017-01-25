@@ -2,6 +2,8 @@
 #define COMPONENT setup
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
+if (!isServer) exitWith {};
+
 _cfg = missionConfigFile >> "CfgFactions" >> uo_missionParam_BLUFORFACTION;
 if (!isClass _cfg) exitWith {ERROR_1("%1 IS NOT A VALID FACTION.", uo_missionParam_BLUFORFACTION)};
 _cvs = getArray (_cfg >> "commandVehicles");

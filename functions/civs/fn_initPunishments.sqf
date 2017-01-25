@@ -1,3 +1,5 @@
+if (!isServer) exitWith {};
+
 uo_civkillRatio = 0;
 [{
     _killRatio = CIVSKILLEDBLU - CIVSKILLEDOPF;
