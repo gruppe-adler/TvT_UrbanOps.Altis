@@ -30,7 +30,7 @@ class Vehicles {
     class rhs_tigr_sts_msv {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "TIGR (PK)";
-        price = 2000;
+        price = 4000;
         stock = 10;
         code = "if (isServer) then {for '_i' from 0 to 12 do {(_this select 2) removeMagazinesTurret ['RHS_mag_VOG30_30',[1]]}}";
     };
@@ -38,7 +38,7 @@ class Vehicles {
     class rhs_tigr_sts_3camo_msv {
         condition = "!uo_missionParam_ISWOODLAND";
         displayName = "TIGR (PK)";
-        price = 2000;
+        price = 4000;
         stock = 10;
         code = "if (isServer) then {for '_i' from 0 to 12 do {(_this select 2) removeMagazinesTurret ['RHS_mag_VOG30_30',[1]]}}";
     };
