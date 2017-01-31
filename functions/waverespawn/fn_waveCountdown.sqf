@@ -29,20 +29,21 @@ INFO("Player countdown done. Starting wave countdown...");
         INFO("Max respawn time reached.");
     };
 
-    _respawnIn = parseText format ["<t align='center' size='1.4'>Spieler <t color='#00ff00'>bereit</t></t>"];
+    _respawnIn = parseText format ["<t align='center' size='1.4'>Player <t color='#00ff00'>bereit</t></t>"];
     _waveTimeLeft = call (player getVariable "wr_waveTimeLeft");
     _timeLeftStr = [_waveTimeLeft, "MM:SS"] call BIS_fnc_secondsToString;
     _playersLeft = call (player getVariable "wr_playersLeft");
     _waveSize = player getVariable "wr_waveSize";
-    _waveLeft = parseText format ["<t align='center' size='1.4'>Welle: <t color='%3'>%1/%2</t> - <t color ='%4'>%5</t></t>", _waveSize - _playersLeft, _waveSize, if (_playersLeft == 0) then {"#00ff00"} else {"#ffff00"},if (_waveTimeLeft <= 0) then {"#00ff00"} else {"#ffff00"}, _timeLeftStr];
+    _waveLeft = parseText format ["<t align='center' size='1.4'>Wave: <t color='%3'>%1/%2</t> - <t color ='%4'>%5</t></t>", _waveSize - _playersLeft, _waveSize, if (_playersLeft <= 0) then {"#00ff00"} else {"#ffff00"},if (_waveTimeLeft <= 0) then {"#00ff00"} else {"#ffff00"}, _timeLeftStr];
     if (_waveTimeLeft > 0) then {
-        _explanation = parseText "<t align='center' size='1.4'>Warte auf Wellen-Countdown.</t>";
+        _explanation = parseText "<t align='center' size='1.4'>Waiting for wave-countdown.</t>";
     } else {
-        _explanation = parseText "<t align='center' size='1.4'>Warte auf weitere Spieler.</t>";
+        _explanation = parseText "<t align='center' size='1.4'>Waiting for more players.</t>";
     };
-    [_respawnIn, _waveLeft, _explanation] call uo_waverespawn_fnc_respawnHint;
+    _maxTime = parseText format ["<t align ='center' size='0.7'>Skipping waiting time in: %1.</t>", [MAXRESPAWNTIME - (time -_timeOfDeath),"MM:SS"] call BIS_fnc_secondsToString];
+    [_respawnIn, _waveLeft, _explanation, _maxTime] call uo_waverespawn_fnc_respawnHint;
 
-    if (_waveTimeLeft <= 0) exitWith {
+    if (_waveTimeLeft <= 0 && _playersLeft <= 0) exitWith {
     [_this select 1] call CBA_fnc_removePerFrameHandler;
     player setVariable ["wr_waveCountdownDone", true];
 };
