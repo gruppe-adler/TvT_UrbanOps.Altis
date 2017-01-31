@@ -29,6 +29,10 @@ uo_fnc_endByBluKilled_eliminated = {
         };
 
         if (missionNamespace getVariable ["uo_bluDownSince", 0] > 15 || {uo_missionParam_DEFENSETIME - (serverTime - uo_init_gameStartTime) < WAVERESPAWNTIMELEFTBLU}) then {
+
+            if (missionNamespace getVariable ["uo_endInProgressServer", false]) exitWith {INFO("A different ending is already in progress.")};
+            uo_endInProgressServer = true;
+
             uo_missionStats = [uo_teammembersOpfor,uo_teammembersBlufor,["OPFOR"],["BLUFOR"]] call grad_winrateTracker_fnc_saveWinrate;
             publicVariable "uo_missionStats";
 

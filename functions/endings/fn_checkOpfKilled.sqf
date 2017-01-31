@@ -22,6 +22,9 @@ uo_fnc_endByOpfKilled_eliminated = {
         };
 
         if (missionNamespace getVariable ["uo_opfDownSince", 0] > 15) then {
+            if (missionNamespace getVariable ["uo_endInProgressServer", false]) exitWith {INFO("A different ending is already in progress.")};
+            uo_endInProgressServer = true;
+
             uo_missionStats = [uo_teammembersBlufor,uo_teammembersOpfor,["BLUFOR"],["OPFOR"]] call grad_winrateTracker_fnc_saveWinrate;
             publicVariable "uo_missionStats";
 

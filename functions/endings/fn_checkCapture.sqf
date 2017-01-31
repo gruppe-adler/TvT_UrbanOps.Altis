@@ -6,6 +6,9 @@ if (!isServer) exitWith {};
         publicVariable "CAPTURETIMEREMAINING";
 
         if (CAPTURETIMEREMAINING <= 0) then {
+            if (missionNamespace getVariable ["uo_endInProgressServer", false]) exitWith {INFO("A different ending is already in progress.")};
+            uo_endInProgressServer = true;
+
             uo_missionStats = [uo_teammembersBlufor,uo_teammembersOpfor,["BLUFOR"],["OPFOR"]] call grad_winrateTracker_fnc_saveWinrate;
             publicVariable "uo_missionStats";
 

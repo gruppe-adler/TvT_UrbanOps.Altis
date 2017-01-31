@@ -11,8 +11,8 @@ if (hasInterface) then {
         [_winningSide,_endText] spawn {
             params ["_winningSide","_endText"];
 
-            if (missionNamespace getVariable ["uo_endInProgress", false]) exitWith {INFO("A different ending is already in progress.")};
-            uo_endInProgress = true;
+            if (missionNamespace getVariable ["uo_endInProgressClient", false]) exitWith {INFO("A different ending is already in progress.")};
+            uo_endInProgressClient = true;
 
             _winningText = switch (_winningSide) do {
                 case "WEST": {"BLUFOR WINS"};
