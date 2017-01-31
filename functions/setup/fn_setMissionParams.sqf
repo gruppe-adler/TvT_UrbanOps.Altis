@@ -57,7 +57,8 @@ switch (uo_missionParam_PRESET) do {
         uo_missionParam_CAPTURETIME= "CaptureTime" call BIS_fnc_getParamValue;
         uo_missionParam_DEFENSETIME = "DefenseTime" call BIS_fnc_getParamValue;
         uo_missionParam_SETUPTIME = "SetupTime" call BIS_fnc_getParamValue;
-        uo_missionParam_WAVERESPAWNTIME = "waverespawntime" call BIS_fnc_getParamValue;
+        uo_missionParam_WAVERESPAWNTIMEBLU = "waverespawntimeblu" call BIS_fnc_getParamValue;
+        uo_missionParam_WAVERESPAWNTIMEOPF = "waverespawntimeopf" call BIS_fnc_getParamValue;
         uo_missionParam_RESPAWNTIME = "respawntime" call BIS_fnc_getParamValue;
         uo_missionParam_OPFORRESPAWNENABLED = ("OpforRespawn" call BIS_fnc_getParamValue) == 1;
     };
@@ -68,7 +69,8 @@ switch (uo_missionParam_PRESET) do {
         uo_missionParam_CAPTURETIME= 60;
         uo_missionParam_DEFENSETIME = 3600;
         uo_missionParam_SETUPTIME = 5;
-        uo_missionParam_WAVERESPAWNTIME = 10;
+        uo_missionParam_WAVERESPAWNTIMEBLU = 10;
+        uo_missionParam_WAVERESPAWNTIMEOPF = 10;
         uo_missionParam_RESPAWNTIME = 10;
         uo_missionParam_OPFORRESPAWNENABLED = true;
     };
@@ -79,19 +81,20 @@ switch (uo_missionParam_PRESET) do {
         uo_missionParam_CAPTURETIME= 60;
         uo_missionParam_DEFENSETIME = 3600;
         uo_missionParam_SETUPTIME = 30;
-        uo_missionParam_WAVERESPAWNTIME = 10;
+        uo_missionParam_WAVERESPAWNTIMEBLU = 10;
+        uo_missionParam_WAVERESPAWNTIMEOPF = 10;
         uo_missionParam_RESPAWNTIME = 10;
         uo_missionParam_OPFORRESPAWNENABLED = true;
     };
 };
-
 
 publicVariable "uo_missionParam_CONTROLRATIO";
 publicVariable "uo_missionParam_MONEYFACTOR";
 publicVariable "uo_missionParam_CAPTURETIME";
 publicVariable "uo_missionParam_DEFENSETIME";
 publicVariable "uo_missionParam_SETUPTIME";
-publicVariable "uo_missionParam_WAVERESPAWNTIME";
+publicVariable "uo_missionParam_WAVERESPAWNTIMEBLU";
+publicVariable "uo_missionParam_WAVERESPAWNTIMEOPF";
 publicVariable "uo_missionParam_RESPAWNTIME";
 publicVariable "uo_missionParam_OPFORRESPAWNENABLED";
 
@@ -100,7 +103,8 @@ publicVariable "uo_missionParam_OPFORRESPAWNENABLED";
 ["LOG", "SERVER_SETUP", "uo_missionParam_CAPTURETIME"] call uo_common_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "uo_missionParam_DEFENSETIME"] call uo_common_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "uo_missionParam_SETUPTIME"] call uo_common_fnc_diagReport;
-["LOG", "SERVER_SETUP", "uo_missionParam_WAVERESPAWNTIME"] call uo_common_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_WAVERESPAWNTIMEBLU"] call uo_common_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_WAVERESPAWNTIMEOPF"] call uo_common_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "uo_missionParam_RESPAWNTIME"] call uo_common_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "uo_missionParam_OPFORRESPAWNENABLED"] call uo_common_fnc_diagReport;
 
