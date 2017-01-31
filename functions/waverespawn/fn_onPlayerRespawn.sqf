@@ -13,7 +13,7 @@ if (_originalSide == "WEST" && count (missionNamespace getVariable ["uo_cv_allCV
 //teleport to commandvehicle
 if (_originalSide == "WEST") then {
     _respawnObject = missionNamespace getVariable ["uo_selectedRespawnObject", uo_cv_allCVs select 0];
-    _pos = (getPos _respawnObject) findEmptyPosition [1, 30];
+    _pos = [getPos _respawnObject,[0,30],[0,360]] call uo_common_fnc_findRandomPos;
     [player, _pos] call uo_common_fnc_teleport;
 };
 
