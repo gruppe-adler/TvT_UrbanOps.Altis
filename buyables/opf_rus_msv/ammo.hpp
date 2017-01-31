@@ -17,7 +17,7 @@ class Ammo {
     };
 
     class rhs_100Rnd_762x54mmR {
-        displayName = "7.62 10Rnd";
+        displayName = "7.62 100Rnd Belt";
         description = "Used in:<br/>PKM<br/>PKP";
         price = 250;
         stock = 30;

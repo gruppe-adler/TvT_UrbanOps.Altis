@@ -20,29 +20,28 @@ class us_army {
         addItemsToUniform[] = {
 			LIST_6("ACE_fieldDressing"),
 			LIST_3("ACE_CableTie"),
-			LIST_2("ACE_morphine"),			
+			LIST_2("ACE_morphine"),
 			"ACE_epinephrine",
 			"ACE_Flashlight_MX991",
 			"ACE_key_west",
 			"ACE_MapTools"
 	  	};
-		addItemsToVest[] = {
-			LIST_8("rhs_mag_30Rnd_556x45_M855A1_Stanag"),
-			LIST_2("rhs_mag_an_m8hc"),
-			LIST_2("rhsusf_mag_15Rnd_9x19_JHP"),
-			LIST_2("rhs_mag_m67")
-		};
         addItemsToBackpack[] = {};
 	};
 
 	class Type {
         //rifleman
 		class Soldier_F {
-
+			addItemsToVest[] = {
+				LIST_8("rhs_mag_30Rnd_556x45_M855A1_Stanag"),
+				LIST_2("rhs_mag_an_m8hc"),
+				LIST_2("rhsusf_mag_15Rnd_9x19_JHP"),
+				LIST_2("rhs_mag_m67")
+			};
 		};
 
         //autorifleman
-		class Soldier_AR_F {
+		class Soldier_AR_F: Soldier_F {
 			primaryWeapon = "rhs_weap_m249_pip_S";
 			handgunWeapon = "";
 			vest = "rhsusf_iotv_ocp_SAW";
@@ -59,12 +58,12 @@ class us_army {
 		};
 
         //light AT
-		class Soldier_LAT_F {
+		class Soldier_LAT_F: Soldier_F {
 			secondaryWeapon = "rhs_weap_M136";
 		};
 
         //ammo bearer
-		class Soldier_A_F {
+		class Soldier_A_F: Soldier_F {
 			backpack = "rhsusf_assault_eagleaiii_ocp";
 			addItemsToBackpack[] = {
 				LIST_2("rhs_200rnd_556x45_M_SAW")
@@ -72,7 +71,7 @@ class us_army {
 		};
 
         //medic
-		class Medic_F {
+		class Medic_F: Soldier_F {
 			vest = "rhsusf_iotv_ocp_Medic";
 			backpack = "rhsusf_assault_eagleaiii_ocp";
 			addItemsToBackpack[] = {
@@ -85,7 +84,7 @@ class us_army {
 		};
 
         //squad leader
-        class Soldier_SL_F {
+        class Soldier_SL_F: Soldier_F {
 			primaryWeaponOptics = "rhsusf_acc_compm4";
 			vest = "rhsusf_iotv_ocp_Squadleader";
 			backpack = "tf_rt1523g";
@@ -98,7 +97,7 @@ class us_army {
         };
 
         //team leader
-		class Soldier_TL_F {
+		class Soldier_TL_F: Soldier_F {
 			primaryWeapon = "rhs_weap_m4a1_carryhandle_m203";
 			primaryWeaponOptics = "rhsusf_acc_compm4";
 			vest = "rhsusf_iotv_ocp_Teamleader";

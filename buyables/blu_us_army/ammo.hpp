@@ -76,8 +76,8 @@ class Ammo {
         stock = 20;
     };
 
-    class SmokeShell {
-        displayName = "M83 Smoke Grenade";
+    class rhs_mag_an_m8hc {
+        displayName = "M8 Smoke Grenade";
         price = 200;
         stock = 20;
     };

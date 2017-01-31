@@ -26,21 +26,20 @@ class rus_msv_w {
 			"ACE_key_east",
 			"ACE_MapTools"
 		};
-        addItemsToVest[] = {
-			LIST_7("rhs_30Rnd_545x39_AK"),
-			LIST_2("rhs_mag_rgo")
-		};
         addItemsToBackpack[] = {};
 	};
 
 	class Type {
         //rifleman
 		class Soldier_F {
-
+			addItemsToVest[] = {
+				LIST_7("rhs_30Rnd_545x39_AK"),
+				LIST_2("rhs_mag_rgo")
+			};
 		};
 
         //autorifleman
-		class Soldier_AR_F {
+		class Soldier_AR_F: Soldier_F {
 			primaryWeapon = "rhs_weap_pkp";
 			backpack = "rhs_assault_umbts";
 			headgear = "rhs_6b26_ess";
@@ -55,12 +54,12 @@ class rus_msv_w {
 		};
 
         //light AT
-		class Soldier_LAT_F {
+		class Soldier_LAT_F: Soldier_F {
 			secondaryWeapon = "rhs_weap_rpg26";
 		};
 
         //ammo bearer
-		class Soldier_A_F {
+		class Soldier_A_F: Soldier_F {
 			backpack = "rhs_assault_umbts";
 			addItemsToBackpack[] = {
 				LIST_2("rhs_100Rnd_762x54mmR_green")
@@ -68,7 +67,7 @@ class rus_msv_w {
 		};
 
         //medic
-		class Medic_F {
+		class Medic_F: Soldier_F {
 			backpack = "rhs_assault_umbts";
 			addItemsToBackpack[] = {
 				LIST_20("ACE_fieldDressing"),
@@ -80,7 +79,7 @@ class rus_msv_w {
 		};
 
         //squad leader
-        class Soldier_SL_F {
+        class Soldier_SL_F: Soldier_F {
 			primaryWeaponOptics = "rhs_acc_1p63";
 			vest = "rhs_6b23_6sh92_headset_mapcase";
 			backpack = "tf_mr3000_rhs";
@@ -92,7 +91,7 @@ class rus_msv_w {
         };
 
         //team leader
-		class Soldier_TL_F {
+		class Soldier_TL_F: Soldier_F {
 			primaryWeapon = "rhs_weap_ak74m_gp25";
 			primaryWeaponOptics = "rhs_acc_1p63";
 			vest = "rhs_6b23_6sh92_headset";
