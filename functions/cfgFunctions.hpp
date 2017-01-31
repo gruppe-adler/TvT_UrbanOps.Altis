@@ -53,6 +53,7 @@ class uo_common {
         class getIslandCfgValue {};
         class getNumberOfTeammates {};
         class handleJIP {};
+        class handleTakeRadio {};
         class intro {};
         class isCommander {};
         class saveTeammembers {};
