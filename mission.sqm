@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=651;
+		nextID=652;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11659.191,36.497902,11945.434};
-		dir[]={0.44012907,-0.52411252,-0.72913599};
-		up[]={0.27085564,0.85163963,-0.44871053};
-		aside[]={-0.85613781,-1.374865e-007,-0.51679122};
+		pos[]={2463.4106,24.981995,3475.8879};
+		dir[]={0.66741258,-0.61494052,0.42001247};
+		up[]={0.52045774,0.78857327,0.32753146};
+		aside[]={0.53262281,1.44355e-008,-0.84635442};
 	};
 };
 binarizationWanted=0;
@@ -286,7 +286,7 @@ class Mission
 					flags=3;
 					class Attributes
 					{
-						rank="LIEUTENANT";
+						rank="MAJOR";
 						init="[this, 5] call grad_lbm_fnc_setPermissionLevel";
 						name="opforcommander";
 						description="Commander (must be selected)";
@@ -362,88 +362,6 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2485.4209,-0.016566515,3507.3992};
-						angles[]={0,2.3185651,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-						rank="LIEUTENANT";
-						init="[this, 4] call grad_lbm_fnc_setPermissionLevel";
-						description="Assistant Commander";
-						isPlayable=1;
-					};
-					id=181;
-					type="O_Soldier_TL_F";
-					atlOffset=185.952;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ace_isHandcuffed";
-							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.03;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ace_isSurrendered";
-							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=3;
-					};
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
 						position[]={2487.1072,-0.016612291,3508.9561};
 						angles[]={0,2.18325,0};
 					};
@@ -494,6 +412,87 @@ class Mission
 										};
 									};
 									value=0.97000003;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2485.4209,-0.016566515,3507.3992};
+						angles[]={0,2.3185651,0};
+					};
+					side="East";
+					class Attributes
+					{
+						rank="CAPTAIN";
+						init="[this, 4] call grad_lbm_fnc_setPermissionLevel";
+						description="Assistant Commander";
+						isPlayable=1;
+					};
+					id=651;
+					type="O_Soldier_SL_F";
+					atlOffset=185.952;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
 								};
 							};
 						};
@@ -627,7 +626,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="LIEUTENANT";
+						rank="SERGEANT";
 						init="[this, 3] call grad_lbm_fnc_setPermissionLevel";
 						description="Assistant Squad Leader";
 						isPlayable=1;
@@ -789,7 +788,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="SERGEANT";
+						rank="CORPORAL";
 						init="[this, 2] call grad_lbm_fnc_setPermissionLevel";
 						description="Team Leader";
 						isPlayable=1;
@@ -1134,7 +1133,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="SERGEANT";
+						rank="CORPORAL";
 						init="[this, 2] call grad_lbm_fnc_setPermissionLevel";
 						description="Team Leader";
 						isPlayable=1;
@@ -1493,7 +1492,7 @@ class Mission
 					flags=3;
 					class Attributes
 					{
-						rank="LIEUTENANT";
+						rank="MAJOR";
 						init="[this, 5] call grad_lbm_fnc_setPermissionLevel";
 						name="bluforcommander";
 						description="Commander (must be selected)";
@@ -1576,7 +1575,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="LIEUTENANT";
+						rank="CAPTAIN";
 						init="[this, 4] call grad_lbm_fnc_setPermissionLevel";
 						description="Assistant Commander";
 						isPlayable=1;
@@ -1834,7 +1833,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="LIEUTENANT";
+						rank="SERGEANT";
 						init="[this, 3] call grad_lbm_fnc_setPermissionLevel";
 						description="Assistant Squad Leader";
 						isPlayable=1;
@@ -1996,7 +1995,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="SERGEANT";
+						rank="CORPORAL";
 						init="[this, 2] call grad_lbm_fnc_setPermissionLevel";
 						description="Team Leader";
 						isPlayable=1;
@@ -2341,7 +2340,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="SERGEANT";
+						rank="CORPORAL";
 						init="[this, 2] call grad_lbm_fnc_setPermissionLevel";
 						description="Team Leader";
 						isPlayable=1;
@@ -2782,7 +2781,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="LIEUTENANT";
+						rank="SERGEANT";
 						init="[this, 3] call grad_lbm_fnc_setPermissionLevel";
 						description="Assistant Squad Leader";
 						isPlayable=1;
@@ -2944,7 +2943,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="SERGEANT";
+						rank="CORPORAL";
 						init="[this, 2] call grad_lbm_fnc_setPermissionLevel";
 						description="Team Leader";
 						isPlayable=1;
@@ -3289,7 +3288,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="SERGEANT";
+						rank="CORPORAL";
 						init="[this, 2] call grad_lbm_fnc_setPermissionLevel";
 						description="Team Leader";
 						isPlayable=1;
@@ -3730,7 +3729,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="LIEUTENANT";
+						rank="SERGEANT";
 						init="[this, 3] call grad_lbm_fnc_setPermissionLevel";
 						description="Assistant Squad Leader";
 						isPlayable=1;
@@ -3893,7 +3892,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="SERGEANT";
+						rank="CORPORAL";
 						init="[this, 2] call grad_lbm_fnc_setPermissionLevel";
 						description="Team Leader";
 						isPlayable=1;
@@ -4238,7 +4237,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="SERGEANT";
+						rank="CORPORAL";
 						init="[this, 2] call grad_lbm_fnc_setPermissionLevel";
 						description="Team Leader";
 						isPlayable=1;
@@ -4679,7 +4678,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="LIEUTENANT";
+						rank="SERGEANT";
 						init="[this, 3] call grad_lbm_fnc_setPermissionLevel";
 						description="Assistant Squad Leader";
 						isPlayable=1;
@@ -4842,7 +4841,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="SERGEANT";
+						rank="CORPORAL";
 						init="[this, 2] call grad_lbm_fnc_setPermissionLevel";
 						description="Team Leader";
 						isPlayable=1;
@@ -5187,7 +5186,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="SERGEANT";
+						rank="CORPORAL";
 						init="[this, 2] call grad_lbm_fnc_setPermissionLevel";
 						description="Team Leader";
 						isPlayable=1;
@@ -5628,7 +5627,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="LIEUTENANT";
+						rank="SERGEANT";
 						init="[this, 3] call grad_lbm_fnc_setPermissionLevel";
 						description="Assistant Squad Leader";
 						isPlayable=1;
@@ -5791,7 +5790,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="SERGEANT";
+						rank="CORPORAL";
 						init="[this, 2] call grad_lbm_fnc_setPermissionLevel";
 						description="Team Leader";
 						isPlayable=1;
@@ -6136,7 +6135,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						rank="SERGEANT";
+						rank="CORPORAL";
 						init="[this, 2] call grad_lbm_fnc_setPermissionLevel";
 						description="Team Leader";
 						isPlayable=1;
@@ -9050,7 +9049,7 @@ class Mission
 			class Item1
 			{
 				linkID=1;
-				item0=181;
+				item0=651;
 				item1=553;
 				class CustomData
 				{

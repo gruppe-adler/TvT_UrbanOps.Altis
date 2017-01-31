@@ -4,6 +4,8 @@
 
 private ["_pos"];
 
+[profileName, player getVariable ["originalSide", "UNKNOWN"], player] remoteExec ["uo_waverespawn_fnc_removeFromWave",2,false];
+
 [false] call uo_waverespawn_fnc_blockMap;
 _originalSide = player getVariable ["originalSide", "UNKNOWN"];
 if (_originalSide == "WEST" && count (missionNamespace getVariable ["uo_cv_allCVs",[]]) == 0) exitWith {ERROR("Player respawned but there are no commandvehicles")};
