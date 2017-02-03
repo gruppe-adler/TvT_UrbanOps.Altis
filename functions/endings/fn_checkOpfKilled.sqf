@@ -1,3 +1,7 @@
+#define PREFIX uo
+#define COMPONENT civs
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 if (!isServer) exitWith {};
 
 uo_fnc_endByOpfKilled_preEliminated = {

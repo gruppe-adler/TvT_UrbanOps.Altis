@@ -13,7 +13,7 @@ _originalSide = player getVariable ["originalSide", "UNKNOWN"];
 if (serverTime - _joinTime < 30 && didJIP) exitWith {INFO("Player is JIP. Exiting onPlayerKilled.")};
 
 INFO("Starting waverespawn procedure...");
-[true] call uo_waverespawn_fnc_blockMap
+[true] call uo_waverespawn_fnc_blockMap;
 _timeOfDeath = time;
 
 

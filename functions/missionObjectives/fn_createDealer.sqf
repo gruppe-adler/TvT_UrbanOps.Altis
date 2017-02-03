@@ -17,11 +17,13 @@ _dealerPos = selectRandom ([_dealerHouse] call uo_civs_fnc_findBuildingPositions
 _group = createGroup civilian;
 uo_DEALER = _group createUnit ["C_man_1",_dealerPos,[],0,"NONE"];
 uo_DEALER allowDamage false;
+_barrel = "Land_BarrelEmpty_F" createVehicleLocal _dealerPos;
 
-[{!isNull (missionNamespace getVariable ["uo_DEALER", objNull])}, {
-    params ["_dealerPos"];
+[{!isNull (_this select 1) && !isNull (_this select 2)}, {
+    params ["_dealerPos","_unit","_barrel"];
 
-    _unit = uo_DEALER;
+    _barrel setPosASL ((getPosASL _unit) vectorAdd [random 1, random 1, 0]);
+
     _unit disableAI "PATH";
     _unit setDir (random 360);
     _unit forceAddUniform (selectRandom uo_civs_uniforms);
@@ -42,8 +44,17 @@ uo_DEALER allowDamage false;
         [WEST,'Funds received','You received 10000Cr.',{[player] call uo_common_fnc_isCommander}] remoteExec ['uo_common_fnc_sideNotification',0,false];
     }];
 
-    [EAST,"uo_dealerMarker",true,_dealerPos,"mil_marker","COLOREAST"] call uo_common_fnc_createSideMarker;
-    [_unit] remoteExec ["uo_missionObjectives_fnc_opforBuyAction",0,true];
+    _nearestRoad = [getpos _unit, 50, []] call BIS_fnc_nearestRoad;
+    _vehicleSpawn = if (!isNull _nearestRoad) then {getPos _nearestRoad} else {_dealer};
 
-    [{uo_DEALER allowDamage true}, [], 5] call CBA_fnc_waitAndExecute;
-}, [_dealerPos]] call CBA_fnc_waitUntilAndExecute;
+    [EAST,"uo_dealerMarker",true,_dealerPos,"mil_marker","COLOREAST"] call uo_common_fnc_createSideMarker;
+    [{uo_DEALER allowDamage true}, [], 10] call CBA_fnc_waitAndExecute;
+
+    [{
+        params ["_unit","_vehicleSpawn","_barrel"];
+        _cargospacePos = (getPosASL _barrel) vectorAdd [0,0,-0.00];
+        deleteVehicle _barrel;
+        [_unit,_vehicleSpawn,_cargospacePos] remoteExec ["uo_missionObjectives_fnc_opforBuyAction",0,true];
+    }, [_unit,_vehicleSpawn,_barrel], 3] call CBA_fnc_waitAndExecute;
+
+}, [_dealerPos,uo_DEALER,_barrel]] call CBA_fnc_waitUntilAndExecute;
