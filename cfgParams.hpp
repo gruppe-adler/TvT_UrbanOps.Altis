@@ -37,7 +37,7 @@ class Params
         title = "Preset";
         values[] = {0,1,2};
         texts[] = {"Custom", "Debug Singleplayer", "Debug Multiplayer"};
-        default = 2;
+        default = 1;
     };
 
     class DefenseTime

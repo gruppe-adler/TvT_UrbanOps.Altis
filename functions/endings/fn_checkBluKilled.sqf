@@ -7,7 +7,6 @@ if (!isServer) exitWith {};
 uo_fnc_endByBluKilled_preEliminated = {
     [{
         if (({side _x == west} count playableUnits) == 0) then {
-            INFO("All BLUFOR down.");
             if ({_x getVariable ["uo_respawnObject_isActive", false]} count uo_cv_allCVs == 0 || {uo_missionParam_DEFENSETIME - (serverTime - uo_init_gameStartTime) < WAVERESPAWNTIMELEFTBLU}) then {
                 INFO("All commandvehicles inactive.");
                 [] call uo_fnc_endByBluKilled_eliminated;

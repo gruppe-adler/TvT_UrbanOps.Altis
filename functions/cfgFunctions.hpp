@@ -7,14 +7,6 @@ class uo_choosePlayArea {
     };
 };
 
-class uo_chooseRespawn {
-    class chooseRespawn {
-        class choose {};
-        class findNearestRespawnObject {};
-        class respawnSelectorMarker {};
-    };
-};
-
 class uo_civs {
     class civs {
         class createEnemyMarker {};
@@ -129,18 +121,30 @@ class uo_setup {
 class uo_waverespawn {
     class waverespawn {
         class addRespawnedToGroup {};
+        class addToWaitGroup {};
         class addToWave {};
         class blockMap {};
-        class cvCheck {};
+        class canRespawn {};
+        class chooseRespawn {};
         class doRespawn {};
+        class findNearestRespawnObject {};
         class findOpfSpawnPos {};
+        class generateGroupName {};
+        class getHighestRanking {};
+        class getRole {};
+        class getSmallestGroup {};
+        class getStatus {};
         class initWaveRespawn {};
         class onPlayerKilled {};
         class onPlayerRespawn {};
+        class organizeInGroup {};
         class playerCountdown {};
         class prepareRespawn {};
         class removeFromWave {};
+        class resetPlayerVars {};
+        class respawnGroup {};
         class respawnHint {};
+        class respawnSelectorMarker {};
         class setWaveSize {};
         class startWaveLoops {};
         class waveCountdown {};

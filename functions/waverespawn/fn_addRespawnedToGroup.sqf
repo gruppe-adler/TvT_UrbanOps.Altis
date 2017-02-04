@@ -11,10 +11,11 @@
 #define COMPONENT waverespawn
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
-params ["_player", "_side"];
+params ["_player", "_side", "_respawnComplete"];
 private ["_leader", "_groupName"];
 
 if (!isServer) exitWith {};
+if (isNull _player) exitWith {};
 
 _allGroupNames = [
     "Alpha",
@@ -49,11 +50,9 @@ _allGroupNames = [
 if (_side == "UNKNOWN") exitWith {INFO_1("Player %1's side is unknown.", _player)};
 if (_side == "WEST") then {
     newBluSpawns pushBack _player;
-    _leader = newBluSpawns select 0;
 };
 if (_side == "EAST") then {
     newOpfSpawns pushBack _player;
-    _leader = newOpfSpawns select 0;
 };
 
 //player is not leader --> join leader

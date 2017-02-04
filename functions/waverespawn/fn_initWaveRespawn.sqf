@@ -5,28 +5,26 @@ newOpfSpawns = [];
 
 if (hasInterface) then {
     player setVariable ["joinTime", serverTime];
-    _originalSide = player getVariable "originalSide";
-    if (isNil "_originalSide") exitWith {
-        ["fn_initWaveRespawn - ERROR: PLAYER %1 DOES NOT HAVE ORIGINALSIDE.", profileName] call uo_common_fnc_serverLog;
-    };
-
-    if (_originalSide == "WEST") then {
-        player setVariable ["wr_waitCondition", {!WAVERESPAWNBLU}];
-        player setVariable ["wr_interruptCondition", {count uo_cv_allCVs == 0 || ({_x getVariable ["uo_respawnObject_isActive", false]} count uo_cv_allCVs == 0 && ({side _x == west} count playableUnits) == 0)}];
-        player setVariable ["wr_playersLeft", {WAVERESPAWNPLAYERSLEFTBLU}];
-        player setVariable ["wr_waveTimeLeft", {WAVERESPAWNTIMELEFTBLU}];
-        player setVariable ["wr_waveSize", BLUFORWAVESIZE];
-    };
-    if (_originalSide == "EAST") then {
-        player setVariable ["wr_waitCondition", {!WAVERESPAWNOPF}];
-        player setVariable ["wr_interruptCondition", {uo_DEALERKILLED}];
-        player setVariable ["wr_playersLeft", {WAVERESPAWNPLAYERSLEFTOPF}];
-        player setVariable ["wr_waveTimeLeft", {WAVERESPAWNTIMELEFTOPF}];
-        player setVariable ["wr_waveSize", OPFORWAVESIZE];
-    };
+    player setVariable ["wr_playerRespawnTimeLeft", uo_missionParam_RESPAWNTIME];
+    player setVariable ["wr_interrupted", false];
+    player setVariable ["wr_isFreeRespawn", false];
+    player setVariable ["wr_playerCountdownDone", false];
+    player setVariable ["wr_waveCountdownDone", false];
+    player setVariable ["wr_cvCheckDone", false];
 };
 
 if (isServer) then {
     [] call uo_waverespawn_fnc_startWaveLoops;
+
+    /*DEADPLAYERSBLU_GROUP = createGroup [civilian,false];  //FOR ARMA 1.67
+    DEADPLAYERSOPF_GROUP = createGroup [civilian,false];*/
+
+    DEADPLAYERSBLU_GROUP = createGroup civilian;
+    DEADPLAYERSOPF_GROUP = createGroup civilian;
+    publicVariable "DEADPLAYERSBLU_GROUP";
+    publicVariable "DEADPLAYERSOPF_GROUP";
+    DEADPLAYERSBLU_GROUP setVariable ["ace_map_hideBlueForceMarker",true,true];
+    DEADPLAYERSOPF_GROUP setVariable ["ace_map_hideBlueForceMarker",true,true];
+
     addMissionEventHandler ["HandleDisconnect", {[_this select 3] call uo_waverespawn_fnc_removeFromWave}];
 };

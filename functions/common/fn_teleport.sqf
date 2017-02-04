@@ -5,11 +5,7 @@
 *     1:    destination
 */
 
-_this spawn {
-    params ["_unit", ["_pos", [0,0,0]]];
-
-    _unit allowDamage false;
-    _unit setPos _pos;
-    sleep 1;
-    _unit allowDamage true;
-};
+params ["_unit", ["_pos", [0,0,0]]];
+_unit allowDamage false;
+_unit setPos _pos;
+[{_this allowDamage true}, _unit, 2] call CBA_fnc_waitAndExecute;

@@ -17,6 +17,5 @@ if (!hasInterface) exitWith {};
     if (str _pos == "[]") then {_pos = _configpos};
     player allowDamage false;
     player setPos _pos;
-    [{player allowDamage true}, [], 5] call CBA_fnc_waitAndExecute;
     INFO_2("Moved player to startposition %1. Configposition was %2", _pos, _configpos);
 }, []] call CBA_fnc_waitUntilAndExecute;

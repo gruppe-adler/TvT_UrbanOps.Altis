@@ -1,2 +1,1 @@
-setPlayerRespawnTime 0;
-forceRespawn player;
+[] call uo_waverespawn_fnc_resetPlayerVars;

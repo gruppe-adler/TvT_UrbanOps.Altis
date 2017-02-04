@@ -7,31 +7,31 @@
 #define COMPONENT waverespawn
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
+if (player getVariable ["wr_interrupted", false]) exitWith {};
+
+[] call uo_waverespawn_fnc_resetPlayerVars;
+
 //check JIP player is spawning for the first time
 _joinTime = player getVariable ["joinTime", 0];
-_originalSide = player getVariable ["originalSide", "UNKNOWN"];
 if (serverTime - _joinTime < 30 && didJIP) exitWith {INFO("Player is JIP. Exiting onPlayerKilled.")};
+
+["RESTRICTED"] call uo_common_fnc_startSpectator;
 
 INFO("Starting waverespawn procedure...");
 [true] call uo_waverespawn_fnc_blockMap;
 _timeOfDeath = time;
 
-
-//keep player from respawning
-setPlayerRespawnTime 9999;
-
-
-//reset variables
-player setVariable ["wr_playerRespawnTimeLeft", uo_missionParam_RESPAWNTIME];
-player setVariable ["wr_interrupted", false];
-player setVariable ["wr_isFreeRespawn", false];
-player setVariable ["wr_playerCountdownDone", false];
-player setVariable ["wr_waveCountdownDone", false];
-player setVariable ["wr_cvCheckDone", false];
-
+//respawn player, put him in spec mode
+setPlayerRespawnTime 0;
+forceRespawn player;
+player allowDamage false;
+[{alive player},{
+    setPlayerRespawnTime 9999;
+    TF_max_voice_volume call TFAR_fnc_setVoiceVolume;
+    [playerSide,player] remoteExec ["uo_waverespawn_fnc_addToWaitGroup",2,false];
+},[]] call CBA_fnc_waitUntilAndExecute;
 
 //do the steps
 [_timeOfDeath] call uo_waverespawn_fnc_playerCountdown;
 [{player getVariable "wr_playerCountdownDone"}, {_this call uo_waverespawn_fnc_waveCountdown}, [_timeOfDeath]] call CBA_fnc_waitUntilAndExecute;
-[{player getVariable "wr_waveCountdownDone"}, {[] call uo_waverespawn_fnc_cvCheck}, []] call CBA_fnc_waitUntilAndExecute;
-[{player getVariable "wr_cvCheckDone"}, {[] call uo_waverespawn_fnc_prepareRespawn}, []] call CBA_fnc_waitUntilAndExecute;
+[{player getVariable "wr_waveCountdownDone"}, {[] call uo_waverespawn_fnc_prepareRespawn}, []] call CBA_fnc_waitUntilAndExecute;

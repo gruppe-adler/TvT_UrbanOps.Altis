@@ -3,6 +3,8 @@
 params ["_open",["_line1",""],["_line2",""]];
 if (!hasInterface) exitWith {};
 
+disableSerialization;
+
 //open tlh
 if (_open) then {
 

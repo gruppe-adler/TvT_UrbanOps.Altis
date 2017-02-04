@@ -4,66 +4,74 @@
 
 //BLUFOR =======================================================================
 [{
+    ["WAVERESPAWNSTATUSBLU",["WEST"] call uo_waverespawn_fnc_getStatus] call CBA_fnc_publicVariable;
+
     //dont execute while respawning is possible
     if (WAVERESPAWNBLU) exitWith {};
 
     //start countdown once first player is added to wave
-    if (count deadPlayersBlu >= 1 && WAVERESPAWNTIMELEFTBLU <= uo_missionParam_WAVERESPAWNTIMEBLU) then {
-        [{
-            WAVERESPAWNTIMELEFTBLU = WAVERESPAWNTIMELEFTBLU - 1;
-            publicVariable "WAVERESPAWNTIMELEFTBLU";
-            if (WAVERESPAWNTIMELEFTBLU <= 0) then {[_this select 1] call CBA_fnc_removePerFrameHandler};
-        }, 1, []] call CBA_fnc_addPerFrameHandler;
+    if (count deadPlayersBlu > 0) then {
+        WAVERESPAWNTIMELEFTBLU = (WAVERESPAWNTIMELEFTBLU - 1) max 0;
+        publicVariable "WAVERESPAWNTIMELEFTBLU";
+    } else {
+        ["WAVERESPAWNTIMELEFTBLU",uo_missionParam_WAVERESPAWNTIMEBLU] call CBA_fnc_publicVariable;
     };
 
     //enable respawning when wave is full
-    if (count deadPlayersBlu >= BLUFORWAVESIZE && WAVERESPAWNTIMELEFTBLU <= 0) then {
+    if (["WEST"] call uo_waverespawn_fnc_canRespawn) then {
+        _newGroups = [WEST] call uo_waverespawn_fnc_organizeInGroup;
+        {
+            [_x] remoteExec ["uo_waverespawn_fnc_chooseRespawn",0,false];
+        } forEach _newGroups;
+
         WAVERESPAWNBLU = true;
         publicVariable "WAVERESPAWNBLU";
         INFO("Respawning now possible for Blufor.");
 
         [{
-                WAVERESPAWNBLU = false;
-                publicVariable "WAVERESPAWNBLU";
-                WAVERESPAWNTIMELEFTBLU = uo_missionParam_WAVERESPAWNTIMEBLU;
-                publicVariable    "WAVERESPAWNTIMELEFTBLU";
-                INFO("Respawning no longer possible for Blufor.");
+            WAVERESPAWNBLU = false;
+            publicVariable "WAVERESPAWNBLU";
+            WAVERESPAWNTIMELEFTBLU = uo_missionParam_WAVERESPAWNTIMEBLU;
+            publicVariable    "WAVERESPAWNTIMELEFTBLU";
+            INFO("Respawning no longer possible for Blufor.");
         },[],(RESPAWNWAVEEXTRATIME max 7)] call CBA_fnc_waitAndExecute;
     };
-}, 3, []] call CBA_fnc_addPerFrameHandler;
+}, 1, []] call CBA_fnc_addPerFrameHandler;
 
 //OPFOR ========================================================================
 [{
+    ["WAVERESPAWNSTATUSOPF",["EAST"] call uo_waverespawn_fnc_getStatus] call CBA_fnc_publicVariable;
+    if (uo_DEALERKILLED) exitWith {[_this select 1] call CBA_fnc_removePerFrameHandler; WAVERESPAWNOPF = false; publicVariable "WAVERESPAWNOPF"};
+
     //dont execute while respawning is possible
     if (WAVERESPAWNOPF) exitWith {};
 
     //start countdown once first player is added to wave
-    if (count deadPlayersOpf >= 1 && WAVERESPAWNTIMELEFTOPF <= uo_missionParam_WAVERESPAWNTIMEOPF) then {
-        [{
-            WAVERESPAWNTIMELEFTOPF = WAVERESPAWNTIMELEFTOPF - 1;
-            publicVariable "WAVERESPAWNTIMELEFTOPF";
-            if (WAVERESPAWNTIMELEFTOPF <= 0) then {[_this select 1] call CBA_fnc_removePerFrameHandler};
-        }, 1, []] call CBA_fnc_addPerFrameHandler;
+    if (count deadPlayersOpf > 0) then {
+        WAVERESPAWNTIMELEFTOPF = (WAVERESPAWNTIMELEFTOPF - 1) max 0;
+        publicVariable "WAVERESPAWNTIMELEFTOPF";
+    } else {
+        ["WAVERESPAWNTIMELEFTOPF",uo_missionParam_WAVERESPAWNTIMEOPF] call CBA_fnc_publicVariable;
     };
 
     //enable respawning when wave is full
-    if (count deadPlayersOpf >= OPFORWAVESIZE && WAVERESPAWNTIMELEFTOPF <= 0 && !uo_DEALERKILLED) then {
-        _opf_safeRespawnPos = [] call uo_waverespawn_fnc_findOpfSpawnPos;
-        missionNamespace setVariable ["uo_opf_safeRespawnPos",_opf_safeRespawnPos,true];
+    if (["EAST"] call uo_waverespawn_fnc_canRespawn) then {
+        _newGroups = [EAST] call uo_waverespawn_fnc_organizeInGroup;
+        {
+            [_x] remoteExec ["uo_waverespawn_fnc_chooseRespawn",0,false];
+        } forEach _newGroups;
+
+        WAVERESPAWNOPF = true;
+        publicVariable "WAVERESPAWNOPF";
+        INFO("Respawning now possible for Opfor.");
 
         [{
-            WAVERESPAWNOPF = true;
+            WAVERESPAWNOPF = false;
             publicVariable "WAVERESPAWNOPF";
-            INFO("Respawning now possible for Opfor.");
-        },[],2] call CBA_fnc_waitAndExecute;
-
-        [{
-                WAVERESPAWNOPF = false;
-                publicVariable "WAVERESPAWNOPF";
-                WAVERESPAWNTIMELEFTOPF = uo_missionParam_WAVERESPAWNTIMEOPF;
-                publicVariable    "WAVERESPAWNTIMELEFTOPF";
-                INFO("Respawning no longer possible for Opfor.");
-                missionNamespace setVariable ["uo_opf_safeRespawnPos",nil,true];
-        },[],(RESPAWNWAVEEXTRATIME max 8)] call CBA_fnc_waitAndExecute;
+            WAVERESPAWNTIMELEFTOPF = uo_missionParam_WAVERESPAWNTIMEOPF;
+            publicVariable    "WAVERESPAWNTIMELEFTOPF";
+            INFO("Respawning no longer possible for Opfor.");
+            missionNamespace setVariable ["uo_opf_safeRespawnPos",nil,true];
+        },[],(RESPAWNWAVEEXTRATIME max 7)] call CBA_fnc_waitAndExecute;
     };
-}, 3, []] call CBA_fnc_addPerFrameHandler;
+}, 1, []] call CBA_fnc_addPerFrameHandler;

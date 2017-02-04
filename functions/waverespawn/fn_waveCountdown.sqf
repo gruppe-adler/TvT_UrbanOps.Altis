@@ -7,10 +7,10 @@ if (player getVariable "wr_isFreeRespawn") exitWith {player setVariable ["wr_wav
 
 INFO("Player countdown done. Starting wave countdown...");
 
-[profileName, player getVariable ["originalSide", "UNKNOWN"]] remoteExec ["uo_waverespawn_fnc_addToWave",2,false];
+[player, playerSide] remoteExec ["uo_waverespawn_fnc_addToWave",2,false];
 
 [{
-    private ["_explanation"];
+
     _timeOfDeath = (_this select 0) select 0;
 
     //check interrupt
@@ -29,23 +29,11 @@ INFO("Player countdown done. Starting wave countdown...");
         INFO("Max respawn time reached.");
     };
 
-    _respawnIn = parseText format ["<t align='center' size='1.4'>Player <t color='#00ff00'>bereit</t></t>"];
-    _waveTimeLeft = call (player getVariable "wr_waveTimeLeft");
-    _timeLeftStr = [_waveTimeLeft, "MM:SS"] call BIS_fnc_secondsToString;
-    _playersLeft = call (player getVariable "wr_playersLeft");
-    _waveSize = player getVariable "wr_waveSize";
-    _waveLeft = parseText format ["<t align='center' size='1.4'>Wave: <t color='%3'>%1/%2</t> - <t color ='%4'>%5</t></t>", _waveSize - _playersLeft, _waveSize, if (_playersLeft <= 0) then {"#00ff00"} else {"#ffff00"},if (_waveTimeLeft <= 0) then {"#00ff00"} else {"#ffff00"}, _timeLeftStr];
-    if (_waveTimeLeft > 0) then {
-        _explanation = parseText "<t align='center' size='1.4'>Waiting for wave-countdown.</t>";
-    } else {
-        _explanation = parseText "<t align='center' size='1.4'>Waiting for more players.</t>";
+    if (!(call (player getVariable ["wr_waitCondition",{false}])) || player getVariable ["wr_isFreeRespawn", false] || player getVariable ["wr_interrupted", false]) exitWith {
+        [_this select 1] call CBA_fnc_removePerFrameHandler;
+        player setVariable ["wr_waveCountdownDone", true];
     };
-    _maxTime = parseText format ["<t align ='center' size='0.7'>Skipping waiting time in: %1.</t>", [MAXRESPAWNTIME - (time -_timeOfDeath),"MM:SS"] call BIS_fnc_secondsToString];
-    [_respawnIn, _waveLeft, _explanation, _maxTime] call uo_waverespawn_fnc_respawnHint;
 
-    if (_waveTimeLeft <= 0 && _playersLeft <= 0) exitWith {
-    [_this select 1] call CBA_fnc_removePerFrameHandler;
-    player setVariable ["wr_waveCountdownDone", true];
-};
+    [playerSide] call uo_waverespawn_fnc_respawnHint;
 
 }, 1, _this] call CBA_fnc_addPerFrameHandler;
