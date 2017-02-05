@@ -4,7 +4,7 @@
 
 //BLUFOR =======================================================================
 [{
-    ["WAVERESPAWNSTATUSBLU",["WEST"] call uo_waverespawn_fnc_getStatus] call CBA_fnc_publicVariable;
+    ["WAVERESPAWNSTATUSBLU",[WEST] call uo_waverespawn_fnc_getStatus] call CBA_fnc_publicVariable;
 
     //dont execute while respawning is possible
     if (WAVERESPAWNBLU) exitWith {};
@@ -40,7 +40,7 @@
 
 //OPFOR ========================================================================
 [{
-    ["WAVERESPAWNSTATUSOPF",["EAST"] call uo_waverespawn_fnc_getStatus] call CBA_fnc_publicVariable;
+    ["WAVERESPAWNSTATUSOPF",[EAST] call uo_waverespawn_fnc_getStatus] call CBA_fnc_publicVariable;
     if (uo_DEALERKILLED) exitWith {[_this select 1] call CBA_fnc_removePerFrameHandler; WAVERESPAWNOPF = false; publicVariable "WAVERESPAWNOPF"};
 
     //dont execute while respawning is possible

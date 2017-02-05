@@ -2,7 +2,7 @@ params ["_side"];
 
 _status = "";
 
-if (_side == "WEST") then {
+if (_side == WEST) then {
     _status = switch (true) do {
         case (WAVERESPAWNTIMELEFTBLU > 0): {
             "Waiting for wave-countdown.";
@@ -19,7 +19,7 @@ if (_side == "WEST") then {
     };
 };
 
-if (_side == "WEST") then {
+if (_side == EAST) then {
     _status = switch (true) do {
         case (OPFORWAVESIZE > 0): {
             "Waiting for wave-countdown.";

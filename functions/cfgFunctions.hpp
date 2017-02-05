@@ -91,6 +91,15 @@ class uo_missionObjectives {
     };
 };
 
+class uo_sectors {
+    class sectors {
+        class checkSector {};
+        class drawSectors {};
+        class generatePartialCircle {};
+        class getSector {};
+    };
+};
+
 class uo_missionstart {
     class missionstart {
         class createTrigger {};

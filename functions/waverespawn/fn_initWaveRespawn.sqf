@@ -26,5 +26,5 @@ if (isServer) then {
     DEADPLAYERSBLU_GROUP setVariable ["ace_map_hideBlueForceMarker",true,true];
     DEADPLAYERSOPF_GROUP setVariable ["ace_map_hideBlueForceMarker",true,true];
 
-    addMissionEventHandler ["HandleDisconnect", {[_this select 3] call uo_waverespawn_fnc_removeFromWave}];
+    addMissionEventHandler ["HandleDisconnect", {[_this select 0,side (_this select 0)] call uo_waverespawn_fnc_removeFromWave}];
 };

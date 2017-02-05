@@ -17,5 +17,5 @@ if (_side == EAST) then {
         DEADPLAYERSOPF_GROUP setVariable ["ace_map_hideBlueForceMarker",true,true];
     };
 
-    [_unit] joinSilent DEADPLAYERSBLU_GROUP;
+    [_unit] joinSilent DEADPLAYERSOPF_GROUP;
 };

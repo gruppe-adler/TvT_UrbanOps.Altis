@@ -13,6 +13,7 @@ private ["_pos"];
 30 call TFAR_fnc_setVoiceVolume;
 
 setPlayerRespawnTime 99999;
+player enableSimulation true;
 hint "";
 
-[objNull] call uo_waverespawn_fnc_respawnSelectorMarker;
+[playerSide] call uo_waverespawn_fnc_respawnSelectorMarker;

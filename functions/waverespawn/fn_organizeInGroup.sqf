@@ -12,6 +12,8 @@ INFO_2("Organizing dead %1 players into %2 groups.",_side,_numberOfGroups);
 _newGroups = [];
 for [{_i=0}, {_i<_numberOfGroups}, {_i=_i+1}] do {
     _leader = [_deadPlayersGroup] call uo_waverespawn_getHighestRanking;
+    [_leader,RESPAWNCREDITS] call grad_lbm_fnc_addFunds;
+
     _group = createGroup _side;
     [_leader] joinSilent _group;
     _groupName = [_side] call uo_waverespawn_fnc_generateGroupName;

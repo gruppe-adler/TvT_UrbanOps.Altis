@@ -6,6 +6,7 @@ if (!isServer) exitWith {};
 
 //city trigger =================================================================
 _condition = "
+    uo_unitsInCityArea = thisList;
     ((west countSide thisList) max 0.01)/((east countSide thisList) max 0.1) >= uo_missionParam_CONTROLRATIO;
 ";
 
