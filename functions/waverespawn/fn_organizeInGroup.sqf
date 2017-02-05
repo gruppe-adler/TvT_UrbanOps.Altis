@@ -21,6 +21,12 @@ for [{_i=0}, {_i<_numberOfGroups}, {_i=_i+1}] do {
     _groupName = [_side] call uo_waverespawn_fnc_generateGroupName;
     _group setGroupIDGlobal [_groupName];
 
+    [{!isNull (_this select 0)}, {
+        params ["_group","_groupName"];
+        _data   = [nil, _groupName, false]; // [<Insignia>, <Group Name>, <Private>]
+        ["RegisterGroup", [_group, leader _group, _data]] call BIS_fnc_dynamicGroups;
+    }, [_group,_groupName]] call CBA_fnc_waitUntilAndExecute;
+
     _newGroups pushBack _group;
     INFO_2("%1 selected as leader for %2.", name _leader, _groupName);
 };

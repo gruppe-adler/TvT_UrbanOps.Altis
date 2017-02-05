@@ -2,25 +2,31 @@
 #define COMPONENT missionstart
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
-if (!isServer) exitWith {};
+private ["_condition","_onActivation","_onDeactivation"];
 
-//city trigger =================================================================
-_condition = "
-    uo_unitsInCityArea = thisList;
-    ((west countSide thisList) max 0.01)/((east countSide thisList) max 0.1) >= uo_missionParam_CONTROLRATIO;
-";
+if (!isServer) then {
+    _condition = "
+        uo_unitsInCityArea = thisList;
+        ((west countSide thisList) max 0.01)/((east countSide thisList) max 0.1) >= uo_missionParam_CONTROLRATIO;
+    ";
 
-_onActivation = "
-    BLUFORINCONTROL = true;
-    publicVariable 'BLUFORINCONTROL';
-    [[],'Report','BLUFOR has taken control!'] remoteExec ['uo_common_fnc_sideNotification',0,false];
-";
+    _onActivation = "
+        BLUFORINCONTROL = true;
+        publicVariable 'BLUFORINCONTROL';
+        [[],'Report','BLUFOR has taken control!'] remoteExec ['uo_common_fnc_sideNotification',0,false];
+    ";
 
-_onDeactivation = "
-    BLUFORINCONTROL = false;
-    publicVariable 'BLUFORINCONTROL';
-    [[],'Report','BLUFOR is no longer in control.'] remoteExec ['uo_common_fnc_sideNotification',0,false];
-";
+    _onDeactivation = "
+        BLUFORINCONTROL = false;
+        publicVariable 'BLUFORINCONTROL';
+        [[],'Report','BLUFOR is no longer in control.'] remoteExec ['uo_common_fnc_sideNotification',0,false];
+    ";
+} else {
+    _condition = "uo_unitsInCityArea = thisList;";
+    _onActivation = "";
+    _onDeactivation = "";
+};
+
 
 _trigger = createTrigger ["EmptyDetector", CITYPOSITION, false];
 _trigger setTriggerArea [CITYAREASIZE,CITYAREASIZE,0,false];
