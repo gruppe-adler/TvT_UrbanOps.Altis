@@ -16,4 +16,5 @@ setPlayerRespawnTime 99999;
 player enableSimulation true;
 hint "";
 
+[] call uo_waverespawn_fnc_resetPlayerVars;
 [playerSide] call uo_waverespawn_fnc_respawnSelectorMarker;

@@ -13,8 +13,6 @@ class uo_civs {
         class doFlee {};
         class doSurrender {};
         class createCivs {};
-        class findBuildingPositions {};
-        class findHouses {};
         class findPositionOfInterest {};
         class initCivs {};
         class initPunishments {};
@@ -41,6 +39,8 @@ class uo_common {
         class diagReport {};
         class doAnimation {};
         class emptyContainer {};
+        class findBuildingPositions {};
+        class findBuildings {};
         class findRandomPos {};
         class getIslandCfgValue {};
         class getNumberOfTeammates {};
@@ -136,8 +136,9 @@ class uo_waverespawn {
         class canRespawn {};
         class chooseRespawn {};
         class doRespawn {};
+        class findBuilding {};
         class findNearestRespawnObject {};
-        class findOpfSpawnPos {};
+        class findOpfRespawnPos {};
         class generateGroupName {};
         class getHighestRanking {};
         class getRole {};

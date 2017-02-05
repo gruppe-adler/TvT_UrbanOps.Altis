@@ -20,6 +20,7 @@ if (serverTime - _joinTime < 30 && didJIP) exitWith {INFO("Player is JIP. Exitin
 INFO("Starting waverespawn procedure...");
 [true] call uo_waverespawn_fnc_blockMap;
 _timeOfDeath = time;
+player setVariable ["wr_timeOfDeath",time];
 
 //respawn player, put him in spec mode
 setPlayerRespawnTime 0;

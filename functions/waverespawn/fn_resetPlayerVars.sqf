@@ -8,7 +8,7 @@ switch (playerSide) do {
         player setVariable ["wr_interruptCondition", {count uo_cv_allCVs == 0 || ({_x getVariable ["uo_respawnObject_isActive", false]} count uo_cv_allCVs == 0 && ({side _x == west} count playableUnits) == 0)}];
         player setVariable ["wr_playersLeft", {WAVERESPAWNPLAYERSLEFTBLU}];
         player setVariable ["wr_waveTimeLeft", {WAVERESPAWNTIMELEFTBLU}];
-        player setVariable ["wr_waveSize", BLUFORWAVESIZE];
+        player setVariable ["wr_waveSize", BLUFORWAVESIZE];        
     };
     case (EAST): {
         player setVariable ["wr_waitCondition", {!WAVERESPAWNOPF}];

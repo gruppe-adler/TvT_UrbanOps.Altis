@@ -1,6 +1,8 @@
 #define PREFIX uo
-#define COMPONENT civs
+#define COMPONENT common
 #include "\x\cba\addons\main\script_macros_mission.hpp"
+
+params ["_searchPos","_radius"];
 
 //exclusion list for houses
 _exclusionList = [
@@ -12,8 +14,7 @@ _exclusionList = [
 ];
 
 //HOUSE LIST ===================================================================
-_houseList =    CITYPOSITION nearObjects ["House",CITYAREASIZE+80];
-INFO_1("%1 houses found.", count _houseList);
+_houseList = nearestObjects [_searchPos,["House"],_radius];
 
 //Clean up house list (remove buildings that have no positions)
 _cleanUpCounter = 0;
@@ -29,6 +30,5 @@ _cleanUpCounter = 0;
         };
     };
 }forEach _houseList;
-INFO_2("%1 houses without positions removed from list. %2 remaining.", _cleanUpCounter, count _houseList);
 
 _houseList

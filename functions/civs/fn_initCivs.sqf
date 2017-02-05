@@ -43,7 +43,8 @@ if (isServer) then {
         };
     };
 
-    _houses = [] call uo_civs_fnc_findHouses;
+    _houses = [CITYPOSITION,CITYAREASIZE+80] call uo_common_fnc_findBuildings;
+    INFO_1("%1 houses found for civs.", count _houses);
     [_houses] call uo_missionObjectives_fnc_createDealer;
     [_houses] call uo_civs_fnc_createCivs;
 };
