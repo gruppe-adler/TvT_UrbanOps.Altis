@@ -44,6 +44,18 @@ _marker setMarkerShape "ELLIPSE";
 _marker setMarkerBrush "Border";
 _marker setMarkerSize [BLUFORSPAWNDIST+BLUFORSPAWNBAND, BLUFORSPAWNDIST+BLUFORSPAWNBAND];
 
+//sectors
+_marker = createMarker ["SECTORVERTICAL", CITYPOSITION];
+_marker setMarkerColor "COLORBLACK";
+_marker setMarkerShape "RECTANGLE";
+_marker setMarkerBrush "Solid";
+_marker setMarkerSize [1, CITYAREASIZE];
+
+_marker = createMarker ["SECTORHORIZONTAL", CITYPOSITION];
+_marker setMarkerColor "COLORBLACK";
+_marker setMarkerShape "RECTANGLE";
+_marker setMarkerBrush "Solid";
+_marker setMarkerSize [CITYAREASIZE, 1];
 
 //CREATE EXTRA MARKERS FOR BLUFOR ==============================================
 

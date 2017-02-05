@@ -4,8 +4,6 @@
 
 params ["_unit","_side"];
 
-diag_log str _this;
-
 switch (_side) do {
     case (WEST): {
         if (_unit in deadPlayersBlu) then {
@@ -28,7 +26,9 @@ switch (_side) do {
     default {ERROR_1("Player %1 is neither WEST nor EAST.", name _unit)};
 };
 
-WAVERESPAWNPLAYERSLEFTBLU = BLUFORWAVESIZE - (count deadPlayersBlu);
-WAVERESPAWNPLAYERSLEFTOPF = OPFORWAVESIZE - (count deadPlayersOpf);
-publicVariable "WAVERESPAWNPLAYERSLEFTBLU";
-publicVariable "WAVERESPAWNPLAYERSLEFTOPF";
+[{
+    WAVERESPAWNPLAYERSLEFTBLU = BLUFORWAVESIZE - (count deadPlayersBlu);
+    WAVERESPAWNPLAYERSLEFTOPF = OPFORWAVESIZE - (count deadPlayersOpf);
+    publicVariable "WAVERESPAWNPLAYERSLEFTBLU";
+    publicVariable "WAVERESPAWNPLAYERSLEFTOPF";
+}, [], (RESPAWNWAVEEXTRATIME max 7)] call CBA_fnc_waitAndExecute;

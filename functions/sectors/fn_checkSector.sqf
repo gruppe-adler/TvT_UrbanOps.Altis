@@ -1,4 +1,6 @@
-params ["_sector"];
+params [["_sector",-1]];
+
+if (_sector < 0) exitWith {false};
 
 _westUnitsCount = {
     alive _x &&

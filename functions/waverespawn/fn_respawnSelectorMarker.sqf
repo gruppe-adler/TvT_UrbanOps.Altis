@@ -56,9 +56,9 @@ if (_side == EAST) then {
         params ["_args", "_handle"];
         _args params ["_marker","_selected"];
 
-        if !([_sectorID] call uo_sectors_fnc_checkSector) exitWith {
+        if !([_selected] call uo_sectors_fnc_checkSector) exitWith {
             [EAST,-1] call uo_waverespawn_fnc_respawnSelectorMarker;
         };
 
-    } , 0.1, [_marker,_sectorID]] call CBA_fnc_addPerFrameHandler;
+    } , 0.1, [_marker,_selected]] call CBA_fnc_addPerFrameHandler;
 };

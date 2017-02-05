@@ -4,7 +4,9 @@
 
 params ["_side"];
 
-_deadPlayersGroup = if (_side == WEST) then {DEADPLAYERSBLU_GROUP} else {DEADPLAYERSOPF_GROUP};
+_deadPlayers = if (_side == WEST) then {deadPlayersBlu} else {deadPlayersOpf};
+_deadPlayersGroup = createGroup _side;
+_deadPlayers joinSilent _deadPlayersGroup;
 _numberOfGroups = ceil ((count units _deadPlayersGroup)/5);
 INFO_2("Organizing dead %1 players into %2 groups.",_side,_numberOfGroups);
 
@@ -48,5 +50,7 @@ _allMedics = [];
 {
     [_x] joinSilent ([_newGroups] call uo_waverespawn_fnc_getSmallestGroup);
 } forEach (units _deadPlayersGroup);
+
+deleteGroup _deadPlayersGroup;
 
 _newGroups

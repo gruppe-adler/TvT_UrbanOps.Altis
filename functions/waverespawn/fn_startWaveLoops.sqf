@@ -29,6 +29,11 @@
         INFO("Respawning now possible for Blufor.");
 
         [{
+            _newGroups = [WEST] call uo_waverespawn_fnc_organizeInGroup;
+            {
+                [_x] remoteExec ["uo_waverespawn_fnc_chooseRespawn",0,false];
+            } forEach _newGroups;
+            
             WAVERESPAWNBLU = false;
             publicVariable "WAVERESPAWNBLU";
             WAVERESPAWNTIMELEFTBLU = uo_missionParam_WAVERESPAWNTIMEBLU;
@@ -66,6 +71,11 @@
         INFO("Respawning now possible for Opfor.");
 
         [{
+            _newGroups = [EAST] call uo_waverespawn_fnc_organizeInGroup;
+            {
+                [_x] remoteExec ["uo_waverespawn_fnc_chooseRespawn",0,false];
+            } forEach _newGroups;
+
             WAVERESPAWNOPF = false;
             publicVariable "WAVERESPAWNOPF";
             WAVERESPAWNTIMELEFTOPF = uo_missionParam_WAVERESPAWNTIMEOPF;
