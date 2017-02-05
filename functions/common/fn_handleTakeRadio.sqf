@@ -27,13 +27,13 @@ _radioSide = switch (_encryptionCode) do {
 if (_isBackpack) then {
     if (_radioSide != playerSide) then {
         systemChat "You cannot take this radio.";
-        player action ["DropBag",_container,_item];
+        if (backpack player == _item) then {removeBackpackGlobal player} else {player removeItem _item};
     };
 } else {
     if (_radioSide != playerSide) then {
         systemChat "You cannot take this radio.";
         player removeItem _item;
         player unlinkItem _item;
-        _container addItemCargoGlobal [_item,1];
+        (if (isNull _container) then {createVehicle ["groundWeaponHolder", getPos player, [], 0, "can_Collide"]} else {_container}) addItemCargoGlobal [_item,1];
     };
 };
