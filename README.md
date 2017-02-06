@@ -12,11 +12,15 @@ OPFOR chooses a city that they will have to defend for X minutes (*Capture Time*
 	- [OPFOR](#opfor)
 - [The Dealer (OPFOR)](#the-dealer-opfor)
 - [Commandvehicles (BLUFOR)](#commandvehicles-blufor)
+- [Respawn](#respawn)
+	- [BLUFOR](#blufor)
+	- [OPFOR](#opfor)
 - [Factions](#factions)
 - [Civilians](#civilians)
 - [Parameters](#parameters)
 - [Pictures](#pictures)
 - [Credits](#credits)
+	- [Creative Commons](#creative-commons)
 
 <!-- /TOC -->
 
