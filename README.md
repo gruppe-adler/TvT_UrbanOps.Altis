@@ -62,23 +62,28 @@ OPFOR wins when:
 * the *Location* has been defended for X minutes (*DefenseTime*)
 
 ## The Dealer (OPFOR)
-The *Dealer* is a shady character with connections. He moves supplies into and out of the *Location*. He will help the defending forces, but for a price.
-
-The *Dealer*'s position is marked on OPFOR's map. OPFOR units can buy supplies from the *Dealer*. As long as the *Dealer* is alive, OPFOR units can respawn in waves. Respawned units will respawn somewhere in the *Location* area, not necessarily on the *Dealer's* position.
+The *Dealer* is a shady character with connections. He moves supplies into and out of the *Location*. He will help the defending forces, but for a price. His position is marked on OPFOR's map. OPFOR units can buy supplies from the *Dealer*. As long as the *Dealer* is alive, OPFOR units can respawn.
 
 The *Dealer* will most likely have his shop in a building of some sort. He will look like a normal civilian, but is identifiable by the drugs that he has in his inventory.
 
 ## Commandvehicles (BLUFOR)
 BLUFOR will start their game with a *Commandvehicle*. Supplies, including additional *Commandvehicles* can be bought from each one. *OPFOR* can destroy *Commandvehicles* with an ACE-Interaction.
 
-Each *Commandvehicle's* position is marked on BLUFOR's map. The markers will be blue if respawn is possible and red if respawn is not possible on the respective vehicle. Respawning on a *Commandvehicle* is possible if all conditions are met:
+Each *Commandvehicle's* position is marked on BLUFOR's map. The markers will be blue if respawn is possible and red if respawn is not possible on the respective vehicle. As long as at least one *Commandvehicle* is active, BLUFOR units can respawn.
+
+## Respawn
+Respawning is done in waves. When a player dies, he has to wait for his player respawn time countdown to run out. He will then be added the the wave. As soon as the first player is added to the wave, the wave respawn time countdown starts. All players in a wave will respawn once the wave countdown runs out and the wave has at least X players. Before respawning all players will be evenly distributed into groups of max. 5 players. The highest ranking players will become team leaders and get a small sum of money. The teamleaders then choose the respawn position for their group.
+
+### BLUFOR
+BLUFOR can respawn on their *Commandvehicles*. Respawning on a *Commandvehicle* is possible if all conditions are met:
 
 * is inside the *Respawn Zone*
 * is not moving
 * is not disabled (engine or hull in critical condition) or destroyed
 * does not have any enemies near it (100m)
 
-Respawning *BLUFOR* units will be prompted to choose which *Commandvehicle* to respawn on from the map, if their team has more than one.
+### OPFOR
+The *Location* is divided into four even sectors. Team leaders can choose a respawn position inside a sector as long as there are more OPFOR units that BLUFOR units in that sector. The actual respawn position might deviate from the chosen position. The game will try to find a position that is at least X meters away from all BLUFOR units in the area. It will also try to spawn the whole group inside a building.
 
 ## Factions
 Different factions for BLUFOR and OPFOR can be chosen during mission setup. The chosen faction will determine the loadouts, the *Commandvehicles* and the supplies that players can buy. Typical BLUFOR factions (e.g. USA - Army) can be chosen for the OPFOR side to put them in the defending role.
