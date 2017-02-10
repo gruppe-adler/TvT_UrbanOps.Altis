@@ -7,6 +7,7 @@ params ["_side"];
 _deadPlayers = if (_side == WEST) then {deadPlayersBlu} else {deadPlayersOpf};
 _deadPlayersGroup = createGroup _side;
 _deadPlayers joinSilent _deadPlayersGroup;
+_deadPlayers resize 0;
 _numberOfGroups = ceil ((count units _deadPlayersGroup)/5);
 INFO_2("Organizing dead %1 players into %2 groups.",_side,_numberOfGroups);
 

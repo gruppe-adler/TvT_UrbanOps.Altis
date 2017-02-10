@@ -13,7 +13,12 @@ if (side _group == WEST && count (missionNamespace getVariable ["uo_cv_allCVs",[
 ["Terminate"] call BIS_fnc_EGSpectator;
 [false] call uo_waverespawn_fnc_blockMap;
 if (playerSide == EAST) then {[true] call uo_sectors_fnc_drawSectors};
-openMap [true, false];
+openMap [true, true];
+
+_zoom = if (side _group == WEST) then {0.12} else {0.02};
+_map = (findDisplay 12) displayCtrl 51;
+_map ctrlMapAnimAdd [0,_zoom,CITYPOSITION];
+ctrlMapAnimCommit _map;
 
 [true, "CHOOSE RESPAWN LOCATION", "CONFIRM (ENTER)"] call uo_ui_fnc_twoLineHint;
 
