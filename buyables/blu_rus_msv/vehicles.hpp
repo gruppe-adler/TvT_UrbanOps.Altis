@@ -10,6 +10,19 @@ class Vehicles {
         stock = 10;
     };
 
+    class rhs_tigr_msv {
+        condition = "uo_missionParam_ISWOODLAND";
+        displayName = "Commandvehicle";
+        description = "Seats: 9<br/><br/>Functions as a backup respawn and buymenu access position.";
+        code = "if (isServer) then {[_this select 2] call uo_missionObjectives_fnc_setCommandVehicle};";
+        price = 10000;
+        stock = 2;
+    };
+
+    class rhs_tigr_3camo_msv: rhs_tigr_msv {
+        condition = "!uo_missionParam_ISWOODLAND";
+    };
+
     class rhs_tigr_m_msv {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "TIGR (unarmed)";
