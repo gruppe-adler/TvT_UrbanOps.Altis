@@ -26,8 +26,15 @@ _startTime = serverTime;
 [{
     params ["_startTime","_handle"];
     _timeLeft = AUTOCHOOSETIMEOUT - (serverTime - _startTime);
+    if (group player getVariable ["uo_waverespawn_groupIsRespawned",false]) exitWith {
+        [false] call uo_ui_fnc_twoLineHint;
+        [_handle] call CBA_fnc_removePerFrameHandler
+    };
     [true, format ["CHOOSE RESPAWN LOCATION (%1s left)",(round _timeLeft) max 0], "CONFIRM WITH ENTER"] call uo_ui_fnc_twoLineHint;
-    if (_timeLeft < 0) exitWith {[_handle] call CBA_fnc_removePerFrameHandler};
+    if (_timeLeft < 0) exitWith {
+        [false] call uo_ui_fnc_twoLineHint;
+        [_handle] call CBA_fnc_removePerFrameHandler
+    };
 } , 1, _startTime] call CBA_fnc_addPerFrameHandler;
 
 
@@ -74,8 +81,7 @@ mcd_onRespawnKeyDown = (findDisplay 46) displayAddEventHandler ["KeyUp", {
 
         [false] call uo_ui_fnc_twoLineHint;
         _pos = if (playerSide == WEST) then {getPos uo_selectedRespawnObject} else {uo_selectedRespawnPos};
-        [group player,_pos] remoteExec ["uo_waverespawn_fnc_respawnGroup",2,false];
-        openMap [false, false];
+        [group player,_pos] remoteExec ["uo_waverespawn_fnc_respawnGroup",2,false];        
         [false] call uo_sectors_fnc_drawSectors;
     };
 }];

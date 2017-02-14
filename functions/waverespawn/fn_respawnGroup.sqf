@@ -4,7 +4,7 @@
 
 params ["_group","_pos"];
 
-_group setVariable ["uo_waverespawn_groupIsRespawned",true];
+_group setVariable ["uo_waverespawn_groupIsRespawned",true,true];
 
 if (side _group == WEST) then {
     {
