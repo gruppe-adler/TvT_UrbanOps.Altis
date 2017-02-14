@@ -89,4 +89,12 @@ class Vehicles {
         price = 20000;
         stock = 2;
     };
+
+    class Box_NATO_Equip_F {
+        displayName = "Assault Boat (x2)";
+        description = "2 assault boats in a box that can be loaded into vehicles.";
+        code = "if (isServer) then {[_this select 2,'B_Boat_Transport_01_F',2] remoteExec ['uo_buyables_fnc_initBoatBox',0,true]}";
+        price = 1500;
+        stock = 10;
+    };
 };

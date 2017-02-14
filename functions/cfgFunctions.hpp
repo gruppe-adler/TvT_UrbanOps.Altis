@@ -1,3 +1,10 @@
+class uo_buyables {
+    class buyables {
+        class initBoatBox {};
+        class unloadBoat {};
+    };
+};
+
 class uo_choosePlayArea {
     class choosePlayArea {
         class bluforWaitDialog {};
