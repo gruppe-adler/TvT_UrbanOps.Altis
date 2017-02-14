@@ -55,6 +55,7 @@ class uo_common {
         class startSpectator {};
         class stopAnimation {};
         class teleport {};
+        class temp3dMarker {};
     };
 };
 

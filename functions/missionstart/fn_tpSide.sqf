@@ -23,11 +23,15 @@ if (hasInterface && {playerSide == _side}) then {
 
 		_pos = player getVariable "startPosition";
 		INFO_1("Teleporting player to %1 for game start.", _pos);
-		player allowDamage false;
-		player setPos _pos;
 		[{
-			player allowDamage true;
-			openMap [false, false];
-		}, [], 2] call CBA_fnc_waitAndExecute;
+			params ["_pos"];
+			_onTP = {
+				openMap [false, false];
+				_markObject = if (playerSide == WEST) then {uo_cv_allCVs select 0} else {uo_DEALER};
+				_markerDescription = if (playerSide == WEST) then {"Commandvehicle"} else {"Dealer"};
+				[_markObject,_markerDescription,30] call uo_common_fnc_temp3dMarker;
+			};
+			[player,_pos,_onTP] call uo_common_fnc_teleport;
+		}, [_pos], random 2] call CBA_fnc_waitAndExecute;
 	}, []] call CBA_fnc_waitUntilAndExecute;
 };
