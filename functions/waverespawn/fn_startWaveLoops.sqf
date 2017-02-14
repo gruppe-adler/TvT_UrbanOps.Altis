@@ -22,6 +22,7 @@
         _newGroups = [WEST] call uo_waverespawn_fnc_organizeInGroup;
         {
             [_x] remoteExec ["uo_waverespawn_fnc_chooseRespawn",0,false];
+            [{_this call uo_waverespawn_fnc_autoChooseRespawn}, _x, AUTOCHOOSETIMEOUT] call CBA_fnc_waitAndExecute;
         } forEach _newGroups;
 
         WAVERESPAWNBLU = true;
@@ -32,8 +33,9 @@
             _newGroups = [WEST] call uo_waverespawn_fnc_organizeInGroup;
             {
                 [_x] remoteExec ["uo_waverespawn_fnc_chooseRespawn",0,false];
+                [{_this call uo_waverespawn_fnc_autoChooseRespawn}, _x, AUTOCHOOSETIMEOUT] call CBA_fnc_waitAndExecute;
             } forEach _newGroups;
-            
+
             WAVERESPAWNBLU = false;
             publicVariable "WAVERESPAWNBLU";
             WAVERESPAWNTIMELEFTBLU = uo_missionParam_WAVERESPAWNTIMEBLU;
@@ -64,6 +66,7 @@
         _newGroups = [EAST] call uo_waverespawn_fnc_organizeInGroup;
         {
             [_x] remoteExec ["uo_waverespawn_fnc_chooseRespawn",0,false];
+            [{_this call uo_waverespawn_fnc_autoChooseRespawn}, _x, AUTOCHOOSETIMEOUT] call CBA_fnc_waitAndExecute;
         } forEach _newGroups;
 
         WAVERESPAWNOPF = true;
@@ -74,6 +77,7 @@
             _newGroups = [EAST] call uo_waverespawn_fnc_organizeInGroup;
             {
                 [_x] remoteExec ["uo_waverespawn_fnc_chooseRespawn",0,false];
+                [{_this call uo_waverespawn_fnc_autoChooseRespawn}, _x, AUTOCHOOSETIMEOUT] call CBA_fnc_waitAndExecute;
             } forEach _newGroups;
 
             WAVERESPAWNOPF = false;

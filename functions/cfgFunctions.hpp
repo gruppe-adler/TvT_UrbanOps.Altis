@@ -132,6 +132,7 @@ class uo_waverespawn {
         class addRespawnedToGroup {};
         class addToWaitGroup {};
         class addToWave {};
+        class autoChooseRespawn {};
         class blockMap {};
         class canRespawn {};
         class chooseRespawn {};

@@ -20,7 +20,16 @@ _map = (findDisplay 12) displayCtrl 51;
 _map ctrlMapAnimAdd [0,_zoom,CITYPOSITION];
 ctrlMapAnimCommit _map;
 
-[true, "CHOOSE RESPAWN LOCATION", "CONFIRM (ENTER)"] call uo_ui_fnc_twoLineHint;
+
+//TIMEOUT HINT =================================================================
+_startTime = serverTime;
+[{
+    params ["_startTime","_handle"];
+    _timeLeft = AUTOCHOOSETIMEOUT - (serverTime - _startTime);
+    [true, format ["CHOOSE RESPAWN LOCATION (%1s left)",(round _timeLeft) max 0], "CONFIRM WITH ENTER"] call uo_ui_fnc_twoLineHint;
+    if (_timeLeft < 0) exitWith {[_handle] call CBA_fnc_removePerFrameHandler};
+} , 1, _startTime] call CBA_fnc_addPerFrameHandler;
+
 
 //MAPCLICK EVENT ===============================================================
 mcd_chooseRespawnClick = [
@@ -44,6 +53,7 @@ mcd_chooseRespawnClick = [
         };
     }
 ] call BIS_fnc_addStackedEventHandler;
+
 
 //CONFIRM SELECTION ============================================================
 mcd_onRespawnKeyDown = (findDisplay 46) displayAddEventHandler ["KeyUp", {
