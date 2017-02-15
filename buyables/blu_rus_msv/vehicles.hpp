@@ -23,6 +23,13 @@ class Vehicles {
         condition = "!uo_missionParam_ISWOODLAND";
     };
 
+    class RHS_Ural_MSV_01 {
+        displayName = "Ural-4320";
+        description = "Seats: 15";
+        price = 1200;
+        stock = 10;
+    };
+
     class rhs_tigr_m_msv {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "TIGR (unarmed)";
@@ -55,11 +62,11 @@ class Vehicles {
         stock = 10;
     };
 
-    class RHS_Ural_MSV_01 {
-        displayName = "Ural-4320";
-        description = "Seats: 15";
-        price = 1200;
-        stock = 10;
+    class RHS_Mi8mt_vdv {
+        displayName = "Mi-8MT";
+        description = "Seats: 18<br/><br/>Transport helicopter armed with one side facing and one rear facing PK machine gun.";
+        price = 15000;
+        stock = 2;
     };
 
     class Box_NATO_Equip_F {
