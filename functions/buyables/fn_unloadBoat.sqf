@@ -9,5 +9,7 @@ if (_boatType == "") exitWith {};
 
 _box setVariable ["uo_buyables_boatsInBox",_boatsLeft-1,true];
 
-_pos = (getPos _box) findEmptyPosition [0,10, _boatType];
-createVehicle [_boatType, _pos, [], 0, "NONE"];
+
+[_boatType,"DROPPED",_caller] remoteExec ["grad_fortifications_fnc_startPlacement",0,false];
+/*_pos = (getPos _box) findEmptyPosition [0,10, _boatType];
+createVehicle [_boatType, _pos, [], 0, "NONE"];*/
