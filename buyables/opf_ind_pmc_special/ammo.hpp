@@ -9,18 +9,18 @@ class Ammo {
         stock = 50;
     };
 
-    class rhsusf_20Rnd_762x51_m118_special_Mag {
-        displayName = "7.62mm 20Rnd";
-        description = "Used in:<br/>Mk 11 Mod 0";
-        price = 150;
-        stock = 30;
+    class 30Rnd_9x21_Mag_SMG_02_Tracer_Red {
+        displayName = "9mm 30Rnd";
+        description = "Used in:<br/>Scorpion Evo 3";
+        price = 80;
+        stock = 50;
     };
 
-    class rhsusf_100Rnd_762x51_m62_tracer {
-        displayName = "7.62mm 100Rnd Tracer Belt";
-        description = "Used in:<br/>M240G";
-        price = 250;
-        stock = 30;
+    class 11Rnd_45ACP_Mag {
+        displayName = ".45 ACP 11Rnd";
+        description = "Used in:<br/>FNX-45";
+        price = 40;
+        stock = 50;
     };
 
     class rhsusf_8Rnd_00Buck {
@@ -37,25 +37,25 @@ class Ammo {
         stock = 50;
     };
 
-    class rhs_mag_smaw_HEAA {
-        displayName = "SMAW HEAA";
-        description = "Used in:<br/>SMAW";
-        price = 200;
-        stock = 4;
+    class rhs_mag_M441_HE {
+        displayName = "M441 HE Grenade";
+        description = "Used in:<br/>M320 Grenade Launcher";
+        price = 600;
+        stock = 20;
     };
 
-    class rhs_mag_smaw_HEDP {
-        displayName = "SMAW HEDP";
-        description = "Used in:<br/>SMAW";
+    class rhs_mag_m714_White {
+        displayName = "M714 White Smoke Grenade";
+        description = "Used in:<br/>M320 Grenade Launcher";
         price = 200;
-        stock = 4;
+        stock = 20;
     };
 
-    class rhs_mag_smaw_SR {
-        displayName = "SMAW Spotting Rounds";
-        description = "Used in:<br/>SMAW";
-        price = 300;
-        stock = 4;
+    class rhs_mag_m4009 {
+        displayName = "M4009 Stun Grenade";
+        description = "Used in:<br/>M320 Grenade Launcher";
+        price = 500;
+        stock = 20;
     };
 
     class DemoCharge_Remote_Mag {
@@ -79,6 +79,12 @@ class Ammo {
     class rhs_mag_an_m8hc {
         displayName = "M8 Smoke Grenade";
         price = 200;
+        stock = 20;
+    };
+
+    class ACE_M84 {
+        displayName = "M84 Stun Grenade";
+        price = 500;
         stock = 20;
     };
 };

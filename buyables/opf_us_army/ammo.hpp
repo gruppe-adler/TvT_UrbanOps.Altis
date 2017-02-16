@@ -70,7 +70,7 @@ class Ammo {
         stock = 6;
     };
 
-    class HandGrenade {
+    class rhs_mag_m67 {
         displayName = "M67 Fragmentation Grenade";
         price = 600;
         stock = 20;

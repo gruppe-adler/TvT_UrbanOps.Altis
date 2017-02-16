@@ -19,7 +19,7 @@ class Header
 {
     gameType = Seize;
     minPlayers = 2;
-    maxPlayers = 150;
+    maxPlayers = 84;
 };
 
 //LOAD SCREEN ==================================================================

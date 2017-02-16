@@ -19,16 +19,16 @@ class Params
     class BluforFaction
     {
         title = "Blufor Faction";
-        values[] = {0,1};
-        texts[] = {"USA - Army", "Russia - MSV"};
+        values[] = {0,1,2};
+        texts[] = {"USA - Army", "Russia - MSV", "Independent - PMC"};
         default = 0;
     };
 
     class OpforFaction
     {
         title = "Opfor Faction";
-        values[] = {0,1};
-        texts[] = {"USA - Army", "Russia - MSV"};
+        values[] = {0,1,2};
+        texts[] = {"USA - Army", "Russia - MSV", "Independent - PMC"};
         default = 1;
     };
 

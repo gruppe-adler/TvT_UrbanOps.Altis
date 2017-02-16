@@ -3,11 +3,13 @@ if (!isServer) exitWith {};
 //FACTIONS =====================================================================
 uo_missionParam_BLUFORFACTION = [
     "us_army",
-    "rus_msv"
+    "rus_msv",
+    "ind_pmc_special"
 ] select ("BluforFaction" call BIS_fnc_getParamValue);
 uo_missionParam_OPFORFACTION = [
     "us_army",
-    "rus_msv"
+    "rus_msv",
+    "ind_pmc_special"
 ] select ("OpforFaction" call BIS_fnc_getParamValue);
 uo_missionParam_ISWOODLAND = ["isWoodland"] call uo_common_fnc_getIslandCfgValue;
 

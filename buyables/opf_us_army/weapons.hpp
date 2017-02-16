@@ -16,7 +16,7 @@ class Weapons {
 
     class rhs_weap_M590_8RD {
         displayName = "M590A1 (Long)";
-        price = 1200;
+        price = 800;
         stock = 6;
     };
 

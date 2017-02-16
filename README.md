@@ -39,10 +39,13 @@ These addons are required to run the scenario:
 * [RHS: USAF](http://www.rhsmods.org/mod/2)
 * [RHS: GREF](http://www.rhsmods.org/mod/3)
 
-These addons give civilians a lot more variety, but are optional:
+These optional addons give civilians a lot more variety:
 * [Apex Expansion](https://arma3.com/apex)
 * [RDS Civ](http://www.armaholic.com/page.php?id=26188)
 * [Project Opfor](http://www.armaholic.com/page.php?id=31310)
+
+These optional addons are required for the listed factions:
+* [CUP Vehicles](https://forums.bistudio.com/topic/179326-community-upgrade-project-cup/) - needed for PMC faction
 
 ## Game Flow
 1. OPFOR commander chooses one of the available *Locations* from the map (OPFOR players can watch)
@@ -97,6 +100,7 @@ Buyables for each faction depending on side (click the *EAST* tab on the bottom)
 playable:
 * USA - Army
 * Russia - MSV
+* Independent - PMC
 
 planned:
 * Germany - Heer

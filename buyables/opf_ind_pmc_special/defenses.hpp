@@ -64,5 +64,4 @@ class Defenses {
         stock = 20;
         code = "if (player == _this select 0) then {[player,_this select 1] call grad_fortifications_fnc_addFort;}";
     };
-
 };

@@ -25,6 +25,12 @@ class cfgFactions {
 
     };
 
+    class ind_PMC_special {
+        commandVehicles[] = {"CUP_I_SUV_ION","CUP_I_SUV_ION"};
+        loadoutWood = "ind_pmc_special";
+        loadoutDes = "ind_pmc_special";
+    };
+
     class ind_terrorists {
 
     };
