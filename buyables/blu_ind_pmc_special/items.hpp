@@ -45,6 +45,12 @@ class Items {
         stock = 10;
     };
 
+    class ACE_DefusalKit {
+        displayName = "Defusal Kit";
+        price = 300;
+        stock = 20;
+    };
+
     class B_TacticalPack_blk {
         kindOf = "Wearables";
 
