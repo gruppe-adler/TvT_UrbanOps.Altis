@@ -20,7 +20,11 @@ class Params
     {
         title = "Blufor Faction";
         values[] = {0,1,2};
-        texts[] = {"USA - Army", "Russia - MSV", "Independent - PMC"};
+        texts[] = {
+            "USA - Army",
+            "Russia - MSV",
+            "Independent - PMC (requires CUP Vehicles)"
+        };
         default = 0;
     };
 
@@ -28,7 +32,11 @@ class Params
     {
         title = "Opfor Faction";
         values[] = {0,1,2};
-        texts[] = {"USA - Army", "Russia - MSV", "Independent - PMC"};
+        texts[] = {
+            "USA - Army",
+            "Russia - MSV",
+            "Independent - PMC (requires CUP Vehicles)"
+        };
         default = 1;
     };
 
