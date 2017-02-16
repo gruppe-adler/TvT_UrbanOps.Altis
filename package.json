@@ -5,6 +5,7 @@
                 "grad-moneymenu": ">=0.0.1",
                 "grad-scoreboard": ">=0.0.1",
                 "grad-winratetracker": ">=0.0.1",
-                "grad-fortifications": ">=0.0.1"
+                "grad-fortifications": ">=0.0.1",
+                "grad-aicommand": ">=0.0.1"
         }
 }
