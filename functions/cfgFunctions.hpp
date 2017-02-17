@@ -116,6 +116,7 @@ class uo_sectors {
 class uo_missionstart {
     class missionstart {
         class createTrigger {};
+        class disableBFT {};
         class createLegendMarkers {};
         class findOpfStartPos {};
         class findBluStartPos {};

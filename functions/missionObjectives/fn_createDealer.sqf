@@ -14,6 +14,7 @@ INFO_1("House selected for dealer: %1",_dealerHouse);
 
 //select position and spawn dealer
 _dealerPos = selectRandom ([_dealerHouse] call uo_common_fnc_findBuildingPositions);
+_dealerHouse setVariable ["uo_dealerHouse_dealerPos",_dealerPos];
 _group = createGroup civilian;
 uo_DEALER = _group createUnit ["C_man_1",_dealerPos,[],0,"NONE"];
 uo_DEALER allowDamage false;

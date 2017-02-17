@@ -2,6 +2,11 @@ params ["_unit"];
 
 if (!isServer) exitWith {};
 
+_unit disableAI "SUPPRESSION";
+_unit disableAI "COVER";
+_unit setUnitPos "UP";
+group _unit allowFleeing 0;
+
 [{
     params ["_args","_handle"];
     _args params ["_unit"];

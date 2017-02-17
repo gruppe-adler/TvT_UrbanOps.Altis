@@ -45,6 +45,7 @@
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_checkCapture}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_endMission}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_civs_fnc_initPunishments}, []] call CBA_fnc_waitUntilAndExecute;
+    [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_missionstart_fnc_disableBFT}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[[EAST],"BLUFOR SPAWNED","Game started."] call uo_common_fnc_sideNotification}, []] call CBA_fnc_waitUntilAndExecute;
 
 }, []] call CBA_fnc_waitUntilAndExecute;

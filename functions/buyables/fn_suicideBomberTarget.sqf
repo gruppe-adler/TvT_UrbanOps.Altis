@@ -13,8 +13,8 @@
         [_unit] call uo_buyables_fnc_initSuicideBomber;
     };
 
-    if (_unit distance2D _target < 15 && {!(_unit getVariable ["ACE_isUnconscious",false])}) exitWith {
+    if (_unit distance2D _target < 10 && {!(_unit getVariable ["ACE_isUnconscious",false])}) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
         [_unit] call uo_buyables_fnc_suicideBomberExplode;
     };
-} , 2, _this] call CBA_fnc_addPerFrameHandler;
+} , 0.5, _this] call CBA_fnc_addPerFrameHandler;
