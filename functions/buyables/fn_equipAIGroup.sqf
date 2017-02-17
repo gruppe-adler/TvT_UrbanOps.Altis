@@ -1,7 +1,8 @@
 params ["_group","_loadoutClasses"];
 
-_faction = if (side _group == EAST) then {uo_missionParam_OPFORFACTION} else {uo_missionParam_BLUFORFACTION};
+if (!isServer) exitWith {};
 
+_faction = if (side _group == EAST) then {uo_missionParam_OPFORFACTION} else {uo_missionParam_BLUFORFACTION};
 if (typeName _loadoutClasses != "ARRAY") then {_loadoutClasses = [_loadoutClasses]};
 
 {

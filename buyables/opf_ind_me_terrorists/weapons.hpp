@@ -4,7 +4,7 @@ class Weapons {
 
     class rhs_weap_akm {
         displayName = "AKMS";
-        price = 1400;
+        price = 1000;
         stock = 4;
     };
 

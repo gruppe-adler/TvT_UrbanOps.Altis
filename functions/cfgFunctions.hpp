@@ -3,6 +3,9 @@ class uo_buyables {
         class equipAI {};
         class equipAIGroup {};
         class initBoatBox {};
+        class initSuicideBomber {};
+        class suicideBomberExplode {};
+        class suicideBomberTarget {};
         class unloadBoat {};
     };
 };
