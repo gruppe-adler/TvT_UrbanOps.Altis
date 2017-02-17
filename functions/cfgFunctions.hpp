@@ -1,5 +1,7 @@
 class uo_buyables {
     class buyables {
+        class equipAI {};
+        class equipAIGroup {};
         class initBoatBox {};
         class unloadBoat {};
     };

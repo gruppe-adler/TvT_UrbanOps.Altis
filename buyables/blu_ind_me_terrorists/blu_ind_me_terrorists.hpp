@@ -1,5 +1,4 @@
 class blu_ind_me_terrorists {
-    #include "accessories.hpp"
     #include "ammo.hpp"
     #include "items.hpp"
     #include "vehicles.hpp"

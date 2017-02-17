@@ -10,6 +10,7 @@
 #include "cfgFactions.hpp"
 #include "cfgCivilians.hpp"
 #include "buyables\cfgBuyables.hpp"
+#include "buyables\cfgAIUnitLoadouts.hpp"
 #include "loadouts\loadouts.hpp"
 #include "dialogs\cfgDialogs.hpp"
 
