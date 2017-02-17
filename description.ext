@@ -4,6 +4,7 @@
 #include "node_modules\grad-moneymenu\grad_moneymenu.hpp"
 #include "node_modules\grad-scoreboard\grad_scoreboard.hpp"
 #include "node_modules\grad-fortifications\grad_fortifications.hpp"
+#include "node_modules\grad-aicommand\grad_aicommand.hpp"
 
 #include "cfgParams.hpp"
 #include "cfgIslands.hpp"
@@ -13,7 +14,6 @@
 #include "buyables\cfgAIUnitLoadouts.hpp"
 #include "loadouts\loadouts.hpp"
 #include "dialogs\cfgDialogs.hpp"
-
 
 //HEADER =======================================================================
 class Header
@@ -51,6 +51,7 @@ class CfgFunctions {
     #include "node_modules\grad-winrateTracker\cfgFunctions.hpp"
     #include "node_modules\grad-scoreboard\cfgFunctions.hpp"
     #include "node_modules\grad-fortifications\cfgFunctions.hpp"
+    #include "node_modules\grad-aicommand\cfgFunctions.hpp"
 };
 
 //SOUNDS =======================================================================
