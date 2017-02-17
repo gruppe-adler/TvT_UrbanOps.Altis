@@ -19,7 +19,7 @@ for [{_i=1}, {_i<count _currentWaypoints}, {_i=_i+1}] do {
         if (_nearestWPID >= 0) then {
             _nearestWP = _currentWaypoints select _nearestWPID;
             _nearestWPPos = _nearestWP select 0;
-            _map drawArrow [_thisWPPos,_nearestWPPos,[0,0,0,1]];
+            _map drawArrow [_thisWPPos,_nearestWPPos,_color];
         };
     };
 };
