@@ -18,7 +18,14 @@ if (missionNamespace getVariable ["uo_init_cityChosen", false]) exitWith {};
         {
             //find nearest location
             _clickRadius = ([VILLAGEMARKERSIZE,CITYMARKERSIZE,CAPITALMARKERSIZE,OTHERMARKERSIZE] call BIS_fnc_greatestNum) + 100;
-            CHOSENLOCATION = (nearestLocations [_pos, ["NameVillage", "NameCity", "NameCityCapital", "NameLocal"], _clickRadius]) select 0;
+            _nearestLocations = nearestLocations [_pos, ["NameVillage", "NameCity", "NameCityCapital", "NameLocal"], _clickRadius];
+            CHOSENLOCATION =  locationNull;
+            {
+                if (_x in LOCATION_ALLVILLAGES || _x in LOCATION_ALLCITIES || _x in LOCATION_ALLCAPITALS || _x in LOCATION_ALLOTHER) exitWith {
+                    CHOSENLOCATION = _x;
+                };
+            } forEach _nearestLocations;
+
             _drawRadius = switch (type CHOSENLOCATION) do {
                 case "NameVillage": {VILLAGEMARKERSIZE};
                 case "NameCity": {CITYMARKERSIZE};
@@ -29,7 +36,7 @@ if (missionNamespace getVariable ["uo_init_cityChosen", false]) exitWith {};
             ["fn_chooseCity - %1 clicked on %2", profileName, text CHOSENLOCATION] call uo_common_fnc_serverLog;
 
             //create marker
-            if (!isNil "CHOSENLOCATION") then {
+            if (!isNull CHOSENLOCATION) then {
                 [EAST,"selectionMarker",true,getPos CHOSENLOCATION,"hd_start","ColorGreen","","ELLIPSE",_drawRadius,0.45,"Solid"] call uo_common_fnc_createSideMarker;
             } else {
                 [EAST,"selectionMarker"] call uo_common_fnc_deleteSideMarker;

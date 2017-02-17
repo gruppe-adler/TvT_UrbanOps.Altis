@@ -2,15 +2,17 @@
 *
 */
 
-if (!isServer) exitWith {};
-
+//let everyone find locations
 _searchRadius = 15000;
 _worldCenter = [worldSize / 2,worldSize / 2];
 
-LOCATION_ALLVILLAGES = nearestLocations [_worldCenter, ["NameVillage"], _searchRadius];
-LOCATION_ALLCITIES = nearestLocations [_worldCenter, ["NameCity"], _searchRadius];
-LOCATION_ALLCAPITALS = nearestLocations [_worldCenter, ["NameCityCapital"], _searchRadius];
-LOCATION_ALLOTHER = nearestLocations [_worldCenter, ["NameLocal"], _searchRadius];
+LOCATION_ALLVILLAGES = [nearestLocations [_worldCenter, ["NameVillage"], _searchRadius]] call uo_setup_fnc_filterLocations;
+LOCATION_ALLCITIES = [nearestLocations [_worldCenter, ["NameCity"], _searchRadius]] call uo_setup_fnc_filterLocations;
+LOCATION_ALLCAPITALS = [nearestLocations [_worldCenter, ["NameCityCapital"], _searchRadius]] call uo_setup_fnc_filterLocations;
+LOCATION_ALLOTHER = [nearestLocations [_worldCenter, ["NameLocal"], _searchRadius]] call uo_setup_fnc_filterLocations;
+
+//only draw on server
+if (!isServer) exitWith {};
 
 LOCATIONMARKERS = [];
 

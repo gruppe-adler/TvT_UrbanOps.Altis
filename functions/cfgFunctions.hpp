@@ -129,6 +129,7 @@ class uo_setup {
     class setup {
         class briefingDone {postInit = 1;};
         class createLocationMarkers {};
+        class filterLocations {};
         class moveToMapStart {postInit = 1;};
         class setCommandVehicleClass {};
         class setMapRespawnPos {};

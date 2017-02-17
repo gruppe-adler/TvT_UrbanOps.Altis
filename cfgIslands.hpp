@@ -5,6 +5,48 @@ class CfgIslands {
 		isWoodland = true;
 		spawnPosBlu[] = {8454.05,25140.7,0};
 		spawnPosOpf[] = {8712.9,25205.4,0};
+		locationBlacklist[] = {
+			"AAC airfield",
+			"Agios Georgios",
+			"Agios Georgios",
+			"Agios Kosmas",
+			"Agios Panagiotis",
+			"Aktinarki",
+			"Almyra",
+			"Atsalis",
+			"Bomos",
+			"Cap Agrios",
+			"Cap Drakontas",
+			"Cap Kategidis",
+			"Cap Makrinos",
+			"Cap Thelos",
+			"Cap Zefyris",
+			"Chelonisi",
+			"Drimea",
+			"dump",
+			"Edoris",
+			"Faros",
+			"Fournos",
+			"Gori",
+			"Kavala Pier",
+			"Limni",
+			"Livadi",
+			"Makrynisi",
+			"Mazi",
+			"mine",
+			"Molos Airfield",
+			"Monisi",
+			"Nychi",
+			"Ochrolimni",
+			"Pyrgi",
+			"quarry",
+			"Sagonisi",
+			"Savri",
+			"Sideras",
+			"Surf Club",
+			"Xirolimni Dam",
+			"Zeloran"
+		};
 	};
 
 	class Beketov {
