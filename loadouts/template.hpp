@@ -29,32 +29,32 @@ class CLASSNAME {
 		};
 
         //autorifleman
-		class Soldier_AR_F {
+		class Soldier_AR_F: Soldier_F {
 
 		};
 
         //light AT
-		class Soldier_LAT_F {
+		class Soldier_LAT_F: Soldier_F {
 
 		};
 
         //ammo bearer
-		class Soldier_A_F {
+		class Soldier_A_F: Soldier_F {
 
 		};
 
         //medic
-		class Medic_F {
+		class Medic_F: Soldier_F {
 
 		};
 
         //squad leader
-        class Soldier_SL_F {
+        class Soldier_SL_F: Soldier_F {
 
         };
 
         //team leader
-		class Soldier_TL_F {
+		class Soldier_TL_F: Soldier_F {
 
 		};
 	};
