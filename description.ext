@@ -87,6 +87,11 @@ class CfgGradFortifications {
     buildTimeFactor = 0.7;
     fortificationOwnerType = "SIDE";
     demolitionTimeFactor = 1.6;
+
+    class Land_Loudspeakers_F {
+        canPlaceOnRoad = 0;
+        surfaceNormal = 0;
+    };
 };
 
 //NOTIFICATIONS ================================================================

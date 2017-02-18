@@ -13,6 +13,7 @@ _action = ["uo_propagandaTower_mainNode", "", "",{},{alive (_this select 0)},{},
 
 _condition = {
     side (_this select 1) == EAST &&
+    {[_this select 0] call uo_common_fnc_isMissionObject} &&
     {!((_this select 0) getVariable ["uo_propagandaTower_isPlaying",false])} &&
     {!((_this select 0) getVariable ["uo_propagandaTower_isDestroyed",false])}
 };
@@ -21,6 +22,7 @@ _action = ["uo_propagandaTower_on", "Play propaganda", "\A3\ui_f\data\igui\cfg\a
 
 _condition = {
     side (_this select 1) == EAST &&
+    {[_this select 0] call uo_common_fnc_isMissionObject} &&
     {(_this select 0) getVariable ["uo_propagandaTower_isPlaying",false]} &&
     {!((_this select 0) getVariable ["uo_propagandaTower_isDestroyed",false])}
 };
@@ -29,6 +31,7 @@ _action = ["uo_propagandaTower_off", "Stop propaganda", "\A3\ui_f\data\igui\cfg\
 
 _condition = {
     side (_this select 1) == WEST &&
+    {[_this select 0] call uo_common_fnc_isMissionObject} &&
     {(_this select 0) getVariable ["uo_propagandaTower_isPlaying",false]} &&
     {!((_this select 0) getVariable ["uo_propagandaTower_isDestroyed",false])}
 };

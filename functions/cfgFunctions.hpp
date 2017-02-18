@@ -66,6 +66,7 @@ class uo_common {
         class handleTakeRadio {};
         class intro {};
         class isCommander {};
+        class isMissionObject {};
         class saveTeammembers {};
         class serverLog {};
         class sideHint {};
@@ -123,7 +124,7 @@ class uo_missionstart {
     class missionstart {
         class createLegendMarkers {};
         class createTrigger {};
-        class enableBFT {};        
+        class enableBFT {};
         class findOpfStartPos {};
         class findBluStartPos {};
         class playAreaSetup {};
