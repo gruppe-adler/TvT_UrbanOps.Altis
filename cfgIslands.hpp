@@ -352,11 +352,11 @@ class CfgIslands {
 			};
 			class forest {
 				name = "Parkumäki";
-				type = "NameVillage",
+				type = "NameVillage";
 				pos[] = {3900.89,2701.57};
 			};
 			class peninsula {
-				name = "";
+				name = "Tuukkala";
 				type = "NameVillage";
 				pos[] = {3482.91,1596.57};
 			};
