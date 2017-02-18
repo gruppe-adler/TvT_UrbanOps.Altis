@@ -128,6 +128,7 @@ class uo_missionstart {
 class uo_setup {
     class setup {
         class briefingDone {postInit = 1;};
+        class createCustomLocations {};
         class createLocationMarkers {};
         class filterLocations {};
         class moveToMapStart {postInit = 1;};

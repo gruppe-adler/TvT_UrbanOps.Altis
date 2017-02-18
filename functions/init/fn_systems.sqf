@@ -3,6 +3,7 @@
     //init
     [] call uo_setup_fnc_setMissionParams;
     [] call uo_setup_fnc_setOriginalSide;
+    [] call uo_setup_fnc_createCustomLocations;
     [{missionNamespace getVariable ["uo_init_missionParamsDone", false]}, {[] call uo_init_fnc_pubVars}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_missionParamsDone", false]}, {[] call uo_init_fnc_loadoutFaction}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_pubVarsDone", false]}, {[] call uo_waverespawn_fnc_initWaveRespawn}, []] call CBA_fnc_waitUntilAndExecute;

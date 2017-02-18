@@ -8,7 +8,9 @@ islands=(
 	Altis
 	Beketov
 	Chernarus
+	Chernarus_Summer
 	Chernarus_winter
+	fallujah
 	fata
 	mbg_celle2
 	Stratis

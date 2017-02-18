@@ -1,9 +1,11 @@
 if (!isServer) exitWith {};
 
 //SETTINGS =====================================================================
-BLUFORSPAWNDIST = 1200;
-BLUFORSPAWNBAND = 800;
-BLUFORSTARTDIST = BLUFORSPAWNDIST + BLUFORSPAWNBAND + 800;
+_sizeFactor = [(missionConfigFile >> "CfgIslands" >>  worldName >> "sizeFactor"), "number", 1] call CBA_fnc_getConfigEntry;
+
+BLUFORSPAWNDIST = 1200 * _sizeFactor;
+BLUFORSPAWNBAND = 800 * _sizeFactor;
+BLUFORSTARTDIST = (BLUFORSPAWNDIST + BLUFORSPAWNBAND + 800) * _sizeFactor;
 OPFORRESPAWNDIST = 100;
 CIVILIANPROBABILITY = 3.5;
 DEALERRADIUSFACTOR = 0.75;																										    //CITYAREASIZE * DEALERRADIUSFACTOR == DEALERSPAWNRADIUS

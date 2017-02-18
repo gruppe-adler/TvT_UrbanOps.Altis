@@ -13,7 +13,8 @@ for [{_i=0}, {_i<30}, {_i=_i+1}] do {
 INFO_1("House selected for dealer: %1",_dealerHouse);
 
 //select position and spawn dealer
-_dealerPos = selectRandom ([_dealerHouse] call uo_common_fnc_findBuildingPositions);
+_buildingPositions = [_dealerHouse] call uo_common_fnc_findBuildingPositions;
+_dealerPos = if (count _buildingPositions > 0) then {selectRandom _buildingPositions} else {[CITYPOSITION,[0,CITYAREASIZE * DEALERRADIUSFACTOR]] call uo_common_fnc_findRandomPos};
 _dealerHouse setVariable ["uo_dealerHouse_dealerPos",_dealerPos];
 _group = createGroup civilian;
 uo_DEALER = _group createUnit ["C_man_1",_dealerPos,[],0,"NONE"];
@@ -46,7 +47,7 @@ _barrel = "Land_BarrelEmpty_F" createVehicleLocal _dealerPos;
     }];
 
     _nearestRoad = [getpos _unit, 50, []] call BIS_fnc_nearestRoad;
-    _vehicleSpawn = if (!isNull _nearestRoad) then {getPos _nearestRoad} else {_dealer};
+    _vehicleSpawn = if (!isNull _nearestRoad) then {getPos _nearestRoad} else {uo_DEALER};
 
     [EAST,"uo_dealerMarker",true,_dealerPos,"mil_marker","COLOREAST"] call uo_common_fnc_createSideMarker;
     [{uo_DEALER allowDamage true}, [], 10] call CBA_fnc_waitAndExecute;
