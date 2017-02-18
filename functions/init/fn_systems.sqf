@@ -1,6 +1,7 @@
 [{!isNull player || isDedicated},{
 
     //init
+    ace_map_BFT_Enabled = false;
     [] call uo_setup_fnc_setMissionParams;
     [] call uo_setup_fnc_setOriginalSide;
     [] call uo_setup_fnc_createCustomLocations;
@@ -32,11 +33,13 @@
     [{missionNamespace getVariable ["uo_init_cityChosen", false]}, {[] call uo_civs_fnc_initCivs}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_playAreaSetupDone", false]}, {[] call uo_missionstart_fnc_findOpfStartPos}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_opforSpawnSet", false]}, {[EAST] call uo_missionstart_fnc_tpSide}, []] call CBA_fnc_waitUntilAndExecute;
+    [{missionNamespace getVariable ["uo_init_opforSpawnSet", false]}, {[EAST] call uo_missionstart_fnc_enableBFT}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_opforSpawnSet", false]}, {[] call uo_buyables_fnc_initPropagandaTowers}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_spawnChosen", false]}, {[BLUFORSPAWN] call uo_missionObjectives_fnc_createCommandVehicle}, []] call CBA_fnc_waitUntilAndExecute;
     [{(!isNil "CITYPOSITION" && !isNil "CITYAREASIZE")}, {[] call uo_missionstart_fnc_createTrigger}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_cvCreated", false]}, {[] call uo_missionstart_fnc_findBluStartPos}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_bluforSpawnSet", false]}, {[WEST] call uo_missionstart_fnc_tpSide}, []] call CBA_fnc_waitUntilAndExecute;
+    [{missionNamespace getVariable ["uo_init_bluforSpawnSet", false]}, {[WEST] call uo_missionstart_fnc_enableBFT}, []] call CBA_fnc_waitUntilAndExecute;
 
     //on game start
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_common_fnc_saveTeammembers}, []] call CBA_fnc_waitUntilAndExecute;
@@ -47,7 +50,6 @@
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_checkCapture}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_endMission}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_civs_fnc_initPunishments}, []] call CBA_fnc_waitUntilAndExecute;
-    [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_missionstart_fnc_disableBFT}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[[EAST],"BLUFOR SPAWNED","Game started."] call uo_common_fnc_sideNotification}, []] call CBA_fnc_waitUntilAndExecute;
 
 }, []] call CBA_fnc_waitUntilAndExecute;
