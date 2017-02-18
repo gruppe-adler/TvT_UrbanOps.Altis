@@ -19,6 +19,7 @@ class cfgFactions {
 
     class rus_msv {
         commandVehicles[] = {"rhs_tigr_msv", "rhs_tigr_3camo_msv"};
+        propagandaTowerSounds[] = {"uo_propaganda_rus_1","uo_propaganda_rus_2","uo_propaganda_rus_3","uo_propaganda_rus_4","uo_propaganda_rus_5"};
         loadoutWood = "rus_msv_w";
         loadoutDes = "rus_msv_d";
         BFT = 1;

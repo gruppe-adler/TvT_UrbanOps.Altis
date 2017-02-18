@@ -32,6 +32,7 @@
     [{missionNamespace getVariable ["uo_init_cityChosen", false]}, {[] call uo_civs_fnc_initCivs}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_playAreaSetupDone", false]}, {[] call uo_missionstart_fnc_findOpfStartPos}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_opforSpawnSet", false]}, {[EAST] call uo_missionstart_fnc_tpSide}, []] call CBA_fnc_waitUntilAndExecute;
+    [{missionNamespace getVariable ["uo_init_opforSpawnSet", false]}, {[] call uo_buyables_fnc_initPropagandaTowers}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_spawnChosen", false]}, {[BLUFORSPAWN] call uo_missionObjectives_fnc_createCommandVehicle}, []] call CBA_fnc_waitUntilAndExecute;
     [{(!isNil "CITYPOSITION" && !isNil "CITYAREASIZE")}, {[] call uo_missionstart_fnc_createTrigger}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_cvCreated", false]}, {[] call uo_missionstart_fnc_findBluStartPos}, []] call CBA_fnc_waitUntilAndExecute;

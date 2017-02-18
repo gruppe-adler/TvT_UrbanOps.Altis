@@ -55,15 +55,8 @@ class CfgFunctions {
 };
 
 //SOUNDS =======================================================================
-class CfgSounds
-{
-	sounds[] = {};
-	class uo_morse
-	{
-		name = "uo_morse";
-		sound[] = {"data\morse.ogg", 0.7, 1, 5};
-		titles[] = {};
-	};
+class CfgSounds {
+	#include "cfgSounds.hpp"
 };
 
 //MONEY MENU ===================================================================
@@ -91,6 +84,8 @@ class CfgWinrateTracker {
 //FORTIFICATIONS ===============================================================
 class CfgGradFortifications {
     canDemolishDefault = 1;
+    buildTimeFactor = 0.7;
+    fortificationOwnerType = "SIDE";
     demolitionTimeFactor = 1.6;
 };
 
