@@ -70,6 +70,7 @@ while {count _roads > 0 && count uo_civs_sideRoadVehicles < _vehiclesToCreate} d
         _boundingBox = boundingBox _road;
         _width = ((_boundingBox select 1) select 0) - ((_boundingBox select 0) select 0);
 
+        _startDirection = selectRandom [1,-1];
         {
             _chosenDirection = _x;
             _offRoadFound = false;
@@ -79,10 +80,12 @@ while {count _roads > 0 && count uo_civs_sideRoadVehicles < _vehiclesToCreate} d
                 if (!isOnRoad _testPos) exitWith {_offRoadFound = true};
             };
 
+            _enoughHouses = (count ([_vehPos,20] call uo_common_fnc_findBuildings)) * 30 > random 100;
+
             _canCreate = switch (true) do {
                 case (!_offRoadFound): {"ONROAD"};
                 case (count (getPos _road nearRoads 10) > 2): {"ONINTERSECTION"};
-                case (count ([_vehPos,20] call uo_common_fnc_findBuildings) == 0): {"NOHOUSES"};
+                case (!_enoughHouses): {"NOHOUSES"};
                 case (count ([_vehPos] call _fnc_nearbyVehiclePositions) > 0): {"TOOCLOSE"};
                 case (!([_vehPos] call _fnc_isSafe)): {"UNSAFE"};
                 default {"CANCREATE"};
@@ -90,7 +93,7 @@ while {count _roads > 0 && count uo_civs_sideRoadVehicles < _vehiclesToCreate} d
 
             if (_forEachIndex == 1) then {_roadDir = _roadDir + 180};
             if (_canCreate == "CANCREATE") exitWith {};
-        } forEach [1,-1];
+        } forEach [_startDirection,-_startDirection];
 
         if (uo_missionParam_PRESET in ["DEBUG_SINGLE","DEBUG_MULTI"]) then {
             [_vehPos,_canCreate] call _fnc_createMarker;
@@ -102,7 +105,7 @@ while {count _roads > 0 && count uo_civs_sideRoadVehicles < _vehiclesToCreate} d
             _veh = createVehicle [_type,[0,0,0],[],0,"CAN_COLLIDE"];
             [{!isNull (_this select 0)}, {
                 params ["_veh","_roadDir","_chosenDirection","_vehPos"];
-                _veh setDir _roadDir * _chosenDirection;
+                _veh setDir _roadDir + (90 + 90*_chosenDirection);
                 _veh setPos _vehPos;
                 _veh lock 2;
                 [_veh] call uo_civs_fnc_deleteIfDamaged;
@@ -112,4 +115,4 @@ while {count _roads > 0 && count uo_civs_sideRoadVehicles < _vehiclesToCreate} d
     };
 };
 
-INFO_2("Tried to create %1 vehicles along roads. Created %2.",_vehiclesToCreate,count uo_civs_sideRoadVehicles);
+INFO_2("Tried to create %1 vehicles along roads. Created %2.",_vehiclesToCreate,count uo_civs_sideRoadVehiclePositions);
