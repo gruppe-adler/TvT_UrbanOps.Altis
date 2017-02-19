@@ -1,5 +1,5 @@
-#define RUS_PROPAGANDA_VOL          5
-#define RUS_PROPAGANDA_DIST         300
+#define RUS_PROPAGANDA_VOL          6
+#define RUS_PROPAGANDA_DIST         400
 
 class uo_morse {
     name = "uo_morse";
