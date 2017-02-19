@@ -29,6 +29,8 @@ _unit = _group createUnit [_type,_pos,[],0,"NONE"];
     _allCivs = missionNamespace getVariable ["uo_cv_allCivs", []];
     _allCivs pushBack _unit;
     missionNamespace setVariable ["uo_cv_allCivs", _allCivs, true];
+
+    [_unit] call uo_civs_fnc_deleteIfDamaged;
 }, [_unit,_static]] call CBA_fnc_waitUntilAndExecute;
 
 _unit

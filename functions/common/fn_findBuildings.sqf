@@ -13,6 +13,8 @@ _exclusionList = [
 	"Land_runway_edgelight"
 ];
 
+if (count _searchPos == 0) exitWith {[]};
+
 //HOUSE LIST ===================================================================
 _houseList = nearestObjects [_searchPos,["House"],_radius];
 

@@ -71,6 +71,15 @@ class cfgCivilians {
             "G_Squares_Tinted",
             "G_Spectacles_Tinted"
         };
+
+        vehicles[] = {
+            "C_Hatchback_01_F",
+            "C_Hatchback_01_sport_F",
+            "C_Offroad_01_F",
+            "C_Offroad_01_repair_F",
+            "C_SUV_01_F",
+            "C_Van_01_transport_F"
+        };
     };
 
     class russian {
@@ -131,6 +140,25 @@ class cfgCivilians {
             "G_Squares_Tinted",
             "G_Spectacles_Tinted"
         };
+
+        vehicles[] = {
+            "RDS_Gaz24_Civ_03",
+            "RDS_Gaz24_Civ_01",
+            "RDS_Gaz24_Civ_02",
+            "RDS_Golf4_Civ_01",
+            "RDS_Hatchback_01_F",
+            "RDS_JAWA353_Civ_01",
+            "RDS_S1203_Civ_01",
+            "RDS_S1203_Civ_02",
+            "RDS_Octavia_Civ_01",
+            "RDS_SUV_01_F",
+            "RDS_Zetor6945_Base",
+            "RDS_Lada_Civ_01",
+            "RDS_Lada_Civ_04",
+            "RDS_Lada_Civ_03",
+            "RDS_Lada_Civ_02",
+            "RDS_tt650_Civ_01"
+        };
     };
 
     class middleEastern {
@@ -165,6 +193,10 @@ class cfgCivilians {
             "G_Spectacles",
             "G_Spectacles_Tinted"
         };
+
+        vehicles[] = {
+            "LOP_TAK_Civ_Landrover"
+        };
     };
 
     class tropic: mediterranean {
@@ -192,6 +224,20 @@ class cfgCivilians {
             "U_C_Poloshirt_salmon",
             "U_C_Poloshirt_stripped",
             "U_C_Poloshirt_tricolour"
+        };
+
+        vehicles[] = {
+            "C_Quadbike_01_F",
+            "C_Offroad_02_unarmed_F",
+            "C_Offroad_02_unarmed_F_blue",
+            "C_Offroad_02_unarmed_F_green",
+
+            "C_Hatchback_01_F",
+            "C_Hatchback_01_sport_F",
+            "C_Offroad_01_F",
+            "C_Offroad_01_repair_F",
+            "C_SUV_01_F",
+            "C_Van_01_transport_F"
         };
     };
 };

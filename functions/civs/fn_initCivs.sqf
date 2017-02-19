@@ -11,6 +11,7 @@ if (isServer) then {
             uo_civs_uniforms = [(missionConfigFile >> "cfgCivilians" >>  "russian" >> "uniforms"), "array", []] call CBA_fnc_getConfigEntry;
             uo_civs_headgear = [(missionConfigFile >> "cfgCivilians" >>  "russian" >> "headgear"), "array", []] call CBA_fnc_getConfigEntry;
             uo_civs_goggles = [(missionConfigFile >> "cfgCivilians" >>  "russian" >> "goggles"), "array", []] call CBA_fnc_getConfigEntry;
+            uo_civs_vehicles = [(missionConfigFile >> "cfgCivilians" >>  "russian" >> "vehicles"), "array", []] call CBA_fnc_getConfigEntry;
 
             INFO("Equipping civilians with Russian gear.");
         };
@@ -20,7 +21,12 @@ if (isServer) then {
             uo_civs_uniforms = [(missionConfigFile >> "cfgCivilians" >>  "middleEastern" >> "uniforms"), "array", []] call CBA_fnc_getConfigEntry;
             uo_civs_headgear = [(missionConfigFile >> "cfgCivilians" >>  "middleEastern" >> "headgear"), "array", []] call CBA_fnc_getConfigEntry;
             uo_civs_goggles = [(missionConfigFile >> "cfgCivilians" >>  "middleEastern" >> "goggles"), "array", []] call CBA_fnc_getConfigEntry;
-
+            uo_civs_vehicles = [(missionConfigFile >> "cfgCivilians" >>  "middleEastern" >> "vehicles"), "array", []] call CBA_fnc_getConfigEntry;
+            if (isClass (configFile >> "CfgPatches" >> "rds_A2_Civilians")) then {
+                uo_civs_vehicles = uo_civs_vehicles + ([(missionConfigFile >> "cfgCivilians" >>  "middleEastern" >> "vehicles"), "array", []] call CBA_fnc_getConfigEntry);
+            } else {
+                uo_civs_vehicles = uo_civs_vehicles + ([(missionConfigFile >> "cfgCivilians" >>  "mediterranean" >> "vehicles"), "array", []] call CBA_fnc_getConfigEntry);
+            };
             INFO("Equipping civilians with middle eastern gear.");
         };
 
@@ -29,6 +35,7 @@ if (isServer) then {
             uo_civs_uniforms = [(missionConfigFile >> "cfgCivilians" >>  "tropic" >> "uniforms"), "array", []] call CBA_fnc_getConfigEntry;
             uo_civs_headgear = [(missionConfigFile >> "cfgCivilians" >>  "tropic" >> "headgear"), "array", []] call CBA_fnc_getConfigEntry;
             uo_civs_goggles = [(missionConfigFile >> "cfgCivilians" >>  "tropic" >> "goggles"), "array", []] call CBA_fnc_getConfigEntry;
+            uo_civs_vehicles = [(missionConfigFile >> "cfgCivilians" >>  "tropic" >> "vehicles"), "array", []] call CBA_fnc_getConfigEntry;
 
             INFO("Equipping civilians with tropic gear.");
         };
@@ -38,6 +45,7 @@ if (isServer) then {
             uo_civs_uniforms = [(missionConfigFile >> "cfgCivilians" >>  "mediterranean" >> "uniforms"), "array", []] call CBA_fnc_getConfigEntry;
             uo_civs_headgear = [(missionConfigFile >> "cfgCivilians" >>  "mediterranean" >> "headgear"), "array", []] call CBA_fnc_getConfigEntry;
             uo_civs_goggles = [(missionConfigFile >> "cfgCivilians" >>  "mediterranean" >> "goggles"), "array", []] call CBA_fnc_getConfigEntry;
+            uo_civs_vehicles = [(missionConfigFile >> "cfgCivilians" >>  "mediterranean" >> "vehicles"), "array", []] call CBA_fnc_getConfigEntry;
 
             INFO("Equipping civilians with mediterranean gear.");
         };
@@ -45,8 +53,11 @@ if (isServer) then {
 
     _houses = [CITYPOSITION,CITYAREASIZE+80] call uo_common_fnc_findBuildings;
     INFO_1("%1 houses found for civs.", count _houses);
+    [_houses] call uo_civs_fnc_createSideRoadVehicles;
+    [_houses] call uo_civs_fnc_createGarageVehicles;
     [_houses] call uo_missionObjectives_fnc_createDealer;
     [_houses] call uo_civs_fnc_createCivs;
+
 };
 
 if (hasInterface) then {

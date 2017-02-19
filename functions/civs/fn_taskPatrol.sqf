@@ -30,7 +30,7 @@ for [{_i=0}, {_i<_count}, {_i=_i+1}] do {
 
     _waypoint setWaypointType "MOVE";
     _waypoint setWaypointBehaviour "SAFE";
-    _waypoint setWaypointSpeed (if (4 > random 100) then {"NORMAL"} else {"LIMITED"});
+    _waypoint setWaypointSpeed (if (1 > random 100) then {"NORMAL"} else {"LIMITED"});
     _waypoint setWaypointFormation "STAG COLUMN";
     _waypoint setWaypointTimeout _timeout;
     _waypoint setWaypointCompletionRadius 1;

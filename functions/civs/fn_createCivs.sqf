@@ -16,7 +16,7 @@ _houseCounter = 0;
 	//As long as the buildingpos exists, do:
 	while {((str _buildingPos) != "[0,0,0]")} do {
 
-		if (CIVILIANPROBABILITY > random 100) then {
+		if (CIVILIANPROBABILITY > random 100 && !(typeOf _x in ["Land_i_Garage_V1_F","Land_i_Garage_V2_F","Land_i_Garage_V1_dam_F"])) then {
 			if (count (_x getVariable ["uo_dealerHouse_dealerPos",[]]) > 0 && {_x getVariable ["uo_dealerHouse_dealerPos",[]] isEqualTo _buildingPos}) exitWith {};
 			[_buildingPos,true] call uo_civs_fnc_spawnCiv;
             _staticCivilianCounter = _staticCivilianCounter +1;

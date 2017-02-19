@@ -27,10 +27,13 @@ class uo_choosePlayArea {
 
 class uo_civs {
     class civs {
+        class createCivs {};
         class createEnemyMarker {};
+        class createGarageVehicles {};
+        class createSideRoadVehicles {};
+        class deleteIfDamaged {};
         class doFlee {};
         class doSurrender {};
-        class createCivs {};
         class findPositionOfInterest {};
         class initCivs {};
         class initPunishments {};
