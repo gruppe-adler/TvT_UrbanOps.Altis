@@ -63,6 +63,7 @@ class uo_common {
         class findBuildingPositions {};
         class findBuildings {};
         class findRandomPos {};
+        class getAllowedRadios {};
         class getIslandCfgValue {};
         class getNumberOfTeammates {};
         class handleJIP {};
