@@ -14,7 +14,7 @@ class Vehicles {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "Fennek";
         description = "Seats: 5<br/><br/>No thermal imaging.";
-        code = "if (isServer) then {[_this select 2] disableTIEquipment true};";
+        code = "if (isServer) then {(_this select 2) disableTIEquipment true};";
         price = 4000;
         stock = 10;
     };
@@ -24,7 +24,7 @@ class Vehicles {
     };
 
     class B_Truck_01_transport_F {
-        displayName = "Fennek";
+        displayName = "HEMTT Transport";
         description = "Seats: 18<br/><br/>";
         price = 4000;
         stock = 10;
@@ -34,7 +34,7 @@ class Vehicles {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "Dingo (MG3)";
         description = "Seats: 6<br/><br/>No thermal imaging.";
-        code = "if (isServer) then {[_this select 2] disableTIEquipment true};";
+        code = "if (isServer) then {(_this select 2) disableTIEquipment true};";
         price = 8000;
         stock = 10;
     };
