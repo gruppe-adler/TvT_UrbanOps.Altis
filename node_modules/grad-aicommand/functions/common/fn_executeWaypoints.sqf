@@ -17,4 +17,6 @@ _currentWaypoints = _group getVariable ["grad_aicommand_currentWaypoints",[]];
     _wp setWaypointTimeout _timeout;
     _wp setWaypointType _type;
     _wp setWaypointStatements [_statements select 0,_statements select 1];
-} forEach _currentWaypoints;
+
+    false
+} count _currentWaypoints;

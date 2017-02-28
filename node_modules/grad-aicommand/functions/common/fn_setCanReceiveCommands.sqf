@@ -5,4 +5,5 @@ _units = if (_wholeGroup) then {units group _unit} else {[_unit]};
 
 {
     _x setVariable ["grad_aicommand_canReceiveCommands",_canReceive,true];
-} forEach _units;
+    false
+} count _units;

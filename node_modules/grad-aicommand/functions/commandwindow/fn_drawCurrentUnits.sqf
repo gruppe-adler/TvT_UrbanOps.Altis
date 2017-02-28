@@ -8,4 +8,5 @@ _color = [_currentUnit] call grad_aicommand_fnc_getUnitColor;
 
 {
     _map drawIcon ["iconMan",_color,getPos _x,24,24,getDir _x,"",0,0.03,'TahomaB','right'];
-} forEach (units group _currentUnit);
+    false
+} count (units group _currentUnit);

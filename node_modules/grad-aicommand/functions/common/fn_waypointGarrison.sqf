@@ -52,6 +52,7 @@ private _buildings = (_position nearObjects ["Building", 50]) apply {_x building
             _x doMove _position;
         };
     };
-} forEach units _group;
+    false
+} count (units _group);
 
 true
