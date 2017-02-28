@@ -8,6 +8,13 @@ class Weapons {
         stock = 2;
     };
 
+    class rhs_weap_m24sws {
+        displayName = "M24";
+        description = "The M24 SWS is a bolt-action sniper rifle chambered in 7.62x51 NATO.<br/><br/>This weapon can take magnifying scopes.";
+        price = 3000;
+        stock = 2;
+    };
+
     class rhs_weap_m240G {
         displayName = "M240G";
         price = 2000;

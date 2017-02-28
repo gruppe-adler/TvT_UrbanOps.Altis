@@ -16,6 +16,13 @@ class Ammo {
         stock = 30;
     };
 
+    class rhsusf_10Rnd_762x51_m118_special_Mag {
+        displayName = "7.62mm 10Rnd";
+        description = "Used in:<br/>M40A5";
+        price = 120;
+        stock = 30;
+    };
+
     class 20Rnd_762x51_Mag {
         displayName = "7.62mm 20Rnd";
         description = "Used in:<br/>HK417";

@@ -23,6 +23,13 @@ class Ammo {
         stock = 30;
     };
 
+    class rhs_5Rnd_338lapua_t5000 {
+        displayName = ".338 Lapua Magnum 5Rnd";
+        description = "Used in:<br/>T-5000";
+        price = 150;
+        stock = 30;
+    };
+
     class rhs_rpg7_PG7VL_mag {
         displayName = "PG7-VL";
         description = "Used in:<br/>RPG-7<br/><br/>HEAT Rocket";

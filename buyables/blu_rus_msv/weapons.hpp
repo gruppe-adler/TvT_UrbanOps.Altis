@@ -8,6 +8,13 @@ class Weapons {
         stock = 2;
     };
 
+    class rhs_weap_t5000 {
+        displayName = "T-5000";
+        description = "The Orsis T-5000 is a bolt-action sniper rifle chambered in .338 Lapua Magnum.<br/><br/>This weapon can take magnifying scopes.";
+        price = 3800;
+        stock = 2;
+    };
+
     class rhs_weap_pkm {
         displayName = "PKM";
         price = 2000;

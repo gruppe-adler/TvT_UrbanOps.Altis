@@ -8,6 +8,13 @@ class Weapons {
         stock = 20;
     };
 
+    class rhs_weap_XM2010 {
+        displayName = "M2010 ESR";
+        description = "The M2010 is a modern bolt-action sniper rifle chambered in .300 WinMag.<br/><br/>This weapon can take magnifying scopes.";
+        price = 3500;
+        stock = 2;
+    };
+
     class rhs_weap_M320 {
         displayName = "M320 Grenade Launcher";
         price = 800;

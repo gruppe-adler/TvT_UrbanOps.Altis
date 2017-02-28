@@ -9,6 +9,13 @@ class Ammo {
         stock = 50;
     };
 
+    class rhsusf_5Rnd_300winmag_xm2010 {
+        displayName = ".300 Winchester Magnum 5Rnd";
+        description = "Used in:<br/>M2010 ESR";
+        price = 100;
+        stock = 50;
+    };
+
     class 30Rnd_9x21_Mag_SMG_02_Tracer_Red {
         displayName = "9mm 30Rnd";
         description = "Used in:<br/>Scorpion Evo 3";

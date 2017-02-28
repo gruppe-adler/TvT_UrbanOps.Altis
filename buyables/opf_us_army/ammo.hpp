@@ -9,6 +9,13 @@ class Ammo {
         stock = 50;
     };
 
+    class rhsusf_5Rnd_762x51_m118_special_Mag {
+        displayName = "7.62mm 5Rnd";
+        description = "Used in:<br/>M24";
+        price = 100;
+        stock = 30;
+    };
+
     class rhsusf_20Rnd_762x51_m118_special_Mag {
         displayName = "7.62mm 20Rnd";
         description = "Used in:<br/>Mk 11 Mod 0";

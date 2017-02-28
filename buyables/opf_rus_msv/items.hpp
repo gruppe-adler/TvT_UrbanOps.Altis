@@ -45,6 +45,12 @@ class Items {
         stock = 2;
     };
 
+    class ACE_RangeCard {
+        displayName = "Range Card";
+        price = 100;
+        stock = 20;
+    };
+
     class ACE_Clacker {
         displayName = "M57 Firing Device";
         price = 100;
