@@ -67,6 +67,7 @@ while {count _roads > 0 && count uo_civs_sideRoadVehicles < _vehiclesToCreate} d
     _road = _roads deleteAt _randomRoadID;
 
     if (!isNull _road) then {
+        if (count (roadsConnectedTo _road) == 0) exitWith {};
         _roadDir = _road getDir ((roadsConnectedTo _road) select 0);
         _boundingBox = boundingBox _road;
         _width = ((_boundingBox select 1) select 0) - ((_boundingBox select 0) select 0);
