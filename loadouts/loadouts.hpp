@@ -6,6 +6,8 @@ class Loadouts {
     handleRadios = 1;
 
     class Faction {
+        #include "ger_heer_w.hpp"
+        #include "ger_heer_d.hpp"
         #include "ind_me_terrorists.hpp"
         #include "ind_pmc_special.hpp"
         #include "us_army.hpp"

@@ -6,11 +6,14 @@
 if (!isServer) exitWith {};
 
 params ["_searchPos"];
-_pos = _searchPos findEmptyPosition [0,150,COMMANDVEHICLECLASS];
+
+_cvClass = [] call uo_missionObjectives_fnc_getCommandVehicleClass;
+
+_pos = _searchPos findEmptyPosition [0,150,_cvClass];
 if (str _pos == "[]") then {_pos = _searchPos};
 
 //spawn vehicle
-_cv = COMMANDVEHICLECLASS createVehicle _pos;
+_cv = _cvClass createVehicle _pos;
 [{!isNull (_this select 0)}, {
     params ["_cv"];
 

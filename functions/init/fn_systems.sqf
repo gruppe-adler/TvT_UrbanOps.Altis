@@ -10,7 +10,6 @@
     [{missionNamespace getVariable ["uo_init_pubVarsDone", false]}, {[] call uo_waverespawn_fnc_initWaveRespawn}, []] call CBA_fnc_waitUntilAndExecute;
 
     //setup on mission start
-    [{missionNamespace getVariable ["uo_init_missionParamsDone", false]}, {[] call uo_setup_fnc_setCommandVehicleClass}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_missionParamsDone", false]}, {[] call uo_setup_fnc_setTime}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_missionParamsDone", false]}, {[] call uo_setup_fnc_setWeather}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_missionParamsDone", false]}, {[] call uo_setup_fnc_setMapRespawnPos}, []] call CBA_fnc_waitUntilAndExecute;

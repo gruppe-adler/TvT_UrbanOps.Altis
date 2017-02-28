@@ -110,6 +110,8 @@ class uo_missionObjectives {
         class createDealer {};
         class cvDestroyAction {};
         class destroyCV {};
+        class getCommandVehicleClass {};
+        class onCvCreate {};
         class opforBuyAction {};
         class setCommandVehicle {};
     };
@@ -143,7 +145,6 @@ class uo_setup {
         class createLocationMarkers {};
         class filterLocations {};
         class moveToMapStart {postInit = 1;};
-        class setCommandVehicleClass {};
         class setMapRespawnPos {};
         class setMissionParams {};
         class setMoney {};

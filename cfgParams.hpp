@@ -19,12 +19,13 @@ class Params
     class BluforFaction
     {
         title = "Blufor Faction";
-        values[] = {0,1,2,3};
+        values[] = {0,1,2,3,4};
         texts[] = {
             "USA - Army",
             "Russia - MSV",
-            "Independent - PMC (CUP Vehicles)",
-            "Independent - Middle Eastern Terrorists (Project Opfor)"
+            "Independent - PMC - (requires CUP Vehicles)",
+            "Independent - Middle Eastern Terrorists - (requires Project Opfor)",
+            "GER - Heer - (requires CUP Vehicles, GA Mod, ARC Ger)"
         };
         default = 0;
     };
@@ -32,12 +33,13 @@ class Params
     class OpforFaction
     {
         title = "Opfor Faction";
-        values[] = {0,1,2,3};
+        values[] = {0,1,2,3,4};
         texts[] = {
             "USA - Army",
             "Russia - MSV",
-            "Independent - PMC (requires CUP Vehicles)",
-            "Independent - Middle Eastern Terrorists (requires Project Opfor)"
+            "Independent - PMC - (requires CUP Vehicles)",
+            "Independent - Middle Eastern Terrorists - (requires Project Opfor)",
+            "GER - Heer - (requires CUP Vehicles, GA Mod, ARC Ger)"
         };
         default = 1;
     };
