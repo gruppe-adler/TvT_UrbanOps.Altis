@@ -1,12 +1,14 @@
 class ind_pmc_special {
 	class AllUnits {
         primaryWeapon = "SMG_02_F";
+		primaryWeaponMagazine = "30Rnd_9x21_Mag_SMG_02_Tracer_Red";
 		primaryWeaponMuzzle = "muzzle_snds_L";
 		primaryWeaponOptics = "optic_Aco_smg";
 		primaryWeaponPointer = "rhsusf_acc_anpeq15A";
 		primaryWeaponUnderbarrel = "";
 		secondaryWeapon = "";
 		handgunWeapon = "hgun_Pistol_heavy_01_F";
+		handgunWeaponMagazine = "11Rnd_45ACP_Mag";
         handgunWeaponMuzzle = "muzzle_snds_acp";
         handgunWeaponOptics = "optic_MRD";
 		uniform = "rhs_uniform_g3_blk";
@@ -48,6 +50,7 @@ class ind_pmc_special {
         //autorifleman
 		class Soldier_AR_F: Soldier_F {
             primaryWeapon = "rhs_weap_m27iar";
+			primaryWeaponMagazine = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
             primaryWeaponOptics = "rhsusf_acc_eotech_552";
             primaryWeaponMuzzle = "rhsusf_acc_SF3P556";
 			primaryWeaponUnderbarrel = "rhsusf_acc_harris_bipod";

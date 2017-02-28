@@ -1,6 +1,7 @@
 class ind_me_terrorists {
 	class AllUnits {
         primaryWeapon = "rhs_weap_m38";
+		primaryWeaponMagazine = "rhsgref_5Rnd_762x54_m38";
 		primaryWeaponMuzzle = "";
 		primaryWeaponOptics = "";
 		primaryWeaponPointer = "";
@@ -43,6 +44,7 @@ class ind_me_terrorists {
         //autorifleman
 		class Soldier_AR_F: Soldier_F {
             primaryWeapon = "rhs_weap_akm";
+			primaryWeaponMagazine = "rhs_30Rnd_762x39mm";
             uniform = "LOP_U_AM_Fatigue_02_5";
             headgear = "LOP_H_Shemag_TAN";
             addItemsToUniform[] ={

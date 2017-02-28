@@ -1,6 +1,7 @@
 class rus_msv_w {
 	class AllUnits {
         primaryWeapon = "rhs_weap_ak74m";
+		primaryWeaponMagazine = "rhs_30Rnd_545x39_AK";
 		primaryWeaponMuzzle = "";
 		primaryWeaponOptics = "";
 		primaryWeaponPointer = "";
@@ -41,11 +42,11 @@ class rus_msv_w {
         //autorifleman
 		class Soldier_AR_F: Soldier_F {
 			primaryWeapon = "rhs_weap_pkp";
+			primaryWeaponMagazine = "rhs_100Rnd_762x54mmR";
 			backpack = "rhs_assault_umbts";
 			headgear = "rhs_6b26_ess";
 			addItemsToVest[] = {
-				LIST_2("rhs_mag_rgo"),
-				"rhs_100Rnd_762x54mmR"
+				LIST_2("rhs_mag_rgo")
 			};
 			addItemsToBackpack[] = {
 				LIST_2("rhs_100Rnd_762x54mmR_green"),

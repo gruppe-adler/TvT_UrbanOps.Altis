@@ -1,12 +1,14 @@
 class us_army {
 	class AllUnits {
         primaryWeapon = "rhs_weap_m4a1_carryhandle";
+		primaryWeaponMagazine = "rhs_mag_30Rnd_556x45_M855A1_Stanag";
 		primaryWeaponMuzzle = "";
         primaryWeaponOptics = "";
 		primaryWeaponPointer = "";
 		primaryWeaponUnderbarrel = "";
 		secondaryWeapon = "";
 		handgunWeapon = "rhsusf_weap_m9";
+		handgunWeaponMagazine = "rhsusf_mag_15Rnd_9x19_JHP";
 		uniform = "rhs_uniform_cu_ocp";
         vest = "rhsusf_iotv_ocp_Rifleman";
 		backpack = "";
@@ -33,7 +35,7 @@ class us_army {
         //rifleman
 		class Soldier_F {
 			addItemsToVest[] = {
-				LIST_8("rhs_mag_30Rnd_556x45_M855A1_Stanag"),
+				LIST_7("rhs_mag_30Rnd_556x45_M855A1_Stanag"),
 				LIST_2("rhs_mag_an_m8hc"),
 				LIST_2("rhsusf_mag_15Rnd_9x19_JHP"),
 				LIST_2("rhs_mag_m67")
@@ -43,14 +45,16 @@ class us_army {
         //autorifleman
 		class Soldier_AR_F: Soldier_F {
 			primaryWeapon = "rhs_weap_m249_pip_S";
+			primaryWeaponMagazine = "rhs_200rnd_556x45_M_SAW";
 			handgunWeapon = "";
+			handgunWeaponMagazine = "";
 			vest = "rhsusf_iotv_ocp_SAW";
 			backpack = "rhsusf_assault_eagleaiii_ocp";
 			headgear = "rhsusf_ach_helmet_ESS_ocp";
 			addItemsToVest[] = {
 				LIST_2("rhs_mag_an_m8hc"),
 				LIST_2("rhs_mag_m67"),
-				LIST_2("rhsusf_100Rnd_556x45_soft_pouch")
+				"rhsusf_100Rnd_556x45_soft_pouch"
 			};
 			addItemsToBackpack[] = {
 				LIST_2("rhs_200rnd_556x45_M_SAW")
