@@ -4,6 +4,7 @@ if (!isServer) exitWith {};
 uo_missionParam_BLUFORFACTION = [
     "us_army",
     "rus_msv",
+    "ind_eastern_nationalists",
     "ind_pmc_special",
     "ind_me_terrorists",
     "ger_heer"
@@ -11,6 +12,7 @@ uo_missionParam_BLUFORFACTION = [
 uo_missionParam_OPFORFACTION = [
     "us_army",
     "rus_msv",
+    "ind_eastern_nationalists",
     "ind_pmc_special",
     "ind_me_terrorists",
     "ger_heer"

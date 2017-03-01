@@ -1,12 +1,14 @@
 class CLASSNAME {
 	class AllUnits {
         primaryWeapon = "";
+		primaryWeaponMagazine = "";
 		primaryWeaponMuzzle = "";
 		primaryWeaponOptics = "";
 		primaryWeaponPointer = "";
 		primaryWeaponUnderbarrel = "";
 		secondaryWeapon = "";
 		handgunWeapon = "";
+		handgunWeaponMagazine = "";
 		uniform = "";
         vest = "";
 		backpack = "";

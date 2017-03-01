@@ -32,8 +32,13 @@ class cfgFactions {
         BFT = 1;
     };
 
-    class ind_eastRebels {
-
+    class ind_eastern_nationalists {
+        commandVehicles[] = {"rhsgref_nat_uaz", "rhsgref_nat_uaz"};
+        onCommandVehicleCreate = "";
+        propagandaTowerSounds[] = {"uo_propaganda_rus_1","uo_propaganda_rus_2","uo_propaganda_rus_3","uo_propaganda_rus_4","uo_propaganda_rus_5"};
+        loadoutWood = "ind_eastern_nationalists";
+        loadoutDes = "ind_eastern_nationalists";
+        BFT = 0;
     };
 
     class ind_me_terrorists {

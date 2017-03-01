@@ -15,7 +15,7 @@ class Units {
         displayName = "Rifleman (AT)";
         description = "A simple rifleman armed with a Mosin Nagant and an RPG-26";
         picture = "\po_main\Data\3den\LOP_ISTS_Infantry_AT.jpg";
-        price = 400;
+        price = 1000;
         stock = 10;
         code = "[_this select 2,'riflemanAT'] call uo_buyables_fnc_equipAIGroup";
     };

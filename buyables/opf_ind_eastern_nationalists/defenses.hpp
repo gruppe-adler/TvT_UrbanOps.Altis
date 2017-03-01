@@ -16,6 +16,13 @@ class Defenses {
         stock = 4;
     };
 
+    class rhs_SPG9M_MSV {
+        kindOf = "Vehicles";
+        displayName = "SPG-9M";
+        price = 3000;
+        stock = 1;
+    };
+
     class Land_HBarrier_1_F {
         displayName = "H-Barrier (1)";
         price = 200;

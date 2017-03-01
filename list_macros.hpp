@@ -1,5 +1,6 @@
 
 // brazenly stolen from 1tac
+#define LIST_1(var1) var1
 #define LIST_2(var1) var1,var1
 #define LIST_3(var1) var1,var1,var1
 #define LIST_4(var1) var1,var1,var1,var1
