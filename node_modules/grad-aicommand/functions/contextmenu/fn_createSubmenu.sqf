@@ -15,7 +15,6 @@ _display = findDisplay grad_aicommand_commandwindow_DIALOG;
 _controlsGroup = _display displayCtrl grad_aicommand_contextmenu_GROUP;
 
 (ctrlPosition _parent) params ["_parentX","_parentY","_parentW","_parentH"];
-diag_log str (ctrlPosition _parent);
 
 _idc = grad_aicommand_contextmenu_SUBMENU + 1;
 while {!isNull (_controlsGroup controlsGroupCtrl _idc)} do {
