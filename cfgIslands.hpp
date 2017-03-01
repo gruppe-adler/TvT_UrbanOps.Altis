@@ -104,7 +104,7 @@ class CfgIslands {
 		displayName = "Ramahdi";
 		type = "middle eastern";
 		isWoodland = false;
-		sizeFactor = 0.50;
+		sizeFactor = 0.30;
 		spawnPosBlu[] = {1604.93,1575.83,0};
 		spawnPosOpf[] = {1542.37,1750.86,0};
 
@@ -163,6 +163,14 @@ class CfgIslands {
 		spawnPosBlu[] = {1376.64,628.892,0};
 		spawnPosOpf[] = {1136.77,671.378,0};
 		sizeFactor = 0.30;
+
+		class customLocations {
+			class portoHarbor {
+				name = "Porto Harbor";
+				type = "NameCity";
+				pos[] = {2589.53,2232.25,0};
+			};
+		};
 	};
 
 	class Stratis {
@@ -414,6 +422,18 @@ class CfgIslands {
 				name = "Elektro Harbor";
 				type = "NameCity";
 				pos[] = {4735.83,1111.63,0};
+			};
+
+			class farms {
+				name = "Farms";
+				type = "NameCity";
+				pos[] = {2560.86,2637.29,0};
+			};
+
+			class pusta {
+				name = "Pusta";
+				type = "NameVillage";
+				pos[] = {3761.12,3020.14,0};
 			};
 		};
 	};
