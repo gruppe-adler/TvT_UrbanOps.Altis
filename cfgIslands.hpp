@@ -123,6 +123,56 @@ class CfgIslands {
 		isWoodland = false;
 		spawnPosBlu[] = {10226.5,605.61,0};
 		spawnPosOpf[] = {10204.2,1033.22,0};
+
+		class customLocations {
+			class airfieldN {
+				name = "Airfield North";
+				type = "NameCityCapital";
+				pos[] = {7972.45,2142.85,0};
+			};
+
+			class airfieldS {
+				name = "Airfield South";
+				type = "NameCityCapital";
+				pos[] = {8304.41,1593.64,0};
+			};
+
+			class hotel {
+				name = "Hotel";
+				type = "NameVillage";
+				pos[] = {8231.46,5520.07,0};
+			};
+
+			class village1 {
+				name = "Shakbur";
+				type = "NameVillage";
+				pos[] = {9068.4,9026.81,0};
+			};
+
+			class FOB {
+				name = "FOB";
+				type = "NameVillage";
+				pos[] = {5692.07,9856.37,0};
+			};
+
+			class powerplant {
+				name = "Power Plant";
+				type = "NameVillage";
+				pos[] = {687.158,8340.91,0};
+			};
+
+			class outskirts1 {
+				name = "Outskirts";
+				type = "NameVillage";
+				pos[] = {3890.94,2827.52,0};
+			};
+
+			class milbase {
+				name = "Military Base";
+				type = "NameCity";
+				pos[] = {2927.96,6340.07,0};
+			};
+		};
 	};
 
 	class fata {
@@ -447,6 +497,13 @@ class CfgIslands {
 		locationBlacklist[] = {
 			"airfield",
 			"Firuz Baharv"
+		};
+		class customLocations {
+			class barracks {
+				name = "Barracks";
+				type = "NameVillage";
+				pos[] = {3956.09,2787.43,0};
+			};
 		};
 	};
 };
