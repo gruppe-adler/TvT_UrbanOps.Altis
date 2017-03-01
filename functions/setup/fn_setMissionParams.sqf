@@ -61,6 +61,7 @@ switch (uo_missionParam_PRESET) do {
         uo_missionParam_WAVERESPAWNTIMEOPF = "waverespawntimeopf" call BIS_fnc_getParamValue;
         uo_missionParam_RESPAWNTIME = "respawntime" call BIS_fnc_getParamValue;
         uo_missionParam_OPFORRESPAWNENABLED = ("OpforRespawn" call BIS_fnc_getParamValue) == 1;
+        uo_missionParam_BLUFORRESPAWNENABLED = ("BluforRespawn" call BIS_fnc_getParamValue) == 1;
     };
 
     case ("DEBUG_SINGLE"): {
@@ -73,6 +74,7 @@ switch (uo_missionParam_PRESET) do {
         uo_missionParam_WAVERESPAWNTIMEOPF = 10;
         uo_missionParam_RESPAWNTIME = 10;
         uo_missionParam_OPFORRESPAWNENABLED = true;
+        uo_missionParam_BLUFORRESPAWNENABLED = true;
     };
 
     case ("DEBUG_MULTI"): {
@@ -85,6 +87,7 @@ switch (uo_missionParam_PRESET) do {
         uo_missionParam_WAVERESPAWNTIMEOPF = 10;
         uo_missionParam_RESPAWNTIME = 10;
         uo_missionParam_OPFORRESPAWNENABLED = true;
+        uo_missionParam_BLUFORRESPAWNENABLED = true;
     };
 };
 
@@ -97,6 +100,7 @@ publicVariable "uo_missionParam_WAVERESPAWNTIMEBLU";
 publicVariable "uo_missionParam_WAVERESPAWNTIMEOPF";
 publicVariable "uo_missionParam_RESPAWNTIME";
 publicVariable "uo_missionParam_OPFORRESPAWNENABLED";
+publicVariable "uo_missionParam_BLUFORRESPAWNENABLED";
 
 ["LOG", "SERVER_SETUP", "uo_missionParam_CONTROLRATIO"] call uo_common_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "uo_missionParam_MONEYFACTOR"] call uo_common_fnc_diagReport;

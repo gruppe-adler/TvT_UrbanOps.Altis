@@ -104,6 +104,14 @@ class Params
         default = 1;
     };
 
+    class BluforRespawn
+    {
+        title = "Blufor Respawn";
+        values[] = {0,1};
+        texts[] = {"Disabled", "Enabled"};
+        default = 1;
+    };
+
     class bluforwavesize
     {
         title = "BLUFOR Respawn Wave Size";

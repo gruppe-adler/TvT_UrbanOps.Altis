@@ -4,30 +4,30 @@
 
 if (!isServer) exitWith {};
 
-uo_fnc_endByBluKilled_preEliminated = {
+uo_fnc_checkBluKilled_preEliminated = {
     [{
         if (({side _x == west} count playableUnits) == 0) then {
-            if ({_x getVariable ["uo_respawnObject_isActive", false]} count uo_cv_allCVs == 0 || {uo_missionParam_DEFENSETIME - (serverTime - uo_init_gameStartTime) < WAVERESPAWNTIMELEFTBLU}) then {
+            if ({_x getVariable ["uo_respawnObject_isActive", false]} count uo_cv_allCVs == 0 || !uo_missionParam_BLUFORRESPAWNENABLED || {uo_missionParam_DEFENSETIME - (serverTime - uo_init_gameStartTime) < WAVERESPAWNTIMELEFTBLU}) then {
                 INFO("All commandvehicles inactive.");
-                [] call uo_fnc_endByBluKilled_eliminated;
+                [] call uo_fnc_checkBluKilled_eliminated;
                 [_this select 1] call CBA_fnc_removePerFrameHandler;
             };
         };
     } , 5, []] call CBA_fnc_addPerFrameHandler;
 };
 
-uo_fnc_endByBluKilled_eliminated = {
+uo_fnc_checkBluKilled_eliminated = {
     [{
         if (({side _x == west} count playableUnits) == 0) then {
             _downSince = missionNamespace getVariable ["uo_bluDownSince", 0];
             missionNamespace setVariable ["uo_bluDownSince", _downSince + 1];
         } else {
             missionNamespace setVariable ["uo_bluDownSince", 0];
-            [] call uo_fnc_endByBluKilled_preEliminated;
+            [] call uo_fnc_checkBluKilled_preEliminated;
             [_this select 1] call CBA_fnc_removePerFrameHandler;
         };
 
-        if (missionNamespace getVariable ["uo_bluDownSince", 0] > 15 || {uo_missionParam_DEFENSETIME - (serverTime - uo_init_gameStartTime) < WAVERESPAWNTIMELEFTBLU}) then {
+        if (missionNamespace getVariable ["uo_bluDownSince", 0] > 15 || !uo_missionParam_BLUFORRESPAWNENABLED || {uo_missionParam_DEFENSETIME - (serverTime - uo_init_gameStartTime) < WAVERESPAWNTIMELEFTBLU}) then {
 
             if (missionNamespace getVariable ["uo_endInProgressServer", false]) exitWith {INFO("A different ending is already in progress.")};
             uo_endInProgressServer = true;
@@ -41,4 +41,4 @@ uo_fnc_endByBluKilled_eliminated = {
     } , 1, []] call CBA_fnc_addPerFrameHandler;
 };
 
-[] call uo_fnc_endByBluKilled_preEliminated;
+[] call uo_fnc_checkBluKilled_preEliminated;

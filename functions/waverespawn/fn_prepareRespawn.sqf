@@ -13,9 +13,15 @@ if (player getVariable ["wr_interrupted", false]) exitWith {
     [player, true] call TFAR_fnc_forceSpectator;
     [] call uo_common_fnc_startSpectator;
 
-    _explanation = if (player getVariable ["originalSide", "UNKNOWN"] == "WEST") then {"Commandvehicle destroyed!</t>"} else {"Dealer was killed!"};
+    _explanation = switch (true) do {
+        case (playerSide == WEST && !uo_missionParam_BLUFORRESPAWNENABLED): {"Respawn disabled."};
+        case (playerSide == WEST): {"Commandvehicle destroyed!"};
+        case (!uo_missionParam_OPFORRESPAWNENABLED): {"Respawn disabled."};
+        default {"Dealer was killed!"};
+    };
     _explanation = parseText format ["<t align='center' size='1.4'>%1</t>", _explanation];
     [playerSide, _explanation] call uo_waverespawn_fnc_respawnHint;
+    [{hint ""}, [], 3] call CBA_fnc_waitAndExecute;
 };
 
 if (player getVariable ["wr_isFreeRespawn", false]) exitWith {
