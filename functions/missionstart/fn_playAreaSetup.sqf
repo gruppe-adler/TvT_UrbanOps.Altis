@@ -61,7 +61,7 @@ _marker setMarkerSize [CITYAREASIZE, 1];
 
 [WEST,"STARTDISTMARKER",true,CITYPOSITION,"","COLORBLACK","","ELLIPSE",BLUFORSTARTDIST,1,"Border"] call uo_common_fnc_createSideMarker;
 [WEST,"STARTDISTMARKER_TEXT",true,CITYPOSITION vectorAdd [0,BLUFORSTARTDIST,0],"hd_dot","COLORBLACK","START ZONE","ICON",1,1] call uo_common_fnc_createSideMarker;
-[WEST,"STARTDISTMARKER_ARROW1",CITYPOSITION vectorAdd [0,BLUFORSTARTDIST+300,0],0,"COLORBLACK",600] remoteExec ["uo_common_fnc_createArrowMarkerSide",0,false];
+[WEST,"STARTDISTMARKER_ARROW1",CITYPOSITION vectorAdd [0,BLUFORSTARTDIST+300,0],0,"COLORBLACK",BLUFORSPAWNBAND] remoteExec ["uo_common_fnc_createArrowMarkerSide",0,false];
 
 [WEST,"CAPTUREMARKER_TEXT",true,CITYPOSITION vectorAdd [0,CITYAREASIZE,0],"hd_dot","COLOREAST","CAPTURE ZONE","ICON",1,1] call uo_common_fnc_createSideMarker;
 [WEST,"CAPTUREMARKER_ARROW1",CITYPOSITION vectorAdd [0,CITYAREASIZE/2,0],0,"COLOREAST",CITYAREASIZE] remoteExec ["uo_common_fnc_createArrowMarkerSide",0,false];

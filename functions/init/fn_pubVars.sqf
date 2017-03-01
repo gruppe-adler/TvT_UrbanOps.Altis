@@ -5,7 +5,7 @@ _sizeFactor = [(missionConfigFile >> "CfgIslands" >>  worldName >> "sizeFactor")
 
 BLUFORSPAWNDIST = 1200 * _sizeFactor;
 BLUFORSPAWNBAND = 800 * _sizeFactor;
-BLUFORSTARTDIST = (BLUFORSPAWNDIST + BLUFORSPAWNBAND + 800) * _sizeFactor;
+BLUFORSTARTDIST = (BLUFORSPAWNDIST + BLUFORSPAWNBAND + 800 * _sizeFactor);
 OPFORRESPAWNDIST = 100;
 CIVILIANPROBABILITY = 3.5;
 DEALERRADIUSFACTOR = 0.75;																										    //CITYAREASIZE * DEALERRADIUSFACTOR == DEALERSPAWNRADIUS
@@ -21,10 +21,10 @@ publicVariable "DEALERRADIUSFACTOR";
 publicVariable "RESPAWNCREDITS";
 
 //LOCATION MARKERS =============================================================
-VILLAGEMARKERSIZE = 200 * _sizeFactor;
-CITYMARKERSIZE = 300 * _sizeFactor;
-CAPITALMARKERSIZE = 400 * _sizeFactor;
-OTHERMARKERSIZE = 200 * _sizeFactor;
+VILLAGEMARKERSIZE = 200 * ((_sizeFactor * 1.5) min 1);
+CITYMARKERSIZE = 300 * ((_sizeFactor * 1.5) min 1);
+CAPITALMARKERSIZE = 400 * ((_sizeFactor * 1.5) min 1);
+OTHERMARKERSIZE = 200 * ((_sizeFactor * 1.5) min 1);
 
 publicVariable "VILLAGEMARKERSIZE";
 publicVariable "CITYMARKERSIZE";
