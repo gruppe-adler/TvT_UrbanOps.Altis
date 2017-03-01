@@ -21,10 +21,10 @@ publicVariable "DEALERRADIUSFACTOR";
 publicVariable "RESPAWNCREDITS";
 
 //LOCATION MARKERS =============================================================
-VILLAGEMARKERSIZE = 200;
-CITYMARKERSIZE = 300;
-CAPITALMARKERSIZE = 400;
-OTHERMARKERSIZE = 200;
+VILLAGEMARKERSIZE = 200 * _sizeFactor;
+CITYMARKERSIZE = 300 * _sizeFactor;
+CAPITALMARKERSIZE = 400 * _sizeFactor;
+OTHERMARKERSIZE = 200 * _sizeFactor;
 
 publicVariable "VILLAGEMARKERSIZE";
 publicVariable "CITYMARKERSIZE";

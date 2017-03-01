@@ -162,7 +162,7 @@ class CfgIslands {
 		isWoodland = false;
 		spawnPosBlu[] = {1376.64,628.892,0};
 		spawnPosOpf[] = {1136.77,671.378,0};
-		sizeFactor = 0.50;
+		sizeFactor = 0.30;
 	};
 
 	class Stratis {
@@ -400,7 +400,7 @@ class CfgIslands {
 		class customLocations {
 			class cherno {
 				name = "Chernogorsk";
-				type = "NameCapital";
+				type = "NameCityCapital";
 				pos[] = {1358.15,1684.27,0};
 			};
 

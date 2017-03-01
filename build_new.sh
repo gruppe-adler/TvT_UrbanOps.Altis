@@ -8,9 +8,13 @@ islands=(
 	Altis
 	Beketov
 	Chernarus
+	Chernarus_Summer
 	Chernarus_winter
+	Intro
+	fallujah
 	fata
 	mbg_celle2
+	Porto
 	Stratis
 	Sara_dbe1
 	Shapur_BAF
@@ -18,6 +22,7 @@ islands=(
 	Tanoa
 	utes
 	vt5
+	Woodland_ACR
 	Zargabad
 )
 
