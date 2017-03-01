@@ -415,6 +415,7 @@ class CfgIslands {
 				type = "NameCity";
 				pos[] = {4735.83,1111.63,0};
 			};
+		};
 	};
 
 	class Zargabad {

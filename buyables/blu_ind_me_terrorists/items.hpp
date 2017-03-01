@@ -41,7 +41,7 @@ class Items {
 
     class ACE_key_lockpick {
         displayName = "Lock Pick Set";
-        description = "Can be used to pick the locks of civilian or enemy vehicles. One lock pick set can be used to unlock multiple vehicles."
+        description = "Can be used to pick the locks of civilian or enemy vehicles. One lock pick set can be used to unlock multiple vehicles.";
         price = 500;
         stock = 10;
     };
