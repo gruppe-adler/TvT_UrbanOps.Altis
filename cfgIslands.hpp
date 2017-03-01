@@ -100,6 +100,23 @@ class CfgIslands {
 	class Chernarus_Summer: Chernarus {};
 	class Chernarus_winter: Chernarus {};
 
+	class Intro {
+		displayName = "Ramahdi";
+		type = "middle eastern";
+		isWoodland = false;
+		sizeFactor = 0.50;
+		spawnPosBlu[] = {1604.93,1575.83,0};
+		spawnPosOpf[] = {1542.37,1750.86,0};
+
+		class customLocations {
+			class Ramahdi {
+				name = "Ramahdi";
+				type = "NameVillage";
+				pos[] = {2893.81,2879.46,0};
+			};
+		};
+	};
+
 	class fallujah {
 		displayName = "Fallujah";
 		type = "middle eastern";
@@ -137,6 +154,15 @@ class CfgIslands {
 		spawnPosBlu[] = {13121.7,12175.6,0};
 		spawnPosOpf[] = {12488.2,12689.2,0};
 		locationBlacklist[] = {};
+	};
+
+	class Porto {
+		displayName = "Porto";
+		type = "middle eastern";
+		isWoodland = false;
+		spawnPosBlu[] = {1376.64,628.892,0};
+		spawnPosOpf[] = {1136.77,671.378,0};
+		sizeFactor = 0.50;
 	};
 
 	class Stratis {
@@ -361,6 +387,34 @@ class CfgIslands {
 				pos[] = {3482.91,1596.57};
 			};
 		};
+	};
+
+	class Woodland_ACR {
+		displayName = "Bystrica";
+		type = "russian";
+		isWoodland = true;
+		spawnPosBlu[] = {-731.747,-209.233,0};
+		spawnPosOpf[] = {-486.606,323.952,0};
+		sizeFactor = 1;
+		locationBlacklist[] = {};
+		class customLocations {
+			class cherno {
+				name = "Chernogorsk";
+				type = "NameCapital";
+				pos[] = {1358.15,1684.27,0};
+			};
+
+			class elektro {
+				name = "Elektrozavodsk";
+				type = "NameCity";
+				pos[] = {5145.3,1462.94,0};
+			};
+
+			class elektroHarbor {
+				name = "Elektro Harbor";
+				type = "NameCity";
+				pos[] = {4735.83,1111.63,0};
+			};
 	};
 
 	class Zargabad {
