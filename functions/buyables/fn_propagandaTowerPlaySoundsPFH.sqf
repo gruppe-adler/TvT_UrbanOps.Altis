@@ -7,8 +7,6 @@ _play = {
     _activeTowers = _activeTowers select {alive _x && !(_x getVariable ["uo_propagandaTower_isDestroyed",false]) && _x getVariable ["uo_propagandaTower_isPlaying",false]};
     if (count _activeTowers == 0) exitWith {};
 
-    if (80 > random 100) then {
-        [_activeTowers,selectRandom _sounds] remoteExec ["uo_buyables_fnc_propagandaTowerPlaySounds",0,false];
-    };
+    [_activeTowers,selectRandom _sounds] remoteExec ["uo_buyables_fnc_propagandaTowerPlaySounds",0,false];
 };
-[_play,300,_sounds] call CBA_fnc_addPerFrameHandler;
+[_play,270,_sounds] call CBA_fnc_addPerFrameHandler;

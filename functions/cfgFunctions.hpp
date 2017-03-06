@@ -90,6 +90,7 @@ class uo_endings {
         class checkOpfKilled {};
         class checkDefense {};
         class endMission {};
+        class timeNotifications {};
     };
 };
 
