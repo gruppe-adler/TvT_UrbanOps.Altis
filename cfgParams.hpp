@@ -1,12 +1,12 @@
 class Params
 {
     class WeatherSetting
-        {
+    {
         title = "Weather";
         values[] = {-1,0,25,50,75,100};
         texts[] = {"Random","Clear","Cloudy","Overcast","Rainy","Stormy"};
         default = -1;
-        };
+    };
 
     class TimeOfDay
     {
@@ -56,6 +56,14 @@ class Params
             "Debug Multiplayer (all parameters below will be ignored)"
         };
         default = 2;
+    };
+
+    class RankedMode
+    {
+        title = "Track Winrates";
+        values[] = {0,1};
+        texts[] = {"Off","On"};
+        default = 1;
     };
 
     class DefenseTime

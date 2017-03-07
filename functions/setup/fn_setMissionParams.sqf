@@ -57,6 +57,7 @@ switch (uo_missionParam_PRESET) do {
         uo_missionParam_CONTROLRATIO = "ControlRatio" call BIS_fnc_getParamValue;
         uo_missionParam_MONEYFACTOR = "MoneyFactor" call BIS_fnc_getParamValue;
         uo_missionParam_CAPTURETIME= "CaptureTime" call BIS_fnc_getParamValue;
+        uo_missionParams_RANKEDMODE = ("RankedMode" call BIS_fnc_getParamValue) == 1;
         uo_missionParam_DEFENSETIME = "DefenseTime" call BIS_fnc_getParamValue;
         uo_missionParam_SETUPTIME = "SetupTime" call BIS_fnc_getParamValue;
         uo_missionParam_WAVERESPAWNTIMEBLU = "waverespawntimeblu" call BIS_fnc_getParamValue;
@@ -70,6 +71,7 @@ switch (uo_missionParam_PRESET) do {
         uo_missionParam_CONTROLRATIO = 2;
         uo_missionParam_MONEYFACTOR = 1;
         uo_missionParam_CAPTURETIME= 60;
+        uo_missionParams_RANKEDMODE = false;
         uo_missionParam_DEFENSETIME = 3600;
         uo_missionParam_SETUPTIME = 5;
         uo_missionParam_WAVERESPAWNTIMEBLU = 10;
@@ -83,6 +85,7 @@ switch (uo_missionParam_PRESET) do {
         uo_missionParam_CONTROLRATIO = 1;
         uo_missionParam_MONEYFACTOR = 1;
         uo_missionParam_CAPTURETIME= 60;
+        uo_missionParams_RANKEDMODE = false;
         uo_missionParam_DEFENSETIME = 3600;
         uo_missionParam_SETUPTIME = 30;
         uo_missionParam_WAVERESPAWNTIMEBLU = 10;
@@ -96,6 +99,7 @@ switch (uo_missionParam_PRESET) do {
 publicVariable "uo_missionParam_CONTROLRATIO";
 publicVariable "uo_missionParam_MONEYFACTOR";
 publicVariable "uo_missionParam_CAPTURETIME";
+publicVariable "uo_missionParams_RANKEDMODE";
 publicVariable "uo_missionParam_DEFENSETIME";
 publicVariable "uo_missionParam_SETUPTIME";
 publicVariable "uo_missionParam_WAVERESPAWNTIMEBLU";
@@ -107,6 +111,7 @@ publicVariable "uo_missionParam_BLUFORRESPAWNENABLED";
 ["LOG", "SERVER_SETUP", "uo_missionParam_CONTROLRATIO"] call uo_common_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "uo_missionParam_MONEYFACTOR"] call uo_common_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "uo_missionParam_CAPTURETIME"] call uo_common_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParams_RANKEDMODE"] call uo_common_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "uo_missionParam_DEFENSETIME"] call uo_common_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "uo_missionParam_SETUPTIME"] call uo_common_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "uo_missionParam_WAVERESPAWNTIMEBLU"] call uo_common_fnc_diagReport;
