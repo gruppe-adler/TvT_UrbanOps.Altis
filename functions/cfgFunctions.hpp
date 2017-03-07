@@ -62,6 +62,7 @@ class uo_common {
         class emptyContainer {};
         class findBuildingPositions {};
         class findBuildings {};
+        class findMaxMoonDate {};
         class findRandomPos {};
         class getAllowedRadios {};
         class getIslandCfgValue {};
