@@ -67,7 +67,7 @@ class Defenses {
 
     class Land_Loudspeakers_F {
         displayName = "Propaganda Tower";
-        description = "Broadcasts propaganda in regular intervals. Has to be switched on with ACE-Interaction. Has the equivalent effect of one BLUFOR civilian kill every 15 minutes. The farther from the center this is placed, the weaker the effect. The effects of multiple towers stack.";
+        description = "Broadcasts propaganda in regular intervals. Has to be switched on with ACE-Interaction. Generates the equivalent effect of four BLUFOR civilian kills over the course of the game. The farther from the center this is placed, the weaker the effect. The effects of multiple towers stack.";
         price = 1000;
         stock = 3;
         code = "if (player == _this select 0) then {[player,_this select 1] call grad_fortifications_fnc_addFort;}";

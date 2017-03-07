@@ -20,8 +20,8 @@ if (_play) then {
         if (_tower getVariable ["uo_propagandaTower_isDestroyed",false]) exitWith {};
 
         if (CBA_missionTime - (_tower getVariable ["uo_propagandaTower_lastUpdateTime",CBA_missionTime]) > INTERVAL-1) then {
-            _valueToAdd = (1 - (CITYPOSITION distance2D _tower)/CITYAREASIZE) /12;
-            missionNamespace setVariable ["CIVSKILLEDBLU",(CIVSKILLEDBLU + _valueToAdd) min 8,true];
+            _valueToAdd = (1 - ((CITYPOSITION distance2D _tower)/(CITYAREASIZE*3))) / (uo_missionParam_DEFENSETIME/60/4);
+            missionNamespace setVariable ["CIVSKILLEDBLU",(CIVSKILLEDBLU + _valueToAdd) min 10,true];
         };
 
         _tower setVariable ["uo_propagandaTower_lastUpdateTime",CBA_missionTime];

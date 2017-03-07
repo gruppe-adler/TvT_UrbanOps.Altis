@@ -17,7 +17,7 @@ _condition = {
     {!((_this select 0) getVariable ["uo_propagandaTower_isPlaying",false])} &&
     {!((_this select 0) getVariable ["uo_propagandaTower_isDestroyed",false])}
 };
-_action = ["uo_propagandaTower_on", "Play propaganda", "\A3\ui_f\data\igui\cfg\actions\ico_ON_ca.paa",{_this remoteExec ["uo_buyables_fnc_propagandaTowerSetActive",2,false]},_condition,{},[true]] call ace_interact_menu_fnc_createAction;
+_action = ["uo_propagandaTower_on", "Play propaganda", "\A3\ui_f\data\igui\cfg\actions\ico_ON_ca.paa",{_this remoteExec ["uo_buyables_fnc_propagandaTowerSetActive",2,false]; _this call uo_buyables_fnc_propagandaTowerToggleSound},_condition,{},[true]] call ace_interact_menu_fnc_createAction;
 ["Land_Loudspeakers_F",0,["uo_propagandaTower_mainNode"],_action,false] call ace_interact_menu_fnc_addActionToClass;
 
 _condition = {
@@ -26,7 +26,7 @@ _condition = {
     {(_this select 0) getVariable ["uo_propagandaTower_isPlaying",false]} &&
     {!((_this select 0) getVariable ["uo_propagandaTower_isDestroyed",false])}
 };
-_action = ["uo_propagandaTower_off", "Stop propaganda", "\A3\ui_f\data\igui\cfg\actions\ico_OFF_ca.paa",{_this remoteExec ["uo_buyables_fnc_propagandaTowerSetActive",2,false]},_condition,{},[false]] call ace_interact_menu_fnc_createAction;
+_action = ["uo_propagandaTower_off", "Stop propaganda", "\A3\ui_f\data\igui\cfg\actions\ico_OFF_ca.paa",{_this remoteExec ["uo_buyables_fnc_propagandaTowerSetActive",2,false]; _this call uo_buyables_fnc_propagandaTowerToggleSound},_condition,{},[false]] call ace_interact_menu_fnc_createAction;
 ["Land_Loudspeakers_F",0,["uo_propagandaTower_mainNode"],_action,false] call ace_interact_menu_fnc_addActionToClass;
 
 _condition = {

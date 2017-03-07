@@ -10,6 +10,7 @@ class uo_buyables {
         class propagandaTowerPlaySounds {};
         class propagandaTowerPlaySoundsPFH {};
         class propagandaTowerSetActive {};
+        class propagandaTowerToggleSound {};
         class suicideBomberExplode {};
         class suicideBomberTarget {};
         class unloadBoat {};

@@ -2,7 +2,7 @@ if (!isServer) exitWith {};
 
 //random
 if (uo_missionParam_TIMEOFDAY == -1) then {
-    uo_missionParam_TIMEOFDAY = selectRandom [6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+    uo_missionParam_TIMEOFDAY = selectRandom [6,7,8,9,10,11,12,13,14,15,16,17,18];
 };
 
 _hour = if (uo_missionParam_TIMEOFDAY > 0) then {uo_missionParam_TIMEOFDAY - 1} else {23};
