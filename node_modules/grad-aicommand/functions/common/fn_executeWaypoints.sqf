@@ -1,6 +1,7 @@
 params ["_unit","_player"];
 
 _group = group _unit;
+[_group] call CBA_fnc_clearWaypoints;
 _currentWaypoints = _group getVariable ["grad_aicommand_currentWaypoints",[]];
 
 {
@@ -17,6 +18,7 @@ _currentWaypoints = _group getVariable ["grad_aicommand_currentWaypoints",[]];
     _wp setWaypointTimeout _timeout;
     _wp setWaypointType _type;
     _wp setWaypointStatements [_statements select 0,_statements select 1];
+    if (_speed == "LIMITED") then {_wp setWaypointBehaviour "SAFE"};
 
     false
 } count _currentWaypoints;

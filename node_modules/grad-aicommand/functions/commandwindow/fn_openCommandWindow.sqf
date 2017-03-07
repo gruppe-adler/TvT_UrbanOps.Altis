@@ -4,6 +4,7 @@
 
 params ["_unit","_player"];
 
+(group _unit) setVariable ["grad_aicommand_isBeingEdited",true,true];
 missionNamespace setVariable ["grad_aicommand_currentUnit",_unit];
 if (isNil {(group _unit) getVariable "grad_aicommand_currentWaypoints"}) then {
     (group _unit) setVariable ["grad_aicommand_currentWaypoints",[[getPos _unit,"UNCHANGED",[0,0,0],"MOVE",["true",""]]]];

@@ -30,6 +30,7 @@ class GRAD_aicommand {
         class setCanReceiveCommands {};
         class setGivePermissionLevel {};
         class setReceivePermissionLevel {};
+        class waitASecond {};
         class waypointGarrison {};
     };
 

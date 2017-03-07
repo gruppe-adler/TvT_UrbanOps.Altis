@@ -14,5 +14,6 @@ switch (_mode) do {
         while {count _currentWaypoints > 1} do {
             _currentWaypoints deleteAt 1;
         };
+        _currentWaypoints set [0,[getPos _currentUnit,"UNCHANGED",[0,0,0],"MOVE",["true",""]]];
     };
 };

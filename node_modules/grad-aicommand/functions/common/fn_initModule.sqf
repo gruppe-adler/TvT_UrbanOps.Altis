@@ -2,7 +2,7 @@ grad_aicommand_canReceiveCommandsDefault = ([(missionConfigFile >> "CfgGradAICom
 grad_aicommand_canGiveCommandsDefault = ([(missionConfigFile >> "CfgGradAICommand" >> "canGiveCommandsDefault"),"number",1] call CBA_fnc_getConfigEntry) == 1;
 
 if (hasInterface) then {
-    _action = ["grad_aicommand_actionNode", "AI command", "\A3\ui_f\data\igui\cfg\simpleTasks\types\whiteboard_ca.paa", {}, {true}] call ace_interact_menu_fnc_createAction;
+    _action = ["grad_aicommand_actionNode", "AI command", "\A3\ui_f\data\igui\cfg\simpleTasks\types\whiteboard_ca.paa", {_this call grad_aicommand_fnc_waitASecond}, {!((group (_this select 0)) getVariable ["grad_aicommand_isBeingEdited",false])}, {},[],"",0,[false, false, false, true, false]] call ace_interact_menu_fnc_createAction;
     ["CAManBase",0,["ACE_MainActions"],_action,true] call ace_interact_menu_fnc_addActionToClass;
 
     _action = ["grad_aicommand_mainAction", "Edit commands", "\A3\ui_f\data\igui\cfg\simpleTasks\types\use_ca.paa", {_this call grad_aicommand_fnc_openCommandWindow}, {_this call grad_aicommand_fnc_canGiveCommands}] call ace_interact_menu_fnc_createAction;
