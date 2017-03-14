@@ -1,11 +1,16 @@
 {
-        "dependencies": {
-                "grad-loadout": "4.x",
-                "grad-listbuymenu": ">=0.0.3",
-                "grad-moneymenu": ">=0.0.1",
-                "grad-scoreboard": ">=0.0.1",
-                "grad-winratetracker": ">=0.0.1",
-                "grad-fortifications": ">=0.0.1",
-                "grad-aicommand": ">=0.0.1"
-        }
+    "name": "tvt-urbanops",
+    "description": "A dynamic seize/defend mission for all maps.",
+    "version": "0.5.3",
+    "author": "McDiod",
+
+    "dependencies": {
+            "grad-loadout": "4.x",
+            "grad-listbuymenu": ">=0.0.3",
+            "grad-moneymenu": ">=0.0.1",
+            "grad-scoreboard": ">=0.0.1",
+            "grad-winratetracker": ">=0.0.1",
+            "grad-fortifications": ">=0.0.1",
+            "grad-aicommand": ">=0.0.1"
+    }
 }

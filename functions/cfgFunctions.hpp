@@ -138,6 +138,7 @@ class uo_missionstart {
         class findOpfStartPos {};
         class findBluStartPos {};
         class playAreaSetup {};
+        class startMission {};
         class tpSide {};
     };
 };
