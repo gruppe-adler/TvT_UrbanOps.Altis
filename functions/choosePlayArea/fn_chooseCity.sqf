@@ -24,7 +24,8 @@ if (missionNamespace getVariable ["uo_init_cityChosen", false]) exitWith {};
                 if (_x in LOCATION_ALLVILLAGES || _x in LOCATION_ALLCITIES || _x in LOCATION_ALLCAPITALS || _x in LOCATION_ALLOTHER) exitWith {
                     CHOSENLOCATION = _x;
                 };
-            } forEach _nearestLocations;
+                false
+            } count _nearestLocations;
 
             _drawRadius = switch (type CHOSENLOCATION) do {
                 case "NameVillage": {VILLAGEMARKERSIZE};

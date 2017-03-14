@@ -1,6 +1,6 @@
 class CfgGradBuymenu {
     tracking = 1;
-    trackingTag = "UrbanOps_trackingData1";
+    trackingTag = "UrbanOps_trackingData2";
 
     #include "blu_ger_heer\blu_ger_heer.hpp"
     #include "blu_ind_eastern_nationalists\blu_ind_eastern_nationalists.hpp"

@@ -100,6 +100,17 @@ class CfgGradFortifications {
         class Land_Loudspeakers_F {
             canPlaceOnRoad = 0;
             surfaceNormal = 0;
+            canDemolish = 0;
+            canPackUp = 0;
+        };
+        class Flag_Blue_F {
+            surfaceNormal = 0;
+            condition = "{(_this select 0) inArea _x} count uo_flagPositionAreas > 0";
+            conditionHint = "NOT IN FLAG AREA!";
+            onPlace = "_this call uo_missionObjectives_fnc_onFlagPlace";
+            buildTime = 60;
+            canDemolish = 0;
+            canPackUp = 0;
         };
     };
 };

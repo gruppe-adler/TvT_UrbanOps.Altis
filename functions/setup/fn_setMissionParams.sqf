@@ -43,8 +43,7 @@ publicVariable "OPFORWAVESIZE";
 //GET uo_missionParam_PRESET ===================================================================
 uo_missionParam_PRESET = [
     "CUSTOM",
-    "DEBUG_SINGLE",
-    "DEBUG_MULTI"
+    "DEBUG"
 ] select ("Preset" call BIS_fnc_getParamValue);
 
 publicVariable "uo_missionParam_PRESET";
@@ -67,10 +66,10 @@ switch (uo_missionParam_PRESET) do {
         uo_missionParam_BLUFORRESPAWNENABLED = ("BluforRespawn" call BIS_fnc_getParamValue) == 1;
     };
 
-    case ("DEBUG_SINGLE"): {
-        uo_missionParam_CONTROLRATIO = 2;
+    case ("DEBUG"): {
+        uo_missionParam_CONTROLRATIO = 1;
         uo_missionParam_MONEYFACTOR = 1;
-        uo_missionParam_CAPTURETIME= 60;
+        uo_missionParam_CAPTURETIME= 1200;
         uo_missionParams_RANKEDMODE = false;
         uo_missionParam_DEFENSETIME = 3600;
         uo_missionParam_SETUPTIME = 5;
@@ -79,20 +78,8 @@ switch (uo_missionParam_PRESET) do {
         uo_missionParam_RESPAWNTIME = 10;
         uo_missionParam_OPFORRESPAWNENABLED = true;
         uo_missionParam_BLUFORRESPAWNENABLED = true;
-    };
 
-    case ("DEBUG_MULTI"): {
-        uo_missionParam_CONTROLRATIO = 1;
-        uo_missionParam_MONEYFACTOR = 1;
-        uo_missionParam_CAPTURETIME= 60;
-        uo_missionParams_RANKEDMODE = false;
-        uo_missionParam_DEFENSETIME = 3600;
-        uo_missionParam_SETUPTIME = 30;
-        uo_missionParam_WAVERESPAWNTIMEBLU = 10;
-        uo_missionParam_WAVERESPAWNTIMEOPF = 10;
-        uo_missionParam_RESPAWNTIME = 10;
-        uo_missionParam_OPFORRESPAWNENABLED = true;
-        uo_missionParam_BLUFORRESPAWNENABLED = true;
+        /*[false] call grad_lbm_tracking_fnc_enableTracking;*/
     };
 };
 

@@ -97,7 +97,7 @@ while {count _roads > 0 && count uo_civs_sideRoadVehicles < _vehiclesToCreate} d
             if (_canCreate == "CANCREATE") exitWith {};
         } forEach [_startDirection,-_startDirection];
 
-        if (uo_missionParam_PRESET in ["DEBUG_SINGLE","DEBUG_MULTI"]) then {
+        if (uo_missionParam_PRESET == "DEBUG") then {
             [_vehPos,_canCreate] call _fnc_createMarker;
         };
 

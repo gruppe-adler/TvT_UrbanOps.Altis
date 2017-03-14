@@ -9,7 +9,7 @@ if (!isServer) exitWith {};
         CAPTURETIMEREMAINING = CAPTURETIMEREMAINING - 1;
         publicVariable "CAPTURETIMEREMAINING";
 
-        if (CAPTURETIMEREMAINING <= 0) then {
+        if (CAPTURETIMEREMAINING <= 0 && {{!(_x getVariable ["uo_flagPlaced",false])} count uo_flagPositionAreas == 0}) then {
             if (missionNamespace getVariable ["uo_endInProgressServer", false]) exitWith {INFO("A different ending is already in progress.")};
             uo_endInProgressServer = true;
 

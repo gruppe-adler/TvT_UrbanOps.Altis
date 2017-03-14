@@ -14,7 +14,7 @@
 params ["_searchPos"];
 private ["_nearEnemy","_tooCloseFound","_checkPos","_sectorID","_enemySector"];
 
-if (uo_missionParam_PRESET in ["DEBUG_SINGLE","DEBUG_MULTI"]) then {
+if (uo_missionParam_PRESET == "DEBUG") then {
     for [{_k=0}, {_k<3}, {_k=_k+1}] do {
         for [{_j=0}, {_j<50}, {_j=_j+1}] do {
             deleteMarker format ["opfrespawn_debug_%1_%2",_k,_j];
@@ -30,7 +30,7 @@ for [{_h=0}, {_h<3}, {_h=_h+1}] do {
 
     for [{_i=0}, {_i<50}, {_i=_i+1}] do {
 
-        if (uo_missionParam_PRESET in ["DEBUG_SINGLE","DEBUG_MULTI"]) then {
+        if (uo_missionParam_PRESET == "DEBUG") then {
             _m = createMarkerLocal [format ["opfrespawn_debug_%1_%2",_h,_i],_checkPos];
             _m setMarkerType "hd_dot";
             _m setMarkerColor "COLOREAST";

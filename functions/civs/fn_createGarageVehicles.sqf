@@ -28,7 +28,7 @@ _garages = _houses select {typeOf _x in ["Land_i_Garage_V1_F","Land_i_Garage_V2_
             [_veh] call uo_civs_fnc_deleteIfDamaged;
         },[_veh,_x]] call CBA_fnc_waitUntilAndExecute;
 
-        if (uo_missionParam_PRESET in ["DEBUG_SINGLE","DEBUG_MULTI"]) then {
+        if (uo_missionParam_PRESET == "DEBUG") then {
             _markerName = format ["uo_civs_garageVehicleMarker_%1",count uo_civs_garageVehicleMarkers];
             _marker = createMarker [_markerName, getPos _x];
             _marker setMarkerShape "ICON";

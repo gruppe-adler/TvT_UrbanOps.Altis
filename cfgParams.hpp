@@ -49,13 +49,12 @@ class Params
     class Preset
     {
         title = "Preset";
-        values[] = {0,1,2};
+        values[] = {0,1};
         texts[] = {
             "Custom",
-            "Debug Singleplayer (all parameters below will be ignored)",
-            "Debug Multiplayer (all parameters below will be ignored)"
+            "Debug Mode (all parameters below will be ignored)"
         };
-        default = 2;
+        default = 1;
     };
 
     class RankedMode

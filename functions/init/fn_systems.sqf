@@ -5,7 +5,8 @@
     [] call uo_setup_fnc_setMissionParams;
     [] call uo_setup_fnc_setOriginalSide;
     [] call uo_setup_fnc_createCustomLocations;
-    [{missionNamespace getVariable ["uo_init_missionParamsDone", false]}, {[] call uo_init_fnc_pubVars}, []] call CBA_fnc_waitUntilAndExecute;
+    [] call uo_init_fnc_pubVars;
+    [uo_choosePlayArea_fnc_autoChooseCity, [], 10] call CBA_fnc_waitAndExecute;
     [{missionNamespace getVariable ["uo_init_missionParamsDone", false]}, {[] call uo_init_fnc_loadoutFaction}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_pubVarsDone", false]}, {[] call uo_waverespawn_fnc_initWaveRespawn}, []] call CBA_fnc_waitUntilAndExecute;
 
@@ -18,6 +19,8 @@
     [{missionNamespace getVariable ["uo_init_pubVarsDone", false]}, {[] call uo_choosePlayArea_fnc_chooseCity}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_pubVarsDone", false]}, {[] call uo_choosePlayArea_fnc_chooseSpawn}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_pubVarsDone", false]}, {[] call uo_setup_fnc_setMoney}, []] call CBA_fnc_waitUntilAndExecute;
+
+    if (hasInterface && {playerSide == WEST}) then {[player,"Flag_Blue_F",3] call grad_fortifications_fnc_addFort};
 
     //exit JIP
     _westCondition = (count (missionNamespace getVariable ["uo_cv_allCVs",[]])) == 0;
@@ -36,6 +39,7 @@
     [{missionNamespace getVariable ["uo_init_opforSpawnSet", false]}, {[] call uo_buyables_fnc_initPropagandaTowers}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_spawnChosen", false]}, {[BLUFORSPAWN] call uo_missionObjectives_fnc_createCommandVehicle}, []] call CBA_fnc_waitUntilAndExecute;
     [{(!isNil "CITYPOSITION" && !isNil "CITYAREASIZE")}, {[] call uo_missionstart_fnc_createTrigger}, []] call CBA_fnc_waitUntilAndExecute;
+    [{(!isNil "CITYPOSITION" && !isNil "CITYAREASIZE")}, {[] call uo_missionObjectives_fnc_createFlagPoints}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_cvCreated", false]}, {[] call uo_missionstart_fnc_findBluStartPos}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_bluforSpawnSet", false]}, {[WEST] call uo_missionstart_fnc_tpSide}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_bluforSpawnSet", false]}, {[] call uo_missionstart_fnc_startMission}, []] call CBA_fnc_waitUntilAndExecute;

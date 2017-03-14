@@ -19,6 +19,7 @@ class uo_buyables {
 
 class uo_choosePlayArea {
     class choosePlayArea {
+        class autoChooseCity {};
         class bluforWaitDialog {};
         class chooseCity {};
         class chooseSpawn {};
@@ -112,10 +113,12 @@ class uo_missionObjectives {
         class commandVehicleMarker {};
         class createCommandVehicle {};
         class createDealer {};
+        class createFlagPoints  {};
         class cvDestroyAction {};
         class destroyCV {};
         class getCommandVehicleClass {};
         class onCvCreate {};
+        class onFlagPlace {};
         class opforBuyAction {};
         class setCommandVehicle {};
     };
