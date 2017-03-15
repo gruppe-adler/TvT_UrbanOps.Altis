@@ -100,6 +100,18 @@ class CfgIslands {
 	class Chernarus_Summer: Chernarus {};
 	class Chernarus_winter: Chernarus {};
 
+	class dingor {
+		displayName = "Dingor";
+		type = "middle eastern";
+		isWoodland = false;
+		spawnPosBlu[] = {1096.81,9389.22,0};
+		spawnPosOpf[] = {889.053,9438.74,0};
+		locationBlacklist[] = {
+			"Puente Malargo",
+			"Mt. Toris"
+		};
+	};
+
 	class Intro {
 		displayName = "Ramahdi";
 		type = "middle eastern";
@@ -194,6 +206,18 @@ class CfgIslands {
 			"Tamir Bridge",
 			"Tamir Highway",
 			"Tamir River"
+		};
+	};
+
+	class lingor3 {
+		displayName = "Lingor";
+		type = "tropic";
+		isWoodland = true;
+		spawnPosBlu[] = {1096.81,9389.22,0};
+		spawnPosOpf[] = {889.053,9438.74,0};
+		locationBlacklist[] = {
+			"Puente Malargo",
+			"Mt. Toris"
 		};
 	};
 
