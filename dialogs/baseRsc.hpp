@@ -30,6 +30,30 @@ class uo_RscText
     shadow = 0;
 };
 
+
+class uo_RscStructuredText {
+    idc = -1;
+    type = CT_STRUCTURED_TEXT;
+    style = ST_LEFT;
+    colorBackground[] = { 1, 1, 1, 0};
+    x = 0.1;
+    y = 0.1;
+    w = 0.3;
+    h = 0.1;
+    size = 0.018;
+    text = "";
+    shadow = 1;
+    class Attributes {
+        font = "PuristaLight";
+        color = "#ffffff";
+        align = "left";
+        valign = "top";
+        shadow = 1;
+        shadowColor = "#000000";
+        size = "2.4";
+    };
+};
+
 class uo_RscButton
 {
 	access = 0;

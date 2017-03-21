@@ -13,22 +13,26 @@ _h = [{
 
     //cv is destroyed
     if ((isNull _cv || !alive _cv) || {_cv gethitPointDamage "HitEngine" == 1}) exitWith {
+
+        _fundsForKill = 5000;
+        _timeForKill = uo_missionParam_DEFENSETIME/6;
+
         _cv setVariable ["uo_respawnObject_isActive", false, true];
         _cv setVariable ["uo_respawnObject_isDestroyed", true, true];
         missionNamespace setVariable ["uo_cv_allCVs", (missionNamespace getVariable ["uo_cv_allCVs", []]) - [_cv], true];
 
-        [missionNamespace getVariable ["opforcommander",objNull],5000] call grad_lbm_fnc_addFunds;
-        uo_init_defenseTimeLeft = uo_init_defenseTimeLeft - (uo_missionParam_DEFENSETIME/6);
+        [missionNamespace getVariable ["opforcommander",objNull],_fundsForKill] call grad_lbm_fnc_addFunds;
+        uo_endings_defenseTimeLeft = uo_endings_defenseTimeLeft - _timeForKill;
 
-        [[EAST,WEST,CIVILIAN],'Report','A Commandvehicle has been destroyed.',{!([player] call uo_common_fnc_isCommander)}] remoteExec ['uo_common_fnc_sideNotification',0,false];
-        [EAST,'Commandvehicle destroyed',format ['+%1Cr, -%2min defense time',5000,round (uo_init_defenseTimeLeft/60)],{[player] call uo_common_fnc_isCommander}] remoteExec ['uo_common_fnc_sideNotification',0,false];
+        [[WEST,CIVILIAN],'Report','A Commandvehicle has been destroyed.',{}] remoteExec ['uo_common_fnc_sideNotification',0,false];
+        [EAST,'Commandvehicle destroyed',format ['-%2min defense time',round (_timeForKill/60)],{!([player] call uo_common_fnc_isCommander)}] remoteExec ['uo_common_fnc_sideNotification',0,false];
+        [EAST,'Commandvehicle destroyed',format ['+%1 Cr, -%2 min defense time',_fundsForKill,round (_timeForKill/60)],{[player] call uo_common_fnc_isCommander}] remoteExec ['uo_common_fnc_sideNotification',0,false];
 
         [_this select 1] call CBA_fnc_removePerFrameHandler;
     };
 
     //get distance
     _dist = CITYPOSITION distance2D _cv;
-
 
     _cvactive = switch (true) do {
         case (_dist < _inner): {false};

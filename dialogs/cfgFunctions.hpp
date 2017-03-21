@@ -5,6 +5,13 @@ class uo_ui {
         class confirmHint {};
     };
 
+    class showTimeLeft {
+        file = dialogs\showTimeLeft\functions;
+
+        class addShowTimeLeftKeyEH {postInit = 1;};
+        class onTimeLeftKeyDown {};
+    };
+
     class twoLineHint {
         file = dialogs\twoLineHint\functions;
 

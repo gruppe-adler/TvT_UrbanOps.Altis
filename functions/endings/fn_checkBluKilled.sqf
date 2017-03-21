@@ -3,6 +3,7 @@
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
 if (!isServer) exitWith {};
+if (uo_missionParam_PRESET == "DEBUG") exitWith {};
 
 uo_fnc_checkBluKilled_preEliminated = {
     [{

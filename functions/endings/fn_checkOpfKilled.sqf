@@ -1,8 +1,9 @@
 #define PREFIX uo
-#define COMPONENT civs
+#define COMPONENT endings
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
 if (!isServer) exitWith {};
+if (uo_missionParam_PRESET == "DEBUG") exitWith {};
 
 uo_fnc_checkOpfKilled_preEliminated = {
     [{
