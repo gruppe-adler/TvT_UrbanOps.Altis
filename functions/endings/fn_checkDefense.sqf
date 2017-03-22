@@ -36,6 +36,8 @@ uo_endings_fnc_checkDefense_addPFH = {
                 publicVariable "uo_missionStats";
             };
 
+            [uo_missionstart_defendTask,"SUCCEEDED",false] call BIS_fnc_taskSetState;
+            [uo_missionstart_captureTask,"FAILED",false] call BIS_fnc_taskSetState;
             missionNamespace setVariable ["uo_gameEnded", ["EAST","CITY DEFENDED!"], true];
             INFO("OPFOR has defended the location.");
         }, []] call CBA_fnc_waitUntilAndExecute;

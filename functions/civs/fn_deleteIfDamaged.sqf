@@ -14,5 +14,5 @@
             INFO_1("%1 at %2 has been damaged during creation and had to be deleted :(",typeOf _object,getPos _object);
             deleteVehicle _object;
         };
-    }, _this, 2] call CBA_fnc_waitAndExecute;
+    }, _this, 5] call CBA_fnc_waitAndExecute;
 }, _this] call CBA_fnc_waitUntilAndExecute;

@@ -35,6 +35,8 @@ uo_fnc_checkOpfKilled_eliminated = {
                 publicVariable "uo_missionStats";
             };
 
+            [uo_missionstart_captureTask,"SUCCEEDED",false] call BIS_fnc_taskSetState;
+            [uo_missionstart_defendTask,"FAILED",false] call BIS_fnc_taskSetState;
             missionNamespace setVariable ["uo_gameEnded", ["WEST", "OPFOR ELIMINATED!"], true];
             [_this select 1] call CBA_fnc_removePerFrameHandler;
         };

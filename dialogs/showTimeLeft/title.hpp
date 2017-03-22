@@ -18,8 +18,8 @@ class uo_showTimeLeft {
 
             w = uo_showTimeLeft_W;
             h = uo_showTimeLeft_H;
-            x = safeZoneX + (safeZoneW * 0.70);
-            y = safeZoneY + (safeZoneH * 0.71);
+            x = safeZoneX + (safeZoneW * 0.700);
+            y = safeZoneY + (safeZoneH * 0.705);
 
             text = "";
         };

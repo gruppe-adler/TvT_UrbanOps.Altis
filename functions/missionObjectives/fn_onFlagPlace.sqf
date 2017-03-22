@@ -10,9 +10,8 @@ if (isNil "_area") exitWith {ERROR_2("Flag at %1 placed by %2 is not in a flagar
 if (_area getVariable ["uo_flagPlaced",false]) exitWith {};
 _area setVariable ["uo_flagPlaced",true,true];
 
-[WEST,_area getVariable ["uo_flagAreaMarker",""],true,getPos _area,"hd_dot","COLORGREEN","","ELLIPSE",uo_FLAGRADIUS] call uo_common_fnc_createSideMarker;
-[WEST,_area getVariable ["uo_flagAreaMarkerText",""],true,getPos _area,"hd_dot","COLORGREEN","flag (placed)"] call uo_common_fnc_createSideMarker;
-
+[WEST,_area getVariable ["uo_flagAreaMarker",""]] call uo_common_fnc_deleteSideMarker;
+[_area getVariable ["uo_flagAreaMarkerTask",""],"SUCCEEDED",true] spawn BIS_fnc_taskSetState;
 
 private _timeForFlag = uo_missionParam_DEFENSETIME/12;
 uo_endings_defenseTimeLeft = uo_endings_defenseTimeLeft + _timeForFlag;
