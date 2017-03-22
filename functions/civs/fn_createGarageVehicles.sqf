@@ -16,15 +16,15 @@ uo_civs_sideRoadVehicles = [];
 
 _garages = _houses select {typeOf _x in ["Land_i_Garage_V1_F","Land_i_Garage_V2_F","Land_i_Garage_V1_dam_F"]};
 {
-    if (20 > random 100) then {
+    if (35 > random 100) then {
         _type = selectRandom uo_civs_vehicles;
         _veh = createVehicle [_type,[0,0,0],[],0,"CAN_COLLIDE"];
+        uo_civs_garageVehicles pushBack _veh;
         [{!isNull (_this select 0)}, {
             params ["_veh","_garage"];
             _veh setDir (getDir _garage) + (selectRandom [90,270]);
             _veh setPos (getPos _garage);
             _veh lock 2;
-            uo_civs_garageVehicles pushBack _veh;
             [_veh] call uo_civs_fnc_deleteIfDamaged;
         },[_veh,_x]] call CBA_fnc_waitUntilAndExecute;
 
@@ -39,4 +39,4 @@ _garages = _houses select {typeOf _x in ["Land_i_Garage_V1_F","Land_i_Garage_V2_
     };
 } forEach _garages;
 
-INFO_2("Found %1 garages. Created %1 vehicles in garages.",count _garages,count uo_civs_garageVehicleMarkers);
+INFO_2("Found %1 garages. Created %1 vehicles in garages.",count _garages,count uo_civs_garageVehicles);
