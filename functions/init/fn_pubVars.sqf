@@ -21,6 +21,8 @@ publicVariable "OPFORRESPAWNDIST";
 publicVariable "CIVILIANPROBABILITY";
 publicVariable "DEALERRADIUSFACTOR";
 publicVariable "RESPAWNCREDITS";
+publicVariable "uo_FLAGAMOUNT";
+publicVariable "uo_FLAGRADIUS";
 
 //LOCATION MARKERS =============================================================
 VILLAGEMARKERSIZE = 200 * ((_sizeFactor * 1.5) min 1);

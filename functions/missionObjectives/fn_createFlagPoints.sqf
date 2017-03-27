@@ -2,6 +2,8 @@
 #define COMPONENT missionObjectives
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
+if (!isServer) exitWith {};
+
 _start = diag_tickTime;
 for [{_i=0}, {_i<100}, {_i=_i+1}] do {
     uo_flagPositions = [];
@@ -29,11 +31,11 @@ private _taskDescription = "Place a flag inside the blue marker (zoom in).<br />
     [WEST,_areaMarkerName,true,_x,"hd_dot","COLORWEST","","ELLIPSE",uo_FLAGRADIUS] call uo_common_fnc_createSideMarker;
     _taskID = [WEST,_taskName,[_taskDescription,"Place flag",_areaMarkerName],_x,"AUTOASSIGNED",1,false,"default"] call BIS_fnc_taskCreate;
 
-    _trigger = createTrigger ["EmptyDetector", _x, false];
+    _trigger = createTrigger ["EmptyDetector", _x, true];
     _trigger setTriggerArea [uo_FLAGRADIUS,uo_FLAGRADIUS,0,false];
-    _trigger setVariable ["uo_flagAreaMarker",_areaMarkerName];
-    _trigger setVariable ["uo_flagAreaMarkerText",_textMarkerName];
-    _trigger setVariable ["uo_flagAreaMarkerTask",_taskID];
+    _trigger setVariable ["uo_flagAreaMarker",_areaMarkerName,true];
+    _trigger setVariable ["uo_flagAreaMarkerText",_textMarkerName,true];
+    _trigger setVariable ["uo_flagAreaMarkerTask",_taskID,true];
     uo_flagPositionAreas pushBack _trigger;
 } forEach uo_flagPositions;
 
