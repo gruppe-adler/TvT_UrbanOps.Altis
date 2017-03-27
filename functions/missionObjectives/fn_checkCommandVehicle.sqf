@@ -20,6 +20,7 @@ _h = [{
         _cv setVariable ["uo_respawnObject_isActive", false, true];
         _cv setVariable ["uo_respawnObject_isDestroyed", true, true];
         missionNamespace setVariable ["uo_cv_allCVs", (missionNamespace getVariable ["uo_cv_allCVs", []]) - [_cv], true];
+        if (missionNamespace getVariable ["uo_cv_allCVs", []] == 0) then {[uo_missionstart_defendCVTask,"FAILED",false] call BIS_fnc_taskSetState};
 
         [missionNamespace getVariable ["opforcommander",objNull],_fundsForKill] call grad_lbm_fnc_addFunds;
         uo_endings_defenseTimeLeft = uo_endings_defenseTimeLeft - _timeForKill;

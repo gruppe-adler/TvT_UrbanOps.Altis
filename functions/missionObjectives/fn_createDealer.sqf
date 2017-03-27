@@ -21,6 +21,11 @@ uo_DEALER = _group createUnit ["C_man_1",_dealerPos,[],0,"NONE"];
 uo_DEALER allowDamage false;
 _barrel = "Land_BarrelEmpty_F" createVehicleLocal _dealerPos;
 
+//create task
+_taskDescription = "Defend the dealer. You won't lose if he dies, but your side will no longer be able to respawn and the enemy will receive a large sum of money.";
+uo_missionstart_defendDealerTask = [EAST,"uo_missionstart_defendDealerTask",[_taskDescription,"Defend Dealer",""],_dealerPos,"AUTOASSIGNED",3,false,"defend"] call BIS_fnc_taskCreate;
+
+//wait until dealer spawned
 [{!isNull (_this select 1) && !isNull (_this select 2)}, {
     params ["_dealerPos","_unit","_barrel"];
 
@@ -44,12 +49,13 @@ _barrel = "Land_BarrelEmpty_F" createVehicleLocal _dealerPos;
         [missionNamespace getVariable ["bluforcommander",objNull],10000] call grad_lbm_fnc_addFunds;
         [[EAST,WEST,CIVILIAN],'Report','The dealer has been killed.'] remoteExec ['uo_common_fnc_sideNotification',0,false];
         [WEST,'Funds received','You received 10000Cr.',{[player] call uo_common_fnc_isCommander}] remoteExec ['uo_common_fnc_sideNotification',0,false];
+        [uo_missionstart_defendDealerTask,"FAILED",false] call BIS_fnc_taskSetState;
     }];
 
     _nearestRoad = [getpos _unit, 50, []] call BIS_fnc_nearestRoad;
     _vehicleSpawn = if (!isNull _nearestRoad) then {getPos _nearestRoad} else {uo_DEALER};
 
-    [EAST,"uo_dealerMarker",true,_dealerPos,"mil_marker","COLOREAST"] call uo_common_fnc_createSideMarker;
+    /*[EAST,"uo_dealerMarker",true,_dealerPos,"mil_marker","COLOREAST"] call uo_common_fnc_createSideMarker;*/
     [{uo_DEALER allowDamage true}, [], 10] call CBA_fnc_waitAndExecute;
 
     [{
