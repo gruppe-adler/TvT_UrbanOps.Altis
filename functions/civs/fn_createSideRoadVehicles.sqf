@@ -33,7 +33,7 @@ _fnc_nearbyVehiclePositions = {
     params ["_pos"];
 
     _nearbyVehiclePositions = [];
-    {if (_pos distance2D _x < 20) then {_nearbyVehiclePositions pushBack _x}} forEach uo_civs_sideRoadVehiclePositions;
+    {if (_pos distance2D _x < 30) then {_nearbyVehiclePositions pushBack _x}} forEach uo_civs_sideRoadVehiclePositions;
     _nearbyVehiclePositions
 };
 

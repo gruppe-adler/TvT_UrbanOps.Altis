@@ -6,5 +6,6 @@ class uo_choosePlayArea {
         class chooseCity {};
         class chooseSpawn {};
         class opforWaitDialog {};
+        class showWeatherPreview {};
     };
 };
