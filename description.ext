@@ -92,7 +92,8 @@ class CfgWinrateTracker {
 //FORTIFICATIONS ===============================================================
 class CfgGradFortifications {
     canDemolishDefault = 1;
-    buildTimeFactor = 0.5;
+    buildTimeFactor = 0.01;
+    packUpTimeFactor = 0.01;
     fortificationOwnerType = "SIDE";
     demolitionTimeFactor = 1.6;
 

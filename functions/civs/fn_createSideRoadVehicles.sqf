@@ -56,7 +56,7 @@ uo_civs_sideRoadVehiclePositions = [];
 
 //MAIN =========================================================================
 _roads = CITYPOSITION nearRoads (CITYAREASIZE+100);
-_vehiclesToCreate = (((count _houses) * 0.1) min ((count _roads) * 0.1));
+_vehiclesToCreate = (((count _houses) * 0.07) min ((count _roads) * 0.07));
 _vehiclesToCreate = round (_vehiclesToCreate * ((random 0.4) + 0.8));
 _vehiclesToCreate = (_vehiclesToCreate min 20) max 4;
 

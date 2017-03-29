@@ -45,13 +45,12 @@
     [{(!isNil "CITYPOSITION" && !isNil "CITYAREASIZE")}, {[] call uo_missionObjectives_fnc_createFlagPoints}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_cvCreated", false]}, {[] call uo_missionstart_fnc_findBluStartPos}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_bluforSpawnSet", false]}, {[WEST] call uo_missionstart_fnc_tpSide}, []] call CBA_fnc_waitUntilAndExecute;
-    [{missionNamespace getVariable ["uo_init_bluforSpawnSet", false]}, {[] call uo_missionstart_fnc_startMission}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_bluforSpawnSet", false]}, {[WEST] call uo_missionstart_fnc_enableBFT}, []] call CBA_fnc_waitUntilAndExecute;
+    [{missionNamespace getVariable ["uo_init_bluforSpawnSet", false]}, {[] call uo_missionstart_fnc_startMission}, []] call CBA_fnc_waitUntilAndExecute;
 
     //on game start
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_common_fnc_saveTeammembers}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_missionstart_fnc_createLegendMarkers}, []] call CBA_fnc_waitUntilAndExecute;
-    /*[{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[uo_missionParam_DEFENSETIME - ((floor ((uo_missionParam_DEFENSETIME / 60) / 2)) * 60)] call uo_endings_fnc_timeNotifications}, []] call CBA_fnc_waitUntilAndExecute;*/
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_checkBluKilled}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_checkOpfKilled}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_checkDefense}, []] call CBA_fnc_waitUntilAndExecute;

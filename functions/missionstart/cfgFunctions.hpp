@@ -6,6 +6,7 @@ class uo_missionstart {
         class findOpfStartPos {};
         class findBluStartPos {};
         class playAreaSetup {};
+        class resetBuildTimes {};
         class startMission {};
         class tpSide {};
     };
