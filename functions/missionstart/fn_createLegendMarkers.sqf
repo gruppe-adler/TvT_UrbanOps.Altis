@@ -9,8 +9,7 @@ _legendMarkers = if (side player == WEST) then {
 } else {
     [
         ["b_inf", "COLORWEST", "= enemy infantry", EAST],
-        ["b_hq", "COLORWEST", "= enemy command vehicle", EAST],
-        ["mil_marker", "COLOREAST", "= the dealer", EAST]
+        ["b_hq", "COLORWEST", "= enemy command vehicle", EAST]
     ]
 };
 

@@ -26,9 +26,9 @@ _unit = _group createUnit [_type,_pos,[],0,"NONE"];
     _ehID = _unit addEventHandler ["killed", {[_this] call uo_civs_fnc_onKilled}];
     _unit setVariable ["uo_killedEH",_ehID];
 
-    _allCivs = missionNamespace getVariable ["uo_cv_allCivs", []];
+    _allCivs = missionNamespace getVariable ["uo_civs_allCivs", []];
     _allCivs pushBack _unit;
-    missionNamespace setVariable ["uo_cv_allCivs", _allCivs, true];
+    missionNamespace setVariable ["uo_civs_allCivs", _allCivs, true];
 
     [_unit] call uo_civs_fnc_deleteIfDamaged;
 }, [_unit,_static]] call CBA_fnc_waitUntilAndExecute;

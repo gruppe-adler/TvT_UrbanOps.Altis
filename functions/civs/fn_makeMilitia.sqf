@@ -4,6 +4,8 @@ private ["_weapon","_magazine"];
 if (!alive _civ || isNull _civ) exitWith {};
 if (!local _civ) exitWith {};
 
+_civ enableAI "PATH";
+
 //ADD MILITIA GEAR =============================================================
 _availableHandguns = [(missionConfigFile >> "cfgCivilians" >>  "handguns"), "array", []] call CBA_fnc_getConfigEntry;
 _availableRifles = [(missionConfigFile >> "cfgCivilians" >>  "rifles"), "array", []] call CBA_fnc_getConfigEntry;

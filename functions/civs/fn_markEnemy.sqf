@@ -6,7 +6,7 @@ if (typeName _accuracy == "ARRAY") then {_accuracy = (random ((_accuracy select 
 switch (true) do {
     //mark unit
     case (_mode == "UNITS"): {
-        _enemies = playableUnits select {alive _x && (side _x == _side) && (_x distance CITYPOSITION) < CITYAREASIZE*1.5};
+        _enemies = allUnits select {alive _x && (side _x == _side) && (_x distance CITYPOSITION) < CITYAREASIZE*3};
         _markerType = if (_side == east) then {"o_inf"} else {"b_inf"};
     };
 
@@ -26,6 +26,7 @@ switch (true) do {
 if (count _enemies > 0) then {
     _enemyUnit = selectRandom _enemies;
     if (!isNull _enemyUnit) then {
-        [_side,_enemyUnit,_accuracy,_markerType] remoteExec ['uo_civs_fnc_createEnemyMarker',0,false];
+        _markForSide = if (_side == WEST) then {EAST} else {WEST};
+        [_markForSide,_enemyUnit,_accuracy,_markerType] remoteExec ['uo_civs_fnc_createEnemyMarker',0,false];
     };
 };
