@@ -2,7 +2,7 @@
 #define COMPONENT missionObjectives
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
-params ["_flag","_placer"];
+params ["_placer","_flag"];
 
 private _area = (uo_flagPositionAreas select {_flag distance2D _x < uo_FLAGRADIUS * 1.15}) select 0;
 if (isNil "_area") exitWith {ERROR_2("Flag at %1 placed by %2 is not in a flagarea.",getPos _flag,name _placer)};
