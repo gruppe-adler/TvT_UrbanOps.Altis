@@ -11,11 +11,11 @@ if (isNil "deadPlayersOpf") then {deadPlayersOpf = []};
 switch (_deadPlayerSide) do {
     case (WEST): {
         deadPlayersBlu pushBackUnique _deadPlayer;
-        INFO_2("Added player %1 to deadPlayersBlu. %2 dead blufor total.", _deadPlayer, count deadPlayersBlu);
+        INFO_2("Added player %1 to deadPlayersBlu. %2 dead blufor total.", name _deadPlayer, count deadPlayersBlu);
     };
     case (EAST): {
         deadPlayersOpf pushBackUnique _deadPlayer;
-        INFO_2("Added player %1 to deadPlayersOpf. %2 dead opfor total.", _deadPlayer, count deadPlayersOpf);
+        INFO_2("Added player %1 to deadPlayersOpf. %2 dead opfor total.", name _deadPlayer, count deadPlayersOpf);
     };
     default {
         ERROR_1("Unknown side for player %1", _deadPlayer);
