@@ -4,7 +4,7 @@
 
 params ["_flag","_placer"];
 
-private _area = (uo_flagPositionAreas select {_flag inArea _x}) select 0;
+private _area = (uo_flagPositionAreas select {_flag distance2D _x < uo_FLAGRADIUS * 1.15}) select 0;
 if (isNil "_area") exitWith {ERROR_2("Flag at %1 placed by %2 is not in a flagarea.",getPos _flag,name _placer)};
 
 if (_area getVariable ["uo_flagPlaced",false]) exitWith {};

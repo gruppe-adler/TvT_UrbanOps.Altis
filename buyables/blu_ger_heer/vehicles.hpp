@@ -60,7 +60,7 @@ class Vehicles {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "MH6 Littlebird";
         description = "Seats: 8<br/><br/>";
-        price = 1000;
+        price = 10000;
         stock = 2;
     };
 
