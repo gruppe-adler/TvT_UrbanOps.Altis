@@ -25,7 +25,7 @@ if (hasInterface) then {
 
             if (!isNil "uo_missionStats") then {
                 uo_missionStats call grad_scoreboard_fnc_loadScoreboard;
-                sleep 22;
+                sleep 18;
             } else {
                 systemChat "uo_missionStats has not been received. Not displaying scoreboard.";
             };

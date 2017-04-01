@@ -81,7 +81,7 @@ class CfgGradMoneymenu {
 
 //WINRATE TRACKER ==============================================================
 class CfgWinrateTracker {
-    scoreBoardDuration = 20;                            //duration that the scoreboard will stay open
+    scoreBoardDuration = 16;                            //duration that the scoreboard will stay open
     sortBy = "WINRATES";                                //what to sort by, can be "GAMES","WINS","LOSSES","WINRATES"
     minGamesForSort = 5;                                //minimum number of games a player needs to have to be in the upper ranks
     playerStatsHeadline = "PLAYER WINRATES";            //headline for scoreboard
