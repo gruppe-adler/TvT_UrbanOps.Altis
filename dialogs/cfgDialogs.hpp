@@ -7,6 +7,7 @@
 class RscTitles {
     #include "twoLineHint\title.hpp"
     #include "animatedHint\title.hpp"
+    #include "RscPIP\title.hpp"
     #include "showTimeLeft\title.hpp"
     #include "..\node_modules\grad-fortifications\dialog\hint\title.hpp"
 

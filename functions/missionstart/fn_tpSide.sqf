@@ -22,6 +22,7 @@ if (hasInterface && {playerSide == _side}) then {
 		[{
 			params ["_pos"];
 			_onTP = {
+				[false] call uo_choosePlayArea_fnc_showWeatherPreview;
 				openMap [false, false];
 				_markObject = if (playerSide == WEST) then {uo_cv_allCVs select 0} else {uo_DEALER};
 				_markerDescription = if (playerSide == WEST) then {"Commandvehicle"} else {"Dealer"};

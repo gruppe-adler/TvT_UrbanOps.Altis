@@ -3,6 +3,12 @@ if (player getVariable ["originalSide", "UNKNOWN"] != "EAST") exitWith {};
 if (missionNamespace getVariable ["uo_init_cityChosen", false]) exitWith {};
 
 [{!isNull (findDisplay 46)}, {
+    [true] call uo_choosePlayArea_fnc_showWeatherPreview;
+    [3,{uo_choosePlayArea_preloadFinished = true}] call uo_common_fnc_wait3Dframes;
+}, []] call CBA_fnc_waitUntilAndExecute;
+
+[{!isNull (findDisplay 46) && (missionNamespace getVariable ["uo_choosePlayArea_preloadFinished",false])}, {
+
     openMap [true, true];
     [] call uo_choosePlayArea_fnc_opforWaitDialog;
 

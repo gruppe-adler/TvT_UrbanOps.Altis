@@ -2,14 +2,20 @@ if (!hasInterface) exitWith {};
 if (player getVariable ["originalSide", "UNKNOWN"] != "WEST") exitWith {};
 if (missionNamespace getVariable ["uo_init_spawnChosen", false]) exitWith {};
 
+
 [{!isNull (findDisplay 46)}, {
+    [true] call uo_choosePlayArea_fnc_showWeatherPreview;
+    [3,{uo_choosePlayArea_preloadFinished = true}] call uo_common_fnc_wait3Dframes;
+}, []] call CBA_fnc_waitUntilAndExecute;
+
+
+[{missionNamespace getVariable ["uo_choosePlayArea_preloadFinished",false]}, {
     openMap [true, true];
     [] call uo_choosePlayArea_fnc_bluforWaitDialog;
 }, []] call CBA_fnc_waitUntilAndExecute;
 
 
 if !([player] call uo_common_fnc_isCommander) exitWith {};
-
 
 [{SETUPTIMEREMAINING <= 0}, {
     ["Blufor Commander %1 is now choosing a city.", profileName] call uo_common_fnc_serverLog;

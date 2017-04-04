@@ -5,6 +5,8 @@ class CfgIslands {
 		isWoodland = true;
 		spawnPosBlu[] = {8454.05,25140.7,0};
 		spawnPosOpf[] = {8712.9,25205.4,0};
+		previewCamPos[] = {5279.3,11319.1,0};
+		previewCamTarget[] = {5047.8,11146.8,0};
 		locationBlacklist[] = {
 			"AAC airfield",
 			"Agios Georgios",

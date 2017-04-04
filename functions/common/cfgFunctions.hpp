@@ -34,5 +34,6 @@ class uo_common {
         class stopAnimation {};
         class teleport {};
         class temp3dMarker {};
+        class wait3dFrames {};
     };
 };

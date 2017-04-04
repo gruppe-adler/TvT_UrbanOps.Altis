@@ -1,4 +1,4 @@
-version=52;
+version=53;
 class EditorData
 {
 	moveGridStep=1;
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2463.4106,24.981995,3475.8879};
-		dir[]={0.66741258,-0.61494052,0.42001247};
-		up[]={0.52045774,0.78857327,0.32753146};
-		aside[]={0.53262281,1.44355e-008,-0.84635442};
+		pos[]={22436.834,47.87199,20538.395};
+		dir[]={-0.19232774,-0.17364821,-0.96584499};
+		up[]={-0.033912569,0.98480767,-0.17030454};
+		aside[]={-0.98074466,3.7252903e-009,0.19529468};
 	};
 };
 binarizationWanted=0;
@@ -61,21 +61,21 @@ class AddonsMetaData
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item1
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item2
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item3
 		{
@@ -208,7 +208,7 @@ class AddonsMetaData
 			className="A3_Modules_F_Heli";
 			name="Arma 3 Helicopters - Scripted Modules";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item22
 		{
