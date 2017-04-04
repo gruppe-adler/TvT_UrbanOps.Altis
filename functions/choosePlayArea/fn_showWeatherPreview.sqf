@@ -19,6 +19,7 @@ if (_show) then {
     _cam cameraEffect ["Fixed", "FRONT", _rendertarget];
     _cam camSetTarget _camTarget;
     _cam camPreload 0;
+    _cam camCommit 0;
 
     _pipPIPCtrl ctrlsettext format ["#(argb,256,256,1)r2t(%1,1.0)",_rendertarget];
 } else {
