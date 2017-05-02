@@ -12,7 +12,7 @@ islands=(
 	Chernarus_winter
 	Intro
 	fallujah
-	fata
+	lythium
 	mbg_celle2
 	Porto
 	Stratis

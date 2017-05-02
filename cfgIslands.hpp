@@ -237,6 +237,17 @@ class CfgIslands {
 		};
 	};
 
+	class lythium {
+		displayName = "Lythium";
+		type = "middle eastern";
+		isWoodland = false;
+		spawnPosBlu[] = {-788.312,169.817,0};
+		spawnPosOpf[] = {240.184,-536.609,0};
+		previewCamPos[] = {9744.18,11424.5,0};
+		previewCamTarget[] = {9860.08,11091.6,0};
+		locationBlacklist[] = {};
+	};
+
 	class mbg_celle2 {
 		displayName = "Celle";
 		type = "russian";

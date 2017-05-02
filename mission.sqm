@@ -7630,11 +7630,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={1000.0587,-139.29828,2000.0024};
+				position[]={1000.059,-139.298,2000.002};
 			};
 			id=540;
 			type="ace_viewdistance_ModuleSettings";
-			atlOffset=46.671722;
+			atlOffset=46.671997;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7652,7 +7652,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=4000;
+							value=8000;
 						};
 					};
 				};
@@ -7671,7 +7671,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=0;
+							value=1;
 						};
 					};
 				};
