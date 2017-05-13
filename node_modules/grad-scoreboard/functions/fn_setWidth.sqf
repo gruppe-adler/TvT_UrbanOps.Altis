@@ -2,7 +2,7 @@
 #include "..\dialog\defines.hpp"
 
 params ["_totalWidth"];
-_width = ((_totalWidth/80) min 1) max 0.2;
+_width = ((_totalWidth/80) min 1) max 0.35;
 
 _fnc_setPos = {
     params ["_ctrl", "_w"];
