@@ -13,7 +13,6 @@ class uo_civs {
         class makeMilitia {};
         class markEnemy {};
         class onKilled {};
-        class setFriendIndep {};
         class spawnCiv {};
         class taskPatrol {};
     };

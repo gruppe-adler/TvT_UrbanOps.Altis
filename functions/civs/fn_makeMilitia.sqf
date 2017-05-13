@@ -1,4 +1,4 @@
-params [["_civ",objNull]];
+params [["_civ",objNull],"_side"];
 private ["_weapon","_magazine"];
 
 if (!alive _civ || isNull _civ) exitWith {};
@@ -50,7 +50,7 @@ if (_ehID > 0) then {
 //SET TO INDEPENDENT ===========================================================
 _oldWaypointSettings = [group _civ,"COPY",false,false] call uo_common_fnc_copyWaypoints;
 
-_group = createGroup INDEPENDENT;
+_group = createGroup _side;
 [_civ] joinSilent _group;
 _group setBehaviour "COMBAT";
 _group setCombatMode "RED";
