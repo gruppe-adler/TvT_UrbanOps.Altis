@@ -10,8 +10,10 @@ islands=(
 	Chernarus
 	Chernarus_Summer
 	Chernarus_winter
+	dingor
 	Intro
 	fallujah
+	lingor3
 	lythium
 	mbg_celle2
 	Porto
