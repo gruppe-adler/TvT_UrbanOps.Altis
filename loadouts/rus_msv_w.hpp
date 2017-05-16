@@ -21,6 +21,7 @@ class rus_msv_w {
         addItemsToUniform[] = {
 			LIST_6("ACE_fieldDressing"),
 			LIST_2("ACE_morphine"),
+			LIST_3("ACE_CableTie"),
 			LIST_2("rhs_mag_rdg2_white"),
 			"ACE_epinephrine",
 			"ACE_Flashlight_KSF1",

@@ -16,8 +16,8 @@ INFO_1("House selected for dealer: %1",_dealerHouse);
 _buildingPositions = [_dealerHouse] call uo_common_fnc_findBuildingPositions;
 _dealerPos = if (count _buildingPositions > 0) then {selectRandom _buildingPositions} else {[CITYPOSITION,[0,CITYAREASIZE * DEALERRADIUSFACTOR]] call uo_common_fnc_findRandomPos};
 _dealerHouse setVariable ["uo_dealerHouse_dealerPos",_dealerPos];
-_group = createGroup civilian;
-uo_DEALER = _group createUnit ["C_man_1",_dealerPos,[],0,"NONE"];
+
+uo_DEALER = (createGroup EAST) createUnit ["C_man_1",_dealerPos,[],0,"NONE"];
 uo_DEALER allowDamage false;
 _barrel = "Land_BarrelEmpty_F" createVehicleLocal _dealerPos;
 
@@ -31,6 +31,8 @@ uo_missionstart_defendDealerTask = [EAST,"uo_missionstart_defendDealerTask",[_ta
 
     _barrel setPosASL ((getPosASL _unit) vectorAdd [random 1, random 1, 0]);
 
+    [_unit] joinSilent (createGroup EAST);    //workaround for weird createUnit bug
+    [_unit, false] call grad_aicommand_fnc_setCanReceiveCommands;
     _unit disableAI "PATH";
     _unit setDir (random 360);
     _unit forceAddUniform (selectRandom uo_civs_uniforms);
