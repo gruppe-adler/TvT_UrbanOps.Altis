@@ -12,7 +12,6 @@
 #include "cfgCivilians.hpp"
 #include "buyables\cfgBuyables.hpp"
 #include "buyables\cfgAIUnitLoadouts.hpp"
-#include "loadouts\loadouts.hpp"
 #include "dialogs\cfgDialogs.hpp"
 
 //HEADER =======================================================================
@@ -65,6 +64,17 @@ class CfgScopeWeapons {
     rhs_weap_m40a5 = 1;
     rhs_weap_t5000 = 1;
     rhs_weap_m24sws = 1;
+};
+
+//LOADOUTS =====================================================================
+class Loadouts {
+    resetLoadout = 0;
+    baseDelay = 10;
+    handleRadios = 1;
+
+    class Faction {
+        #include "node_modules\grad-factions-tvt\loadouts.hpp"
+    };
 };
 
 //MONEY MENU ===================================================================
