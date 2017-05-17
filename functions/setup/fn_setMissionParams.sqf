@@ -79,7 +79,7 @@ switch (uo_missionParam_PRESET) do {
         uo_missionParam_OPFORRESPAWNENABLED = true;
         uo_missionParam_BLUFORRESPAWNENABLED = true;
 
-        /*[false] call grad_lbm_tracking_fnc_enableTracking;*/
+        [false] call grad_lbm_tracking_fnc_enableTracking;
     };
 };
 
