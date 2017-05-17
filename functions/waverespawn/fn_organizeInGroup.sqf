@@ -14,7 +14,8 @@ INFO_2("Organizing dead %1 players into %2 groups.",_side,_numberOfGroups);
 //create groups, add teamleads
 _newGroups = [];
 for [{_i=0}, {_i<_numberOfGroups}, {_i=_i+1}] do {
-    _leader = [_deadPlayersGroup] call uo_waverespawn_fnc_getHighestRanking;    
+    _leader = [_deadPlayersGroup] call uo_waverespawn_fnc_getHighestRanking;
+    [_leader,2000] call grad_lbm_fnc_setFunds;
 
     _group = createGroup _side;
     [_leader] joinSilent _group;
@@ -49,12 +50,14 @@ _allMedics = [];
     {
         _unit = _x;
         [_unit] joinSilent ([_newGroups] call uo_waverespawn_fnc_getSmallestGroup);
+        [_unit,0] call grad_lbm_fnc_setFunds;
     } forEach _x;
 } forEach [_allMGs,_allATs,_allMedics];
 
 //distribute riflemen
 {
     [_x] joinSilent ([_newGroups] call uo_waverespawn_fnc_getSmallestGroup);
+    [_unit,0] call grad_lbm_fnc_setFunds;
 } forEach (units _deadPlayersGroup);
 
 deleteGroup _deadPlayersGroup;
