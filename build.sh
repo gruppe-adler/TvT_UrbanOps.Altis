@@ -10,11 +10,10 @@ islands=(
 	Chernarus
 	Chernarus_Summer
 	Chernarus_winter
-	dingor
 	Intro
 	fallujah
-	lingor3
 	lythium
+	Malden
 	mbg_celle2
 	Porto
 	Stratis

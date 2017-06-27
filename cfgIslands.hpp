@@ -248,6 +248,22 @@ class CfgIslands {
 		locationBlacklist[] = {};
 	};
 
+	class Malden {
+		displayName = "Malden";
+		type = "mediterranean";
+		isWoodland = true;
+		spawnPosBlu[] = {10092.8,6046.75,0};
+		spawnPosOpf[] = {9912.59,5925.78,0};
+		previewCamPos[] = {3072.14,6510.89,0};
+		previewCamTarget[] = {3261.39,6395.49,0};
+		locationBlacklist[] = {
+			"Pegasus Air Co.",
+			"Moray",
+			"Faro",
+			"harbor"
+		};
+	};
+
 	class mbg_celle2 {
 		displayName = "Celle";
 		type = "russian";
