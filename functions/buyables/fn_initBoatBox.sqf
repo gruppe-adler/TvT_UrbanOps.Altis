@@ -3,6 +3,8 @@ params ["_box","_type","_amount"];
 _box setVariable ["uo_buyables_boatType",_type];
 _box setVariable ["uo_buyables_boatsInBox",_amount];
 
+[_box, true, 1] call ace_cargo_fnc_makeLoadable;
+
 if (!hasInterface) exitWith {};
 
 _onAction = {
