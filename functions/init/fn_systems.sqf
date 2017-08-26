@@ -28,7 +28,7 @@
     //exit JIP
     _westCondition = (count (missionNamespace getVariable ["uo_cv_allCVs",[]])) == 0;
     _eastCondition = (missionNamespace getVariable ["uo_DEALERKILLED",false]);
-    if (hasInterface && missionNamespace getVariable ["uo_init_gamestarted", false] && {(playerSide == WEST && _westCondition) || (playerSide == EAST && _eastCondition)}) exitWith {player setDamage 1};
+    if (hasInterface && missionNamespace getVariable ["uo_init_gamestarted", false] && {(playerSide == WEST && _westCondition) || (playerSide == EAST && _eastCondition)}) exitWith {player allowDamage true; player setDamage 1};
 
     //report
     if (isServer) then {[{["PRINT", "SERVER_SETUP"] call uo_common_fnc_diagReport}, [], 15] call CBA_fnc_waitAndExecute};
