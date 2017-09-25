@@ -1,7 +1,7 @@
 {
     "name": "tvt-urbanops",
     "description": "A dynamic seize/defend mission for all maps.",
-    "version": "0.9.2",
+    "version": "0.9.3",
     "author": "McDiod",
 
     "dependencies": {
