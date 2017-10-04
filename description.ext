@@ -113,6 +113,7 @@ class CfgGradFortifications {
             surfaceNormal = 0;
             canDemolish = 0;
             canPackUp = 0;
+            onBuildComplete = "[_this select 1,_this select 0,[true]] call uo_buyables_fnc_propagandaTowerSetActive";
         };
         class Flag_Blue_F {
             surfaceNormal = 0;
