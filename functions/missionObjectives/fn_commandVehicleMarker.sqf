@@ -1,6 +1,6 @@
 params ["_cv", "_id"];
 
-if (player getVariable ["originalSide", "UNKNOWN"] != "WEST") exitWith {};
+if (playerSide != WEST) exitWith {};
 if (isNil "_cv") exitWith {};
 if (isNull _cv) exitWith {};
 
