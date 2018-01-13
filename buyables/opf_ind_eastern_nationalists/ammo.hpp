@@ -16,13 +16,6 @@ class Ammo {
         stock = 30;
     };
 
-    class rhsgref_10Rnd_792x57_m76 {
-        displayName = "7.92mm 10Rnd";
-        description = "Used in:<br/>M76";
-        price = 150;
-        stock = 30;
-    };
-
     class rhs_100Rnd_762x54mmR {
         displayName = "7.62 100Rnd Belt";
         description = "Used in:<br/>PKM<br/>PKP";

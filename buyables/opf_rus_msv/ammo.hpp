@@ -9,13 +9,6 @@ class Ammo {
         stock = 50;
     };
 
-    class rhs_10Rnd_762x54mmR_7N1 {
-        displayName = "7.62 10Rnd";
-        description = "Used in:<br/>SVDS";
-        price = 100;
-        stock = 30;
-    };
-
     class rhs_100Rnd_762x54mmR {
         displayName = "7.62 100Rnd Belt";
         description = "Used in:<br/>PKM<br/>PKP";

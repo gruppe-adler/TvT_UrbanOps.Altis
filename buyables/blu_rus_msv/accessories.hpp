@@ -28,13 +28,6 @@ class Accessories {
         stock = 2;
     };
 
-    class rhs_acc_pso1m21 {
-        displayName = "PSO 1M2-1";
-        description = "PSO 1M2-1<br/>Magnification: 4x<br/><br/>This can only be mounted on weapons that explicitly say so in their buy menu description. (Most bolt-action rifles)";
-        price = 1000;
-        stock = 2;
-    };
-
     class rhs_acc_perst1ik {
         displayName = "Perst-1IK Laser";
         price = 300;
