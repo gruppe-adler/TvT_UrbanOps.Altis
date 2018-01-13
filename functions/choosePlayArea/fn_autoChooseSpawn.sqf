@@ -2,6 +2,7 @@
 #define COMPONENT choosePlayArea
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
+if (!isServer) exitWith {};
 if (isPlayer (missionNamespace getVariable ["bluforcommander",objNull])) exitWith {};
 
 BLUFORSPAWN = CITYPOSITION getPos [BLUFORSTARTDIST, random 360];

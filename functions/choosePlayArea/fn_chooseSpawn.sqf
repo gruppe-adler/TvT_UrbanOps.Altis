@@ -1,6 +1,5 @@
 if (!hasInterface) exitWith {};
 if (player getVariable ["originalSide", "UNKNOWN"] != "WEST") exitWith {};
-if (missionNamespace getVariable ["uo_init_spawnChosen", false]) exitWith {};
 
 
 [{!isNull (findDisplay 46)}, {
@@ -10,6 +9,8 @@ if (missionNamespace getVariable ["uo_init_spawnChosen", false]) exitWith {};
 
 
 [{missionNamespace getVariable ["uo_choosePlayArea_preloadFinished",false]}, {
+    if (missionNamespace getVariable ["uo_init_spawnChosen", false]) exitWith {};
+
     openMap [true, true];
     [] call uo_choosePlayArea_fnc_bluforWaitDialog;
 }, []] call CBA_fnc_waitUntilAndExecute;
