@@ -110,7 +110,7 @@ class Params
         title = "Opfor Respawn";
         values[] = {0,1,2};
         texts[] = {"Disabled", "in Playzone", "outside Playzone"};
-        default = 1;
+        default = 2;
     };
 
     class BluforRespawn
@@ -158,6 +158,6 @@ class Params
         title = "OPFOR Wave Respawn Time (Minutes)";
         values[] = {30,60,90,120,150,180,210,240,270,300,330,360,390,420,450,480,510,540,570,600};
         texts[] = {"0.5","1","1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5", "8", "8.5", "9", "9.5", "10"};
-        default = 540;
+        default = 270;
     };
 };

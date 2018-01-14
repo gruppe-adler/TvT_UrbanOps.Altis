@@ -73,6 +73,10 @@
         publicVariable "WAVERESPAWNOPF";
         INFO("Respawning now possible for Opfor.");
 
+        if (uo_missionParam_OPFORRESPAWNMODE == 2) then {
+            ["uo_notification",["OPFOR RESPAWN","Opfor reinforcements are on the way."]] remoteExec ["bis_fnc_showNotification",0,false];
+        };
+
         [{
             _newGroups = [EAST] call uo_waverespawn_fnc_organizeInGroup;
             {
