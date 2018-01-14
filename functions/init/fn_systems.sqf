@@ -9,7 +9,7 @@
 
     //auto choose if commanders are not available
     [uo_choosePlayArea_fnc_autoChooseCity, [], 10] call CBA_fnc_waitAndExecute;
-    [{missionNamespace getVariable ["uo_init_playAreaSetupDone", false]}, {[uo_choosePlayArea_fnc_autoChooseSpawn, [], 10] call CBA_fnc_waitAndExecute}, []] call CBA_fnc_waitUntilAndExecute;
+    [{(missionNamespace getVariable ["SETUPTIMEREMAINING",10]) <= 0}, {[uo_choosePlayArea_fnc_autoChooseSpawn, [], 10] call CBA_fnc_waitAndExecute}, []] call CBA_fnc_waitUntilAndExecute;
 
     //setup on mission start
     [{missionNamespace getVariable ["uo_init_missionParamsDone", false]}, {[] call uo_init_fnc_loadoutFaction}, []] call CBA_fnc_waitUntilAndExecute;
