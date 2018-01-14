@@ -9,6 +9,7 @@ if (leader _group != player) exitWith {
 };
 
 if (side _group == WEST && count (missionNamespace getVariable ["uo_cv_allCVs",[]]) < 2) exitWith {[_group,getPos (uo_cv_allCVs select 0)] remoteExec ["uo_waverespawn_fnc_respawnGroup",2,false]};
+if (side _group == EAST && uo_missionParam_OPFORRESPAWNMODE == 2) exitWith {[_group,CITYPOSITION] remoteExec ["uo_waverespawn_fnc_respawnGroup",2,false]};
 
 ["Terminate"] call BIS_fnc_EGSpectator;
 [false] call uo_waverespawn_fnc_blockMap;
@@ -81,7 +82,7 @@ mcd_onRespawnKeyDown = (findDisplay 46) displayAddEventHandler ["KeyUp", {
 
         [false] call uo_ui_fnc_twoLineHint;
         _pos = if (playerSide == WEST) then {getPos uo_selectedRespawnObject} else {uo_selectedRespawnPos};
-        [group player,_pos] remoteExec ["uo_waverespawn_fnc_respawnGroup",2,false];        
+        [group player,_pos] remoteExec ["uo_waverespawn_fnc_respawnGroup",2,false];
         [false] call uo_sectors_fnc_drawSectors;
     };
 }];
