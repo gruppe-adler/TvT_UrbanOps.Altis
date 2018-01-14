@@ -26,7 +26,7 @@ _h = [{
         uo_endings_defenseTimeLeft = uo_endings_defenseTimeLeft - _timeForKill;
 
         [[WEST,CIVILIAN],'Report','A Commandvehicle has been destroyed.',{}] remoteExec ['uo_common_fnc_sideNotification',0,false];
-        [EAST,'Commandvehicle destroyed',format ['-%2min defense time',round (_timeForKill/60)],{!([player] call uo_common_fnc_isCommander)}] remoteExec ['uo_common_fnc_sideNotification',0,false];
+        [EAST,'Commandvehicle destroyed',format ['-%1min defense time',round (_timeForKill/60)],{!([player] call uo_common_fnc_isCommander)}] remoteExec ['uo_common_fnc_sideNotification',0,false];
         [EAST,'Commandvehicle destroyed',format ['+%1 Cr, -%2 min defense time',_fundsForKill,round (_timeForKill/60)],{[player] call uo_common_fnc_isCommander}] remoteExec ['uo_common_fnc_sideNotification',0,false];
 
         [_this select 1] call CBA_fnc_removePerFrameHandler;
