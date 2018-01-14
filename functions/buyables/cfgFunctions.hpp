@@ -5,6 +5,7 @@ class uo_buyables {
         class initBoatBox {};
         class initPropagandaTowers {};
         class initSuicideBomber {};
+        class nerfRaven {};
         class propagandaTowerDestroyedEffect {};
         class propagandaTowerDestroy {};
         class propagandaTowerPlaySounds {};

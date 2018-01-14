@@ -64,4 +64,13 @@ class Items {
         price = 300;
         stock = 20;
     };
+
+    class B_rhsusf_B_BACKPACK {
+        kindOf = "Wearables";
+
+        displayName = "RQ-11 Raven Drone";
+        description = "Hand-launched, remote-controlled UAV in a backpack.<br/>Viewmodes:<br/>  * normal<br/>  * nightvision<br/><br/>Check your map >> Raven for controls.";
+        price = 2500;
+        stock = 1;
+    };
 };

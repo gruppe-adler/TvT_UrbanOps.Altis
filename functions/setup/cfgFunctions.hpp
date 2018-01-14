@@ -1,6 +1,7 @@
 class uo_setup {
     class setup {
         class briefingDone {postInit = 1;};
+        class createBriefing {};
         class createCustomLocations {};
         class createLocationMarkers {};
         class filterLocations {};

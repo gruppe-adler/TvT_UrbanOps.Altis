@@ -6,6 +6,7 @@
     [] call uo_setup_fnc_setOriginalSide;
     [] call uo_setup_fnc_createCustomLocations;
     [] call uo_init_fnc_pubVars;
+    [] call uo_buyables_fnc_nerfRaven;
 
     //auto choose if commanders are not available
     [uo_choosePlayArea_fnc_autoChooseCity, [], 10] call CBA_fnc_waitAndExecute;
@@ -22,6 +23,8 @@
     [{missionNamespace getVariable ["uo_init_pubVarsDone", false]}, {[] call uo_choosePlayArea_fnc_chooseCity}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_pubVarsDone", false]}, {[] call uo_choosePlayArea_fnc_chooseSpawn}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_pubVarsDone", false]}, {[] call uo_setup_fnc_setMoney}, []] call CBA_fnc_waitUntilAndExecute;
+    [{(!isNil "uo_missionParam_BLUFORFACTION" && !isNil "uo_missionParam_OPFORFACTION")}, {[] call uo_setup_fnc_createBriefing}, []] call CBA_fnc_waitUntilAndExecute;
+
 
     if (hasInterface && {playerSide == WEST}) then {[player,"Flag_Blue_F",3] call grad_fortifications_fnc_addFort};
 
