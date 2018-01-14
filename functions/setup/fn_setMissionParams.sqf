@@ -62,7 +62,8 @@ switch (uo_missionParam_PRESET) do {
         uo_missionParam_WAVERESPAWNTIMEBLU = "waverespawntimeblu" call BIS_fnc_getParamValue;
         uo_missionParam_WAVERESPAWNTIMEOPF = "waverespawntimeopf" call BIS_fnc_getParamValue;
         uo_missionParam_RESPAWNTIME = "respawntime" call BIS_fnc_getParamValue;
-        uo_missionParam_OPFORRESPAWNENABLED = ("OpforRespawn" call BIS_fnc_getParamValue) == 1;
+        uo_missionParam_OPFORRESPAWNENABLED = ("OpforRespawn" call BIS_fnc_getParamValue) >= 1;
+        uo_missionParam_OPFORRESPAWNMODE = ("OpforRespawn" call BIS_fnc_getParamValue);
         uo_missionParam_BLUFORRESPAWNENABLED = ("BluforRespawn" call BIS_fnc_getParamValue) == 1;
     };
 
@@ -77,6 +78,7 @@ switch (uo_missionParam_PRESET) do {
         uo_missionParam_WAVERESPAWNTIMEOPF = 10;
         uo_missionParam_RESPAWNTIME = 10;
         uo_missionParam_OPFORRESPAWNENABLED = true;
+        uo_missionParam_OPFORRESPAWNMODE = 2;
         uo_missionParam_BLUFORRESPAWNENABLED = true;
 
         [false] call grad_lbm_tracking_fnc_enableTracking;
@@ -93,6 +95,7 @@ publicVariable "uo_missionParam_WAVERESPAWNTIMEBLU";
 publicVariable "uo_missionParam_WAVERESPAWNTIMEOPF";
 publicVariable "uo_missionParam_RESPAWNTIME";
 publicVariable "uo_missionParam_OPFORRESPAWNENABLED";
+publicVariable "uo_missionParam_OPFORRESPAWNMODE";
 publicVariable "uo_missionParam_BLUFORRESPAWNENABLED";
 
 ["LOG", "SERVER_SETUP", "uo_missionParam_CONTROLRATIO"] call uo_common_fnc_diagReport;
@@ -105,6 +108,8 @@ publicVariable "uo_missionParam_BLUFORRESPAWNENABLED";
 ["LOG", "SERVER_SETUP", "uo_missionParam_WAVERESPAWNTIMEOPF"] call uo_common_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "uo_missionParam_RESPAWNTIME"] call uo_common_fnc_diagReport;
 ["LOG", "SERVER_SETUP", "uo_missionParam_OPFORRESPAWNENABLED"] call uo_common_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_OPFORRESPAWNMODE"] call uo_common_fnc_diagReport;
+["LOG", "SERVER_SETUP", "uo_missionParam_BLUFORRESPAWNENABLED"] call uo_common_fnc_diagReport;
 
 //DONE =========================================================================
 missionNamespace setVariable ["uo_init_missionParamsDone", true, true];

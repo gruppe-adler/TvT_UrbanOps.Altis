@@ -77,7 +77,9 @@
             _newGroups = [EAST] call uo_waverespawn_fnc_organizeInGroup;
             {
                 [_x] remoteExec ["uo_waverespawn_fnc_chooseRespawn",0,false];
-                [{_this call uo_waverespawn_fnc_autoChooseRespawn}, _x, AUTOCHOOSETIMEOUT] call CBA_fnc_waitAndExecute;
+                if (uo_missionParam_OPFORRESPAWNMODE == 1) then {
+                    [{_this call uo_waverespawn_fnc_autoChooseRespawn}, _x, AUTOCHOOSETIMEOUT] call CBA_fnc_waitAndExecute;
+                };
             } forEach _newGroups;
 
             WAVERESPAWNOPF = false;

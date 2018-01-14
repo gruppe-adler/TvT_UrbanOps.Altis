@@ -108,8 +108,8 @@ class Params
     class OpforRespawn
     {
         title = "Opfor Respawn";
-        values[] = {0,1};
-        texts[] = {"Disabled", "Enabled"};
+        values[] = {0,1,2};
+        texts[] = {"Disabled", "in Playzone", "outside Playzone"};
         default = 1;
     };
 
