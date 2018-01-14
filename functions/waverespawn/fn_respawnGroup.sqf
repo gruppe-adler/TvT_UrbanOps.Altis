@@ -47,7 +47,7 @@ if (side _group == EAST) then {
     //spawn outside city
     } else {
         diag_log ["SEARCHPOS",_pos];
-        _roads = _pos nearRoads 200;
+        _roads = _pos nearRoads 400;
         if (count _roads > 0) then {
             _pos = getPos (selectRandom _roads);
             diag_log ["ROADPOS",_pos];

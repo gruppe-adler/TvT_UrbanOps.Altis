@@ -12,7 +12,7 @@
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
 params ["_searchPos"];
-private ["_nearEnemy","_tooCloseFound","_checkPos","_sectorID","_enemySector"];
+private ["_nearEnemy","_tooCloseFound","_checkPos","_sectorID","_enemySector","_availablePos"];
 
 if (uo_missionParam_PRESET == "DEBUG") then {
     for [{_k=0}, {_k<3}, {_k=_k+1}] do {
@@ -64,26 +64,44 @@ if (uo_missionParam_OPFORRESPAWNMODE == 1) then {
 
 //spawn outside city
 } else {
-    _searchDist = BLUFORSTARTDIST + 200;
-    _westUnits = playableUnits select {side _x == WEST};
+    _searchDist = BLUFORSPAWNDIST + BLUFORSPAWNBAND + 400;
+    _westUnits = playableUnits select {side _x == WEST && (getPos _x) distance2D _searchPos > 250};
     _dirArray = _westUnits apply {_searchPos getDir _x};
     _dirArray sort true;
 
     _selectedDir = random 360;
-    if (count _dirArray == 0) exitWith {_checkPos = _searchPos getPos [_searchDist,_selectedDir]};
-
-    _dirArray pushBack ((_dirArray select 0) + 360);
-    private _maxDelta = 0;
-    for [{_i=0},{_i<(count _dirArray)-1},{_i=_i+1}] do {
-        _delta = (_dirArray select (_i+1)) - (_dirArray select _i);
-        if (_delta > _maxDelta) then {
-            _maxDelta = _delta;
-            _selectedDir = (_dirArray select _i) + _delta/2;
+    if (count _dirArray == 0) then {
+        _availablePos = _searchPos getPos [_searchDist,_selectedDir]
+    } else {
+        _dirArray pushBack ((_dirArray select 0) + 360);
+        _maxDelta = 0;
+        for [{_i=0},{_i<(count _dirArray)-1},{_i=_i+1}] do {
+            _delta = (_dirArray select (_i+1)) - (_dirArray select _i);
+            if (_delta > _maxDelta) then {
+                _maxDelta = _delta;
+                _selectedDir = (_dirArray select _i) + _delta/2;
+            };
         };
+
+        if (_selectedDir > 360) then {_selectedDir = _selectedDir - 360};
+        _availablePos = _searchPos getPos [_searchDist,_selectedDir];
     };
 
-    if (_selectedDir > 360) then {_selectedDir = _selectedDir - 360};
-    _checkPos = _searchPos getPos [_searchDist,_selectedDir];
+    for [{_i=0},{_i<500},{_i=_i+1}] do {
+        _checkPos = _availablePos getPos [5*_i,random 360];
+        if !(surfaceIsWater _checkPos) exitWith {};
+    };
+    if (surfaceIsWater _checkPos) then {
+        _checkPos = _availablePos;
+        ERROR_1("No land position found around %1.",_availablePos);
+    };
+
+    if (uo_missionParam_PRESET == "DEBUG") then {
+        _m = createMarkerLocal ["opfrespawn_debug_0_0",_checkPos];
+        _m setMarkerType "hd_dot";
+        _m setMarkerColor "COLOREAST";
+        _m setMarkerText "SEARCHPOS CENTER";
+    };
 };
 
 
