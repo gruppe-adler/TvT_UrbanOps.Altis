@@ -46,16 +46,18 @@ if (side _group == EAST) then {
 
     //spawn outside city
     } else {
-        diag_log ["SEARCHPOS",_pos];
+        //spawn a vehicle of the commandvehicle class
+        _vehicleClass = [uo_missionParam_OPFORFACTION] call uo_missionObjectives_fnc_getCommandVehicleClass;
         _roads = _pos nearRoads 400;
         if (count _roads > 0) then {
             _pos = getPos (selectRandom _roads);
-            diag_log ["ROADPOS",_pos];
         } else {
-            _vehicleClass = [uo_missionParam_OPFORFACTION] call uo_missionObjectives_fnc_getCommandVehicleClass;
             _pos = [_pos,[0,200],[0,360],_vehicleClass] call uo_common_fnc_findRandomPos;
-            diag_log ["RANDOMPOS",_pos];
         };
+
+        _veh = createVehicle [_vehicleClass,_pos,[],0,"NONE"];
+        [_veh] call uo_common_fnc_emptyContainer;
+        [_veh] remoteExec ["uo_missionObjectives_fnc_onCvCreate",0,true];
 
         INFO_2("Random respawn outside playzone for %1 group %2 at %3.",side _group,groupID _group,_pos);
         {
