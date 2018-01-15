@@ -10,10 +10,10 @@ if (side _group == WEST) then {
     {
         [{
             params ["_unit","_pos"];
-            _respawnPos = _pos findEmptyPosition [3,40];
+            _respawnPos = (_pos getPos [random 6,random 360]) findEmptyPosition [0,30];
             if (count _respawnPos == 0) then {_respawnPos = _pos};
             [_unit,_respawnPos] remoteExec ["uo_waverespawn_fnc_doRespawn",0,false];
-        }, [_x,_pos], random 2] call CBA_fnc_waitAndExecute;
+        }, [_x,_pos], random 4] call CBA_fnc_waitAndExecute;
     } forEach (units _group);
 };
 
@@ -37,10 +37,10 @@ if (side _group == EAST) then {
             {
                 [{
                     params ["_unit","_pos"];
-                    _respawnPos = _pos findEmptyPosition [0,30];
+                    _respawnPos = (_pos getPos [random 6,random 360]) findEmptyPosition [0,30];
                     if (count _respawnPos == 0) then {_respawnPos = _pos};
                     [_unit,_respawnPos] remoteExec ["uo_waverespawn_fnc_doRespawn",0,false];
-                }, [_x,_pos], random 2] call CBA_fnc_waitAndExecute;
+                }, [_x,_pos], random 4] call CBA_fnc_waitAndExecute;
             } forEach (units _group);
         };
 
@@ -63,10 +63,10 @@ if (side _group == EAST) then {
         {
             [{
                 params ["_unit","_pos"];
-                _respawnPos = _pos findEmptyPosition [0,30];
+                _respawnPos = (_pos getPos [random 6,random 360]) findEmptyPosition [0,30];
                 if (count _respawnPos == 0) then {_respawnPos = _pos};
                 [_unit,_respawnPos] remoteExec ["uo_waverespawn_fnc_doRespawn",0,false];
-            }, [_x,_pos], random 2] call CBA_fnc_waitAndExecute;
+            }, [_x,_pos], random 4] call CBA_fnc_waitAndExecute;
         } forEach (units _group);
     };
 };
