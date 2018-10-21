@@ -30,7 +30,7 @@ loadScreen = "data\loadpic.paa";
 
 //MISC =========================================================================
 respawn = 3;
-respawnDelay = 9999;
+respawnDelay = 1;
 respawnVehicleDelay = 0;
 respawnTemplates[] = {"Base"};
 respawnOnStart = -1;

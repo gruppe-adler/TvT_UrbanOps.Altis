@@ -23,8 +23,8 @@ _timeOfDeath = time;
 player setVariable ["wr_timeOfDeath",time];
 
 //respawn player, put him in spec mode
-setPlayerRespawnTime 0;
-forceRespawn player;
+setPlayerRespawnTime 1;
+/* forceRespawn player; */
 player allowDamage false;
 [{alive player},{
     setPlayerRespawnTime 9999;
