@@ -22,7 +22,8 @@ INFO_1("FLAGS TOOK %1 SECONDS",_stop-_start);
 
 if (count uo_flagPositions < uo_FLAGAMOUNT) then {ERROR_2("Only %1 of %2 flag positions found.",count uo_flagPositions,uo_FLAGAMOUNT)};
 
-private _taskDescription = "Place a flag inside the blue marker (zoom in).<br />ACE-Selfinteraction >> Equipment >> Fortifications >> Flag";
+private _taskDescription = format ["Place a flag inside the blue marker (zoom in). For each placed flag you get an additional %1 min to capture the location.<br/><br/>Use:<br/>ACE-Selfinteraction >> Equipment >> Fortifications >> Flag",round (uo_FLAGTIMEBONUS/60)];
+
 {
     _areaMarkerName = format ["uo_flagmarker_%1",_forEachIndex];
     _textMarkerName = format ["uo_flagmarkerText_%1",_forEachIndex];

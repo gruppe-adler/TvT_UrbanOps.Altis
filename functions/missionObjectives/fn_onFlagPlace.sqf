@@ -13,7 +13,6 @@ _area setVariable ["uo_flagPlaced",true,true];
 [WEST,_area getVariable ["uo_flagAreaMarker",""]] call uo_common_fnc_deleteSideMarker;
 [_area getVariable ["uo_flagAreaMarkerTask",""],"SUCCEEDED",true] spawn BIS_fnc_taskSetState;
 
-private _timeForFlag = uo_missionParam_DEFENSETIME/12;
-uo_endings_defenseTimeLeft = uo_endings_defenseTimeLeft + _timeForFlag;
+uo_endings_defenseTimeLeft = uo_endings_defenseTimeLeft + uo_FLAGTIMEBONUS;
 
-[WEST,'Flag placed',format ['%1/%2 flags placed. +%3 min defense time',{(_x getVariable ["uo_flagPlaced",false])} count uo_flagPositionAreas,count uo_flagPositionAreas,round (_timeForFlag/60)]] remoteExec ['uo_common_fnc_sideNotification',0,false];
+[WEST,'Flag placed',format ['%1/%2 flags placed. +%3 min defense time',{(_x getVariable ["uo_flagPlaced",false])} count uo_flagPositionAreas,count uo_flagPositionAreas,round (uo_FLAGTIMEBONUS/60)]] remoteExec ['uo_common_fnc_sideNotification',0,false];
