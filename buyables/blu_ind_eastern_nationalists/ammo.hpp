@@ -2,6 +2,12 @@ class Ammo {
     displayName = "Ammunition";
     kindOf = "Items";
 
+    class rhs_VG40OP_white {
+        description = "Used in:<br/>GP-25";
+        price = 50;
+        stock = 40;
+    };
+
     class rhs_mag_9x18_8_57N181S {
         description = "Used in:<br/>Makarov PM";
         price = 30;

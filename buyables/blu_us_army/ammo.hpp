@@ -2,6 +2,12 @@ class Ammo {
     displayName = "Ammunition";
     kindOf = "Items";
 
+    class UGL_FlareWhite_F {
+        description = "Used in:<br/>40mm UGL";
+        price = 50;
+        stock = 40;
+    };
+
     class rhsusf_mag_15Rnd_9x19_FMJ {
         description = "Used in:<br/>M9";
         price = 30;

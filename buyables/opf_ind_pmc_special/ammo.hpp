@@ -2,6 +2,12 @@ class Ammo {
     displayName = "Ammunition";
     kindOf = "Items";
 
+    class UGL_FlareWhite_F {
+        description = "Used in:<br/>40mm UGL";
+        price = 50;
+        stock = 40;
+    };
+
     class rhs_mag_30Rnd_556x45_Mk318_Stanag {
         displayName = "5.56mm 30Rnd";
         description = "Used in:<br/>M4 variants";
