@@ -2,6 +2,11 @@ class Weapons {
     displayName = "Weapons";
     kindOf = "Weapons";
 
+    class rhsusf_weap_glock17g4 {
+        price = 100;
+        stock = 30;
+    };
+
     class arifle_SPAR_03_blk_F {
         displayName = "HK 417";
         price = 1500;

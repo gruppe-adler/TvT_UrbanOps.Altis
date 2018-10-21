@@ -2,6 +2,11 @@ class Weapons {
     displayName = "Weapons";
     kindOf = "Weapons";
 
+    class rhs_weap_makarov_pm {
+        price = 100;
+        stock = 30;
+    };
+
     class rhs_weap_akm {
         displayName = "AKMS";
         price = 1400;

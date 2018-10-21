@@ -2,6 +2,11 @@ class Weapons {
     displayName = "Weapons";
     kindOf = "Weapons";
 
+    class rhsusf_weap_m9 {
+        price = 100;
+        stock = 30;
+    };
+
     class rhs_weap_sr25 {
         displayName = "Mk 11 Mod 0";
         price = 1200;

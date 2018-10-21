@@ -2,6 +2,12 @@ class Ammo {
     displayName = "Ammunition";
     kindOf = "Items";
 
+    class rhs_mag_9x19_17 {
+        description = "Used in:<br/>MP-443";
+        price = 30;
+        stock = 200;
+    };
+
     class rhs_30Rnd_545x39_AK {
         displayName = "5.45mm 30Rnd";
         description = "Used in:<br/>AK74M";

@@ -2,6 +2,12 @@ class Ammo {
     displayName = "Ammunition";
     kindOf = "Items";
 
+    class rhsusf_mag_17Rnd_9x19_FMJ {
+        description = "Used in:<br/>Glock 17";
+        price = 30;
+        stock = 200;
+    };
+
     class rhssaf_30rnd_556x45_EPR_G36 {
         displayName = "5.56mm EPR 30Rnd";
         description = "Used in:<br/>G36 variants";

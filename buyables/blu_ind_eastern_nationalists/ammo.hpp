@@ -2,6 +2,12 @@ class Ammo {
     displayName = "Ammunition";
     kindOf = "Items";
 
+    class rhs_mag_9x18_8_57N181S {
+        description = "Used in:<br/>Makarov PM";
+        price = 30;
+        stock = 200;
+    };
+
     class rhs_30Rnd_762x39mm {
         displayName = "7.62mm 30Rnd";
         description = "Used in:<br/>AKM variants<br/>AK104<br/>M70<br/>M92";

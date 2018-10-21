@@ -2,6 +2,12 @@ class Ammo {
     displayName = "Ammunition";
     kindOf = "Items";
 
+    class rhsusf_mag_15Rnd_9x19_FMJ {
+        description = "Used in:<br/>M9";
+        price = 30;
+        stock = 200;
+    };
+
     class rhs_mag_30Rnd_556x45_Mk318_Stanag {
         displayName = "5.56mm 30Rnd";
         description = "Used in:<br/>M4 variants";
