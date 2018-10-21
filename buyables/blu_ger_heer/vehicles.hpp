@@ -10,16 +10,16 @@ class Vehicles {
         stock = 10;
     };
 
-    class Fennek_Flecktarn_san {
+    class Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FueFu {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "Commandvehicle";
-        description = "Seats: 5<br/><br/>Functions as a backup respawn and buymenu access position.";
+        description = "Seats: 4<br/><br/>Functions as a backup respawn and buymenu access position.";
         code = "if (isServer) then {[_this select 2] call uo_missionObjectives_fnc_setCommandVehicle};";
         price = 10000;
         stock = 2;
     };
 
-    class Fennek_Tropen_san: Fennek_Flecktarn_san {
+    class Redd_Tank_LKW_leicht_gl_Wolf_Tropentarn_FueFu: Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FueFu {
         condition = "!uo_missionParam_ISWOODLAND";
     };
 
@@ -43,16 +43,16 @@ class Vehicles {
         stock = 10;
     };
 
-    class CUP_B_Dingo_GER_Wdl {
+    class Redd_Tank_Fuchs_1A4_Jg_Flecktarn {
         condition = "uo_missionParam_ISWOODLAND";
-        displayName = "Dingo (MG3)";
-        description = "Seats: 6<br/><br/>No thermal imaging.";
+        displayName = "Fuchs Infantry (MG3)";
+        description = "Seats: 11";
         code = "if (isServer) then {(_this select 2) disableTIEquipment true};";
         price = 8000;
         stock = 10;
     };
 
-    class CUP_B_Dingo_GER_Des: CUP_B_Dingo_GER_Wdl {
+    class Redd_Tank_Fuchs_1A4_Jg_Tropentarn: Redd_Tank_Fuchs_1A4_Jg_Flecktarn {
         condition = "!uo_missionParam_ISWOODLAND";
     };
 

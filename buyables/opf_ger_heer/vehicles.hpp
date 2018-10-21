@@ -30,16 +30,16 @@ class Vehicles {
         stock = 10;
     };
 
-    class CUP_B_Dingo_GER_Wdl {
+    class Redd_Tank_Fuchs_1A4_Jg_Flecktarn {
         condition = "uo_missionParam_ISWOODLAND";
-        displayName = "Dingo (MG3)";
-        description = "Seats: 6<br/><br/>No thermal imaging.";
+        displayName = "Fuchs Infantry (MG3)";
+        description = "Seats: 11";
         code = "if (isServer) then {(_this select 2) disableTIEquipment true};";
         price = 8000;
         stock = 10;
     };
 
-    class CUP_B_Dingo_GER_Des: CUP_B_Dingo_GER_Wdl {
+    class Redd_Tank_Fuchs_1A4_Jg_Tropentarn: Redd_Tank_Fuchs_1A4_Jg_Flecktarn {
         condition = "!uo_missionParam_ISWOODLAND";
     };
 };

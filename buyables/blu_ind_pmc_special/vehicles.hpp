@@ -10,17 +10,16 @@ class Vehicles {
         stock = 10;
     };
 
-    class CUP_I_SUV_ION {
+    class CUP_C_SUV_TK {
         displayName = "SUV (unarmed)";
         description = "Seats: 7+6";
         price = 1800;
         stock = 10;
     };
 
-    class CUP_I_SUV_Armored_ION {
-        displayName = "SUV (M134)";
-        description = "Seats: 5+6";
-        price = 8000;
+    class rhsusf_M1078A1R_SOV_M2_D_fmtv_socom {
+        description = "Seats: 5";
+        price = 4000;
         stock = 10;
     };
 
