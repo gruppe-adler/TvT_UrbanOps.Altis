@@ -30,6 +30,9 @@ if (hasInterface) then {
                 systemChat "uo_missionStats has not been received. Not displaying scoreboard.";
             };
 
+            [] call GRAD_replay_fnc_stopRecord;
+            waitUntil {missionNamespace getVariable ["REPLAY_FINISHED",false]};
+
             _isVictory = if (_winningSide == (player getVariable ["originalSide", "UNKNOWN"])) then {true} else {false};
             [{["end1", _this select 0, true, true, true] spawn BIS_fnc_endMission}, [_isVictory], 5] call CBA_fnc_waitAndExecute;
         };

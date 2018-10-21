@@ -24,6 +24,7 @@ class ind_me_terrorists {
 			LIST_6("ACE_fieldDressing"),
 			LIST_3("ACE_CableTie"),
 			LIST_2("ACE_morphine"),
+            LIST_2("ACE_Chemlight_HiWhite"),
 			"ACE_epinephrine",
 			"ACE_Flashlight_MX991",
 			"ACE_key_west",

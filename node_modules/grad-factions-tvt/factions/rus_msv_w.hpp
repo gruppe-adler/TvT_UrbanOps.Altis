@@ -24,6 +24,7 @@ class rus_msv_w {
 			LIST_6("ACE_fieldDressing"),
 			LIST_2("ACE_morphine"),
 			LIST_2("rhs_mag_rdg2_white"),
+            LIST_2("ACE_Chemlight_HiWhite"),
 			"ACE_epinephrine",
 			"ACE_Flashlight_KSF1",
 			"ACE_key_east",
