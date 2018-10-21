@@ -3,7 +3,7 @@ if (player getVariable ["originalSide", "UNKNOWN"] != "EAST") exitWith {};
 
 
 [{!isNull (findDisplay 46)}, {
-    [true] call uo_choosePlayArea_fnc_showWeatherPreview;
+    /* [true] call uo_choosePlayArea_fnc_showWeatherPreview; */
     [3,{uo_choosePlayArea_preloadFinished = true}] call uo_common_fnc_wait3Dframes;
 }, []] call CBA_fnc_waitUntilAndExecute;
 
