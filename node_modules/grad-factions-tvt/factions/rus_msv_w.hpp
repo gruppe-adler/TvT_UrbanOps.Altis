@@ -27,7 +27,6 @@ class rus_msv_w {
             LIST_2("ACE_Chemlight_HiWhite"),
 			"ACE_epinephrine",
 			"ACE_Flashlight_KSF1",
-			"ACE_key_east",
 			"ACE_MapTools"
 		};
         addItemsToBackpack[] = {};

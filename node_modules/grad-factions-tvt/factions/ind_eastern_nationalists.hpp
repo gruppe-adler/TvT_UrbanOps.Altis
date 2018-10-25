@@ -28,7 +28,6 @@ class ind_eastern_nationalists {
             LIST_2("ACE_Chemlight_HiWhite"),
 			"ACE_epinephrine",
 			"ACE_Flashlight_KSF1",
-			"ACE_key_east",
 			"ACE_MapTools"
         };
         addItemsToVest[] = {};

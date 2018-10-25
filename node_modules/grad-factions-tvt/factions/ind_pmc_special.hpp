@@ -30,7 +30,6 @@ class ind_pmc_special {
             LIST_2("ACE_Chemlight_HiWhite"),
 			"ACE_epinephrine",
 			"ACE_Flashlight_MX991",
-			"ACE_key_west",
 			"ACE_MapTools",
             "ACE_NVG_Wide"
         };
