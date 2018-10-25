@@ -6,6 +6,7 @@ class Vehicles {
     class O_Quadbike_01_F {
         displayName = "Quadbike";
         description = "Seats: 2";
+        code = "_this call uo_buyables_fnc_initVehicleLock";
         price = 1000;
         stock = 10;
     };
@@ -14,7 +15,7 @@ class Vehicles {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "Commandvehicle";
         description = "Seats: 9<br/><br/>Functions as a backup respawn and buymenu access position.";
-        code = "if (isServer) then {[_this select 2] call uo_missionObjectives_fnc_setCommandVehicle};";
+        code = "if (isServer) then {[_this select 2] call uo_missionObjectives_fnc_setCommandVehicle}; _this call uo_buyables_fnc_initVehicleLock";
         price = 10000;
         stock = 2;
     };
@@ -26,6 +27,7 @@ class Vehicles {
     class RHS_Ural_MSV_01 {
         displayName = "Ural-4320";
         description = "Seats: 15";
+        code = "_this call uo_buyables_fnc_initVehicleLock";
         price = 1200;
         stock = 10;
     };
@@ -34,6 +36,7 @@ class Vehicles {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "TIGR (unarmed)";
         description = "Seats: 8";
+        code = "_this call uo_buyables_fnc_initVehicleLock";
         price = 2000;
         stock = 10;
     };
@@ -46,7 +49,7 @@ class Vehicles {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "TIGR (PK)";
         description = "Seats: 7<br/><br/>No grenade launcher ammunition.";
-        code = "if (isServer) then {for '_i' from 0 to 12 do {(_this select 2) removeMagazinesTurret ['RHS_mag_VOG30_30',[1]]}}";
+        code = "if (isServer) then {for '_i' from 0 to 12 do {(_this select 2) removeMagazinesTurret ['RHS_mag_VOG30_30',[1]]}}; _this call uo_buyables_fnc_initVehicleLock";
         price = 4000;
         stock = 10;
     };
@@ -58,6 +61,7 @@ class Vehicles {
     class rhsgref_BRDM2_msv {
         displayName = "BRDM-2";
         description = "Seats: 5+6";
+        code = "_this call uo_buyables_fnc_initVehicleLock";
         price = 6000;
         stock = 10;
     };
@@ -65,6 +69,7 @@ class Vehicles {
     class RHS_Mi8mt_vdv {
         displayName = "Mi-8MT";
         description = "Seats: 18<br/><br/>Transport helicopter armed with one side facing and one rear facing PK machine gun.";
+        code = "_this call uo_buyables_fnc_initVehicleLock";
         price = 15000;
         stock = 2;
     };

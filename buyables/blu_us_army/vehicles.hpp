@@ -6,6 +6,7 @@ class Vehicles {
     class B_Quadbike_01_F {
         displayName = "Quadbike";
         description = "Seats: 2";
+        code = "_this call uo_buyables_fnc_initVehicleLock";
         price = 1000;
         stock = 10;
     };
@@ -14,7 +15,7 @@ class Vehicles {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "Commandvehicle";
         description = "Seats: 4<br/><br/>Functions as a backup respawn and buymenu access position.";
-        code = "if (isServer) then {[_this select 2] call uo_missionObjectives_fnc_setCommandVehicle};";
+        code = "if (isServer) then {[_this select 2] call uo_missionObjectives_fnc_setCommandVehicle}; _this call uo_buyables_fnc_initVehicleLock";
         price = 10000;
         stock = 2;
     };
@@ -27,6 +28,7 @@ class Vehicles {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "HMMWV (unarmed)";
         description = "Seats: 4";
+        code = "_this call uo_buyables_fnc_initVehicleLock";
         price = 2000;
         stock = 10;
     };
@@ -39,6 +41,7 @@ class Vehicles {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "HMMWV (2D/Open)";
         description = "Seats: 8";
+        code = "_this call uo_buyables_fnc_initVehicleLock";
         price = 1800;
         stock = 10;
     };
@@ -51,6 +54,7 @@ class Vehicles {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "HMMWV (M2)";
         description = "Seats: 5";
+        code = "_this call uo_buyables_fnc_initVehicleLock";
         price = 4000;
         stock = 10;
     };
@@ -63,6 +67,7 @@ class Vehicles {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "M1232 (M2)";
         description = "Seats: 11";
+        code = "_this call uo_buyables_fnc_initVehicleLock";
         price = 8000;
         stock = 10;
     };
@@ -75,6 +80,7 @@ class Vehicles {
         condition = "uo_missionParam_ISWOODLAND";
         displayName = "M113 (M2)";
         description = "Seats: 13";
+        code = "_this call uo_buyables_fnc_initVehicleLock";
         price = 6000;
         stock = 10;
     };
@@ -86,6 +92,7 @@ class Vehicles {
     class RHS_CH_47F_10 {
         displayName = "CH-47F";
         description = "Seats: 29";
+        code = "_this call uo_buyables_fnc_initVehicleLock";
         price = 20000;
         stock = 2;
     };
