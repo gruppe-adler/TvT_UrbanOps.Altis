@@ -1,6 +1,4 @@
-#define PREFIX uo
-#define COMPONENT waverespawn
-#include "\x\cba\addons\main\script_macros_mission.hpp"
+#include "script_component.hpp"
 
 INFO("Ready to respawn. Preparing...");
 
@@ -8,8 +6,8 @@ INFO("Ready to respawn. Preparing...");
 if (player getVariable ["wr_interrupted", false]) exitWith {
 
     player allowDamage true;
-    player setDamage 1;
     setPlayerRespawnTime 99999;
+    player setDamage 1;
     [player, true] call TFAR_fnc_forceSpectator;
     [] call uo_common_fnc_startSpectator;
 
@@ -20,7 +18,7 @@ if (player getVariable ["wr_interrupted", false]) exitWith {
         default {"Dealer was killed!"};
     };
     _explanation = parseText format ["<t align='center' size='1.4'>%1</t>", _explanation];
-    [playerSide, _explanation] call uo_waverespawn_fnc_respawnHint;
+    [playerSide, _explanation] call FUNC(respawnHint);
     [{hint ""}, [], 3] call CBA_fnc_waitAndExecute;
 };
 

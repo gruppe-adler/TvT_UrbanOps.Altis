@@ -29,6 +29,7 @@ class uo_waverespawn {
         class respawnSelectorMarker {};
         class setWaveSize {};
         class startWaveLoops {};
+        class warningFunctionNameWorkaround {};
         class waveCountdown {};
     };
 };
