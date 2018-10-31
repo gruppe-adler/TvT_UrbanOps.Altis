@@ -8,10 +8,11 @@ class Weapons {
     };
 
     class rhs_weap_m38_rail {
-        displayName = "Mosin Nagant (Railed)";
-        description = "Mosin Nagant is a five-shot, bolt-action, internal magazine–fed, military rifle chambered in 7.62x54R.<br/><br/>This weapon can take magnifying scopes.";
+        displayName = "Mosin Nagant + Scope";
+        description = "Mosin Nagant is a five-shot, bolt-action, internal magazine–fed, military rifle chambered in 7.62x54R.<br/><br/>Comes with Pilad P3.";
         price = 2500;
         stock = 2;
+        opticsItem = "hlc_optic_VOMZ3d";
     };
 
     class rhs_weap_pkm {

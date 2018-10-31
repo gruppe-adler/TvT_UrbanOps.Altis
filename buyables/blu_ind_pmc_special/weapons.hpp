@@ -9,10 +9,12 @@ class Weapons {
     };
 
     class rhs_weap_XM2010 {
-        displayName = "M2010 ESR";
-        description = "The M2010 is a modern bolt-action sniper rifle chambered in .300 WinMag.<br/><br/>This weapon can take magnifying scopes.";
-        price = 3500;
+        displayName = "M2010 ESR + Scope + Bipod";
+        description = "The M2010 is a modern bolt-action sniper rifle chambered in .300 WinMag.<br/><br/>Comes with M8541A SSDS and Harris Bipod.";
+        price = 3200;
         stock = 2;
+        opticsItem = "rhsusf_acc_premier";
+        underbarrelItem = "rhsusf_acc_harris_bipod";
     };
 
     class rhs_weap_M320 {

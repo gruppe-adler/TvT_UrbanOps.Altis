@@ -14,10 +14,12 @@ class Weapons {
     };
 
     class rhs_weap_m40a5 {
-        displayName = "M40A5";
-        description = "The M40A5 is a bolt-action sniper rifle chambered in 7.62x51 NATO.<br/><br/>This weapon can take magnifying scopes.";
-        price = 3000;
+        displayName = "M40A5 + Scope + Bipod";
+        description = "The M40A5 is a bolt-action sniper rifle chambered in 7.62x51 NATO.<br/><br/>Comes with Kahles ZF95 and Harris Bipod.";
+        price = 3200;
         stock = 2;
+        opticsItem = "hlc_optic_ZF95Base";
+        underbarrelItem = "rhsusf_acc_harris_swivel";
     };
 
     class rhs_weap_m240G {

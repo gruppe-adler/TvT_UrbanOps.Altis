@@ -14,10 +14,12 @@ class Weapons {
     };
 
     class rhs_weap_m24sws {
-        displayName = "M24";
-        description = "The M24 SWS is a bolt-action sniper rifle chambered in 7.62x51 NATO.<br/><br/>This weapon can take magnifying scopes.";
-        price = 3000;
+        displayName = "M24 + Scope + Bipod";
+        description = "The M24 SWS is a bolt-action sniper rifle chambered in 7.62x51 NATO.<br/><br/>Comes with M8541A SSDS and Harris Bipod.";
+        price = 3400;
         stock = 2;
+        opticsItem = "rhsusf_acc_premier";
+        underbarrelItem = "rhsusf_acc_harris_swivel";
     };
 
     class rhs_weap_m240G {

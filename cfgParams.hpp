@@ -23,10 +23,10 @@ class Params
         texts[] = {
             "USA - Army",
             "Russia - MSV",
-            "Independent - Eastern European Nationalists",
+            "Independent - Eastern European Nationalists - (requires FHQ Accessories)",
             "Independent - PMC - (requires CUP Vehicles)",
             "Independent - Middle Eastern Terrorists - (requires Project Opfor)",
-            "GER - Heer - (requires CUP Vehicles, GA Mod, ARC Ger, Redd 'n' Tank)"
+            "GER - Heer - (requires CUP Vehicles, GA Mod, ARC Ger, Redd 'n' Tank, NI Arms)"
         };
         default = 0;
     };
@@ -38,10 +38,10 @@ class Params
         texts[] = {
             "USA - Army",
             "Russia - MSV",
-            "Independent - Eastern European Nationalists",
+            "Independent - Eastern European Nationalists - (requires FHQ Accessories)",
             "Independent - PMC - (requires CUP Vehicles)",
             "Independent - Middle Eastern Terrorists - (requires Project Opfor)",
-            "GER - Heer - (requires CUP Vehicles, GA Mod, ARC Ger, Redd 'n' Tank)"
+            "GER - Heer - (requires CUP Vehicles, GA Mod, ARC Ger, Redd 'n' Tank, NI Arms)"
         };
         default = 1;
     };
