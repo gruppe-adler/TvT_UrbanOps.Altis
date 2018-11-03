@@ -1,9 +1,5 @@
-params ["_unit","_canReceive",["_wholeGroup",true]];
+#include "script_component.hpp"
 
-if (typeName _unit == "GROUP") then {_unit = leader _unit; _wholeGroup = true};
-_units = if (_wholeGroup) then {units group _unit} else {[_unit]};
+params ["_unitOrGroup","_canReceive"];
 
-{
-    _x setVariable ["grad_aicommand_canReceiveCommands",_canReceive,true];
-    false
-} count _units;
+_unitOrGroup setVariable [QGVAR(canReceiveCommands),_canReceive,true];

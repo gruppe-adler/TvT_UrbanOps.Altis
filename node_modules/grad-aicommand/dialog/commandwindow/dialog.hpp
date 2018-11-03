@@ -1,5 +1,5 @@
 class grad_aicommand_commandwindow {
-    idd = grad_aicommand_commandwindow_DIALOG;
+    idd = GRAD_AICOMMAND_COMMANDWINDOW_DIALOG;
     movingEnable = false;
     enableSimulation = true;
 
@@ -17,11 +17,11 @@ class grad_aicommand_commandwindow {
     };
     class Controls {
         /*class contextmenu: grad_aicommand_RscControlsGroupNoScrollbars {
-            idc = grad_aicommand_contextmenu_GROUP;
+            idc = GRAD_AICOMMAND_CONTEXTMENU_GROUP;
 
         };*/
         /*class Map: grad_aicommand_RscMapControl {
-            idc = grad_aicommand_commandwindow_MAP;
+            idc = GRAD_AICOMMAND_COMMANDWINDOW_MAP;
 
             x = safeZoneX;
             y = safeZoneY;

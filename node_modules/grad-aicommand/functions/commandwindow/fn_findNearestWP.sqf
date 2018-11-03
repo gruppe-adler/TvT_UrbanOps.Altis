@@ -1,15 +1,20 @@
-params ["_pos","_waypoints",["_maxDistance",100],["_excludedIDs",[-1]]];
+#include "script_component.hpp"
 
-_nearestWaypointID = -1;
-_distance = _maxDistance;
+params ["_pos","_group"];
+
+private _nearestWaypoint = [];
+
+private _minDist = 9999999999;
+private _activeWPs = waypoints _group select {
+    (_x select 1) >= currentWaypoint _group
+};
+
 {
-    _wpPos = _x select 0;
-    _distanceWP = _pos distance2D _wpPos;
-    if (_distanceWP < _distance && !(_forEachIndex in _excludedIDs)) then {
-        _nearestWaypointID = _forEachIndex;
-        _distance = _distanceWP;
+    _distance = (waypointPosition _x) distance2D _pos;
+    if (_distance < _minDist) then {
+        _minDist = _distance;
+        _nearestWaypoint = _x;
     };
+} forEach _activeWPs;
 
-} forEach _waypoints;
-
-_nearestWaypointID
+_nearestWaypoint

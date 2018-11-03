@@ -1,24 +1,46 @@
 #include "..\..\dialog\ui_toolkit.hpp"
 #include "..\..\dialog\commandwindow\defines.hpp"
-#include "..\..\dialog\contextmenu\defines.hpp"
+
+#include "script_component.hpp"
 
 params ["_unit","_player"];
 
-(group _unit) setVariable ["grad_aicommand_isBeingEdited",true,true];
-missionNamespace setVariable ["grad_aicommand_currentUnit",_unit];
-if (isNil {(group _unit) getVariable "grad_aicommand_currentWaypoints"}) then {
-    (group _unit) setVariable ["grad_aicommand_currentWaypoints",[[getPos _unit,"UNCHANGED",[0,0,0],"MOVE",["true",""]]]];
+if ((group _unit) getVariable [QGVAR(isDirectEdit),false]) exitWith {
+    hint "Group is already being edited.";
 };
 
-createDialog "grad_aicommand_commandwindow";
-_display = findDisplay grad_aicommand_commandwindow_DIALOG;
-_map = _display ctrlCreate ["RscMapControl",grad_aicommand_commandwindow_MAP];
+createDialog QGVAR(commandwindow);
+private _display = findDisplay GRAD_AICOMMAND_COMMANDWINDOW_DIALOG;
+private _map = _display ctrlCreate ["RscMapControl",GRAD_AICOMMAND_COMMANDWINDOW_MAP];
+private _contextmenu = _display ctrlCreate ["RscControlsGroupNoScrollbars",GRAD_AICOMMAND_CONTEXTMENU_GROUP];
+[_display] call FUNC(createRenameGroupDialog);
 _map ctrlSetPosition [safeZoneX,safeZoneY,safeZoneW,safeZoneH];
 _map ctrlCommit 0;
-_contextmenu = _display ctrlCreate ["RscControlsGroupNoScrollbars",grad_aicommand_contextmenu_GROUP];
 _contextmenu ctrlShow false;
+_renameGroupMenu ctrlShow false;
 
-[_display,_map] call grad_aicommand_fnc_addEHs;
+GVAR(highcommandSide) = side _player;
 
-_map ctrlAddEventHandler ["Draw",{_this call grad_aicommand_fnc_drawArrows}];
-_map ctrlAddEventHandler ["Draw",{_this call grad_aicommand_fnc_drawCurrentUnits}];
+if (isNil QGVAR(individualUnitsGroups)) then {GVAR(individualUnitsGroups) = []};
+
+// highcommand mode
+if (_unit == _player) then {
+    GVAR(editMode) = 0;
+    GVAR(currentGroup) = grpNull;
+    GVAR(editableGroups) = [];
+    [] call FUNC(updateEditableGroups);
+
+// direct edit mode
+} else {
+    GVAR(editMode) = 1;
+    GVAR(currentGroup) = group _unit;
+    GVAR(editableGroups) = [group _unit];
+
+    GVAR(currentGroup) setVariable [QGVAR(isDirectEdit),true,true];
+    {[_x,"PATH"] remoteExec ["disableAI",_x,false]} forEach (units GVAR(currentGroup));
+};
+
+_map ctrlAddEventHandler ["Draw",{_this call FUNC(drawEditableGroups)}];
+_map ctrlAddEventHandler ["Draw",{_this call FUNC(drawIndividualUnits)}];
+_map ctrlAddEventHandler ["Draw",{_this call FUNC(drawArrows)}];
+[_display,_map] call FUNC(addEHs);

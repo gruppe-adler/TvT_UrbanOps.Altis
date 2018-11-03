@@ -1,10 +1,11 @@
+#include "script_component.hpp"
+
 params ["_timeout"];
 
-_currentUnit = missionNamespace getVariable ["grad_aicommand_currentUnit",objNull];
-_currentWaypoints = (group _currentUnit) getVariable ["grad_aicommand_currentWaypoints",[]];
-_wpIndex = missionNamespace getVariable ["grad_aicommand_selectedWaypoint",-1];
-if (_wpIndex < 0) exitWith {};
+private _currentGroup = missionNamespace getVariable [QGVAR(currentGroup),grpNull];
+if (isNull _currentGroup) exitWith {};
 
-_wp = _currentWaypoints select _wpIndex;
+private _currentWaypoint = _currentGroup getVariable [QGVAR(selectedWaypoint),[]];
+if (count _currentWaypoint == 0) exitWith {};
 
-_wp set [2,[_timeout,_timeout,_timeout]];
+[_currentWaypoint,[_timeout,_timeout,_timeout]] remoteExecCall ["setWaypointTimeout",2,false];

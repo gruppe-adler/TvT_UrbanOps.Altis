@@ -1,6 +1,6 @@
-params ["_unit"];
+params [["_side",sideUnknown]];
 
-_color = switch (side _unit) do {
+private _color = switch (_side) do {
     case (WEST): {
         [0,0.3,0.6,1]
     };

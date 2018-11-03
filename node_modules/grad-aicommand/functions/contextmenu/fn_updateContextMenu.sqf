@@ -1,18 +1,22 @@
 #include "..\..\dialog\ui_toolkit.hpp"
 #include "..\..\dialog\commandwindow\defines.hpp"
-#include "..\..\dialog\contextmenu\defines.hpp"
+#include "script_component.hpp"
 
-_display = findDisplay grad_aicommand_commandwindow_DIALOG;
-ctrlPosition (_display displayCtrl grad_aicommand_contextmenu_GROUP) params ["_x","_y"];
+
+_display = findDisplay GRAD_AICOMMAND_COMMANDWINDOW_DIALOG;
+ctrlPosition (_display displayCtrl GRAD_AICOMMAND_CONTEXTMENU_GROUP) params ["_x","_y"];
 
 /*[false] call grad_aicommand_fnc_openContextMenu;*/
 
-_currentUnit = missionNamespace getVariable ["grad_aicommand_currentUnit",objNull];
-_currentWaypoints = (group _currentUnit) getVariable ["grad_aicommand_currentWaypoints",[]];
-_wpIndex = missionNamespace getVariable ["grad_aicommand_selectedWaypoint",-1];
-if (_wpIndex < 0) exitWith {};
-_wp = _currentWaypoints select _wpIndex;
+private _currentGroup = missionNamespace getVariable [QGVAR(currentGroup),grpNull];
+if (isNull _currentGroup) exitWith {};
+
+private _currentWaypoint = _currentGroup getVariable [QGVAR(selectedWaypoint),[]];
+if (count _currentWaypoint == 0) then {
+    [true,[_x,_y],_currentGroup] call FUNC(openContextMenu);
+} else {
+    [true,[_x,_y],_currentWaypoint] call FUNC(openContextMenu);
+};
 
 
-[true,[_x,_y],_wp] call grad_aicommand_fnc_openContextMenu;
-/*[{isNull ((_this select 0) displayCtrl grad_aicommand_contextmenu_GROUP)}, {(_this select 1) call grad_aicommand_fnc_openContextMenu}, [_display,[true,[_x,_y],_wp]]] call CBA_fnc_waitUntilAndExecute;*/
+/*[{isNull ((_this select 0) displayCtrl GRAD_AICOMMAND_CONTEXTMENU_GROUP)}, {(_this select 1) call grad_aicommand_fnc_openContextMenu}, [_display,[true,[_x,_y],_wp]]] call CBA_fnc_waitUntilAndExecute;*/

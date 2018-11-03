@@ -1,14 +1,12 @@
 #include "..\..\dialog\ui_toolkit.hpp"
-#include "..\..\dialog\contextmenu\defines.hpp"
 
-params ["_display","_idc","_controlsGroup","_text","_pos","_statement"];
+params ["_display","_idc","_controlsGroup","_pos","_statement",["_text",""]];
 
-_button = if (isNull (_controlsGroup controlsGroupCtrl _idc)) then {
+private _button = if (isNull (_controlsGroup controlsGroupCtrl _idc)) then {
     _display ctrlCreate ["RscButtonMenu",_idc,_controlsGroup];
 } else {
     _controlsGroup controlsGroupCtrl _idc;
 };
-
 
 _button ctrlShow true;
 _button ctrlSetText _text;
