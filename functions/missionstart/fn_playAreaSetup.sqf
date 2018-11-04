@@ -12,6 +12,7 @@ CITYAREASIZE = switch (type CHOSENLOCATION) do {
     case "NameCity": {CITYMARKERSIZE};
     case "NameCityCapital": {CAPITALMARKERSIZE};
     case "NameLocal": {OTHERMARKERSIZE};
+    default {300};
 };
 publicVariable "CITYAREASIZE";
 
