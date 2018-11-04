@@ -4,7 +4,7 @@
     ace_map_BFT_Enabled = false;
     [] call uo_setup_fnc_setMissionParams;
     [] call uo_setup_fnc_setOriginalSide;
-    [] call uo_setup_fnc_createCustomLocations;
+    /* [] call uo_setup_fnc_createCustomLocations; */
     [] call uo_init_fnc_pubVars;
     [] call uo_buyables_fnc_nerfRaven;
 
