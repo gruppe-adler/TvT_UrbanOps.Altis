@@ -47,15 +47,19 @@ class ger_heer_w {
 
         //autorifleman
 		class Soldier_AR_F: Soldier_F {
-            primaryWeapon = "rhs_weap_minimi_para_railed";
+            primaryWeapon = "hlc_lmg_MG3";
             primaryWeaponMagazine = "rhs_200rnd_556x45_M_SAW";
             handgunWeapon = "";
             handgunWeaponMagazine = "";
+            backpack = "ARC_GER_Kitbag_compact_Flecktarn";
             addItemsToVest[] = {
-				LIST_2("rhs_200rnd_556x45_M_SAW"),
+				LIST_2("hlc_50Rnd_762x51_B_MG3"),
 				LIST_2("rhs_mag_an_m8hc"),
 				LIST_2("rhs_mag_m67")
 			};
+            addItemsToBackpack[] = {
+                LIST_3("hlc_100Rnd_762x51_M_MG3")
+            };
 		};
 
         //light AT
@@ -67,8 +71,7 @@ class ger_heer_w {
 		class Soldier_A_F: Soldier_F {
             backpack = "ARC_GER_Kitbag_compact_Flecktarn";
             addItemsToBackpack[] = {
-                LIST_2("rhs_200rnd_556x45_M_SAW"),
-                "rhs_200rnd_556x45_T_SAW"
+                LIST_3("hlc_100Rnd_762x51_M_MG3")
             };
 		};
 

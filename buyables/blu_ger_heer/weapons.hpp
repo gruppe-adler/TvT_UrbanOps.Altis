@@ -22,12 +22,6 @@ class Weapons {
         underbarrelItem = "rhsusf_acc_harris_swivel";
     };
 
-    class rhs_weap_m240G {
-        displayName = "M240G";
-        price = 2000;
-        stock = 2;
-    };
-
     class rhs_weap_M136 {
         displayName = "M136 HEAT";
         price = 800;

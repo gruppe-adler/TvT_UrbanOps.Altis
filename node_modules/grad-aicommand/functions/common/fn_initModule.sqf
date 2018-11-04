@@ -10,9 +10,8 @@ if (isNil QGVAR(canUseHighcommandDefault)) then {
     GVAR(canUseHighcommandDefault) = ([(missionConfigFile >> "CfgGradAICommand" >> "canUseHighcommandDefault"),"number",0] call CBA_fnc_getConfigEntry) == 1;
 };
 
-
 if (hasInterface) then {
-    _action = ["grad_aicommand_actionNode", "AI command", "\A3\ui_f\data\igui\cfg\simpleTasks\types\whiteboard_ca.paa", {_this call FUNC(openCommandWindow)}, {[group (_this select 0)] call FUNC(isEditableGroup)}] call ace_interact_menu_fnc_createAction;
+    _action = ["grad_aicommand_actionNode", "AI command", "\A3\ui_f\data\igui\cfg\simpleTasks\types\whiteboard_ca.paa", {[FUNC(openCommandWindow),_this] call CBA_fnc_execNextFrame}, {[group (_this select 0)] call FUNC(isEditableGroup)}] call ace_interact_menu_fnc_createAction;
     ["CAManBase",0,["ACE_MainActions"],_action,true] call ace_interact_menu_fnc_addActionToClass;
 
     /* _action = ["grad_aicommand_editCommandsAction", "Edit commands", "\A3\ui_f\data\igui\cfg\simpleTasks\types\use_ca.paa", {_this call FUNC(openCommandWindow)}, {_this call FUNC(canGiveCommands)}] call ace_interact_menu_fnc_createAction;
@@ -27,6 +26,6 @@ if (hasInterface) then {
     /* _action = ["grad_aicommand_leaveGroupAction", "Leave group", "\A3\ui_f\data\igui\cfg\simpleTasks\types\getout_ca.paa", {_this call FUNC(leaveGroup)}, {_this call FUNC(canGiveCommands)}] call ace_interact_menu_fnc_createAction;
     ["CAManBase",0,["ACE_MainActions","grad_aicommand_actionNode"],_action,true] call ace_interact_menu_fnc_addActionToClass; */
 
-    _action = ["grad_aicommand_highcommandAction", "AI command", "\A3\ui_f\data\igui\cfg\simpleTasks\types\whiteboard_ca.paa", {_this call FUNC(openCommandWindow)}, {(_this select 1) getVariable [QGVAR(canUseHighcommand),GVAR(canUseHighcommandDefault)]}] call ace_interact_menu_fnc_createAction;
+    _action = ["grad_aicommand_highcommandAction", "AI command", "\A3\ui_f\data\igui\cfg\simpleTasks\types\whiteboard_ca.paa", {[FUNC(openCommandWindow),_this] call CBA_fnc_execNextFrame}, {(_this select 1) getVariable [QGVAR(canUseHighcommand),GVAR(canUseHighcommandDefault)]}] call ace_interact_menu_fnc_createAction;
     ["CAManBase",1,["ACE_SelfActions"],_action,true] call ace_interact_menu_fnc_addActionToClass;
 };

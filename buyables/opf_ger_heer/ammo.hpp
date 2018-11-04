@@ -21,9 +21,8 @@ class Ammo {
         stock = 50;
     };
 
-    class rhs_200rnd_556x45_M_SAW {
-        displayName = "5.56mm 100Rnd Mixed Belt";
-        description = "Used in:<br/>FN Minimi";
+    class hlc_100Rnd_762x51_M_MG3 {
+        description = "Used in:<br/>MG3";
         price = 200;
         stock = 30;
     };
@@ -39,13 +38,6 @@ class Ammo {
         displayName = "7.62mm 20Rnd";
         description = "Used in:<br/>HK417";
         price = 200;
-        stock = 30;
-    };
-
-    class rhsusf_100Rnd_762x51_m62_tracer {
-        displayName = "7.62mm 100Rnd Tracer Belt";
-        description = "Used in:<br/>M240G";
-        price = 250;
         stock = 30;
     };
 
