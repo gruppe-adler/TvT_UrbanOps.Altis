@@ -304,6 +304,102 @@ class CfgIslands {
 		previewCamTarget[] = {3853,4930,0};
 	};
 
+    class WL_Rosche {
+        displayName = "Rosche";
+		type = "russian";
+		isWoodland = true;
+		spawnPosBlu[] = {-106,133,0};
+		spawnPosOpf[] = {-65,867,0};
+		spawnPosInd[] = {-119,1285,0};
+		previewCamPos[] = {4438,4295,0};
+		previewCamTarget[] = {4562,4203,0};
+		locationBlacklist[] = {
+            "Gross Malchau",
+            "Emmendorf",
+            "Molzen",
+            "Jarlitz"
+		};
+        class customLocations {
+			class geidlsHardware {
+				name = "Geidl's Hardware";
+				type = "NameVillage";
+				pos[] = {3989,2588};
+			};
+            class malchauEast {
+				name = "Malchau East";
+				type = "NameVillage";
+				pos[] = {14717,14868};
+			};
+            class malchauWest {
+				name = "Malchau West";
+				type = "NameVillage";
+				pos[] = {14024,14690};
+			};
+            class emmendorfCenter {
+				name = "Emmendorf Center";
+				type = "NameVillage";
+				pos[] = {304,10881};
+			};
+            class reiterhof {
+				name = "Reiterhof";
+				type = "NameVillage";
+				pos[] = {730,11309};
+			};
+            class molzenCenter {
+				name = "Molzen Center";
+				type = "NameVillage";
+				pos[] = {2818,8887};
+			};
+            class jarlitzEast {
+                name = "Jarlitz East";
+                type = "NameVillage";
+                pos[] = {9515,7946};
+            };
+            class jarlitzWest {
+                name = "Jarlitz West";
+                type = "NameVillage";
+                pos[] = {8943,7709};
+            };
+            class constructionYard {
+                name = "Construction Yard";
+                type = "NameVillage";
+                pos[] = {13156,7431};
+            };
+            class oldenstadtHafen {
+                name = "Oldenstadt Hafen";
+                type = "NameCity";
+                pos[] = {1426,5742};
+            };
+        };
+    };
+
+    class ruha {
+		displayName = "Ruha";
+		type = "russian";
+		isWoodland = true;
+		spawnPosBlu[] = {8243,83,0};
+		spawnPosOpf[] = {8270,503,0};
+		spawnPosInd[] = {8277,1002,0};
+		previewCamPos[] = {4438,4295,0};
+		previewCamTarget[] = {4562,4203,0};
+		locationBlacklist[] = {
+			"Joutkallio",
+            "Kivimäki"
+		};
+        class customLocations {
+			class milDepot {
+				name = "Military Depot";
+				type = "NameVillage";
+				pos[] = {6692,1586};
+			};
+            class sawmill {
+				name = "Sawmill";
+				type = "NameVillage";
+				pos[] = {3457,7088};
+			};
+        };
+	};
+
 	class Stratis {
 		displayName = "Stratis";
 		type = "mediterranean";
