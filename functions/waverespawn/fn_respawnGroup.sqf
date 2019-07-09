@@ -66,7 +66,7 @@ if (side _group == EAST) then {
                 params ["_unit","_pos"];
                 _respawnPos = (_pos getPos [random 6,random 360]) findEmptyPosition [0,30];
                 if (count _respawnPos == 0) then {_respawnPos = _pos};
-                [_unit,_respawnPos] remoteExec [QFUNC(doRespawn),0,false];
+                [_unit,_respawnPos,true] remoteExec [QFUNC(doRespawn),0,false];
             }, [_x,_pos], random 4] call CBA_fnc_waitAndExecute;
         } forEach (units _group);
     };
