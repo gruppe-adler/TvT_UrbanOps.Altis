@@ -6,7 +6,7 @@ private ["_condition","_onActivation","_onDeactivation"];
 
 if (isServer) then {
     _condition = "
-        uo_unitsInCityArea = thisList;
+        uo_unitsInCityArea = thisList arrayIntersect playableUnits;
         ((west countSide thisList) max 0.01)/((east countSide thisList) max 0.1) >= uo_missionParam_CONTROLRATIO;
     ";
 
@@ -22,7 +22,7 @@ if (isServer) then {
         [[],'Report','BLUFOR is no longer in control.'] remoteExec ['uo_common_fnc_sideNotification',0,false];
     ";
 } else {
-    _condition = "uo_unitsInCityArea = thisList;";
+    _condition = "uo_unitsInCityArea = thisList arrayIntersect playableUnits;";
     _onActivation = "";
     _onDeactivation = "";
 };
