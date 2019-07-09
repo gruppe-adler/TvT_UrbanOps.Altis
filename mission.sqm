@@ -3568,7 +3568,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=1;
+														value=0.89999998;
 													};
 												};
 												class Item1
