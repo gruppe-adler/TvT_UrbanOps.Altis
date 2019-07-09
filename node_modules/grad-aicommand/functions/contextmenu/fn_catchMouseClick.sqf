@@ -69,7 +69,7 @@ if (_isOverContextMenu) exitWith {true};
 
 [false] call grad_aicommand_fnc_openContextMenu;
 
-private _currentGroup = missionNamespace getVariable [QGVAR(currentGroup),grpNull];
-if (!isNull _currentGroup) then {
-    _currentGroup setVariable [QGVAR(selectedWaypoint),nil];
+private _currentGroups = missionNamespace getVariable [QGVAR(currentGroups),[]];
+if (count _currentGroups > 0) then {
+    {_x setVariable [QGVAR(selectedWaypoint),nil]} forEach _currentGroups;
 };

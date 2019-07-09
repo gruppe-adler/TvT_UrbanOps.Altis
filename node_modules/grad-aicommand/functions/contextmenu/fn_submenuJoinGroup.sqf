@@ -7,4 +7,6 @@ private _groupToJoin = _joinableGroups param [_groupID,grpNull];
 
 if (isNull _groupToJoin) exitWith {};
 
-units (missionNamespace getVariable [QGVAR(currentGroup),grpNull]) joinSilent _groupToJoin;
+GVAR(currentGroups) deleteAt (GVAR(currentGroups) find GVAR(groupMenuGroup));
+units (missionNamespace getVariable [QGVAR(groupMenuGroup),grpNull]) joinSilent _groupToJoin;
+GVAR(groupMenuGroup) = grpNull;

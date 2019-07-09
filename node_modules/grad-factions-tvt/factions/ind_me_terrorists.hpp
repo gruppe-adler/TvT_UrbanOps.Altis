@@ -15,7 +15,7 @@ class ind_me_terrorists {
 		backpack = "";
 		headgear = "H_Shemag_olive";
 		nvgoggles = "";
-		radio = "tf_fadak";
+		radio = "TFAR_fadak";
 		binoculars = "";
 		map = "ItemMap";
 		gps = "";

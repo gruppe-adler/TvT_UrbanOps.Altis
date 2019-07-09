@@ -12,11 +12,11 @@ private _controlsGroup = _display displayCtrl GRAD_AICOMMAND_RENAMEGROUP_GROUP;
 if (isNull _controlsGroup) exitWith {ERROR("Rename group dialog controlsgroup is null.")};
 
 if (_open) then {
-    _currentGroup = missionNamespace getVariable [QGVAR(currentGroup),grpNull];
-    if (isNull _currentGroup) exitWith {};
+    _groupMenuGroup = missionNamespace getVariable [QGVAR(groupMenuGroup),grpNull];
+    if (isNull _groupMenuGroup) exitWith {};
 
     _titlebar = _controlsGroup controlsGroupCtrl GRAD_AICOMMAND_RENAMEGROUP_TITLE;
-    _titlebar ctrlSetText format ["RENAME %1",toUpper groupID _currentGroup];
+    _titlebar ctrlSetText format ["RENAME %1",toUpper groupID _groupMenuGroup];
 
     _map = _display displayCtrl GRAD_AICOMMAND_COMMANDWINDOW_MAP;
 

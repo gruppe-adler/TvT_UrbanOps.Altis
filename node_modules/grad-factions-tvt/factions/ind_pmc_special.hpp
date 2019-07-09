@@ -18,7 +18,7 @@ class ind_pmc_special {
 		backpack = "";
 		headgear = "H_Watchcap_blk";
 		nvgoggles = "";
-		radio = "tf_anprc152";
+		radio = "TFAR_anprc152";
 		binoculars = "Binocular";
 		map = "ItemMap";
 		gps = "ItemGPS";

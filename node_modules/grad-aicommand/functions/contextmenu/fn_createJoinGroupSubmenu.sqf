@@ -2,8 +2,8 @@
 
 params ["_parent","_mode"];
 
-private _currentGroup = missionNamespace getVariable [QGVAR(currentGroup),grpNull];
-GVAR(submenuJoinableGroups) = allGroups select {[_x] call FUNC(isEditableGroup) && _x != _currentGroup};
+private _groupMenuGroup = missionNamespace getVariable [QGVAR(groupMenuGroup),grpNull];
+GVAR(submenuJoinableGroups) = allGroups select {[_x] call FUNC(isEditableGroup) && _x != _groupMenuGroup};
 
 private _entries = [];
 {

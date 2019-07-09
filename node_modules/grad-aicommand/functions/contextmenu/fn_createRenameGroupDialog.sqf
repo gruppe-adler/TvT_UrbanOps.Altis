@@ -39,16 +39,16 @@ _editBox ctrlAddEventHandler ["KeyDown",{
     _newGroupName = ctrlText _editBox;
     if (_newGroupName == "") exitWith {};
 
-    private _currentGroup = missionNamespace getVariable [QGVAR(currentGroup),grpNull];
-    if (isNull _currentGroup) exitWith {_controlsGroup ctrlShow false};
+    private _groupMenuGroup = missionNamespace getVariable [QGVAR(groupMenuGroup),grpNull];
+    if (isNull _groupMenuGroup) exitWith {_controlsGroup ctrlShow false};
 
-    if ([_newGroupName,side _currentGroup] call FUNC(groupIdExists)) then {
+    if ([_newGroupName,side _groupMenuGroup] call FUNC(groupIdExists)) then {
         _titlebar = _controlsGroup controlsGroupCtrl GRAD_AICOMMAND_RENAMEGROUP_TITLE;
         _titlebar ctrlSetText format ["ERROR: %1 ALREADY EXISTS!",toUpper _newGroupName];
         playsound "3DEN_notificationWarning";
 
     } else {
-        _currentGroup setGroupIdGlobal [_newGroupName];
+        _groupMenuGroup setGroupIdGlobal [_newGroupName];
         _editBox ctrlSetText "";
         _controlsGroup ctrlShow false;
     };

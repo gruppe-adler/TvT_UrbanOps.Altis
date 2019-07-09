@@ -16,7 +16,7 @@ class ind_eastern_nationalists {
 		headgear = "rhs_beanie_green";
         goggles = "G_Bandanna_oli";
 		nvgoggles = "";
-		radio = "tf_fadak";
+		radio = "TFAR_fadak";
 		binoculars = "Binocular";
 		map = "ItemMap";
 		gps = "ItemGPS";

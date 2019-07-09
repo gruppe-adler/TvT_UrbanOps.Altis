@@ -1,9 +1,13 @@
 #include "..\..\dialog\ui_toolkit.hpp"
 #include "..\..\dialog\commandwindow\defines.hpp"
+#include "script_component.hpp"
 
-onMapSingleClick "";
-(findDisplay GRAD_AICOMMAND_COMMANDWINDOW_DIALOG) displayRemoveEventHandler ["MouseButtonUp",grad_aicommand_mouseButtonEH];
-(findDisplay GRAD_AICOMMAND_COMMANDWINDOW_DIALOG) displayRemoveEventHandler ["KeyUp",grad_aicommand_keyUpEH];
+GVAR(leftButtonDown) = nil;
 
+private _display = findDisplay GRAD_AICOMMAND_COMMANDWINDOW_DIALOG;
 
-/*["grad_aicommand_mapClickEH","onMapSingleClick"] call BIS_fnc_removeStackedEventHandler;*/
+_display displayRemoveEventHandler ["MouseButtonDown",GVAR(mouseDownEH)];
+_display displayRemoveEventHandler ["MouseButtonUp",GVAR(mouseUpEH)];
+_display displayRemoveEventHandler ["MouseButtonClick",GVAR(mouseClickEH)];
+
+_display displayRemoveEventHandler ["KeyUp",GVAR(keyUpEH)];

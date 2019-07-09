@@ -2,7 +2,7 @@
 
 params ["_parent","_mode"];
 
-private _currentGroup = missionNamespace getVariable [QGVAR(currentGroup),grpNull];
+private _groupMenuGroup = missionNamespace getVariable [QGVAR(groupMenuGroup),grpNull];
 
 private _entries = [];
 {
@@ -12,6 +12,6 @@ private _entries = [];
 
     _entry = [_unitDescription,format [QUOTE([%1] call FUNC(submenuKickUnit); [false] call FUNC(openContextMenu);),_forEachIndex]];
     _entries pushBack _entry;
-} forEach ((units _currentGroup) select {alive _x});
+} forEach ((units _groupMenuGroup) select {alive _x});
 
 [_parent,_mode,_entries] call FUNC(createSubMenu);
