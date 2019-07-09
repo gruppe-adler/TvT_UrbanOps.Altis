@@ -223,6 +223,24 @@ class CfgIslands {
 		};
 	};
 
+    class gm_weferlingen_summer {
+        displayName = "Weferlingen";
+		type = "russian";
+		isWoodland = true;
+		spawnPosBlu[] = {18881,20658,0};
+		spawnPosOpf[] = {18289,20631,0};
+		previewCamPos[] = {10342,10348,0};
+		previewCamTarget[] = {10449,10520,0};
+		locationBlacklist[] = {
+
+		};
+    };
+
+    class gm_weferlingen_winter: gm_weferlingen_summer {
+        displayName = "Weferlingen Winter";
+
+    };
+
 	class lingor3 {
 		displayName = "Lingor";
 		type = "tropic";
@@ -559,6 +577,34 @@ class CfgIslands {
 			"Imuri Island"
 		};
 	};
+
+    class tem_anizay {
+		displayName = "Anizay";
+		type = "middle eastern";
+		isWoodland = false;
+		spawnPosBlu[] = {10178,10352,0};
+		spawnPosOpf[] = {9295,10358,0};
+		previewCamPos[] = {4294,6250.,0};
+		previewCamTarget[] = {4428,6010,0};
+		locationBlacklist[] = {
+
+		};
+	};
+
+    class Tembelan {
+        displayName = "Tembelan";
+		type = "middle eastern";
+		isWoodland = false;
+		spawnPosBlu[] = {247,303,0};
+		spawnPosOpf[] = {555,278,0};
+		previewCamPos[] = {4229,7068,0};
+		previewCamTarget[] = {4239,6653,0};
+		locationBlacklist[] = {
+            "Yuri Island",
+            "Kasur Island",
+            "Besar Airbase"
+		};
+    };
 
 	class utes {
 		displayName = "Utes";
