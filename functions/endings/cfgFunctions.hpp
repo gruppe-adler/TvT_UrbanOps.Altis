@@ -4,7 +4,8 @@ class uo_endings {
         class checkCapture {};
         class checkOpfKilled {};
         class checkDefense {};
-        class endMission {};
+        class endMissionClient {};
+        class endMissionServer {};
         class timeNotifications {};
     };
 };

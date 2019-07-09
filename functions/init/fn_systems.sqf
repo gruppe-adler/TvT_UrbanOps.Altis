@@ -58,7 +58,6 @@
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_checkOpfKilled}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_checkDefense}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_checkCapture}, []] call CBA_fnc_waitUntilAndExecute;
-    [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_endings_fnc_endMission}, []] call CBA_fnc_waitUntilAndExecute;
     [{missionNamespace getVariable ["uo_init_gamestarted", false]}, {[] call uo_civs_fnc_initPunishments}, []] call CBA_fnc_waitUntilAndExecute;
 
 }, []] call CBA_fnc_waitUntilAndExecute;

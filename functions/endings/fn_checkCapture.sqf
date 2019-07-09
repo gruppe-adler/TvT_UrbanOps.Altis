@@ -20,7 +20,7 @@ if (!isServer) exitWith {};
 
             [uo_missionstart_captureTask,"SUCCEEDED",false] call BIS_fnc_taskSetState;
             [uo_missionstart_defendTask,"FAILED",false] call BIS_fnc_taskSetState;
-            missionNamespace setVariable ["uo_gameEnded", ["WEST", "CITY CAPTURED!"], true];
+            ["WEST", "CITY CAPTURED!"] call EFUNC(endings,endMissionServer);
             [_this select 1] call CBA_fnc_removePerFrameHandler;
         };
     };
