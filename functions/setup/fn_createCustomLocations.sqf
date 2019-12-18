@@ -1,5 +1,5 @@
 
-_configPath = missionConfigFile >> "CfgIslands" >>  worldName >> "customLocations";
+_configPath = missionConfigFile >> "CfgGradIslands" >>  worldName >> "customLocations";
 _customLocations = "true" configClasses _configPath;
 
 {

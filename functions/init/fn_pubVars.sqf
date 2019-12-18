@@ -1,7 +1,7 @@
 if (!isServer) exitWith {};
 
 //SETTINGS =====================================================================
-_sizeFactor = [(missionConfigFile >> "CfgIslands" >>  worldName >> "sizeFactor"), "number", 1] call CBA_fnc_getConfigEntry;
+_sizeFactor = [(missionConfigFile >> "CfgGradIslands" >>  worldName >> "urbanops_sizeFactor"), "number", 1] call CBA_fnc_getConfigEntry;
 
 BLUFORSPAWNDIST = 1200 * _sizeFactor;
 BLUFORSPAWNBAND = 800 * _sizeFactor;
