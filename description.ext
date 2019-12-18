@@ -64,9 +64,12 @@ class CfgSounds {
 
 //LOADOUTS =====================================================================
 class Loadouts {
-    resetLoadout = 0;
     baseDelay = 10;
+    perPlayerDelay = 1;
     handleRadios = 1;
+    resetLoadout = 0;
+    randomizationMode = 1;
+    customGear = 120;
 
     class Faction {
         #include "node_modules\grad-factions-tvt\loadouts.hpp"
