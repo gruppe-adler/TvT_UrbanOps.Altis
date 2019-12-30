@@ -8,6 +8,7 @@ _id = _allCVs pushBack _cv;
 missionNamespace setVariable ["uo_cv_allCVs", _allCVs, true];
 
 [_cv] call uo_common_fnc_emptyContainer;
+_cv addItemCargoGlobal ["ACE_CableTie", 50];
 [_cv] call uo_missionObjectives_fnc_checkCommandVehicle;
 [_cv] remoteExec ["uo_missionObjectives_fnc_bluforBuyAction",0,true];
 [_cv] remoteExec ["uo_missionObjectives_fnc_cvDestroyAction",0,true];
