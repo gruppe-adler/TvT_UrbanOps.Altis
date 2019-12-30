@@ -22,8 +22,11 @@ uo_DEALER allowDamage false;
 _barrel = "Land_BarrelEmpty_F" createVehicleLocal _dealerPos;
 
 //create task
-_taskDescription = "Defend the dealer. You won't lose if he dies, but your side will no longer be able to respawn and the enemy will receive a large sum of money.";
-uo_missionstart_defendDealerTask = [EAST,"uo_missionstart_defendDealerTask",[_taskDescription,"Defend Dealer",""],_dealerPos,"AUTOASSIGNED",3,false,"defend"] call BIS_fnc_taskCreate;
+private _taskDescription = "Defend the dealer. You won't lose if he dies, but your side will no longer be able to respawn and the enemy will receive a large sum of money.";
+uo_missionstart_defendDealerTask = [EAST,"uo_missionstart_defendDealerTask",[_taskDescription,"Defend Dealer (optional)",""],_dealerPos,"AUTOASSIGNED",3,false,"defend"] call BIS_fnc_taskCreate;
+
+_taskDescription = "Kill the enemy dealer. The dealer is a civilian somewhere in the AO, that can be identified by the drugs in his inventory. There are cable ties in the command vehicle that will help you with this. Once the dealer is dead, the enemy will no longer be able to respawn, and our side will receive a large sum of money.";
+uo_missionstart_killDealerTask = [WEST,"uo_missionstart_killDealerTask",[_taskDescription,"Kill Dealer (optional)",""],nil,"AUTOASSIGNED",3,false,"kill"] call BIS_fnc_taskCreate;
 
 //wait until dealer spawned
 [{!isNull (_this select 1) && !isNull (_this select 2)}, {
@@ -52,6 +55,7 @@ uo_missionstart_defendDealerTask = [EAST,"uo_missionstart_defendDealerTask",[_ta
         [[EAST,WEST,CIVILIAN],'Report','The dealer has been killed.'] remoteExec ['uo_common_fnc_sideNotification',0,false];
         [WEST,'Funds received','You received 10000Cr.',{[player] call uo_common_fnc_isCommander}] remoteExec ['uo_common_fnc_sideNotification',0,false];
         [uo_missionstart_defendDealerTask,"FAILED",false] call BIS_fnc_taskSetState;
+        [uo_missionstart_killDealerTask,"SUCCEEDED",false] call BIS_fnc_taskSetState;        
     }];
 
     _nearestRoad = [getpos _unit, 50, []] call BIS_fnc_nearestRoad;
